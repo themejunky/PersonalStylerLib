@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nContainer"
+    style="@style/base_match_match">
+
+    <LinearLayout
+       style="@style/default_LL_match_match_vertical">
+
+        <View
+            style="@style/Custom_Button_View"/>
+
+        <TextView
+            android:id="@+id/nShadow"
+            style="@style/Custom_Button_Shadow"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nButton"
+        style="@style/Custom_Button_Text"
+        />
+
+</RelativeLayout>
