@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="16dp"
     tools:context="mystylistlib.themejunky.com.mystylistlib.MainActivity">
 
   <com.themejunky.personalstylerlib.customviews.CustomButton
-      android:layout_width="50dp"
+      android:id="@+id/bb"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       app:cb_text="test"
-      app:cb_active_unpressed="@color/colorAccent">
+      app:cb_form_validation="false"
+
+
+      app:cb_active_shadow="@color/base_gray"
+      app:cb_active_unpressed="@color/base_purple"
+      app:cb_active_pressed="@color/base_red"
+
+      app:cb_inactive_shadow="@color/base_background"
+      app:cb_inactive_unpressed="@color/base_gray"
+      app:cb_inactive_pressed="@color/base_black">
 
 
   </com.themejunky.personalstylerlib.customviews.CustomButton>
 
-</android.support.constraint.ConstraintLayout>
+  <com.themejunky.personalstylerlib.customviews.CustomHomeItem
+      android:layout_width="250dp"
+      android:layout_height="wrap_content"
+
+      app:chi_background_color="@color/colorPrimary"
+      app:chi_number_color="@color/base_line"
+      app:chi_radius="10"
+      app:chi_text_text="dasasfdsdfas"
+      app:chi_title_text="titole"
+      app:chi_border_default="@color/base_red"
+      app:chi_stroke="5"
+      ></com.themejunky.personalstylerlib.customviews.CustomHomeItem>
+
+
+
+
+</LinearLayout>

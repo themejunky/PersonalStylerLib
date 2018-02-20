@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="11dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:background="@color/base_grey2"/>
+
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/text_view_circle_grey"/>
+
+        <View
+            android:id="@+id/nLastLine"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/base_grey2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/default_LL_wrap_wrap_vertical"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/nTime"
+            style="@style/app_detail_status_time"
+            android:text="10:40"/>
+
+        <TextView
+            android:id="@+id/nDate"
+            style="@style/app_detail_status_date"
+            android:text="5 May"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nStatus"
+        style="@style/app_detail_status_text" />
+
+</LinearLayout>

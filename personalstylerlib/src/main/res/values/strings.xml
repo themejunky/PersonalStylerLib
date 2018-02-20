@@ -6,4 +6,9 @@
     <string name="default_font_bold">Catamaran-Bold.ttf</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="onboarding_step_4_add">Adauga un serviciu</string>
+
+    <string name="register_mandatory"> *</string>
+
+
 </resources>

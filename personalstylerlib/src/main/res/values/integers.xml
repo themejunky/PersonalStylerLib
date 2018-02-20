@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="cbb_radius">3</integer>
+    <integer name="cbb_stroke">2</integer>
+    <integer name="cbb_padding">15</integer>
+
+    <integer name="cs_radius">3</integer>
+    <integer name="cs_stroke">2</integer>
+
+    <integer name="chi_radius">3</integer>
+    <integer name="chi_stroke">0</integer>
+
+    <integer name="cbs_padding">16</integer>
+</resources>

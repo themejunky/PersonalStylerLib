@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="CustomButton_inactive_shadow">#ffffff</color>
+    <color name="CustomButton_inactive_unpressed">#b1b1b1</color>
+    <color name="CustomButton_inactive_pressed">#b1b1b1</color>
+    <color name="CustomButton_green_unpressed">#0cb037</color>
+    <color name="CustomButton_green_pressed">#0b9a30</color>
+    <color name="CustomButton_green_shadow">#b3e6c0</color>
+    <color name="CustomButton_blue_unpressed">#36609f</color>
+    <color name="CustomButton_blue_pressed">#1c488b</color>
+    <color name="CustomButton_blue_shadow">#91a8cb</color>
+    <color name="CustomButton_red_unpressed">#dd4b39</color>
+    <color name="CustomButton_red_pressed">#c12d1a</color>
+    <color name="CustomButton_red_shadow">#ec9d93</color>
+    <color name="CustomButton_default_text_color">#ffffff</color>
+
+    <color name="CustomButtonBorder_default_text_color">#cbcbcb</color>
+    <color name="CustomButtonBorder_default_background_color">#ffffff</color>
+    <color name="CustomButtonBorder_default_border_color">#b1b1b1</color>
+    <color name="CustomButtonBorder_border_color_list_price">#880cff</color>
+    <color name="CustomButtonBorder_border_color_list_time">#4095ff</color>
+    <color name="CustomButtonBorder_border_color_add_pictures">#880cff</color>
+    <color name="CustomButtonBorder_border_color_location">#e6e6e6</color>
+
+    <color name="CustomService_default_background_color">#ffffff</color>
+    <color name="CustomService_default_border_color_active">#333333</color>
+    <color name="CustomService_default_border_color_inactive">#e6e6e6</color>
+    <color name="CustomService_default_border_color_pressed">#880cff</color>
+
+    <color name="CustomInput_line_default">#d1d1d1</color>
+    <color name="CustomInput_line_active">#0cb037</color>
+    <color name="CustomInput_line_error">#fc0056</color>
+
+    <color name="CustomHomeItem_default_title_color">#333333</color>
+    <color name="CustomHomeItem_default_number_color">#880cff</color>
+    <color name="CustomHomeItem_default_text_color">#333333</color>
+    <color name="CustomHomeItem_default_background_color">#ffffff</color>
+    <color name="CustomHomeItem_default_border_color">#ffffff</color>
+    <color name="CustomHomeItem_green_color">#0cb037</color>
+    <color name="CustomHomeItem_title">#333333</color>
+    <color name="CustomHomeItem_number">#880cff</color>
+
+    <color name="Schedule_active_background">#0cb037</color>
+    <color name="Schedule_active_border">#9c06c839</color>
+    <color name="Schedule_active_text">#ffffff</color>
+    <color name="Schedule_inactive_background">#ffffff</color>
+    <color name="Schedule_inactive_border">#e6e6e6</color>
+    <color name="Schedule_inactive_text">#333333</color>
+    <color name="Schedule_hour">#333333</color>
+    <color name="Schedule_hour_lines">#d1d1d1</color>
+    <color name="Schedule_hour_background">#ffffff</color>
+    <color name="Schedule_TimePicker_Border">#e6e6e6</color>
+    <color name="Schedule_TimePicker_Background">#ffffff</color>
+    <color name="Schedule_Disponibil_Active">#0cb037</color>
+    <color name="Schedule_Disponibil_Inactive">#ffffff</color>
+    <color name="Schedule_Indisponibil_Active">#fc0056</color>
+    <color name="Schedule_Indisponibil_Inactive">#ffffff</color>
+    <color name="Schedule_Diponibil_Background">#e6f7eb</color>
+    <color name="Schedule_Diponibil_Border">#0cb037</color>
+    <color name="Schedule_Indiponibil_Background">#ffe5ee</color>
+    <color name="Schedule_Indiponibil_Border">#fc0056</color>
+    <color name="Schedule_Buttons_Background_Inactive">#ffffff</color>
+    <color name="Schedule_Buttons_Inactive">#b1b1b1</color>
+    <color name="Schedule_ok">#0cb037</color>
+    <color name="Schedule_remove">#fc0056</color>
+    <color name="Schedule_TimePicker_line">#880cff</color>
+
+    <color name="Schedule_MonthPicker_header">#b1b1b1</color>
+    <color name="Schedule_MonthPicker_before">#4cb1b1b1</color>
+    <color name="Schedule_MonthPicker_current">#333333</color>
+
+
+    <color name="Appoint_Trigger_Border">#14000000</color>
+    <color name="Appoint_Trigger_Text">#880cff</color>
+
+    <color name="default_edit_text_bottom_line">#ffffff</color>
+    <color name="default_background">#fff</color>
+
+    <color name="default_error">#fc0056</color>
+    <color name="default_text_buttons">#ffffff</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#303F9F</color>
+
+    <color name="base_line">#c8c7cc</color>
+    <color name="base_black">#333333</color>
+    <color name="base_unselected">#e6e6e6</color>
+    <color name="base_selected">#880cff</color>
+
+    <color name="base_line_color">#f2f1f1</color>
+
+    <color name="step_3_button">#880cff</color>
+    <color name="step_3_button_min">#4095ff</color>
+
+
+    <color name="base_purple">#9326ff</color>
+    <color name="base_unselected_text">#b1b1b1</color>
+    <color name="base_background">#f0eff5</color>
+    <color name="base_gray">#cbcbcb</color>
+    <color name="base_input_underline">#d1d1d1</color>
+    <color name="base_green">#0cb037</color>
+    <color name="base_white">#fff</color>
+    <color name="base_red">#fc0a5d</color>
+    <color name="base_red2">#fc0056</color>
+    <color name="base_grey2">#e6e4e4</color>
+    <color name="base_blue">#4095ff</color>
+    <color name="base_violet">#880cff</color>
+
+    <color name="core_tabview_default_text_color">#b0a2f9</color>
+    <color name="core_tabview_selected_text_color">#ffffff</color>
+    <color name="core_tabview_selected_line">#ffd800</color>
+
+    <color name="default_inactive">#e6e6e6</color>
+
+
+
+</resources>

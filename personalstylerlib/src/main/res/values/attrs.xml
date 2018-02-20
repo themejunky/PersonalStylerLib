@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+    <declare-styleable name="CustomButtonService">
+        <attr name="cbs_image" format="reference"/>             <!-- set the image(svg) -->
+        <attr name="cbs_text" format="string"/>                 <!-- text on the bottom -->
+        <attr name="cbs_style" format="reference"/>             <!-- text style class [R.style.cs_default_style] -->
+        <attr name="cbs_backgroundColor" format="color"/>       <!-- set the background color [R.color.CustomService_default_background_color] -->
+        <attr name="cbs_border_radius" format="integer"/>       <!-- border corrners radius [R.integer.cs_radius]  -->
+        <attr name="cbs_border_stroke" format="integer"/>       <!-- border stroke [R.integer.cs_stroke]  -->
+        <attr name="cbs_border_default" format="color"/>        <!-- set active-default border color [R.color.CustomService_default_border_color_active] -->
+        <attr name="cbs_border_pressed" format="color"/>        <!-- set active-pressed border color [R.color.CustomService_default_border_color_pressed] -->
+        <attr name="cbs_image_color" format="color"/>
+        <attr name="cbs_image_padding" format="dimension"/>
+        <attr name="cbs_border_inactive_state" format="color"/> <!-- set inactive border color [R.color.CustomService_default_border_color_inactive] -->
+    </declare-styleable>
+
     <declare-styleable name="CustomButton">
         <attr name="cb_tag" format="string"/>               <!-- used for onClick identification -->
         <attr name="cb_text_style" format="reference"/>     <!-- text style class  [R.style.cb_default_style] -->
         <attr name="cb_text_font" format="string"/>         <!-- font family for the text on the button -->
+        <attr name="cb_text_color" format="color"/>        <!-- text color on the button (default :  -->
         <attr name="cb_text" format="string"/>              <!-- text on the button -->
         <attr name="cb_active_pressed" format="color"/>     <!-- active-color-button-pressed -->
         <attr name="cb_active_unpressed" format="color"/>   <!-- active-color-button-unpressed -->
@@ -13,6 +29,62 @@
         <attr name="cb_inactive_unpressed" format="color"/> <!-- inactive-color-button-unpressed -->
         <attr name="cb_inactive_shadow" format="color"/>    <!-- inactive-color-button-shadow -->
         <attr name="cb_form_validation" format="string"/>   <!-- if this button should validate the form before submit -->
+    </declare-styleable>
+
+    <declare-styleable name="CustomInput">
+        <attr name="ci_type" format="enum">                     <!-- set the type of the input -->
+            <enum name="input" value="1"/>
+            <enum name="spinner" value="2"/>
+        </attr>
+        <attr name="ci_keyboard" format="enum">                 <!-- set the type of softkeyboard -->
+            <enum name="text" value="1"/>
+            <enum name="min_text" value="12"/>
+            <enum name="email" value="2"/>
+            <enum name="phone" value="3"/>
+            <enum name="password" value="4"/>
+            <enum name="numbers" value="5"/>
+        </attr>
+        <attr name="ci_title_style" format="reference"/>        <!-- R.style.ci_default_style -->
+        <attr name="ci_title_font" format="string"/>            <!-- set the title font name -->
+        <attr name="ci_title_text" format="string"/>            <!-- set the title text-->
+        <!-- next,done -->
+        <attr name="ci_imei_option" format="enum">              <!-- imei option ( "done" - close the keyboard ; "next" move cursor to the next input ) -->
+            <enum name="done" value="0"/>
+            <enum name="next" value="1"/>
+        </attr>
+        <attr name="ci_style" format="reference"/>              <!-- set text style class for edittext [R.style.ci_default_style] -->
+        <attr name="ci_font" format="string"/>                  <!-- set the font name of input (edittext) -->
+        <attr name="ci_botton_line_default" format="color"/>    <!-- set bottom line color (default) [R.color.CustomInput_line_default] -->
+        <attr name="ci_botton_line_error" format="color"/>      <!--set bottom line color (active) [R.color.CustomService_default_border_color_inactive] -->
+        <attr name="ci_botton_line_active" format="color"/>     <!-- set bottom line color (error) [R.color.ci_botton_line_error] -->
+        <attr name="ci_hint" format="string"/>                  <!-- set edittext hint -->
+        <attr name="ci_error_mandatory" format="boolean"/>      <!--  set the "*" to flag up the field is mandatory -->
+        <attr name="ci_error_message" format="string"/>         <!-- set the error message if validation not succeed -->
+    </declare-styleable>
+
+    <declare-styleable name="CustomButtonBorder">
+        <attr name="cbb_tag" format="string"/>              <!-- used for onClick identification -->
+        <attr name="cbb_text" format="string"/>             <!-- text on the button -->
+        <attr name="cbb_text_color" format="color"/>        <!-- text color on the button (default :  -->
+        <attr name="cbb_padding" format="dimension"/>       <!-- button padding vs text ( default : 15)  -->
+        <attr name="cbb_backgroundColor" format="color"/>   <!-- border corrners radius ( default : #fff)  -->
+        <attr name="cbb_border_radius" format="integer"/>   <!-- border corrners radius ( default : 3)  -->
+        <attr name="cbb_border_stroke" format="integer"/>   <!-- border stroke ( default : 2)  -->
+        <attr name="cbb_border_default" format="color"/>    <!-- default color ( text & border )  -->
+        <attr name="cbb_border_pressed" format="color"/>    <!-- pressed color ( text & border )  -->
+    </declare-styleable>
+
+    <declare-styleable name="CustomHomeItem">
+        <attr name="chi_background_color" format="color"/>  <!-- set the background color -->
+        <attr name="chi_radius" format="integer"/>          <!-- set the radius -->
+        <attr name="chi_stroke" format="integer"/>          <!-- set the stroke -->
+        <attr name="chi_border_default" format="color"/>    <!-- set default border color -->
+        <attr name="chi_title_text" format="string"/>       <!-- set title text -->
+        <attr name="chi_title_color" format="color"/>       <!-- set title color -->
+        <attr name="chi_number_text" format="string"/>      <!-- set number text -->
+        <attr name="chi_number_color" format="color"/>      <!-- set number color -->
+        <attr name="chi_text_text" format="string"/>        <!-- set text text -->
+        <attr name="chi_text_color" format="color"/>        <!-- set text color -->
     </declare-styleable>
 
 </resources>
