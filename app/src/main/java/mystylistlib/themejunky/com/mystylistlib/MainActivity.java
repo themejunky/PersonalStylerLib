@@ -16,8 +16,7 @@ public class MainActivity extends AppCompatActivity implements CustomButton.Cust
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new InitCaligraphy("Catamaran-Regular.ttf");
-        bb = findViewById(R.id.bb);
-        bb.setListener(this);
+
     }
 
 

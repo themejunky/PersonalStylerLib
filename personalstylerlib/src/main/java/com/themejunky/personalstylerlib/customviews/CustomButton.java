@@ -49,7 +49,6 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
 
         /* start-up stuff*/
         TAG = "CustomButton";
-
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomButton);
         inflate(nContext, R.layout.custom_button, this);
 
@@ -57,7 +56,6 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
             setStyle(mButton, R.styleable.CustomButton_cb_text_style, R.style.cb_default_style);
             setFontFamily(mButton, mTypedarray.getString(R.styleable.CustomButton_cb_text_font), false);
             setTitle(mButton, R.styleable.CustomButton_cb_text);
-
             setTextColor(mButton, R.styleable.CustomButton_cb_text_color, R.color.CustomButton_default_text_color);
 
         mShadow = findViewById(R.id.nShadow);
@@ -66,14 +64,11 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
             mContainer.setTag(mTypedarray.getString(R.styleable.CustomButton_cb_tag));
             mContainer.setOnTouchListener(this);
 
-            if(mTypedarray.getString(R.styleable.CustomButton_cb_form_validation)!=null){
-                if (mTypedarray.getString(R.styleable.CustomButton_cb_form_validation).equals("true")) {
-                    setInactive();
-                } else {
-                    setActive();
-                }
-            }
-
+        if (mTypedarray.getString(R.styleable.CustomButton_cb_form_validation).equals("true")) {
+            setInactive();
+        } else {
+            setActive();
+        }
     }
 
     /**
@@ -85,31 +80,28 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             mShadow.setVisibility(View.GONE);
 
-            if(this.getTag()!=null){
-                switch (this.getTag().toString()) {
-                    case Constants.CUSTOM_BUTTON_ACTIVE:
-                        setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_active_pressed);
-                        break;
-                    case Constants.CUSTOM_BUTTON_INACTIVE:
-                        setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_inactive_pressed);
-                        break;
-                }
+            switch (this.getTag().toString()) {
+                case Constants.CUSTOM_BUTTON_ACTIVE:
+                    setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_active_pressed);
+                    break;
+                case Constants.CUSTOM_BUTTON_INACTIVE:
+                    setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_inactive_pressed);
+                    break;
             }
-
 
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             mShadow.setVisibility(View.VISIBLE);
-            if(this.getTag()!=null) {
-                switch (this.getTag().toString()) {
-                    case Constants.CUSTOM_BUTTON_ACTIVE:
-                        setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_active_unpressed);
-                        break;
-                    case Constants.CUSTOM_BUTTON_INACTIVE:
-                        setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_inactive_unpressed);
-                        break;
-                }
+
+            switch (this.getTag().toString()) {
+                case Constants.CUSTOM_BUTTON_ACTIVE:
+                    setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_active_unpressed);
+                    break;
+                case Constants.CUSTOM_BUTTON_INACTIVE:
+                    setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_inactive_unpressed);
+                    break;
             }
+
             try {
                 mListener.onCustomButtonClick(view);
             } catch (Exception e) {
@@ -136,6 +128,7 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
         setmButtonDrawableColor((GradientDrawable) mShadow.getBackground(), R.styleable.CustomButton_cb_inactive_shadow);
         this.setTag(Constants.CUSTOM_BUTTON_INACTIVE);
     }
+
     /**
      * Change text on the button
      * @param nText - string resource
