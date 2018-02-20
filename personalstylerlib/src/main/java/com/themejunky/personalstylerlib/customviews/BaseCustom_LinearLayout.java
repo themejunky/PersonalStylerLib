@@ -111,12 +111,22 @@ public class BaseCustom_LinearLayout extends LinearLayout {
      */
     protected void setTextColor(TextView nView, int nColor, int nDefaultColor) {
         try {
+            nView.setTextColor(getColorWithDefaultPreloaded(nColor, nDefaultColor));
+        } catch (Exception e) {
+            nView.setTextColor(nDefaultColor);
+            Log.d(TAG,""+e.getMessage());
+        }
+    }
+
+    protected void setTextColorButton(TextView nView, int nColor, int nDefaultColor) {
+        try {
             nView.setTextColor(getColorWithDefaultPreloaded(nColor, mContext.getResources().getColor(nDefaultColor)));
         } catch (Exception e) {
             nView.setTextColor(nDefaultColor);
             Log.d(TAG,""+e.getMessage());
         }
     }
+
     protected void setTextColor(TextView nView, int nColor) {
         try {
             nView.setTextColor(getResources().getColor(nColor));

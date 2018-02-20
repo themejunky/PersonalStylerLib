@@ -8,6 +8,20 @@
     android:layout_marginLeft="16dp"
     tools:context="mystylistlib.themejunky.com.mystylistlib.MainActivity">
 
+<com.themejunky.personalstylerlib.customviews.CustomHomeItem
+    style="@style/base_match_wrap"
+    app:chi_title_text="asdfsadfadfsasdfasdfasdf"
+    app:chi_title_color="@color/CustomHomeItem_green_color"
+    app:chi_text_text="afasdfasdfasdfasdfasdfadfaklsdfkjahdflkajshdflakjsdfhlakjfdlajfdhalsfdjhalskjdfhalskjfhals
+"
+    />
 
+    <com.themejunky.personalstylerlib.customviews.CustomButton
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:cb_text="testasdfasdf"
+        app:cb_active_unpressed="@color/base_red"
+
+        />
 
 </LinearLayout>

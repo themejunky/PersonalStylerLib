@@ -56,7 +56,7 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
             setStyle(mButton, R.styleable.CustomButton_cb_text_style, R.style.cb_default_style);
             setFontFamily(mButton, mTypedarray.getString(R.styleable.CustomButton_cb_text_font), false);
             setTitle(mButton, R.styleable.CustomButton_cb_text);
-            setTextColor(mButton, R.styleable.CustomButton_cb_text_color, R.color.CustomButton_default_text_color);
+            setTextColorButton(mButton, R.styleable.CustomButton_cb_text_color, R.color.CustomButton_default_text_color);
 
         mShadow = findViewById(R.id.nShadow);
 
@@ -64,11 +64,14 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
             mContainer.setTag(mTypedarray.getString(R.styleable.CustomButton_cb_tag));
             mContainer.setOnTouchListener(this);
 
-        if (mTypedarray.getString(R.styleable.CustomButton_cb_form_validation).equals("true")) {
-            setInactive();
-        } else {
-            setActive();
-        }
+            if(mTypedarray.getString(R.styleable.CustomButton_cb_form_validation)!=null){
+                if (mTypedarray.getString(R.styleable.CustomButton_cb_form_validation).equals("true")) {
+                    setInactive();
+                } else {
+                    setActive();
+                }
+            }
+
     }
 
     /**
@@ -80,26 +83,29 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             mShadow.setVisibility(View.GONE);
 
-            switch (this.getTag().toString()) {
-                case Constants.CUSTOM_BUTTON_ACTIVE:
-                    setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_active_pressed);
-                    break;
-                case Constants.CUSTOM_BUTTON_INACTIVE:
-                    setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_inactive_pressed);
-                    break;
+            if(this.getTag()!=null) {
+                switch (this.getTag().toString()) {
+                    case Constants.CUSTOM_BUTTON_ACTIVE:
+                        setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_active_pressed);
+                        break;
+                    case Constants.CUSTOM_BUTTON_INACTIVE:
+                        setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_inactive_pressed);
+                        break;
+                }
             }
 
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             mShadow.setVisibility(View.VISIBLE);
-
-            switch (this.getTag().toString()) {
-                case Constants.CUSTOM_BUTTON_ACTIVE:
-                    setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_active_unpressed);
-                    break;
-                case Constants.CUSTOM_BUTTON_INACTIVE:
-                    setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_inactive_unpressed);
-                    break;
+            if(this.getTag()!=null) {
+                switch (this.getTag().toString()) {
+                    case Constants.CUSTOM_BUTTON_ACTIVE:
+                        setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_active_unpressed);
+                        break;
+                    case Constants.CUSTOM_BUTTON_INACTIVE:
+                        setmButtonDrawableColor((GradientDrawable) mButton.getBackground(), R.styleable.CustomButton_cb_inactive_unpressed);
+                        break;
+                }
             }
 
             try {
