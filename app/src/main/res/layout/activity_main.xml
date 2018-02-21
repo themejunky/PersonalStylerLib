@@ -10,4 +10,34 @@
 
 
 
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nTimp"
+        style="@style/base_match_wrap"
+        android:layout_height="150dp"
+        android:layout_width="150dp"
+        android:layout_marginTop="15dp"
+        app:ci_type="spinner"
+        app:ci_imei_option="next"
+        app:ci_title_text="sdfg"
+        app:ci_hint="sdfgsf"
+        app:ci_error_message="sdfgsdfg"
+        app:ci_error_mandatory="true"
+        />
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nCategorie"
+        style="@style/base_match_wrap"
+        app:ci_type="spinner"
+        app:ci_title_text="asfasdfa"
+        app:ci_error_message="asfdasdfads"
+        app:ci_error_mandatory="true"
+        />
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:layout_height="150dp"
+        android:layout_width="150dp"
+        app:ci_type="spinner"
+        app:ci_title_text="asfasdfa"
+        />
+
 </LinearLayout>
