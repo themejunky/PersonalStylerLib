@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://C:\Users\Junky2\Documents\PersonalStylerLib\MyStylistLib.iml" filepath="C:\Users\Junky2\Documents\PersonalStylerLib\MyStylistLib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PersonalStylerLib.iml" filepath="$PROJECT_DIR$/PersonalStylerLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PersonalStylerLib.iml" filepath="$PROJECT_DIR$/.idea/PersonalStylerLib.iml" />
+      <module fileurl="file://C:\Users\ThemeJunky\StudioProjects\PersonalStylerLib\PersonalStylerLib.iml" filepath="C:\Users\ThemeJunky\StudioProjects\PersonalStylerLib\PersonalStylerLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\ThemeJunky\StudioProjects\PersonalStylerLib\app\app.iml" filepath="C:\Users\ThemeJunky\StudioProjects\PersonalStylerLib\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/personalstylerlib/personalstylerlib.iml" filepath="$PROJECT_DIR$/personalstylerlib/personalstylerlib.iml" />
+      <module fileurl="file://C:\Users\ThemeJunky\StudioProjects\PersonalStylerLib\personalstylerlib\personalstylerlib.iml" filepath="C:\Users\ThemeJunky\StudioProjects\PersonalStylerLib\personalstylerlib\personalstylerlib.iml" />
     </modules>
   </component>
 </project>

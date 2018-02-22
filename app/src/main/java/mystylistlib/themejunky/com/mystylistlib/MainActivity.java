@@ -8,21 +8,13 @@ import com.themejunky.personalstylerlib.InitCaligraphy;
 import com.themejunky.personalstylerlib.customviews.CustomButton;
 import com.themejunky.personalstylerlib.customviews.CustomButtonBorder;
 
-public class MainActivity extends AppCompatActivity implements CustomButton.Custom_Button_Interface {
+public class MainActivity extends AppCompatActivity {
 
-    CustomButton bb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new InitCaligraphy("Catamaran-Regular.ttf");
-
-    }
-
-
-
-    @Override
-    public void onCustomButtonClick(View view) {
-
     }
 }
+

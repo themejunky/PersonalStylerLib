@@ -3,6 +3,7 @@
 
 
     <declare-styleable name="CustomButtonService">
+        <attr name="cbs_tag" format="string"/>
         <attr name="cbs_image" format="reference"/>             <!-- set the image(svg) -->
         <attr name="cbs_text" format="string"/>                 <!-- text on the bottom -->
         <attr name="cbs_style" format="reference"/>             <!-- text style class [R.style.cs_default_style] -->
