@@ -59,6 +59,7 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
 
         setUnpressed();
         setTitle(mText, R.styleable.CustomButtonBorder_cbb_text);
+        setStyle(mText, R.styleable.CustomButtonBorder_cbb_style, R.style.ci_default_style);
         setTextColor(mText, R.styleable.CustomButtonBorder_cbb_text_color, R.color.CustomButtonBorder_default_text_color);
 
     }

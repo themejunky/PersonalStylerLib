@@ -64,6 +64,7 @@
     </declare-styleable>
 
     <declare-styleable name="CustomButtonBorder">
+        <attr name="cbb_style" format="reference"/>     <!-- text style class  [R.style.cb_default_style] -->
         <attr name="cbb_tag" format="string"/>              <!-- used for onClick identification -->
         <attr name="cbb_text" format="string"/>             <!-- text on the button -->
         <attr name="cbb_text_color" format="color"/>        <!-- text color on the button (default :  -->
