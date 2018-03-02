@@ -64,7 +64,7 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
             mPic.setImageDrawable(mTypedarray.getDrawable(R.styleable.CustomButtonService_cbs_image));
 
         mContainer = findViewById(R.id.nContainer);
-
+            mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonService_cbs_tag));
         mPicContainer = findViewById(R.id.nPicContainer);
             setPadding(mPicContainer,R.styleable.CustomButtonService_cbs_image_padding, mContainer.getResources().getInteger(R.integer.cbs_padding));
         mText = findViewById(R.id.nText);
