@@ -19,15 +19,12 @@
             style="@style/Register_Mandatory"
             />
 
-
     </LinearLayout>
 
      <EditText
         android:id="@+id/nInput"
         style="@style/base_match_wrap"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:visibility="visible"
+        android:visibility="gone"
         />
 
       <com.themejunky.personalstylerlib.customviews.CustomSpinner
