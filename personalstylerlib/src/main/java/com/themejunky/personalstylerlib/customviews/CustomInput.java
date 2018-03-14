@@ -120,6 +120,8 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         mInput.setText(nText);
     }
 
+    public void setHint(String nText) { mInput.setHint(nText);}
+
     /**
      * Set a new error message and shows-up
      */
