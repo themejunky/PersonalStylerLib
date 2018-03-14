@@ -12,6 +12,7 @@
         <TextView
             android:id="@+id/nTitle"
             style="@style/base_wrap_wrap"
+            android:text="adadsdas"
             />
 
         <TextView
@@ -24,7 +25,8 @@
      <EditText
         android:id="@+id/nInput"
         style="@style/base_match_wrap"
-        android:visibility="gone"
+
+        android:visibility="visible"
         />
 
       <com.themejunky.personalstylerlib.customviews.CustomSpinner

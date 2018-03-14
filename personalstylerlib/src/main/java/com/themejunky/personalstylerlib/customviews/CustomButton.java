@@ -43,7 +43,7 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
 
     private TextView mButton, mShadow;
     private Custom_Button_Interface mListener;
-
+    private RelativeLayout mContainer;
     public CustomButton(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
 
@@ -60,7 +60,7 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
 
         mShadow = findViewById(R.id.nShadow);
 
-        RelativeLayout mContainer = findViewById(R.id.nContainer);
+        mContainer = findViewById(R.id.nContainer);
             mContainer.setTag(mTypedarray.getString(R.styleable.CustomButton_cb_tag));
             mContainer.setOnTouchListener(this);
 
@@ -115,6 +115,13 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
             }
         }
         return false;
+    }
+
+    /**
+     * Set tag for the current custom view for onClick
+     */
+    public void setTag(int nText) {
+        mContainer.setTag(nText);
     }
 
     /**
