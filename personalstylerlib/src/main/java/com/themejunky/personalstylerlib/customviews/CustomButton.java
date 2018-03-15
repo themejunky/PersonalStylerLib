@@ -121,7 +121,7 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
      * Set tag for the current custom view for onClick
      */
     public void setTag(int nText) {
-        mContainer.setTag(nText);
+        mContainer.setTag(mContext.getString(nText));
     }
 
     /**
