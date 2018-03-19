@@ -51,44 +51,11 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
 
         if (mInputType.equals("1")) {
             mInput = findViewById(R.id.nInput);
-            mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
-            mInput.setVisibility(View.VISIBLE);
-            setStyle(mInput, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
-            setFontFamily(mInput, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
-            setInputHint(mInput, R.styleable.CustomInput_ci_hint);
-            setInputBottomLineColor(mInput, R.styleable.CustomInput_ci_botton_line_default, R.color.CustomInput_line_default);
-            //mInput.setOnFocusChangeListener(this);
+            setEditTextParamiters(mInput);
 
-            switch (mInputKeyboard) {
-                case "1":
-                    mInput.setInputType(InputType.TYPE_CLASS_TEXT);
-                    break;
-                case "12":
-                    mInput.setInputType(InputType.TYPE_CLASS_TEXT);
-                    break;
-                case "2":
-                    mInput.setInputType(InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS);
-                    break;
-                case "3":
-                    mInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-                    break;
-                case "4":
-                    mInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    break;
-                case "5":
-                    mInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-                    break;
-            }
-
-            switch (mTypedarray.getString(R.styleable.CustomInput_ci_imei_option)) {
-                case "1":
-                    mInput.setImeOptions(EditorInfo.IME_ACTION_NEXT);
-                    break;
-                case "0":
-                    mInput.setImeOptions(EditorInfo.IME_ACTION_DONE);
-                    break;
-            }
-
+        }else if(mInputType.equals("3")){
+            mInputBorder = findViewById(R.id.inputWithBorder);
+            setEditTextParamiters(mInputBorder);
 
         }else if (mInputType.equals("2")) {
             CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
@@ -163,6 +130,45 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     }
 
     public void setEditTextParamiters(TextView textView){
+        mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
+        textView.setVisibility(View.VISIBLE);
+        setStyle(textView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
+        setFontFamily(textView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
+        setInputHint(textView, R.styleable.CustomInput_ci_hint);
+        if(textView==mInput){
+            setInputBottomLineColor(textView, R.styleable.CustomInput_ci_botton_line_default, R.color.CustomInput_line_default);
+            textView.setOnFocusChangeListener(this);
+        }
 
+
+        switch (mInputKeyboard) {
+            case "1":
+                textView.setInputType(InputType.TYPE_CLASS_TEXT);
+                break;
+            case "12":
+                textView.setInputType(InputType.TYPE_CLASS_TEXT);
+                break;
+            case "2":
+                textView.setInputType(InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS);
+                break;
+            case "3":
+                textView.setInputType(InputType.TYPE_CLASS_NUMBER);
+                break;
+            case "4":
+                textView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                break;
+            case "5":
+                textView.setInputType(InputType.TYPE_CLASS_NUMBER);
+                break;
+        }
+
+        switch (mTypedarray.getString(R.styleable.CustomInput_ci_imei_option)) {
+            case "1":
+                textView.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+                break;
+            case "0":
+                textView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+                break;
+        }
     }
 }

@@ -17,14 +17,14 @@
 
     </LinearLayout>
 
-    <!--<EditText
+    <EditText
         android:id="@+id/nInput"
         style="@style/base_match_wrap"
         android:layout_marginTop="-15dp"
-        android:visibility="gone" />-->
+        android:visibility="gone" />
 
     <EditText
-        android:id="@+id/nInput"
+        android:id="@+id/inputWithBorder"
         style="@style/base_match_wrap"
         android:background="@drawable/border_edit_text"
         android:paddingLeft="15dp"
