@@ -35,7 +35,6 @@
     <declare-styleable name="CustomInput">
         <attr name="ci_type" format="enum">                     <!-- set the type of the input -->
             <enum name="input" value="1"/>
-            <enum name="input_border" value="3"/>
             <enum name="spinner" value="2"/>
         </attr>
         <attr name="ci_keyboard" format="enum">                 <!-- set the type of softkeyboard -->
