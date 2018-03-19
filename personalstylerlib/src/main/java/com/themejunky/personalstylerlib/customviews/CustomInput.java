@@ -53,7 +53,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             mInput = findViewById(R.id.nInput);
             setEditTextParamiters(mInput);
 
-        }else if(mInputType.equals("11")){
+        }else if(mInputType.equals("3")){
             mInputBorder = findViewById(R.id.inputWithBorder);
             setEditTextParamiters(mInputBorder);
 

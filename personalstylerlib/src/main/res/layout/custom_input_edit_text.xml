@@ -28,8 +28,8 @@
         style="@style/base_match_wrap"
         android:background="@drawable/border_edit_text"
         android:paddingLeft="15dp"
-        android:paddingTop="13.5dp"
-        android:paddingBottom="13.5dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
         android:visibility="gone"
 
 
