@@ -115,5 +115,8 @@
     <color name="default_inactive">#e6e6e6</color>
 
 
+    <color name="border_edittext">#d1d1d1</color>
+
+
 
 </resources>
