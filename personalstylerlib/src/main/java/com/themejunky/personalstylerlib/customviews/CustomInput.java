@@ -30,7 +30,7 @@ import com.themejunky.personalstylerlib.R;
  */
 public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocusChangeListener {
 
-    private EditText mInput,nInputBorder;
+    private EditText mInput,mInputBorder;
     private String mInputType, mInputKeyboard;
     private TextView mError;
 
@@ -48,13 +48,13 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
 
         mInput = findViewById(R.id.nInput);
-        nInputBorder = findViewById(R.id.nInputBorder);
+        mInputBorder = findViewById(R.id.nInputBorder);
 
         if (mInputType.equals("1")) {
             setEditTextParamiters(mInput);
 
         }else if(mInputType.equals("11")){
-            setEditTextParamiters(nInputBorder);
+            setEditTextParamiters(mInputBorder);
 
         }else if (mInputType.equals("2")) {
             CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
