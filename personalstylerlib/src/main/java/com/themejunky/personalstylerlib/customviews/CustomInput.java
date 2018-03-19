@@ -48,7 +48,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
 
         mInput = findViewById(R.id.nInput);
-        mInputBorder = findViewById(R.id.nInputBorder);
+        mInputBorder = findViewById(R.id.inputWithBorder);
 
         if (mInputType.equals("1")) {
             setEditTextParamiters(mInput);
