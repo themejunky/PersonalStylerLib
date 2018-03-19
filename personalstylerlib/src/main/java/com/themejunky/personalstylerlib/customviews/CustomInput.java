@@ -47,13 +47,14 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
             setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
 
-        mInput = findViewById(R.id.nInput);
-        mInputBorder = findViewById(R.id.inputWithBorder);
+
 
         if (mInputType.equals("1")) {
+            mInput = findViewById(R.id.nInput);
             setEditTextParamiters(mInput);
 
         }else if(mInputType.equals("11")){
+            mInputBorder = findViewById(R.id.inputWithBorder);
             setEditTextParamiters(mInputBorder);
 
         }else if (mInputType.equals("2")) {
