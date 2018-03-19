@@ -53,10 +53,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             mInput = findViewById(R.id.nInput);
             setEditTextParamiters(mInput);
 
-        }else if(mInputType.equals("3")){
-            mInputBorder = findViewById(R.id.inputWithBorder);
-            setEditTextParamiters(mInputBorder);
-
         }else if (mInputType.equals("2")) {
             CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
             mSpinner.setVisibility(View.VISIBLE);
@@ -135,11 +131,11 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         setStyle(textView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
         setFontFamily(textView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
         setInputHint(textView, R.styleable.CustomInput_ci_hint);
-        if(textView==mInput){
+       /* if(textView==mInput){
             setInputBottomLineColor(textView, R.styleable.CustomInput_ci_botton_line_default, R.color.CustomInput_line_default);
-        }
-        textView.setOnFocusChangeListener(this);
 
+        textView.setOnFocusChangeListener(this);
+ }*/
         switch (mInputKeyboard) {
             case "1":
                 textView.setInputType(InputType.TYPE_CLASS_TEXT);
