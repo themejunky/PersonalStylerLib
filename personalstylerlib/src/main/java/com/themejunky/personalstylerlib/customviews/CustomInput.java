@@ -3,6 +3,8 @@ package com.themejunky.personalstylerlib.customviews;
 import android.content.Context;
 import android.text.InputType;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -30,8 +32,8 @@ import com.themejunky.personalstylerlib.R;
  */
 public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocusChangeListener {
 
-    private EditText mInput,mInputBorder;
-    private String mInputType, mInputKeyboard;
+    private EditText mInput,mInputBorder,mInputMultiLine;
+    private String mInputType, mInputKeyboard,mGravity,mScrollbar;
     private TextView mError;
 
     public CustomInput(Context nContext, AttributeSet nAttrs) {
@@ -53,13 +55,56 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             mInput = findViewById(R.id.nInput);
             setEditTextParamiters(mInput);
 
-        }else if(mInputType.equals("3")){
-            mInputBorder = findViewById(R.id.inputWithBorder);
-            setEditTextParamiters(mInputBorder);
-
         }else if (mInputType.equals("2")) {
             CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
             mSpinner.setVisibility(View.VISIBLE);
+        }
+        else if (mInputType.equals("3")) {
+            mInputMultiLine = findViewById(R.id.inputMultiLine);
+            setEditTextParamiters(mInputMultiLine);
+            mInputMultiLine.setVisibility(View.VISIBLE);
+            setPadding(mInputMultiLine,R.styleable.CustomInput_ci_padding,getResources().getInteger(R.integer.ci_padping));
+            setPaddingLeft(mInputMultiLine,R.styleable.CustomInput_ci_paddingLeft,getResources().getInteger(R.integer.ci_padding_left));
+            setMinLines(mInputMultiLine,R.styleable.CustomInput_ci_min_lines,getResources().getInteger(R.integer.ci_min_lines));
+            setMaxLines(mInputMultiLine,R.styleable.CustomInput_ci_max_lines,getResources().getInteger(R.integer.ci_max_lines));
+
+            if(mGravity!=null) {
+                switch (mGravity) {
+                    case "1":
+                        mInputMultiLine.setGravity(Gravity.TOP);
+                        break;
+                    case "2":
+                        mInputMultiLine.setGravity(Gravity.LEFT);
+                        break;
+                    case "3":
+                        mInputMultiLine.setGravity(Gravity.RIGHT);
+                        break;
+                    case "4":
+                        mInputMultiLine.setGravity(Gravity.BOTTOM);
+                        break;
+
+                }
+            }else {
+                mInputMultiLine.setGravity(Gravity.TOP | Gravity.LEFT);
+
+            }
+            if(mScrollbar!=null) {
+            switch (mScrollbar){
+                case "1":
+                    mInputMultiLine.setVerticalScrollBarEnabled(true);
+                    break;
+                case "2":
+                    mInputMultiLine.setHorizontallyScrolling(true);
+                    break;
+                case "3":
+                    mInputMultiLine.setHorizontallyScrolling(false);
+                    mInputMultiLine.setVerticalScrollBarEnabled(false);
+                    break;
+            }
+            }else {
+                mInputMultiLine.setVerticalScrollBarEnabled(true);
+            }
+
         }
 
         mError = findViewById(R.id.nError);
@@ -131,6 +176,8 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
 
     public void setEditTextParamiters(TextView textView){
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
+        mGravity =  mTypedarray.getString(R.styleable.CustomInput_ci_gravity);
+        mScrollbar = mTypedarray.getString(R.styleable.CustomInput_ci_scrollbars);
         textView.setVisibility(View.VISIBLE);
         setStyle(textView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
         setFontFamily(textView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
@@ -159,6 +206,9 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                 break;
             case "5":
                 textView.setInputType(InputType.TYPE_CLASS_NUMBER);
+                break;
+            case "6":
+                textView.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
                 break;
         }
 

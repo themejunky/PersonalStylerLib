@@ -31,6 +31,13 @@
         android:paddingTop="13dp"
         android:paddingBottom="13dp"
         android:visibility="gone"
+        />
+
+    <EditText
+        android:id="@+id/inputMultiLine"
+        style="@style/base_match_wrap"
+        android:background="@drawable/border_edit_text"
+        android:visibility="gone"
 
 
         />

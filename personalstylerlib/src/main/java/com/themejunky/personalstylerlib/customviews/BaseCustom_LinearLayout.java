@@ -8,6 +8,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -248,6 +249,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         return (int) (mTypedarray.getDimension(nResourceReference, nDefault));
     }
 
+
     /**
      * Get the color from resources
      *
@@ -266,4 +268,38 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     public int getColorWithDefaultPreloaded(int nResourceReference, int nDefault) {
           return mTypedarray.getColor(nResourceReference, nDefault);
     }
-}
+
+    protected void setPaddingLeft(EditText nView, int nResourceReference, int nDefaultDim) {
+        try {
+            nView.setPadding(mTypedarray.getInt(nResourceReference, nDefaultDim),0,0,0);
+        } catch (Exception e) {
+            Log.d(TAG,""+e.getMessage());
+        }
+    }
+
+   protected void setLines(EditText nView, int nResourceReference, int nDefaultDim){
+       try {
+           nView.setLines(mTypedarray.getInt(nResourceReference,nDefaultDim));
+       } catch (Exception e) {
+           Log.d(TAG,""+e.getMessage());
+       }
+   }
+    protected void setMinLines(EditText nView, int nResourceReference, int nDefaultDim) {
+        try {
+            nView.setMinLines(mTypedarray.getInt(nResourceReference,nDefaultDim));
+        } catch (Exception e) {
+            Log.d(TAG,""+e.getMessage());
+        }
+    }
+
+    protected void setMaxLines(EditText nView, int nResourceReference, int nDefaultDim) {
+        try {
+            nView.setMaxLines(mTypedarray.getInt(nResourceReference,nDefaultDim));
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
+        }
+    }
+
+
+
+    }

@@ -4,29 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_marginLeft="16dp"
+    android:orientation="vertical"
     tools:context="mystylistlib.themejunky.com.mystylistlib.MainActivity">
 
 
 
 
-
     <com.themejunky.personalstylerlib.customviews.CustomInput
-    android:id="@+id/nEmail3"
-    android:layout_marginTop="45dp"
-    style="@style/base_match_wrap"
-    app:ci_imei_option="next"
-    app:ci_type="input_border"
-    app:ci_keyboard="email"
-    app:ci_title_text="Adresa de mail"
-    app:ci_hint="ionescu.popescu@gmail.com"
-
-    />
-
-
-
-
+        android:id="@+id/nEmail"
+        style="@style/base_match_wrap"
+        android:layout_marginTop="45dp"
+        app:ci_hint="ionescu.popescu@gmail.com"
+        app:ci_imei_option="next"
+        app:ci_keyboard="text"
+        app:ci_min_lines="2"
+        app:ci_padding="100"
+        app:ci_title_text="Adresa de mail"
+        app:ci_type="input_multiline" />
 
 
 </LinearLayout>
