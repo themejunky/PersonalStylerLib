@@ -61,6 +61,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         }
         else if (mInputType.equals("3")) {
             mInputMultiLine = findViewById(R.id.inputMultiLine);
+            mGravity =  mTypedarray.getString(R.styleable.CustomInput_ci_gravity);
             setEditTextParamiters(mInputMultiLine);
             mInputMultiLine.setVisibility(View.VISIBLE);
             setPadding(mInputMultiLine,R.styleable.CustomInput_ci_padding,getResources().getInteger(R.integer.ci_padping));
@@ -82,6 +83,10 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     case "4":
                         mInputMultiLine.setGravity(Gravity.BOTTOM);
                         break;
+                    case "5":
+                        mInputMultiLine.setGravity(Gravity.CENTER_VERTICAL);
+                        break;
+
 
                 }
             }else {
@@ -176,7 +181,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
 
     public void setEditTextParamiters(TextView textView){
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
-        mGravity =  mTypedarray.getString(R.styleable.CustomInput_ci_gravity);
         mScrollbar = mTypedarray.getString(R.styleable.CustomInput_ci_scrollbars);
         textView.setVisibility(View.VISIBLE);
         setStyle(textView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);

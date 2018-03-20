@@ -71,6 +71,7 @@
             <enum name="left" value="2" />
             <enum name="right" value="3" />
             <enum name="bottom" value="4" />
+            <enum name="center_vertical" value="5" />
        </attr>
         <attr name="ci_min_lines" format="integer"/>              <!-- set minimum of text lines-->
         <attr name="ci_max_lines" format="integer"/>              <!-- set maximum of text lines-->

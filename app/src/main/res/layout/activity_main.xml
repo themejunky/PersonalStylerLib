@@ -19,9 +19,21 @@
         app:ci_imei_option="next"
         app:ci_keyboard="text"
         app:ci_min_lines="2"
-        app:ci_padding="100"
+        app:ci_gravity="center_vertical"
         app:ci_title_text="Adresa de mail"
         app:ci_type="input_multiline" />
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmai2l"
+        style="@style/base_match_wrap"
+        android:layout_marginTop="45dp"
+        app:ci_hint="ionescu.popescu@gmail.com"
+        app:ci_imei_option="next"
+        app:ci_keyboard="text"
+        app:ci_title_text="Adresa de mail"
+        app:ci_type="spinner" />
+
+
 
 
 </LinearLayout>
