@@ -86,11 +86,14 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     case "5":
                         mInputMultiLine.setGravity(Gravity.CENTER_VERTICAL);
                         break;
+                    case "6":
+                        mInputMultiLine.setGravity(Gravity.TOP | Gravity.LEFT);
+                        break;
 
 
                 }
             }else {
-                mInputMultiLine.setGravity(Gravity.TOP | Gravity.LEFT);
+                mInputMultiLine.setGravity(Gravity.CENTER_VERTICAL);
 
             }
             if(mScrollbar!=null) {
