@@ -8,7 +8,9 @@ import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -41,7 +43,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         try {
             nView.setTypeface(Typeface.createFromAsset(mContext.getAssets(), nFontResource));
         } catch (Exception e) {
-            Log.d(TAG, ""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
             if (nDefaulfFont) {
                 nView.setTypeface(Typeface.createFromAsset(mContext.getAssets(), mContext.getResources().getString(R.string.default_font_bold)));
             } else {
@@ -53,54 +55,56 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     /**
      * Set the specific style class.
      *
-     * @param nView                 - the view on witch will be the style class apply ( textview or edittext )
-     * @param nResourceReference    - custom styleable references
-     * @param nDefault              - default style if none is provided
+     * @param nView              - the view on witch will be the style class apply ( textview or edittext )
+     * @param nResourceReference - custom styleable references
+     * @param nDefault           - default style if none is provided
      */
     protected void setStyle(TextView nView, int nResourceReference, int nDefault) {
         try {
             nView.setTextAppearance(mContext, getStyle(nResourceReference, nDefault));
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
     /**
      * Set the specific padding with default fallback if padding not provided
      *
-     * @param nView                 - the view on witch will be the padding apply ( textview or edittext )
-     * @param nResourceReference    - custom styleable references
-     * @param nDefaultDim           - default style if none is provided
+     * @param nView              - the view on witch will be the padding apply ( textview or edittext )
+     * @param nResourceReference - custom styleable references
+     * @param nDefaultDim        - default style if none is provided
      */
     protected void setPadding(View nView, int nResourceReference, int nDefaultDim) {
         try {
-            nView.setPadding(getDimension(nResourceReference, nDefaultDim),getDimension(nResourceReference, nDefaultDim),getDimension(nResourceReference, nDefaultDim),getDimension(nResourceReference, nDefaultDim));
+            nView.setPadding(getDimension(nResourceReference, nDefaultDim), getDimension(nResourceReference, nDefaultDim), getDimension(nResourceReference, nDefaultDim), getDimension(nResourceReference, nDefaultDim));
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
+
     protected void setPadding(View nView, int nResourceReference) {
         try {
-            nView.setPadding(nResourceReference,nResourceReference,nResourceReference,nResourceReference);
+            nView.setPadding(nResourceReference, nResourceReference, nResourceReference, nResourceReference);
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
     /**
      * Set the specific title
      *
-     * @param nView                 - the TextView on witch will be the title apply
-     * @param nResourceReference    - string reference to be set
+     * @param nView              - the TextView on witch will be the title apply
+     * @param nResourceReference - string reference to be set
      */
     protected void setTitle(TextView nView, int nResourceReference) {
         try {
-            if (mTypedarray.getString(nResourceReference)!=null) {
+            if (mTypedarray.getString(nResourceReference) != null) {
                 nView.setText(mTypedarray.getString(nResourceReference));
             } else {
                 nView.setVisibility(View.GONE);
             }
-        } catch (Exception e) { }
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -115,7 +119,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
             nView.setTextColor(getColorWithDefaultPreloaded(nColor, nDefaultColor));
         } catch (Exception e) {
             nView.setTextColor(nDefaultColor);
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
@@ -124,7 +128,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
             nView.setTextColor(getColorWithDefaultPreloaded(nColor, mContext.getResources().getColor(nDefaultColor)));
         } catch (Exception e) {
             nView.setTextColor(nDefaultColor);
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
@@ -132,14 +136,15 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         try {
             nView.setTextColor(getResources().getColor(nColor));
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
     /**
      * Trigger "*" to appear and show up to the user that this field is mandatory
-     * @param nView                 - the TextView that contain "*" to be shown/hidden
-     * @param nResourceReference    - show/hide the TextView
+     *
+     * @param nView              - the TextView that contain "*" to be shown/hidden
+     * @param nResourceReference - show/hide the TextView
      */
     protected void setMandatory(TextView nView, int nResourceReference) {
         try {
@@ -149,71 +154,75 @@ public class BaseCustom_LinearLayout extends LinearLayout {
                 nView.setVisibility(View.GONE);
             }
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
     /**
      * Set the bottom color of the EditText
-     * @param nView                 - the desired EditText to modify bottom color
-     * @param nResourceReference    - the desired color to be set
-     * @param nDefaultColor         - the default color if none is provided
+     *
+     * @param nView              - the desired EditText to modify bottom color
+     * @param nResourceReference - the desired color to be set
+     * @param nDefaultColor      - the default color if none is provided
      */
     protected void setInputBottomLineColor(TextView nView, int nResourceReference, int nDefaultColor) {
         try {
             nView.getBackground().setColorFilter(getColor(nResourceReference, nDefaultColor), PorterDuff.Mode.SRC_ATOP);
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
     /**
      * Set the solid color of the Button
-     * @param nDrawable             - the Drawable of the button on witch will be set the solid color
-     * @param nResourceReference    - the solid color to be set
+     *
+     * @param nDrawable          - the Drawable of the button on witch will be set the solid color
+     * @param nResourceReference - the solid color to be set
      */
     protected void setmButtonDrawableColor(GradientDrawable nDrawable, int nResourceReference) {
         try {
             nDrawable.setColor(getColor(nResourceReference, 0));
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
     /**
      * Set the hint text of the EditText
-     * @param nView                 - EditText on witch will be set
-     * @param nResourceReference    - Desired hint
+     *
+     * @param nView              - EditText on witch will be set
+     * @param nResourceReference - Desired hint
      */
     protected void setInputHint(TextView nView, int nResourceReference) {
         try {
             nView.setHint(mTypedarray.getString(nResourceReference));
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
     /**
      * Set the border color, stroke and radius of the EditText throw GradiendDrawable of the view
-     * @param nView                 - EditText on witch will be applyed
-     * @param nColor                - solid background color
-     * @param nRadius               - radius of the alll 4 corners
-     * @param nStroke               - stroke of the border
-     * @param nBorderColor          - border color
+     *
+     * @param nView               - EditText on witch will be applyed
+     * @param nColor              - solid background color
+     * @param nRadius             - radius of the alll 4 corners
+     * @param nStroke             - stroke of the border
+     * @param nBorderColor        - border color
      * @param nDefaultBorderColor - default border color if none is provided
      */
-    public void setBorderColorAndRadius(View nView, int nColor, int nDefaultColor , int nRadius, int nDefaultRadius, int nStroke, int nDefaultStroke, int nBorderColor, int nDefaultBorderColor) {
+    public void setBorderColorAndRadius(View nView, int nColor, int nDefaultColor, int nRadius, int nDefaultRadius, int nStroke, int nDefaultStroke, int nBorderColor, int nDefaultBorderColor) {
         try {
             GradientDrawable mGD = new GradientDrawable();
             mGD.setColor(mTypedarray.getInt(nColor, nDefaultColor));
-            mGD.setCornerRadius(mTypedarray.getFloat(nRadius,nDefaultRadius));
-            mGD.setStroke(mTypedarray.getInt(nStroke,nDefaultStroke), mTypedarray.getColor(nBorderColor,nDefaultBorderColor));
+            mGD.setCornerRadius(mTypedarray.getFloat(nRadius, nDefaultRadius));
+            mGD.setStroke(mTypedarray.getInt(nStroke, nDefaultStroke), mTypedarray.getColor(nBorderColor, nDefaultBorderColor));
             nView.setBackground(mGD);
-          }
-          catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
         }
     }
+
     public void setBorderColorAndRadius(View nView, int nColor, int nRadius, int nStroke, int nBorderColor) {
         try {
             GradientDrawable mGD = new GradientDrawable();
@@ -221,9 +230,8 @@ public class BaseCustom_LinearLayout extends LinearLayout {
             mGD.setCornerRadius(nRadius);
             mGD.setStroke(nStroke, getResources().getColor(nBorderColor));
             nView.setBackground(mGD);
-        }
-        catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
@@ -231,7 +239,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
      * Get the style items from resource
      *
      * @param nResourceReference - styleable references
-     * @param nDefault - default color if none is provided
+     * @param nDefault           - default color if none is provided
      * @return - style item as int
      */
     private int getStyle(int nResourceReference, int nDefault) {
@@ -242,7 +250,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
      * Get the dimension
      *
      * @param nResourceReference - styleable references
-     * @param nDefault - default dimension if none is provided
+     * @param nDefault           - default dimension if none is provided
      * @return - style item as int
      */
     private int getDimension(int nResourceReference, int nDefault) {
@@ -254,7 +262,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
      * Get the color from resources
      *
      * @param nResourceReference - styleable references
-     * @param nDefault - default color if none is provided
+     * @param nDefault           - default color if none is provided
      * @return - color item as int
      */
     public int getColor(int nResourceReference, int nDefault) {
@@ -266,35 +274,36 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     }
 
     public int getColorWithDefaultPreloaded(int nResourceReference, int nDefault) {
-          return mTypedarray.getColor(nResourceReference, nDefault);
+        return mTypedarray.getColor(nResourceReference, nDefault);
     }
 
     protected void setPaddingLeft(EditText nView, int nResourceReference, int nDefaultDim) {
         try {
-            nView.setPadding(mTypedarray.getInt(nResourceReference, nDefaultDim),0,0,0);
+            nView.setPadding(mTypedarray.getInt(nResourceReference, nDefaultDim), 0, 0, 0);
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
-   protected void setLines(EditText nView, int nResourceReference, int nDefaultDim){
-       try {
-           nView.setLines(mTypedarray.getInt(nResourceReference,nDefaultDim));
-       } catch (Exception e) {
-           Log.d(TAG,""+e.getMessage());
-       }
-   }
+    protected void setLines(EditText nView, int nResourceReference, int nDefaultDim) {
+        try {
+            nView.setLines(mTypedarray.getInt(nResourceReference, nDefaultDim));
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
+        }
+    }
+
     protected void setMinLines(EditText nView, int nResourceReference, int nDefaultDim) {
         try {
-            nView.setMinLines(mTypedarray.getInt(nResourceReference,nDefaultDim));
+            nView.setMinLines(mTypedarray.getInt(nResourceReference, nDefaultDim));
         } catch (Exception e) {
-            Log.d(TAG,""+e.getMessage());
+            Log.d(TAG, "" + e.getMessage());
         }
     }
 
     protected void setMaxLines(EditText nView, int nResourceReference, int nDefaultDim) {
         try {
-            nView.setMaxLines(mTypedarray.getInt(nResourceReference,nDefaultDim));
+            nView.setMaxLines(mTypedarray.getInt(nResourceReference, nDefaultDim));
         } catch (Exception e) {
             Log.d(TAG, "" + e.getMessage());
         }
@@ -302,4 +311,16 @@ public class BaseCustom_LinearLayout extends LinearLayout {
 
 
 
+
+    protected void setDevider(View nView, int nResourceReference) {
+        try {
+            LayoutParams params = (LayoutParams) nView.getLayoutParams();
+            params.width = nResourceReference;
+            nView.setLayoutParams(params);
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
+        }
     }
+
+
+}

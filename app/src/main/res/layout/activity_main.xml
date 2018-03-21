@@ -11,21 +11,15 @@
 
 
 
-    <com.themejunky.personalstylerlib.customviews.CustomInput
-        android:id="@+id/nEmail"
-        style="@style/base_match_wrap"
-        android:layout_width="150dp"
-        android:layout_marginTop="45dp"
-        app:ci_hint="ionescu.popescu@gmail.com ionescu.popescu@gmail.com"
-        app:ci_keyboard="text"
-        app:ci_lines="8"
-        app:ci_min_lines="6"
-        app:ci_max_lines="10"
-        app:ci_gravity="left_top"
-        app:ci_title_text="Adresa de mail"
-        app:ci_scrollbars="vertical"
-        app:ci_type="input_multiline" />
-
+   <com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cbbi_image="@drawable/ic_client_address"
+       app:cbbi_text="Poza ta"
+       app:cbbi_text_color="@color/base_red2"
+       app:cbbi_devider="20"
+       app:cbbi_padding="30"
+       app:cbbi_background="@drawable/border_edit_text"/>
 
 
 

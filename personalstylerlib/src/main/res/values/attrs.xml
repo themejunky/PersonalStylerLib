@@ -110,5 +110,14 @@
         <attr name="chi_text_text" format="string" />        <!-- set text text -->
         <attr name="chi_text_color" format="color" />        <!-- set text color -->
     </declare-styleable>
+    <declare-styleable name="CustomButtonBorderImage">
+        <attr name="cbbi_devider" format="integer"/>
+        <attr name="cbbi_text" format="string"/>
+        <attr name="cbbi_text_color" format="reference"/>
+        <attr name="cbbi_image" format="reference"/>
+        <attr name="cbbi_background" format="reference"/>
+        <attr name="cbbi_padding" format="integer"/>
+
+    </declare-styleable>
 
 </resources>

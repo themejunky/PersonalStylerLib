@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/base_match_wrap"
+    android:id="@+id/nContainer"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/nImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       />
+
+    <View
+        android:id="@+id/nDevider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+    <TextView
+        android:id="@+id/nText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       />
+
+</LinearLayout>
