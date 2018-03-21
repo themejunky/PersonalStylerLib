@@ -12,6 +12,7 @@
 
 
    <com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage
+       android:id="@+id/test"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        app:cbbi_image="@drawable/ic_client_address"
@@ -19,7 +20,11 @@
        app:cbbi_text_color="@color/base_red2"
        app:cbbi_devider="20"
        app:cbbi_padding="30"
-       app:cbbi_background="@drawable/border_edit_text"/>
+       />
+
+   <com.themejunky.personalstylerlib.customviews.CustomButton
+       android:layout_width="50dp"
+       android:layout_height="50dp"/>
 
 
 

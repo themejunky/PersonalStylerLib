@@ -28,6 +28,10 @@
     <color name="CustomService_default_border_color_inactive">#e6e6e6</color>
     <color name="CustomService_default_border_color_pressed">#880cff</color>
 
+    <color name="CustomButtonBorderImage_default_background_color">#00000000</color>
+    <color name="CustomButtonBorderImage_default_border_color_unpresssed">#bbbbbb</color>
+    <color name="CustomButtonBorderImage_default_border_color_pressed">#880cff</color>
+
     <color name="CustomInput_line_default">#d1d1d1</color>
     <color name="CustomInput_line_active">#0cb037</color>
     <color name="CustomInput_line_error">#fc0056</color>
