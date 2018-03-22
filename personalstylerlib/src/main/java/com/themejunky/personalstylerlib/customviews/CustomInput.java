@@ -8,14 +8,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.Scroller;
-import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
-
-import java.lang.reflect.Type;
 
 
 /**
@@ -152,7 +147,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public void setEditTextParameters(TextView nTextView) {
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
 
-        setPadding(nTextView, R.styleable.CustomInput_ci_padding, getResources().getInteger(R.integer.ci_padping));
+        setPadding(nTextView, R.styleable.CustomInput_ci_padding, getResources().getInteger(R.integer.ci_padding));
         setStyle(nTextView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
         setFontFamily(nTextView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
         setInputHint(nTextView, R.styleable.CustomInput_ci_hint);
