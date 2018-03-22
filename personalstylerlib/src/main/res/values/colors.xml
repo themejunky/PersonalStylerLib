@@ -35,6 +35,10 @@
     <color name="CustomInput_line_default">#d1d1d1</color>
     <color name="CustomInput_line_active">#0cb037</color>
     <color name="CustomInput_line_error">#fc0056</color>
+    <color name="CustomInput_default_background_color">#f4f4f4</color>
+    <color name="CustomInput_default_border_color_unfocus">#d1d1d1</color>
+    <color name="CustomInput_default_border_color_focus">#0cb037</color>
+
 
     <color name="CustomHomeItem_default_title_color">#333333</color>
     <color name="CustomHomeItem_default_number_color">#880cff</color>

@@ -38,13 +38,13 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     private EditText mInput,mInputBorder,mInputMultiLine;
     private String mInputType, mInputKeyboard,mGravity,mScrollbar;
     private TextView mError;
+    private int mDefaultBackgroundColor,mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColorFocus, mDefaultBorderColorUnFocus;
 
     public CustomInput(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
         TAG = "CustomInput";
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);
         inflate(nContext, R.layout.custom_input_edit_text, this);
-
         mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
 
         TextView mTitle = findViewById(R.id.nTitle);
@@ -52,10 +52,18 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
             setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
 
+        mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);
+        mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);
+        mDefaultBorderColorFocus = getResources().getColor(R.color.CustomInput_default_border_color_focus);
+        mDefaultBorderRadius = getResources().getInteger(R.integer.ci_radius);
+        mDefaultBorderStroke = getResources().getInteger(R.integer.ci_stroke);
+
+
 
 
         if (mInputType.equals("1")) {
             mInput = findViewById(R.id.nInput);
+            mInput.setVisibility(View.VISIBLE);
             setEditTextParamiters(mInput);
 
         }else if (mInputType.equals("2")) {
@@ -64,59 +72,17 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         }
         else if (mInputType.equals("3")) {
             mInputMultiLine = findViewById(R.id.inputMultiLine);
-            mGravity =  mTypedarray.getString(R.styleable.CustomInput_ci_gravity);
-
             setEditTextParamiters(mInputMultiLine);
+
             mInputMultiLine.setVisibility(View.VISIBLE);
-            setPadding(mInputMultiLine,R.styleable.CustomInput_ci_padding,getResources().getInteger(R.integer.ci_padping));
-            setPaddingLeft(mInputMultiLine,R.styleable.CustomInput_ci_paddingLeft,getResources().getInteger(R.integer.ci_padding_left));
+
             setMinLines(mInputMultiLine,R.styleable.CustomInput_ci_min_lines,getResources().getInteger(R.integer.ci_min_lines));
             setMaxLines(mInputMultiLine,R.styleable.CustomInput_ci_max_lines,getResources().getInteger(R.integer.ci_max_lines));
+            setGravity(mInputMultiLine,R.styleable.CustomInput_ci_gravity,Gravity.TOP | Gravity.LEFT);
+            setScrollBar(mInputMultiLine,R.styleable.CustomInput_ci_scrollbars);
 
-
-            if(mGravity!=null) {
-                switch (mGravity) {
-                    case "1":
-                        mInputMultiLine.setGravity(Gravity.TOP);
-                        break;
-                    case "2":
-                        mInputMultiLine.setGravity(Gravity.LEFT);
-                        break;
-                    case "3":
-                        mInputMultiLine.setGravity(Gravity.RIGHT);
-                        break;
-                    case "4":
-                        mInputMultiLine.setGravity(Gravity.BOTTOM);
-                        break;
-                    case "5":
-                        mInputMultiLine.setGravity(Gravity.CENTER_VERTICAL);
-                        break;
-                    case "6":
-                        mInputMultiLine.setGravity(Gravity.TOP | Gravity.LEFT);
-                        break;
-
-
-                }
-            }else {
-                mInputMultiLine.setGravity(Gravity.CENTER_VERTICAL);
-
-            }
-            if(mScrollbar!=null) {
-            switch (mScrollbar){
-                case "1":
-                    mInputMultiLine.setVerticalScrollBarEnabled(true);
-                    break;
-                case "2":
-                    mInputMultiLine.setHorizontallyScrolling(true);
-                    break;
-                case "3":
-                    mInputMultiLine.setHorizontallyScrolling(false);
-                    mInputMultiLine.setVerticalScrollBarEnabled(false);
-                    break;
-            }
-            }else {
-                mInputMultiLine.setVerticalScrollBarEnabled(true);
-            }
+            mInputMultiLine.setSingleLine(false);
+            mInputMultiLine.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);
 
         }
 
@@ -137,8 +103,10 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public void onFocusChange(View view, boolean b) {
         if (b) {
             setInputBottomLineColor((TextView) findViewById(R.id.nInput), R.styleable.CustomInput_ci_botton_line_active, R.color.CustomInput_line_active);
+            setFocusState(view);
         } else {
             setInputBottomLineColor((TextView) findViewById(R.id.nInput), R.styleable.CustomInput_ci_botton_line_default, R.color.CustomInput_line_default);
+            setUnFocusState(view);
         }
     }
 
@@ -191,12 +159,14 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
         mScrollbar = mTypedarray.getString(R.styleable.CustomInput_ci_scrollbars);
         textView.setVisibility(View.VISIBLE);
+        setPadding(textView,R.styleable.CustomInput_ci_padding,getResources().getInteger(R.integer.ci_padping));
         setStyle(textView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
         setFontFamily(textView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
         setInputHint(textView, R.styleable.CustomInput_ci_hint);
+        textView.setOnFocusChangeListener(this);
         if(textView==mInput){
             setInputBottomLineColor(textView, R.styleable.CustomInput_ci_botton_line_default, R.color.CustomInput_line_default);
-            textView.setOnFocusChangeListener(this);
+
         }
 
 
@@ -237,5 +207,32 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     break;
             }
         }
+    }
+
+    public void setFocusState(View editText){
+        Log.d("adaw","setFocusState");
+        setBorderColorAndRadius(editText,
+                R.styleable.CustomInput_ci_backgroundColor,mDefaultBackgroundColor,
+                R.styleable.CustomInput_ci_border_radius,mDefaultBorderRadius,
+                R.styleable.CustomInput_ci_border_stroke,mDefaultBorderStroke,
+                R.styleable.CustomInput_ci_border_pressed,mDefaultBorderColorFocus);
+    }
+
+    public void setUnFocusState(View editText){
+        Log.d("adaw","setUnFocusState");
+        setBorderColorAndRadius(editText,
+                R.styleable.CustomInput_ci_backgroundColor,mDefaultBackgroundColor,
+                R.styleable.CustomInput_ci_border_radius,mDefaultBorderRadius,
+                R.styleable.CustomInput_ci_border_stroke,mDefaultBorderStroke,
+                R.styleable.CustomInput_ci_border_unpressed,mDefaultBorderColorUnFocus);
+    }
+
+    public void setDefaultState(View editText) {
+        Log.d("adaw","setDefaultState");
+        setBorderColorAndRadius(editText,
+                R.styleable.CustomInput_ci_backgroundColor,mDefaultBackgroundColor,
+                R.styleable.CustomInput_ci_border_radius,mDefaultBorderRadius,
+                R.styleable.CustomInput_ci_border_stroke,mDefaultBorderStroke,
+                R.styleable.CustomInput_ci_border_unpressed,mDefaultBorderColorUnFocus);
     }
 }

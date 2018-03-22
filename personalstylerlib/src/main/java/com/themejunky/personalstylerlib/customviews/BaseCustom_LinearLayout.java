@@ -309,6 +309,34 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         }
     }
 
+    protected void setGravity(EditText nView, int nResourceReference, int nDefaultDim) {
+        try {
+            nView.setGravity(mTypedarray.getInt(nResourceReference, nDefaultDim));
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
+        }
+    }
+
+    protected void setScrollBar(EditText nView, int nResourceReference) {
+        try {
+            switch (nResourceReference){
+                case 1:
+                    nView.setVerticalScrollBarEnabled(true);
+                    break;
+                case 2:
+                    nView.setHorizontallyScrolling(true);
+                    break;
+                case 3:
+                    nView.setVerticalScrollBarEnabled(false);
+                    nView.setHorizontallyScrolling(false);
+                    break;
+                    default: nView.setVerticalScrollBarEnabled(true);
+            }
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
+        }
+    }
+
 
 
 
