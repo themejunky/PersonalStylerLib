@@ -72,8 +72,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             setPaddingLeft(mInputMultiLine,R.styleable.CustomInput_ci_paddingLeft,getResources().getInteger(R.integer.ci_padding_left));
             setMinLines(mInputMultiLine,R.styleable.CustomInput_ci_min_lines,getResources().getInteger(R.integer.ci_min_lines));
             setMaxLines(mInputMultiLine,R.styleable.CustomInput_ci_max_lines,getResources().getInteger(R.integer.ci_max_lines));
-            mInputMultiLine.setSingleLine(false);
-            mInputMultiLine.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);
+
 
             if(mGravity!=null) {
                 switch (mGravity) {
@@ -221,9 +220,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                 case "5":
                     textView.setInputType(InputType.TYPE_CLASS_NUMBER);
                     break;
-                case "6":
-                    textView.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-                    break;
             }
         }
 
@@ -234,6 +230,10 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     break;
                 case "0":
                     textView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+                    break;
+                case "2":
+                    mInputMultiLine.setSingleLine(false);
+                    mInputMultiLine.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);
                     break;
             }
         }

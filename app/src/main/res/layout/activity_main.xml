@@ -22,12 +22,21 @@
        app:cbbi_padding="30"
        />
 
-   <com.themejunky.personalstylerlib.customviews.CustomServices
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       border
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ci_keyboard="text"
+        app:ci_type="input_multiline"
+        app:ci_hint="Textul tau"
+        app:ci_title_text="Text"
+        app:ci_min_lines="5"
+        app:ci_max_lines="10"
+        app:ci_lines="5"
+        app:ci_imei_option="done"
 
-       />
+        />
+
+
 
 
 
