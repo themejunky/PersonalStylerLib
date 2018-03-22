@@ -11,18 +11,58 @@
 
 
 
-
-
-    <com.themejunky.personalstylerlib.customviews.CustomInput
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:ci_keyboard="text"
-        app:ci_type="input"
-        app:ci_hint="Textul tau"
-        app:ci_title_text="Text"
-        app:ci_imei_option="done"
+        android:weightSum="100"
+        android:orientation="horizontal">
 
-        />
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            android:id="@+id/nSpinnerTest"
+            app:ci_keyboard="text"
+            app:ci_type="spinner"
+            app:ci_hint="Textul tau"
+            app:ci_title_text="Text"
+            app:ci_imei_option="next"
+
+            />
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            app:ci_keyboard="text"
+            app:ci_type="input"
+            app:ci_hint="Textul tau"
+            app:ci_title_text="Text"
+            app:ci_imei_option="done"
+            />
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            app:ci_keyboard="password"
+            app:ci_type="input"
+            app:ci_hint="@string/asfasdf"
+            app:ci_title_text="Text"
+            app:ci_imei_option="done"
+            />
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:layout_width="0dp"
+            android:layout_weight="25"
+            android:layout_height="wrap_content"
+            app:ci_keyboard="password"
+            app:ci_type="input"
+            app:ci_hint="a*f*g*t*t**"
+            app:ci_title_text="Text"
+            app:ci_imei_option="done"
+            />
+    </LinearLayout>
+
+
+
     <com.themejunky.personalstylerlib.customviews.CustomInput
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,6 +73,8 @@
         app:ci_imei_option="next"
 
         />
+
+
 
 
 
