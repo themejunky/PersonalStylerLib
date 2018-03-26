@@ -7,5 +7,16 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="base_login_input" parent="base_match_wrap">
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="SwitchCompatStyle" >
+        <item name="thumbTint">@drawable/switch_color_thumb</item>
+        <item name="trackTint">@drawable/switch_color_track</item>
+    </style>
+
+
+
 
 </resources>

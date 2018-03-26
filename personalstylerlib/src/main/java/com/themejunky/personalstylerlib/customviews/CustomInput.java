@@ -152,6 +152,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         setFontFamily(nTextView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
         setInputHint(nTextView, R.styleable.CustomInput_ci_hint);
         setDefaultState(nTextView);
+
         nTextView.setOnFocusChangeListener(this);
 
        if (mInputKeyboard != null) {

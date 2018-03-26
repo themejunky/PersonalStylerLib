@@ -45,7 +45,6 @@
             android:layout_height="wrap_content"
             app:ci_keyboard="password"
             app:ci_type="input"
-            app:ci_hint="@string/asfasdf"
             app:ci_title_text="Text"
             app:ci_imei_option="done"
             />
@@ -64,15 +63,43 @@
 
 
     <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmail"
+        style="@style/base_match_wrap"
+        app:ci_imei_option="next"
+        app:ci_type="input"
+        app:ci_keyboard="email"
+        app:ci_title_text="@string/login_email_title"
+        app:ci_hint="@string/login_email_hint"
+        app:ci_error_message="@string/login_error_1"
+        />
+
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nPassword"
+        style="@style/base_login_input"
+        app:ci_imei_option="done"
+        app:ci_type="input"
+        app:ci_keyboard="password"
+        app:ci_title_text="@string/login_password_title"
+        app:ci_hint="@string/login_password_hint"
+        app:ci_error_message="@string/login_error_2"
+        />
+
+
+
+
+    <android.support.v7.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/SwitchCompatStyle"/>
+
+    <com.themejunky.personalstylerlib.customviews.CustomTextSwitch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:ci_keyboard="text"
-        app:ci_type="input_multiline"
-        app:ci_hint="Textul tau"
-        app:ci_title_text="Text"
-        app:ci_imei_option="next"
+        app:cts_text="Arata numarul meu tuturor clientilor"
+        app:cts_subtext="Doar clientii care au o comanda activa cu tine vor putea vedea  numarul tau de telefon"/>
 
-        />
+
 
 
 

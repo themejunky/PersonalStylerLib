@@ -8,7 +8,7 @@
     <integer name="ci_lines">2</integer>
     <integer name="ci_max_lines">8</integer>
     <integer name="ci_min_lines">4</integer>
-    <integer name="ci_padding">27</integer>
+    <integer name="ci_padding">0</integer>
     <integer name="ci_radius">7</integer>
     <integer name="ci_stroke">1</integer>
 

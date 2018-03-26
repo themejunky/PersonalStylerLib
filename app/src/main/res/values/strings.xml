@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">MyStylistLib</string>
     <string name="catamaran_regular">Catamaran-Regular.ttf</string>
+    <string name="login_email_title">Adresa de email</string>
+    <string name="login_email_hint">ionescu.popescu@gmail.com</string>
+    <string name="login_password_title">Parola</string>
+    <string name="login_password_hint">*************</string>
+    <string name="login_error_1">Adresa de e-mail este gresita!</string>
+    <string name="login_error_2">Parola este gresita!</string>
 </resources>

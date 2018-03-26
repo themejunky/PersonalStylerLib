@@ -20,6 +20,7 @@
     </style>
 
     <style name="base_wrap_wrap">
+        <item name="android:layout_gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -147,9 +148,25 @@
         <item name="android:layout_marginLeft">25dp</item>
     </style>
 
+
     <style name="onboarding_step_3_service_text" parent="base_wrap_wrap">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/base_black</item>
+    </style>
+    <!-- Switch-->
+    <style name="SwitchCompatStyle" >
+        <item name="thumbTint">@drawable/switch_color_thumb</item>
+        <item name="trackTint">@drawable/switch_color_track</item>
+    </style>
+
+    <style name="switch_subtext" parent="base_wrap_wrap">
+        <item name="android:lineSpacingExtra">-2sp</item>
+        <item name="android:textColor">@color/switch_subtext_color</item>
+    </style>
+
+    <style name="switch_text" parent="base_wrap_wrap">
+        <item name="android:textColor">@color/switch_text_color</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
 

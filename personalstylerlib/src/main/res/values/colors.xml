@@ -122,8 +122,12 @@
 
     <color name="default_inactive">#e6e6e6</color>
 
-
     <color name="border_edittext">#d1d1d1</color>
+
+   <!-- Switch-->
+    <color name="switch_text_color">#333333</color>
+    <color name="switch_subtext_color">#c3c3c3</color>
+
 
 
 
