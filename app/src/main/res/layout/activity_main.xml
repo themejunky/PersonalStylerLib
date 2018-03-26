@@ -94,6 +94,7 @@
         android:theme="@style/SwitchCompatStyle"/>
 
     <com.themejunky.personalstylerlib.customviews.CustomTextSwitch
+        android:id="@+id/nSwitchr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cts_text="Arata numarul meu tuturor clientilor"

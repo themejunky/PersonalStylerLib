@@ -3,7 +3,9 @@ package com.themejunky.personalstylerlib.customviews;
 import android.content.Context;
 import android.support.v7.widget.SwitchCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
@@ -12,14 +14,19 @@ import com.themejunky.personalstylerlib.R;
  * Created by Junky2 on 3/26/2018.
  */
 
-public class CustomTextSwitch extends BaseCustom_LinearLayout {
+public class CustomTextSwitch extends BaseCustom_LinearLayout implements CompoundButton.OnCheckedChangeListener {
     private TextView mText,mSubtext;
     private SwitchCompat mSwitch;
     private CustomTextSwitch_Interface mListener;
 
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        mListener.onCustomTextSwitchClick(b);
+    }
+
     /* click listener interface */
     public interface CustomTextSwitch_Interface {
-        void onCustomTextSwitchClick(View view);
+        void onCustomTextSwitchClick(Boolean isChecked);
     }
     /* setter for listener */
     public void setListener(CustomTextSwitch_Interface nListener) {
@@ -33,7 +40,7 @@ public class CustomTextSwitch extends BaseCustom_LinearLayout {
     public CustomTextSwitch(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomTextSwitch);
-        inflate(nContext, R.layout.custom_text_toggle, this);
+        inflate(nContext, R.layout.custom_text_switch, this);
 
         mText = findViewById(R.id.nText);
         mSubtext = findViewById(R.id.nSubtext);
@@ -43,6 +50,8 @@ public class CustomTextSwitch extends BaseCustom_LinearLayout {
         setTitle(mSubtext,R.styleable.CustomTextSwitch_cts_subtext);
         setTextColor(mText,R.styleable.CustomTextSwitch_cts_text_color,getResources().getColor(R.color.switch_text_color));
         setTextColor(mSubtext,R.styleable.CustomTextSwitch_cts_subtext_color,getResources().getColor(R.color.switch_subtext_color));
+
+        mSwitch.setOnCheckedChangeListener(this);
 
 
     }

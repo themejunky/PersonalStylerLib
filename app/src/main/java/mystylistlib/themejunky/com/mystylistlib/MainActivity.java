@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -13,6 +14,7 @@ import com.themejunky.personalstylerlib.customviews.CustomButton;
 import com.themejunky.personalstylerlib.customviews.CustomButtonBorder;
 import com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage;
 import com.themejunky.personalstylerlib.customviews.CustomInput;
+import com.themejunky.personalstylerlib.customviews.CustomTextSwitch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +22,11 @@ import java.util.List;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity  implements CustomTextSwitch.CustomTextSwitch_Interface {
 
 
     private CustomInput mSpinner;
+    private CustomTextSwitch mSwitch;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity  {
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ((Spinner) mSpinner.findViewById(R.id.nSpinner)).setAdapter(dataAdapter);
+        mSwitch = findViewById(R.id.nSwitchr);
+        mSwitch.setListener(this);
 
     }
 
@@ -48,5 +53,14 @@ public class MainActivity extends AppCompatActivity  {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
+    @Override
+    public void onCustomTextSwitchClick(Boolean isSwitch) {
+        if (isSwitch){
+            Log.d("dfasdas","is Active");
+        }else {
+            Log.d("dfasdas","is Inactive");
+        }
+
+    }
 }
 
