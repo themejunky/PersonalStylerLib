@@ -10,5 +10,18 @@
 
     <string name="register_mandatory"> *</string>
 
+    <!--Intro-->
+    <string name="intro_title_page1">SERVICII PREMIUM</string>
+    <string name="intro_title_page2">STILISTI DE TOP</string>
+    <string name="intro_title_page3">SIMPLU SI RAPID</string>
+
+    <string name="intro_description1_page1">Fie ca ai nevoie de o schimbare de look pentru un eveniment special sau doar vrei sa te relaxezi cu un masaj dupa o zi de munca, noi iti propunem la dispozitie cele mai bune servicii din oras.</string>
+    <string name="intro_description1_page2">Iti garantam servicii de calitate, puse la dispozitie de cei mai buni profesionisti. Prin sistemul nostru de ranking, ai acces rapid la profilurile stilistilor case se afla in top in domeniile lor.</string>
+    <string name="intro_description1_page3">Tipul tau este pretios! Tocmai de aceea, noi am creat o metoda simpla si intuitiva prin care iti poti face o programare, idiferent daca esti la tine acasa sau la birou. Este simplu ca 1 – 2 – 3!</string>
+
+    <string name="intro_skip">Skip</string>
+    <string name="intro_next">Next</string>
+
+
 
 </resources>

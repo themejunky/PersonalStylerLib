@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/nContainerPager"
+        style="@style/base_match_match"
+        android:orientation="vertical"
+        android:background="@color/intro_bg_picture_page1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/nContainerLinear"
+        style="@style/base_match_match"
+        android:orientation="vertical"
+        android:background="@drawable/background_intro1">
+
+        <TextView
+            android:id="@+id/nTitle"
+            style="@style/Intro_Title"
+            android:text="@string/intro_title_page1"
+            />
+
+        <TextView
+            android:id="@+id/nText"
+            style="@style/Intro_Description"
+            android:text="@string/intro_description1_page1"/>
+
+        <RelativeLayout
+
+            style="@style/base_match_match"
+            >
+            <TextView
+                android:layout_alignParentBottom="true"
+                style="@style/Intro_Buttons"
+                android:text="@string/intro_skip"
+                android:layout_alignParentLeft="true"
+                />
+
+
+            <TextView
+                style="@style/Intro_Buttons"
+                android:text="@string/intro_next"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
