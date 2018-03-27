@@ -5,7 +5,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.themejunky.personalstylerlib.R;
-
 import java.util.List;
 
 public class IntroPagerActivity extends AppCompatActivity {
@@ -15,6 +14,8 @@ public class IntroPagerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewpager);
+
+        TabLayout tabLayout = (TabLayout) container.findViewById(R.id.tabDotss);
 
         fetchViews();
         init();
