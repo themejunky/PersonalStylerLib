@@ -88,10 +88,7 @@
 
 
 
-    <android.support.v7.widget.SwitchCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:theme="@style/SwitchCompatStyle"/>
+
 
     <com.themejunky.personalstylerlib.customviews.CustomTextSwitch
         android:id="@+id/nSwitchr"
@@ -100,6 +97,14 @@
         app:cts_text="Arata numarul meu tuturor clientilor"
         app:cts_subtext="Doar clientii care au o comanda activa cu tine vor putea vedea  numarul tau de telefon"/>
 
+
+
+    <com.themejunky.personalstylerlib.customviews.CustomTextSwitch
+        android:id="@+id/nSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cts_text="Arata numarul meu tuturor clientilor"
+        app:cts_subtext="Doar clientii care au o comanda activa cu tine vor putea vedea  numarul tau de telefon"/>
 
 
 

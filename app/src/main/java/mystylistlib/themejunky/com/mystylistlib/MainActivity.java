@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 
 import com.themejunky.personalstylerlib.InitCaligraphy;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity  implements CustomTextSwitch
 
 
     private CustomInput mSpinner;
-    private CustomTextSwitch mSwitch;
+    private CustomTextSwitch mSwitch,mSwitcher;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -44,7 +45,10 @@ public class MainActivity extends AppCompatActivity  implements CustomTextSwitch
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ((Spinner) mSpinner.findViewById(R.id.nSpinner)).setAdapter(dataAdapter);
         mSwitch = findViewById(R.id.nSwitchr);
+        mSwitcher = findViewById(R.id.nSwitcher);
         mSwitch.setListener(this);
+        mSwitcher.setListener(this);
+
 
     }
 
@@ -53,12 +57,12 @@ public class MainActivity extends AppCompatActivity  implements CustomTextSwitch
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
+
     @Override
-    public void onCustomTextSwitchClick(Boolean isSwitch) {
-        if (isSwitch){
-            Log.d("dfasdas","is Active");
-        }else {
-            Log.d("dfasdas","is Inactive");
+    public void onCustomTextSwitchClick(CompoundButton compoundButton, Boolean isChecked) {
+        switch (compoundButton.getId()){
+
+
         }
 
     }

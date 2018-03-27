@@ -21,12 +21,13 @@ public class CustomTextSwitch extends BaseCustom_LinearLayout implements Compoun
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-        mListener.onCustomTextSwitchClick(b);
+        mListener.onCustomTextSwitchClick(compoundButton,b);
+
     }
 
     /* click listener interface */
     public interface CustomTextSwitch_Interface {
-        void onCustomTextSwitchClick(Boolean isChecked);
+        void onCustomTextSwitchClick(CompoundButton compoundButton,Boolean isChecked);
     }
     /* setter for listener */
     public void setListener(CustomTextSwitch_Interface nListener) {
