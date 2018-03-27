@@ -64,11 +64,4 @@ public  class IntroPagerFragment extends Fragment {
                 });
         return gradientDrawable;
     }
-    public GradientDrawable setGradient(Context context,int color1){
-        GradientDrawable gradientDrawable = new GradientDrawable(
-                GradientDrawable.Orientation.TOP_BOTTOM,
-                new int[]{ContextCompat.getColor(context, color1),
-                });
-        return gradientDrawable;
-    }
 }
