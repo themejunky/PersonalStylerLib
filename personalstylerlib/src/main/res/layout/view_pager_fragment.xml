@@ -9,48 +9,50 @@
         android:id="@+id/nContainerPager"
         style="@style/base_match_match"
         android:orientation="vertical"
+        android:weightSum="100"
         android:background="@color/intro_bg_picture_page1">
 
     <ImageView
+        android:id="@+id/nImage"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="0dp"
+        android:layout_weight="48"
         />
 
     <LinearLayout
         android:id="@+id/nContainerLinear"
-        style="@style/base_match_match"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="52"
         android:orientation="vertical"
         android:background="@drawable/background_intro1">
 
-        <TextView
-            android:id="@+id/nTitle"
-            style="@style/Intro_Title"
-            android:text="@string/intro_title_page1"
-            />
+        <LinearLayout
 
-        <TextView
-            android:id="@+id/nText"
-            style="@style/Intro_Description"
-            android:text="@string/intro_description1_page1"/>
+            style="@style/Container_Text">
 
-        <RelativeLayout
+            <TextView
+                android:id="@+id/nTitle"
+                style="@style/Intro_Title"
+                android:text="@string/intro_title_page1"
+                />
 
+            <TextView
+                android:id="@+id/nText"
+                style="@style/Intro_Description"
+                android:text="@string/intro_description1_page1"/>
+        </LinearLayout>
+
+
+
+        <ViewStub
+            android:id="@+id/nextViewStub"
+           style="@style/base_match_match"
+            android:layout="@layout/next_layout"/>
+        <ViewStub
+            android:id="@+id/finishViewStub"
             style="@style/base_match_match"
-            >
-            <TextView
-                android:layout_alignParentBottom="true"
-                style="@style/Intro_Buttons"
-                android:text="@string/intro_skip"
-                android:layout_alignParentLeft="true"
-                />
-
-
-            <TextView
-                style="@style/Intro_Buttons"
-                android:text="@string/intro_next"
-                android:layout_alignParentRight="true"
-                />
-        </RelativeLayout>
+            android:layout="@layout/finish_layout"/>
 
     </LinearLayout>
 

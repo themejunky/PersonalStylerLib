@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/base_match_match">
+
+
+
+        <TextView
+            android:id="@+id/nFinish"
+            style="@style/Intro_Buttons"
+            android:text="@string/intro_finis"
+            android:layout_alignParentRight="true"
+            />
+
+</RelativeLayout>

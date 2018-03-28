@@ -9,16 +9,18 @@ public class ViewPagerModel implements Serializable {
     private int colorStart;
     private int colorCenter;
     private int colorEnd;
+    private boolean isLastPage;
 
 
-
-    public ViewPagerModel(int image,String title, String text,int colorStart,int colorCenter,int colorEnd) {
+    public ViewPagerModel(int image, String title, String text, int colorStart, int colorCenter, int colorEnd, boolean isLastPage) {
         this.image = image;
         this.title = title;
         this.text = text;
         this.colorStart = colorStart;
         this.colorCenter = colorCenter;
         this.colorEnd = colorEnd;
+
+        this.isLastPage = isLastPage;
     }
 
     public int getImage() {
@@ -43,5 +45,10 @@ public class ViewPagerModel implements Serializable {
 
     public int getColorEnd() {
         return colorEnd;
+    }
+
+
+    public boolean getIsLastPage() {
+        return isLastPage;
     }
 }
