@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/default_LL_match_match_vertical">
 
-    <RelativeLayout style="@style/base_match_wrap">
+    <RelativeLayout
+        style="@style/base_match_wrap"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
 
         <TextView
             android:id="@+id/nText"
-            style="@style/switch_text"
-            android:text="asdasd"/>
+            style="@style/switch_text"/>
 
         <android.support.v7.widget.SwitchCompat
             android:id="@+id/nSwitch"
-            style="@style/base_wrap_wrap"
-            android:layout_alignParentRight="true"
-            android:theme="@style/SwitchCompatStyle" />
+            style="@style/switch_switch"/>
 
     </RelativeLayout>
 

@@ -167,6 +167,14 @@
     <style name="switch_text" parent="base_wrap_wrap">
         <item name="android:textColor">@color/switch_text_color</item>
         <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontPath">Catamaran-Regular.ttf</item>
+    </style>
+
+
+    <style name="switch_switch" parent="base_wrap_wrap">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:theme">@style/SwitchCompatStyle</item>
     </style>
 
     <!--Intro-->
@@ -205,10 +213,6 @@
         <item name="android:textColor">@color/base_white</item>
     </style>
 
-    <style name="Switch" parent="base_wrap_wrap">
-        <item name="android:layout_alignParentRight">true</item>
-        <item name="android:theme">@style/SwitchCompatStyle</item>
-    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
