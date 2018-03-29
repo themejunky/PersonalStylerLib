@@ -43,14 +43,6 @@ public class CustomTextSwitch extends BaseCustom_LinearLayout implements Compoun
         mSwitch.setOnCheckedChangeListener(this);
     }
 
-    private void setTitle(int nTitle) {
-        mText.setText(nTitle);
-    }
-
-    private void setText(String nText) {
-        mSubtext.setText(nText);
-    }
-
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         mListener.onCustomTextSwitchClick(compoundButton,b);
