@@ -7,4 +7,16 @@
     <string name="login_password_hint">*************</string>
     <string name="login_error_1">Adresa de e-mail este gresita!</string>
     <string name="login_error_2">Parola este gresita!</string>
+
+    <string name="title_page1">SERVICII PREMIUM</string>
+    <string name="title_page2">STILISTI DE TOP</string>
+    <string name="title_page3">SIMPLU SI RAPID</string>
+
+    <string name="description_page1">Fie ca ai nevoie de o schimbare de look pentru un eveniment special sau doar vrei sa te relaxezi cu un masaj dupa o zi de munca, noi iti punem la dispozitie cele mai bune servicii din oras.</string>
+    <string name="description_page2">Iti garantam servicii de calitate, puse la dispozitie de cei mai buni profesionisti. Prin sistemul nostru de ranking, ai acces rapid la profilurile stilistilor care se afla in top in domeniile lor.</string>
+    <string name="description_page3">Timpul tau este pretios! Tocmai de aceea, noi am creat o metoda rapida simpla si intuitiva prin care iti poti face o programare, indiferent daca esti la tine acasa sau la birou. Este simplu ca 1 — 2 — 3 </string>
+
+    <string name="skip_intro_pager">Skip</string>
+    <string name="next_intro_pager">Next</string>
+    <string name="finish_intro_pager">Finish</string>
 </resources>

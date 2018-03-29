@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 public class ViewPagerModel implements Serializable {
     private int image;
-    private String title;
-    private String text;
+    private int title;
+    private int text;
     private int colorStart;
     private int colorCenter;
     private int colorEnd;
     private boolean isLastPage;
 
 
-    public ViewPagerModel(int image, String title, String text, int colorStart, int colorCenter, int colorEnd, boolean isLastPage) {
+    public ViewPagerModel(int image, int title, int text, int colorStart, int colorCenter, int colorEnd, boolean isLastPage) {
         this.image = image;
         this.title = title;
         this.text = text;
@@ -27,11 +27,11 @@ public class ViewPagerModel implements Serializable {
         return image;
     }
 
-    public String getTitle() {
+    public int getTitle() {
         return title;
     }
 
-    public String getText() {
+    public int getText() {
         return text;
     }
 
