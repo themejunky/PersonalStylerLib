@@ -3,9 +3,7 @@ package com.themejunky.personalstylerlib.customviews;
 import android.content.Context;
 import android.support.v7.widget.SwitchCompat;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
-import android.widget.CompoundButton;
+ import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
