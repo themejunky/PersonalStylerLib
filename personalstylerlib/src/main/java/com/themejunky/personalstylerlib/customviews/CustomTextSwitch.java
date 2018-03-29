@@ -25,19 +25,15 @@ public class CustomTextSwitch extends BaseCustom_LinearLayout implements Compoun
         mListener = nListener;
     }
 
-    public CustomTextSwitch(Context nContext, int nTitle, int nText) {
-        super(nContext);
-        init(nContext);
-
-        setTitle(mText,nTitle);
-        setTitle(mSubtext,nText);
-    }
-
     public CustomTextSwitch(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomTextSwitch);
 
-        init(nContext);
+        inflate(nContext, R.layout.custom_text_switch, this);
+
+        mText = findViewById(R.id.nText);
+        mSubtext = findViewById(R.id.nSubtext);
+        mSwitch = findViewById(R.id.nSwitch);
 
         setTitle(mText,R.styleable.CustomTextSwitch_cts_text);
         setTitle(mSubtext,R.styleable.CustomTextSwitch_cts_subtext);
@@ -47,13 +43,12 @@ public class CustomTextSwitch extends BaseCustom_LinearLayout implements Compoun
         mSwitch.setOnCheckedChangeListener(this);
     }
 
-    private void init(Context nContext) {
-        inflate(nContext, R.layout.custom_text_switch, this);
+    private void setTitle(int nTitle) {
+        mText.setText(nTitle);
+    }
 
-        mText = findViewById(R.id.nText);
-        mSubtext = findViewById(R.id.nSubtext);
-        mSwitch = findViewById(R.id.nSwitch);
-
+    private void setText(String nText) {
+        mSubtext.setText(nText);
     }
 
     @Override
