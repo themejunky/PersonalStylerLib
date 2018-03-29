@@ -23,11 +23,12 @@ import java.util.List;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class MainActivity extends AppCompatActivity  implements CustomTextSwitch.CustomTextSwitch_Interface {
+public class MainActivity extends AppCompatActivity  implements CustomButtonBorder.CustomButtonBorderInterface {
 
 
     private CustomInput mSpinner;
     private CustomTextSwitch mSwitch,mSwitcher;
+    private CustomButtonBorder apasa;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity  implements CustomTextSwitch
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder().setDefaultFontPath("Catamaran-Regular.ttf").setFontAttrId(R.attr.fontPath).build());
-        mSpinner=  findViewById(R.id.nSpinnerTest);
+       /* mSpinner=  findViewById(R.id.nSpinnerTest);
         List<String> list = new ArrayList<String>();
         list.add("list 1");
         list.add("list 2");
@@ -47,7 +48,11 @@ public class MainActivity extends AppCompatActivity  implements CustomTextSwitch
         mSwitch = findViewById(R.id.nSwitchr);
         mSwitcher = findViewById(R.id.nSwitcher);
         mSwitch.setListener(this);
-        mSwitcher.setListener(this);
+        mSwitcher.setListener(this);*/
+        apasa = findViewById(R.id.apasaId);
+        apasa.setListener(this);
+        apasa.setAsAppointmentButton();
+
 
 
     }
@@ -57,14 +62,14 @@ public class MainActivity extends AppCompatActivity  implements CustomTextSwitch
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
-
     @Override
-    public void onCustomTextSwitchClick(CompoundButton compoundButton, Boolean isChecked) {
-        switch (compoundButton.getId()){
+    public void onCustomButtonBorderClick(View view) {
+        Log.d("awaea","click 1");
 
+        if (view.getTag().equals("tag")){
+                Log.d("awaea","click 2");
 
         }
-
     }
 }
 

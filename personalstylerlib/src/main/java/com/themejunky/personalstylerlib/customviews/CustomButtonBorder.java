@@ -16,12 +16,13 @@ import com.themejunky.personalstylerlib.R;
  * button with white background color and border
  * this button has 2 states : pressed and unpressed
  */
-public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.OnClickListener  {
+public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.OnClickListener {
 
     /* default values*/
-    private int mDefaultBackgroundColor,mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColor;
+    private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColor;
     /* the state of the button ; by default is no pressed = false */
     private Boolean mStateOfPress = false;
+    private boolean mStateOfActivation=true;
 
     /* click listener interface */
     public interface CustomButtonBorderInterface {
@@ -66,14 +67,25 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
 
     @Override
     public void onClick(View view) {
-        if (mListener!=null) {
-            if (!mStateOfPress) {
-                setPressed(); }
-            else { setUnpressed(); }
-            mListener.onCustomButtonBorderClick(view); }
+
+        if (mStateOfActivation) {
+            if (mListener != null) {
+                if (!mStateOfPress) {
+                    setPressed();
+                } else {
+                    setUnpressed();
+                }
+            }
+        }else {
+            setUnpressed();
+        }
+        mListener.onCustomButtonBorderClick(view);
     }
 
 
+    public void setAsAppointmentButton() {
+        mStateOfActivation=false;
+    }
     /**
      * Default state of the button : white background with gray border (by default)
      */
@@ -83,11 +95,11 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
 
         setBorderColorAndRadius(mContainer,
                 R.styleable.CustomButtonBorder_cbb_backgroundColor, mDefaultBackgroundColor,
-                R.styleable.CustomButtonBorder_cbb_border_radius,mDefaultBorderRadius,
-                R.styleable.CustomButtonBorder_cbb_border_stroke,mDefaultBorderStroke,
-                R.styleable.CustomButtonBorder_cbb_border_default,mDefaultBorderColor);
+                R.styleable.CustomButtonBorder_cbb_border_radius, mDefaultBorderRadius,
+                R.styleable.CustomButtonBorder_cbb_border_stroke, mDefaultBorderStroke,
+                R.styleable.CustomButtonBorder_cbb_border_default, mDefaultBorderColor);
 
-        setTextColor(mText,R.styleable.CustomButtonBorder_cbb_border_default,R.color.CustomButtonBorder_default_text_color);
+        setTextColor(mText, R.styleable.CustomButtonBorder_cbb_border_default, R.color.CustomButtonBorder_default_text_color);
     }
 
     /**
@@ -108,6 +120,7 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
 
     /**
      * Set the desired text on the button
+     *
      * @param nText - the new text to show on the button
      */
 
@@ -116,7 +129,8 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
         mText.setVisibility(View.VISIBLE);
 
         if (nStrikeFlag) {
-        mText.setPaintFlags(mText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG); }
+            mText.setPaintFlags(mText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }
 
         mContainer.invalidate();
         mText.invalidate();
@@ -125,7 +139,10 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
 
     /**
      * Get the current state of the button ( pressed or unpressed )
+     *
      * @return - boolean (true = pressed ; false = unpressed )
      */
-    public Boolean getStateOfPress() { return mStateOfPress; }
+    public Boolean getStateOfPress() {
+        return mStateOfPress;
+    }
 }

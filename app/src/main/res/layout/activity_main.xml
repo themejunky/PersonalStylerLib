@@ -10,103 +10,15 @@
 
 
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="100"
-        android:orientation="horizontal">
-
-        <com.themejunky.personalstylerlib.customviews.CustomInput
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:layout_height="wrap_content"
-            android:id="@+id/nSpinnerTest"
-            app:ci_keyboard="text"
-            app:ci_type="spinner"
-            app:ci_hint="Textul tau"
-            app:ci_title_text="Text"
-            app:ci_imei_option="next"
-
-            />
-        <com.themejunky.personalstylerlib.customviews.CustomInput
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:layout_height="wrap_content"
-            app:ci_keyboard="text"
-            app:ci_type="input"
-            app:ci_hint="Textul tau"
-            app:ci_title_text="Text"
-            app:ci_imei_option="done"
-            />
-        <com.themejunky.personalstylerlib.customviews.CustomInput
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:layout_height="wrap_content"
-            app:ci_keyboard="password"
-            app:ci_type="input"
-            app:ci_title_text="Text"
-            app:ci_imei_option="done"
-            />
-        <com.themejunky.personalstylerlib.customviews.CustomInput
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:layout_height="wrap_content"
-            app:ci_keyboard="password"
-            app:ci_type="input"
-            app:ci_hint="a*f*g*t*t**"
-            app:ci_title_text="Text"
-            app:ci_imei_option="done"
-            />
-    </LinearLayout>
-
-
-
-    <com.themejunky.personalstylerlib.customviews.CustomInput
-        android:id="@+id/nEmail"
-        style="@style/base_match_wrap"
-        app:ci_imei_option="next"
-        app:ci_type="input"
-        app:ci_keyboard="email"
-        app:ci_title_text="@string/login_email_title"
-        app:ci_hint="@string/login_email_hint"
-        app:ci_error_message="@string/login_error_1"
-        />
-
-
-    <com.themejunky.personalstylerlib.customviews.CustomInput
-        android:id="@+id/nPassword"
-        style="@style/base_login_input"
-        app:ci_imei_option="done"
-        app:ci_type="input"
-        app:ci_keyboard="password"
-        app:ci_title_text="@string/login_password_title"
-        app:ci_hint="@string/login_password_hint"
-        app:ci_error_message="@string/login_error_2"
-        />
-
-
-
-
-
-
-    <com.themejunky.personalstylerlib.customviews.CustomTextSwitch
-        android:id="@+id/nSwitchr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cts_text="Arata numarul meu tuturor clientilor"
-        app:cts_subtext="Doar clientii care au o comanda activa cu tine vor putea vedea  numarul tau de telefon"/>
-
-
-
-    <com.themejunky.personalstylerlib.customviews.CustomTextSwitch
-        android:id="@+id/nSwitcher"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cts_text="Arata numarul meu tuturor clientilor"
-        app:cts_subtext="Doar clientii care au o comanda activa cu tine vor putea vedea  numarul tau de telefon"/>
-
-
+<com.themejunky.personalstylerlib.customviews.CustomButtonBorder
+    android:id="@+id/apasaId"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    app:cbb_tag="tag"
+    app:cbb_border_default="@color/base_white"
+    app:cbb_text="Apasa-ma"
+    app:cbb_text_color="@color/base_white"
+    app:cbb_backgroundColor="@color/base_green"/>
 
 
 
