@@ -10,42 +10,34 @@ import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
 
-/**
- * Created by Junky2 on 3/26/2018.
- */
-
 public class CustomTextSwitch extends BaseCustom_LinearLayout implements CompoundButton.OnCheckedChangeListener {
     private TextView mText,mSubtext;
     private SwitchCompat mSwitch;
     private CustomTextSwitch_Interface mListener;
 
-    @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-        mListener.onCustomTextSwitchClick(compoundButton,b);
-
-    }
-
     /* click listener interface */
     public interface CustomTextSwitch_Interface {
         void onCustomTextSwitchClick(CompoundButton compoundButton,Boolean isChecked);
     }
+
     /* setter for listener */
     public void setListener(CustomTextSwitch_Interface nListener) {
         mListener = nListener;
     }
 
-    public CustomTextSwitch(Context context) {
-        super(context);
+    public CustomTextSwitch(Context nContext, int nTitle, int nText) {
+        super(nContext);
+        init(nContext);
+
+        setTitle(mText,nTitle);
+        setTitle(mSubtext,nText);
     }
 
     public CustomTextSwitch(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomTextSwitch);
-        inflate(nContext, R.layout.custom_text_switch, this);
 
-        mText = findViewById(R.id.nText);
-        mSubtext = findViewById(R.id.nSubtext);
-        mSwitch = findViewById(R.id.nSwitch);
+        init(nContext);
 
         setTitle(mText,R.styleable.CustomTextSwitch_cts_text);
         setTitle(mSubtext,R.styleable.CustomTextSwitch_cts_subtext);
@@ -53,7 +45,20 @@ public class CustomTextSwitch extends BaseCustom_LinearLayout implements Compoun
         setTextColor(mSubtext,R.styleable.CustomTextSwitch_cts_subtext_color,getResources().getColor(R.color.switch_subtext_color));
 
         mSwitch.setOnCheckedChangeListener(this);
+    }
 
+    private void init(Context nContext) {
+        inflate(nContext, R.layout.custom_text_switch, this);
+
+        mText = findViewById(R.id.nText);
+        mSubtext = findViewById(R.id.nSubtext);
+        mSwitch = findViewById(R.id.nSwitch);
 
     }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        mListener.onCustomTextSwitchClick(compoundButton,b);
+    }
+
 }
