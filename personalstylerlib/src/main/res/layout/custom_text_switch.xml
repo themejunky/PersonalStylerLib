@@ -6,7 +6,8 @@
 
         <TextView
             android:id="@+id/nText"
-            style="@style/switch_text" />
+            style="@style/switch_text"
+            android:text="asdasd"/>
 
         <android.support.v7.widget.SwitchCompat
             android:id="@+id/nSwitch"
