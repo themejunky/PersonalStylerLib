@@ -172,9 +172,9 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     protected void setViewVisibility(View nView, int nResourceReference) {
         try {
             if (mTypedarray.getBoolean(nResourceReference, true)) {
-                nView.setVisibility(View.INVISIBLE);
-            } else {
                 nView.setVisibility(View.VISIBLE);
+            } else {
+                nView.setVisibility(View.INVISIBLE);
             }
         } catch (Exception e) {
             Log.d(TAG, "" + e.getMessage());
