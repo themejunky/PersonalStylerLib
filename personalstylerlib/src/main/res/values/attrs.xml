@@ -139,4 +139,11 @@
         <attr name="chot_text" format="string"/>
     </declare-styleable>
 
+    <declare-styleable name="CustomSettingItem">
+        <attr name="csi_title" format="string"/>
+        <attr name="csi_subtext" format="string"/>
+        <attr name="csi_arrow_visibility" format="boolean" />
+
+    </declare-styleable>
+
 </resources>

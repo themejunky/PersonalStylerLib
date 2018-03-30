@@ -107,6 +107,17 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         }
     }
 
+    protected void setTitleFallbackInvisible(TextView nView, int nResourceReference) {
+        try {
+            if (mTypedarray.getString(nResourceReference) != null) {
+                nView.setText(mTypedarray.getString(nResourceReference));
+            } else {
+                nView.setVisibility(View.INVISIBLE);
+            }
+        } catch (Exception e) {
+        }
+    }
+
     /**
      * Set text color
      *
@@ -152,6 +163,18 @@ public class BaseCustom_LinearLayout extends LinearLayout {
                 nView.setVisibility(View.VISIBLE);
             } else {
                 nView.setVisibility(View.GONE);
+            }
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
+        }
+    }
+
+    protected void setViewVisibility(View nView, int nResourceReference) {
+        try {
+            if (mTypedarray.getBoolean(nResourceReference, false)) {
+                nView.setVisibility(View.INVISIBLE);
+            } else {
+                nView.setVisibility(View.VISIBLE);
             }
         } catch (Exception e) {
             Log.d(TAG, "" + e.getMessage());
