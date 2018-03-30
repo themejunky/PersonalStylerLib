@@ -126,14 +126,17 @@
         <attr name="cbbi_border_unpressed" format="color"/>
         <attr name="cbbi_border_radius" format="integer"/>
         <attr name="cbbi_border_stroke" format="integer"/>
-
-
     </declare-styleable>
+
     <declare-styleable name="CustomTextSwitch">
         <attr name="cts_text_color" format="color"/>
         <attr name="cts_subtext_color" format="color"/>
         <attr name="cts_text" format="string"/>
         <attr name="cts_subtext" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomHeaderOneText">
+        <attr name="chot_text" format="string"/>
     </declare-styleable>
 
 </resources>

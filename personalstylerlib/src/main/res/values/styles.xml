@@ -216,6 +216,20 @@
         <item name="android:textColor">@color/base_white</item>
     </style>
 
+    <style name="Appointments_Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/base_line_color</item>
+    </style>
+
+    <style name="Header_Text" parent="base_match_wrap">
+        <item name="fontPath">Catamaran-Bold.ttf</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/base_black</item>
+        <item name="android:background">@color/base_background</item>
+        <item name="android:padding">13sp</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
