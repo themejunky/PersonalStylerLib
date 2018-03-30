@@ -2,11 +2,24 @@ package com.themejunky.personalstylerlib.customviews;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
 
-public class CustomSettingItem extends BaseCustom_LinearLayout {
+public class CustomSettingItem extends BaseCustom_LinearLayout implements View.OnClickListener {
+
+    private CustomSettingItem_Interface mListener;
+
+    /* click listener interface */
+    public interface CustomSettingItem_Interface {
+        void onCustomSettingItemClick();
+    }
+
+    /* setter for listener */
+    public void setListener(CustomSettingItem.CustomSettingItem_Interface nListener) {
+        mListener = nListener;
+    }
 
     public CustomSettingItem(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
@@ -17,5 +30,14 @@ public class CustomSettingItem extends BaseCustom_LinearLayout {
         setTitleFallbackInvisible(((TextView) findViewById(R.id.nTitle)),R.styleable.CustomSettingItem_csi_title);
         setTitleFallbackInvisible(((TextView) findViewById(R.id.nSubtext)),R.styleable.CustomSettingItem_csi_subtext);
         setViewVisibility(findViewById(R.id.nArrow), R.styleable.CustomSettingItem_csi_arrow_visibility);
+
+        findViewById(R.id.nContainer).setTag(mTypedarray.getString(R.styleable.CustomSettingItem_csi_tag));
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (mListener!=null) {
+            mListener.onCustomSettingItemClick();
+        }
     }
 }
