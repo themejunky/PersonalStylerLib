@@ -3,9 +3,7 @@
     style="@style/default_LL_match_match_vertical">
 
     <RelativeLayout
-        style="@style/base_match_wrap"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp">
+        style="@style/switch_container">
 
         <TextView
             android:id="@+id/nText"

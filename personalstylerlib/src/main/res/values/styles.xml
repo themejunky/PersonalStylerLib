@@ -159,6 +159,11 @@
         <item name="trackTint">@drawable/switch_color_track</item>
     </style>
 
+    <style name="switch_container" parent="base_match_wrap">
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
     <style name="switch_subtext" parent="base_wrap_wrap">
         <item name="android:lineSpacingExtra">-2sp</item>
         <item name="android:textColor">@color/switch_subtext_color</item>
@@ -166,6 +171,7 @@
         <item name="fontPath">Catamaran-Regular.ttf</item>
         <item name="android:layout_marginTop">-8dp</item>
         <item name="android:paddingRight">25dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
 
     <style name="switch_text" parent="base_wrap_wrap">
