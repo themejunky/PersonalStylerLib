@@ -13,7 +13,7 @@ public class CustomSettingItem extends BaseCustom_LinearLayout implements View.O
 
     /* click listener interface */
     public interface CustomSettingItem_Interface {
-        void onCustomSettingItemClick();
+        void onCustomSettingItemClick(View nView);
     }
 
     /* setter for listener */
@@ -36,9 +36,9 @@ public class CustomSettingItem extends BaseCustom_LinearLayout implements View.O
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View nView) {
         if (mListener!=null) {
-            mListener.onCustomSettingItemClick();
+            mListener.onCustomSettingItemClick(nView);
         }
     }
 }
