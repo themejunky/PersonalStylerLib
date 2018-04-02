@@ -38,6 +38,7 @@ public class CustomTextSwitch extends BaseCustom_LinearLayout implements Compoun
         setTextColor(mText,R.styleable.CustomTextSwitch_cts_text_color,getResources().getColor(R.color.switch_text_color));
         setTextColor(mSubtext,R.styleable.CustomTextSwitch_cts_subtext_color,getResources().getColor(R.color.switch_subtext_color));
 
+        mSwitch.setTag(mTypedarray.getString(R.styleable.CustomTextSwitch_cts_tag));
         mSwitch.setOnCheckedChangeListener(this);
     }
 

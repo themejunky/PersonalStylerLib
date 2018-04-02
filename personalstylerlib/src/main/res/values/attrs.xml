@@ -133,6 +133,7 @@
         <attr name="cts_subtext_color" format="color"/>
         <attr name="cts_text" format="string"/>
         <attr name="cts_subtext" format="string"/>
+        <attr name="cts_tag" format="string"/>
     </declare-styleable>
 
     <declare-styleable name="CustomHeaderOneText">
