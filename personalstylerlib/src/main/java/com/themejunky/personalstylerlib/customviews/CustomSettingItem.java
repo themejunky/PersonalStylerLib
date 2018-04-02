@@ -32,6 +32,7 @@ public class CustomSettingItem extends BaseCustom_LinearLayout implements View.O
         setViewVisibility(findViewById(R.id.nArrow), R.styleable.CustomSettingItem_csi_arrow_visibility);
 
         findViewById(R.id.nContainer).setTag(mTypedarray.getString(R.styleable.CustomSettingItem_csi_tag));
+        findViewById(R.id.nContainer).setOnClickListener(this);
     }
 
     @Override
