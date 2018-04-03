@@ -145,6 +145,7 @@
         <attr name="csi_subtext" format="string"/>
         <attr name="csi_tag" format="string" />
         <attr name="csi_arrow_visibility" format="boolean" />
+        <attr name="csi_icon" format="reference" />
 
     </declare-styleable>
 

@@ -2,7 +2,7 @@ package mystylistlib.themejunky.com.mystylistlib;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
+import android.view.View;
 
 import com.themejunky.personalstylerlib.customviews.CustomSettingItem;
 
@@ -16,8 +16,9 @@ public class CustomActivity extends AppCompatActivity implements CustomSettingIt
         ((CustomSettingItem) findViewById(R.id.nView)).setListener(this);
     }
 
+
     @Override
-    public void onCustomSettingItemClick() {
-        Toast.makeText(this,"ceva",Toast.LENGTH_SHORT).show();
+    public void onCustomSettingItemClick(View nView) {
+
     }
 }

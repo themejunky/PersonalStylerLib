@@ -3,6 +3,7 @@ package com.themejunky.personalstylerlib.customviews;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
@@ -30,6 +31,12 @@ public class CustomSettingItem extends BaseCustom_LinearLayout implements View.O
         setTitleFallbackInvisible(((TextView) findViewById(R.id.nTitle)),R.styleable.CustomSettingItem_csi_title);
         setTitleFallbackInvisible(((TextView) findViewById(R.id.nSubtext)),R.styleable.CustomSettingItem_csi_subtext);
         setViewVisibility(findViewById(R.id.nArrow), R.styleable.CustomSettingItem_csi_arrow_visibility);
+
+        try {
+            ((ImageView) findViewById(R.id.nIcon)).setImageDrawable(mTypedarray.getDrawable(R.styleable.CustomSettingItem_csi_icon));
+        } catch (Exception ignored) {
+            findViewById(R.id.nIcon).setVisibility(View.GONE);
+        }
 
         findViewById(R.id.nContainer).setTag(mTypedarray.getString(R.styleable.CustomSettingItem_csi_tag));
         findViewById(R.id.nContainer).setOnClickListener(this);
