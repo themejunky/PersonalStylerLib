@@ -6,7 +6,10 @@
     <ImageView
         android:id="@+id/nIcon"
         android:layout_width="25dp"
-        android:layout_height="25dp" />
+        android:layout_height="25dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+    />
     
     <TextView
         android:id="@+id/nTitle"

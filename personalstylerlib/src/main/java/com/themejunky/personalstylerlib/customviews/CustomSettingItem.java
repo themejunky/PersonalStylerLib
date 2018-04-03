@@ -2,6 +2,7 @@ package com.themejunky.personalstylerlib.customviews;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,9 +33,11 @@ public class CustomSettingItem extends BaseCustom_LinearLayout implements View.O
         setTitleFallbackInvisible(((TextView) findViewById(R.id.nSubtext)),R.styleable.CustomSettingItem_csi_subtext);
         setViewVisibility(findViewById(R.id.nArrow), R.styleable.CustomSettingItem_csi_arrow_visibility);
 
-        try {
+        Log.d("asdasds",""+mTypedarray.getDrawable(R.styleable.CustomSettingItem_csi_icon));
+
+        if (mTypedarray.getDrawable(R.styleable.CustomSettingItem_csi_icon)!=null) {
             ((ImageView) findViewById(R.id.nIcon)).setImageDrawable(mTypedarray.getDrawable(R.styleable.CustomSettingItem_csi_icon));
-        } catch (Exception ignored) {
+        } else {
             findViewById(R.id.nIcon).setVisibility(View.GONE);
         }
 

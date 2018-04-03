@@ -11,6 +11,15 @@
         android:layout_height="wrap_content"
         app:csi_title="IBAN"
         app:csi_subtext="IBAN"
-        app:csi_arrow_visibility="false"/>
+        app:csi_arrow_visibility="true"/>
 
+
+    <com.themejunky.personalstylerlib.customviews.CustomSettingItem
+        android:id="@+id/nView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:csi_title="IBAN"
+        app:csi_subtext="IBAN"
+        app:csi_icon="@drawable/ic_profile_1"
+        app:csi_arrow_visibility="true"/>
 </LinearLayout>
