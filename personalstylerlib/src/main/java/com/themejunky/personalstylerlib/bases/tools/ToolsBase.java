@@ -2,6 +2,9 @@ package com.themejunky.personalstylerlib.bases.tools;
 
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -56,6 +59,33 @@ public class ToolsBase {
             return scrollView.getHeight() < childHeight + scrollView.getPaddingTop() + scrollView.getPaddingBottom();
         }
         return false;
+    }
+
+
+    /**
+     * Sets Grid Manager Horizontal
+     * @param list - recyclerview list
+     * @param adapter - adapter
+     * @return - Grid Layout Manager for future
+     */
+    public GridLayoutManager setList_GridLayoutManager_Horizontal(final RecyclerView list, final RecyclerView.Adapter adapter) {
+        GridLayoutManager GL = new GridLayoutManager(mContext, 1, LinearLayoutManager.HORIZONTAL, false);
+        list.setLayoutManager(GL);
+        list.setAdapter(adapter);
+        return GL;
+    }
+
+    /**
+     * Sets Grid Manager Vertical
+     * @param list - recyclerview list
+     * @param adapter - adapter
+     * @return - Grid Layout Manager for future
+     */
+    public GridLayoutManager setList_GridLayoutManager_Vertical( final RecyclerView list, final RecyclerView.Adapter adapter) {
+        GridLayoutManager GL = new GridLayoutManager(mContext, 1, LinearLayoutManager.VERTICAL, false);
+        list.setLayoutManager(GL);
+        list.setAdapter(adapter);
+        return GL;
     }
 
 }
