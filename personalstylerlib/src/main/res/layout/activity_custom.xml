@@ -14,5 +14,12 @@
         app:csi_arrow_visibility="true"/>
 
 
+    <com.themejunky.personalstylerlib.customviews.CustomHomeItem
+        style="@style/MatchMatch"
+        app:chi_title_text="ceva"
+        app:chi_title_color="@color/CustomHomeItem_default_number_color"
+        app:chi_text_text="ceva"
+        />
+
 
 </LinearLayout>

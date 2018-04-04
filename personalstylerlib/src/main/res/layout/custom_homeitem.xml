@@ -20,7 +20,7 @@
 
                 <TextView
                     android:id="@+id/nText"
-                    style="WrapWrap.Regular.Black.14"
+                    style="@style/WrapWrap.Regular.Black.14"
                     android:layout_gravity="center_vertical"/>
 
     </LinearLayout>

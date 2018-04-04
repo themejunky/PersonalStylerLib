@@ -59,14 +59,14 @@ public class CustomHomeItem extends BaseCustom_LinearLayout  {
             setTitle(mTitle, R.styleable.CustomHomeItem_chi_title_text);
             setTextColor(mTitle,R.styleable.CustomHomeItem_chi_title_color,mDefaultTitleColor);
 
-        TextView mNr = findViewById(R.id.nNr);
-            setTitle(mNr, R.styleable.CustomHomeItem_chi_number_text);
-            setTextColor(mNr,R.styleable.CustomHomeItem_chi_number_color,mDefaultNumberColor);
-
-
-        TextView mText = findViewById(R.id.nText);
-            setTitle(mText, R.styleable.CustomHomeItem_chi_text_text);
-            setTextColor(mText,R.styleable.CustomHomeItem_chi_text_color,mDefaultTextColor);
+//        TextView mNr = findViewById(R.id.nNr);
+//            setTitle(mNr, R.styleable.CustomHomeItem_chi_number_text);
+//            setTextColor(mNr,R.styleable.CustomHomeItem_chi_number_color,mDefaultNumberColor);
+//
+//
+//        TextView mText = findViewById(R.id.nText);
+//            setTitle(mText, R.styleable.CustomHomeItem_chi_text_text);
+//            setTextColor(mText,R.styleable.CustomHomeItem_chi_text_color,mDefaultTextColor);
 
     }
 }
