@@ -4,9 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.themejunky.personalstylerlib.bases.CustomActivity;
 import com.themejunky.personalstylerlib.customviews.CustomSettingItem;
 
-public class CustomActivity extends AppCompatActivity implements CustomSettingItem.CustomSettingItem_Interface {
+public class Custom extends CustomActivity implements CustomSettingItem.CustomSettingItem_Interface {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,6 +1,7 @@
 package com.themejunky.personalstylerlib.bases;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -13,9 +14,15 @@ import com.themejunky.personalstylerlib.bases.tools.Tools;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class CustomActivity  extends AppCompatActivity {
+public class CustomActivity extends AppCompatActivity {
 
-    protected Tools mTools = Tools.getInstance(this);
+    protected Tools mTools;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mTools = Tools.getInstance(this);
+    }
 
     /**
      * Check if the provided ScrollView has scroll. If so .... triger hand-animation
