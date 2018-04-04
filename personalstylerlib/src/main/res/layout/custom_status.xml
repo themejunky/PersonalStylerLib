@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/MatchMatch.Horizontal"
     android:gravity="center_vertical">
 
     <LinearLayout
@@ -14,11 +12,10 @@
         <View
             android:layout_width="1dp"
             android:layout_height="10dp"
-            android:background="@color/base_grey2"/>
+            android:background="@color/divider"/>
 
         <TextView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
+            style="@style/Cube10"
             android:background="@drawable/text_view_circle_grey"/>
 
         <View
@@ -26,28 +23,29 @@
             android:layout_width="1dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/base_grey2"/>
+            android:background="@color/divider"/>
 
     </LinearLayout>
 
     <LinearLayout
-        style="@style/default_LL_wrap_wrap_vertical"
+        style="@style/WrapWrap.Vertical"
         android:layout_marginLeft="15dp">
 
         <TextView
             android:id="@+id/nTime"
-            style="@style/app_detail_status_time"
-            android:text="10:40"/>
+            style="@style/WrapWrap.Regular.Black.14"/>
 
         <TextView
             android:id="@+id/nDate"
-            style="@style/app_detail_status_date"
-            android:text="5 May"/>
+            style="@style/WrapWrap.Regular.Grey.13"
+            />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/nStatus"
-        style="@style/app_detail_status_text" />
+        style="@style/WrapWrap.Regular.Grey.13"
+        android:layout_marginLeft="25dp"
+      />
 
 </LinearLayout>

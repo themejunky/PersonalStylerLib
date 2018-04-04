@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base-Width-Height -->
+    <style name="WrapWrap">    <item name="android:layout_width">wrap_content</item><item name="android:layout_height">wrap_content</item>  </style>
+    <style name="WrapMatch">   <item name="android:layout_width">wrap_content</item><item name="android:layout_height">match_parent</item>  </style>
+    <style name="MatchWrap">   <item name="android:layout_width">match_parent</item><item name="android:layout_height">wrap_content</item>  </style>
+    <style name="MatchMatch">  <item name="android:layout_width">match_parent</item><item name="android:layout_height">match_parent</item>  </style>
+
+    <!-- Base-Cube-->
+    <style name="Cube0">     <item name="android:layout_width">0dp</item><item name="android:layout_height">0dp</item>      </style>
+    <style name="Cube10">    <item name="android:layout_width">10dp</item><item name="android:layout_height">10dp</item>    </style>
+    <style name="Cube25">    <item name="android:layout_width">25dp</item><item name="android:layout_height">25dp</item>    </style>
+    <style name="Cube55">    <item name="android:layout_width">55dp</item><item name="android:layout_height">55dp</item>    </style>
+
+    <style name="Divider">   <item name="android:background">@color/divider</item>  </style>
+    <style name="Divider.Horizontal">    <item name="android:layout_width">match_parent</item><item name="android:layout_height">1dp</item> </style>
+    <style name="Divider.Vertical">      <item name="android:layout_width">match_parent</item><item name="android:layout_height">1dp</item> </style>
+
+    <!-- Base-Containers-With-Background -->
+    <style name="MatchMatch.White" parent="MatchMatch">  <item name="android:background">@color/base_white</item>  </style>
+    <style name="MatchWrap.White" parent="MatchWrap">  <item name="android:background">@color/base_white</item>  </style>
+
+
+    <!-- Base-LinearLayouts-Horizontal -->
+    <style name="WrapWrap.Horizontal" parent="WrapWrap">        <item name="android:orientation">horizontal</item>  </style>
+    <style name="WrapMatch.Horizontal" parent="WrapMatch">      <item name="android:orientation">horizontal</item>  </style>
+    <style name="MatchWrap.Horizontal" parent="MatchWrap">      <item name="android:orientation">horizontal</item>  </style>
+    <style name="MatchMatch.Horizontal" parent="MatchMatch">    <item name="android:orientation">horizontal</item>  </style>
+
+    <!-- Base-LinearLayouts-Vertical -->
+    <style name="WrapWrap.Vertical" parent="WrapWrap">        <item name="android:orientation">vertical</item>  </style>
+    <style name="WrapMatch.Vertical" parent="WrapMatch">      <item name="android:orientation">vertical</item>  </style>
+    <style name="MatchWrap.Vertical" parent="MatchWrap">      <item name="android:orientation">vertical</item>  </style>
+    <style name="MatchMatch.Vertical" parent="MatchMatch">    <item name="android:orientation">vertical</item>  </style>
+
+    <!-- Base-LinearLayouts-Vertical-With_Background -->
+    <style name="MatchWrap.Vertical.White" parent="MatchWrap.Vertical">      <item name="android:background">@color/white</item>  </style>
+
+    <!-- Base-Bold -->
+    <style name="WrapWrap.Bold" parent="WrapWrap">        <item name="fontPath">Bold.ttf</item>  </style>
+    <style name="WrapMatch.Bold" parent="WrapMatch">      <item name="fontPath">Bold.ttf</item>  </style>
+    <style name="MatchWrap.Bold" parent="MatchWrap">      <item name="fontPath">Bold.ttf</item>  </style>
+    <style name="MatchMatch.Bold" parent="MatchMatch">    <item name="fontPath">Bold.ttf</item>  </style>
+
+    <!-- Base-Regular -->
+    <style name="WrapWrap.Regular" parent="WrapWrap">        <item name="fontPath">Regular.ttf</item>  </style>
+    <style name="WrapMatch.Regular" parent="WrapMatch">      <item name="fontPath">Regular.ttf</item>  </style>
+    <style name="MatchWrap.Regular" parent="MatchWrap">      <item name="fontPath">Regular.ttf</item>  </style>
+    <style name="MatchMatch.Regular" parent="MatchMatch">    <item name="fontPath">Regular.ttf</item>  </style>
+
+    <!-- Base-Bold-Black -->
+    <style name="WrapWrap.Bold.Black" parent="WrapWrap.Bold">        <item name="android:textColor">@color/black</item>  </style>
+    <style name="WrapMatch.Bold.Black" parent="WrapMatch.Bold">      <item name="android:textColor">@color/black</item>  </style>
+    <style name="MatchWrap.Bold.Black" parent="MatchWrap.Bold">      <item name="android:textColor">@color/black</item>  </style>
+    <style name="MatchMatch.Bold.Black" parent="MatchMatch.Bold">    <item name="android:textColor">@color/black</item>  </style>
+
+    <!-- Base-Regular-Black -->
+    <style name="WrapWrap.Regular.Black" parent="WrapWrap.Regular">       <item name="android:textColor">@color/black</item>   </style>
+    <style name="WrapMatch.Regular.Black" parent="WrapMatch.Regular">     <item name="android:textColor">@color/black</item>   </style>
+    <style name="MatchWrap.Regular.Black" parent="MatchWrap.Regular">     <item name="android:textColor">@color/black</item>   </style>
+    <style name="MatchMatch.Regular.Black" parent="MatchMatch.Regular">   <item name="android:textColor">@color/black</item>   </style>
+
+    <!-- Base-Bold-Grey -->
+    <style name="WrapWrap.Bold.Grey" parent="WrapWrap.Bold">        <item name="android:textColor">@color/grey</item>  </style>
+    <style name="WrapMatch.Bold.Grey" parent="WrapMatch.Bold">      <item name="android:textColor">@color/grey</item>  </style>
+    <style name="MatchWrap.Bold.Grey" parent="MatchWrap.Bold">      <item name="android:textColor">@color/grey</item>  </style>
+    <style name="MatchMatch.Bold.Grey" parent="MatchMatch.Bold">    <item name="android:textColor">@color/grey</item>  </style>
+
+    <!-- Base-Regular-Grey -->
+    <style name="WrapWrap.Regular.Grey" parent="WrapWrap.Regular">       <item name="android:textColor">@color/grey</item>   </style>
+    <style name="WrapMatch.Regular.Grey" parent="WrapMatch.Regular">     <item name="android:textColor">@color/grey</item>   </style>
+    <style name="MatchWrap.Regular.Grey" parent="MatchWrap.Regular">     <item name="android:textColor">@color/grey</item>   </style>
+    <style name="MatchMatch.Regular.Grey" parent="MatchMatch.Regular">   <item name="android:textColor">@color/grey</item>   </style>
+
+    <!-- Base-Bold-Grey -->
+    <style name="WrapWrap.Bold.Grey_2" parent="WrapWrap.Bold">        <item name="android:textColor">@color/grey_2</item>  </style>
+    <style name="WrapMatch.Bold.Grey_2" parent="WrapMatch.Bold">      <item name="android:textColor">@color/grey_2</item>  </style>
+    <style name="MatchWrap.Bold.Grey_2" parent="MatchWrap.Bold">      <item name="android:textColor">@color/grey_2</item>  </style>
+    <style name="MatchMatch.Bold.Grey_2" parent="MatchMatch.Bold">    <item name="android:textColor">@color/grey_2</item>  </style>
+
+    <!-- Base-Regular-Grey -->
+    <style name="WrapWrap.Regular.Grey_2" parent="WrapWrap.Regular">       <item name="android:textColor">@color/grey_2</item>   </style>
+    <style name="WrapMatch.Regular.Grey_2" parent="WrapMatch.Regular">     <item name="android:textColor">@color/grey_2</item>   </style>
+    <style name="MatchWrap.Regular.Grey_2" parent="MatchWrap.Regular">     <item name="android:textColor">@color/grey_2</item>   </style>
+    <style name="MatchMatch.Regular.Grey_2" parent="MatchMatch.Regular">   <item name="android:textColor">@color/grey_2</item>   </style>
+
+
+
+    <!-- Base-Bold-White -->
+    <style name="WrapWrap.Bold.White" parent="WrapWrap.Bold">        <item name="android:textColor">@color/white</item>  </style>
+    <style name="WrapMatch.Bold.White" parent="WrapMatch.Bold">      <item name="android:textColor">@color/white</item>  </style>
+    <style name="MatchWrap.Bold.White" parent="MatchWrap.Bold">      <item name="android:textColor">@color/white</item>  </style>
+    <style name="MatchMatch.Bold.White" parent="MatchMatch.Bold">    <item name="android:textColor">@color/white</item>  </style>
+
+    <!-- Base-Regular-White -->
+    <style name="WrapWrap.Regular.White" parent="WrapWrap.Regular">       <item name="android:textColor">@color/white</item>   </style>
+    <style name="WrapMatch.Regular.White" parent="WrapMatch.Regular">     <item name="android:textColor">@color/white</item>   </style>
+    <style name="MatchWrap.Regular.White" parent="MatchWrap.Regular">     <item name="android:textColor">@color/white</item>   </style>
+    <style name="MatchMatch.Regular.White" parent="MatchMatch.Regular">   <item name="android:textColor">@color/white</item>   </style>
+
+    <!-- Base-Bold-Red -->
+    <style name="WrapWrap.Bold.Red" parent="WrapWrap.Bold">        <item name="android:textColor">@color/red</item>  </style>
+    <style name="WrapMatch.Bold.Red" parent="WrapMatch.Bold">      <item name="android:textColor">@color/red</item>  </style>
+    <style name="MatchWrap.Bold.Red" parent="MatchWrap.Bold">      <item name="android:textColor">@color/red</item>  </style>
+    <style name="MatchMatch.Bold.Red" parent="MatchMatch.Bold">    <item name="android:textColor">@color/red</item>  </style>
+
+    <!-- Base-Regular-Red -->
+    <style name="WrapWrap.Regular.Red" parent="WrapWrap.Regular">       <item name="android:textColor">@color/red</item>     </style>
+    <style name="WrapMatch.Regular.Red" parent="WrapMatch.Regular">     <item name="android:textColor">@color/red</item>     </style>
+    <style name="MatchWrap.Regular.Red" parent="MatchWrap.Regular">     <item name="android:textColor">@color/red</item>     </style>
+    <style name="MatchMatch.Regular.Red" parent="MatchMatch.Regular">   <item name="android:textColor">@color/red</item>     </style>
+
+    <!-- Base-Bold-Green -->
+    <style name="WrapWrap.Bold.Green" parent="WrapWrap.Bold">        <item name="android:textColor">@color/green</item>  </style>
+    <style name="WrapMatch.Bold.Green" parent="WrapMatch.Bold">      <item name="android:textColor">@color/green</item>  </style>
+    <style name="MatchWrap.Bold.Green" parent="MatchWrap.Bold">      <item name="android:textColor">@color/green</item>  </style>
+    <style name="MatchMatch.Bold.Green" parent="MatchMatch.Bold">    <item name="android:textColor">@color/green</item>  </style>
+
+    <!-- Base-Regular-Green -->
+    <style name="WrapWrap.Regular.Green" parent="WrapWrap.Regular">       <item name="android:textColor">@color/green</item>     </style>
+    <style name="WrapMatch.Regular.Green" parent="WrapMatch.Regular">     <item name="android:textColor">@color/green</item>     </style>
+    <style name="MatchWrap.Regular.Green" parent="MatchWrap.Regular">     <item name="android:textColor">@color/green</item>     </style>
+    <style name="MatchMatch.Regular.Green" parent="MatchMatch.Regular">   <item name="android:textColor">@color/green</item>     </style>
+
+    <!-- Base-Bold-Purple -->
+    <style name="WrapWrap.Bold.Purple" parent="WrapWrap.Bold">        <item name="android:textColor">@color/purple</item>  </style>
+    <style name="WrapMatch.Bold.Purple" parent="WrapMatch.Bold">      <item name="android:textColor">@color/purple</item>  </style>
+    <style name="MatchWrap.Bold.Purple" parent="MatchWrap.Bold">      <item name="android:textColor">@color/purple</item>  </style>
+    <style name="MatchMatch.Bold.Purple" parent="MatchMatch.Bold">    <item name="android:textColor">@color/purple</item>  </style>
+
+    <!-- Base-Regular-Purple -->
+    <style name="WrapWrap.Regular.Purple_2" parent="WrapWrap.Regular">       <item name="android:textColor">@color/purple_2</item>     </style>
+    <style name="WrapMatch.Regular.Purple_2" parent="WrapMatch.Regular">     <item name="android:textColor">@color/purple_2</item>     </style>
+    <style name="MatchWrap.Regular.Purple_2" parent="MatchWrap.Regular">     <item name="android:textColor">@color/purple_2</item>     </style>
+    <style name="MatchMatch.Regular.Purple_2" parent="MatchMatch.Regular">   <item name="android:textColor">@color/purple_2</item>     </style>
+
+    <!-- Base-Bold-Purple-2 -->
+    <style name="WrapWrap.Bold.Purple_2" parent="WrapWrap.Bold">        <item name="android:textColor">@color/purple_2</item>  </style>
+    <style name="WrapMatch.Bold.Purple_2" parent="WrapMatch.Bold">      <item name="android:textColor">@color/purple_2</item>  </style>
+    <style name="MatchWrap.Bold.Purple_2" parent="MatchWrap.Bold">      <item name="android:textColor">@color/purple_2</item>  </style>
+    <style name="MatchMatch.Bold.Purple_2" parent="MatchMatch.Bold">    <item name="android:textColor">@color/purple_2</item>  </style>
+
+    <!-- Base-Regular-Purple-2 -->
+    <style name="WrapWrap.Regular.Purple" parent="WrapWrap.Regular">       <item name="android:textColor">@color/purple</item>     </style>
+    <style name="WrapMatch.Regular.Purple" parent="WrapMatch.Regular">     <item name="android:textColor">@color/purple</item>     </style>
+    <style name="MatchWrap.Regular.Purple" parent="MatchWrap.Regular">     <item name="android:textColor">@color/purple</item>     </style>
+    <style name="MatchMatch.Regular.Purple" parent="MatchMatch.Regular">   <item name="android:textColor">@color/purple</item>     </style>
+
+
+
+
+    <style name="WrapWrap.Regular.Black.13" parent="WrapWrap.Regular.Black">       <item name="android:textSize">13sp</item>     </style>
+    <style name="MatchWrap.Regular.Black.13" parent="MatchWrap.Regular.Black">       <item name="android:textSize">13sp</item>     </style>
+    <style name="MatchWrap.Regular.Black.14" parent="MatchWrap.Regular.Black">       <item name="android:textSize">14sp</item>     </style>
+    <style name="WrapWrap.Regular.Black.14" parent="WrapWrap.Regular.Black">       <item name="android:textSize">14sp</item>     </style>
+    <style name="WrapWrap.Regular.Black.15" parent="WrapWrap.Regular.Black">       <item name="android:textSize">15sp</item>     </style>
+    <style name="WrapWrap.Regular.Black.17" parent="WrapWrap.Regular.Black">       <item name="android:textSize">17sp</item>     </style>
+
+
+
+    <style name="WrapWrap.Bold.Black.14" parent="WrapWrap.Bold.Black">       <item name="android:textSize">14sp</item>     </style>
+    <style name="MatchWrap.Bold.Black.15" parent="MatchWrap.Bold.Black">       <item name="android:textSize">15sp</item>     </style>
+
+
+    <style name="WrapWrap.Regular.Grey.13" parent="WrapWrap.Regular.Grey">       <item name="android:textSize">13sp</item>     </style>
+    <style name="WrapWrap.Regular.Grey.14" parent="WrapWrap.Regular.Grey">       <item name="android:textSize">14sp</item>     </style>
+
+
+    <style name="WrapWrap.Regular.Grey_2.12" parent="WrapWrap.Regular.Grey_2">       <item name="android:textSize">12sp</item>     </style>
+
+    <style name="WrapWrap.Regular.White.15" parent="WrapWrap.Regular.White">       <item name="android:textSize">15sp</item>     </style>
+    <style name="WrapWrap.Bold.White.16" parent="WrapWrap.Bold.White">       <item name="android:textSize">16sp</item>     </style>
+    <style name="WrapWrap.Bold.White.18" parent="WrapWrap.Bold.White">       <item name="android:textSize">18sp</item>     </style>
+    <style name="WrapWrap.Bold.White.25" parent="WrapWrap.Bold.White">       <item name="android:textSize">25sp</item>     </style>
+
+
+    <style name="WrapWrap.Bold.Red.7" parent="WrapWrap.Bold.Red">       <item name="android:textSize">7sp</item>     </style>
+    <style name="WrapWrap.Bold.Red.13" parent="WrapWrap.Bold.Red">       <item name="android:textSize">13sp</item>     </style>
+
+
+
+    <style name="MatchWrap.Regular.Green.8" parent="MatchWrap.Regular.Green">   <item name="android:textSize">8sp</item>     </style>
+    <style name="MatchWrap.Bold.Green.13" parent="MatchWrap.Bold.Green">   <item name="android:textSize">13sp</item>     </style>
+
+    <style name="WrapWrap.Bold.Purple.14" parent="WrapWrap.Bold.Purple">   <item name="android:textSize">14sp</item>     </style>
+
+    <style name="WrapWrap.Regular.Purple_2.14" parent="WrapWrap.Regular.Purple_2">   <item name="android:textSize">14sp</item>     </style>
+    <style name="WrapWrap.Regular.Purple_2.35" parent="WrapWrap.Regular.Purple_2">   <item name="android:textSize">35sp</item>     </style>
+    <style name="WrapWrap.Bold.Purple_2.14" parent="WrapWrap.Bold.Purple_2">   <item name="android:textSize">14sp</item>     </style>
+</resources>

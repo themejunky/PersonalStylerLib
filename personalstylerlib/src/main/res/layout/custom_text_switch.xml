@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/default_LL_match_match_vertical">
+    style="@style/MatchMatch.Vertical">
 
     <RelativeLayout
-        style="@style/switch_container">
+        style="@style/MatchWrap"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
         <TextView
             android:id="@+id/nText"
-            style="@style/switch_text"/>
+            style="@style/WrapWrap.Regular.Black.14"
+            android:layout_gravity="center"/>
 
         <android.support.v7.widget.SwitchCompat
             android:id="@+id/nSwitch"
-            style="@style/switch_switch"/>
+            style="@style/WrapWrap"
+            android:layout_alignParentRight="true"
+            android:theme="@style/SwitchCompatStyle"
+            />
 
     </RelativeLayout>
 
     <TextView
         android:id="@+id/nSubtext"
-        style="@style/switch_subtext" />
+        style="@style/WrapWrap.Regular.Grey_2.12"
+        android:lineSpacingExtra="-2sp"
+        android:layout_marginTop="-8dp"
+        android:paddingRight="25dp"
+        android:layout_marginBottom="10dp"/>
 
 </LinearLayout>

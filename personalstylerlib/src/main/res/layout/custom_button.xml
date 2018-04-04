@@ -2,23 +2,21 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nContainer"
-    style="@style/base_match_match">
+    style="@style/MatchMatch">
 
     <LinearLayout
-       style="@style/default_LL_match_match_vertical">
+       style="@style/MatchMatch.Vertical">
 
-        <View
-            style="@style/Custom_Button_View"/>
+        <View style="@style/Custom_Button_View"/>
 
         <TextView
             android:id="@+id/nShadow"
-            style="@style/Custom_Button_Shadow"
-            />
+            style="@style/Custom_Button_Shadow"/>
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/nButton"
-        style="@style/Custom_Button_Text"
-        />
+        style="@style/Custom_Button_Text"/>
 
 </RelativeLayout>

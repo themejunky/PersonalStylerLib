@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/default_LL_match_wrap_vertical">
+    style="@style/MatchWrap.Vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        style="@style/MatchWrap.Horizontal">
 
         <TextView
             android:id="@+id/nTitle"
-            style="@style/base_wrap_wrap" />
+            style="@style/WrapWrap" />
 
         <TextView
             android:id="@+id/nMandatory"
-            style="@style/Register_Mandatory" />
+            style="@style/WrapWrap.Bold.Purple_2.14"
+            android:text="@string/default_mandatory"
+            android:visibility="gone"/>
 
     </LinearLayout>
 
     <EditText
         android:id="@+id/nInput"
-        style="@style/base_match_wrap"
-        android:textSize="13sp"
+        style="@style/MatchWrap.Regular.Black.13"
         android:gravity="center_vertical"
         android:visibility="gone" />
 
     <com.themejunky.personalstylerlib.customviews.CustomSpinner
         android:id="@+id/nCustomSpinner"
-        style="@style/base_match_wrap"
-        android:textSize="13sp"
+        style="@style/MatchWrap.Regular.Black.13"
         android:visibility="gone" />
 
     <TextView
         android:id="@+id/nError"
-        style="@style/Login_Error" />
+        style="@style/WrapWrap.Bold.Red.13"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"/>
 
 </LinearLayout>

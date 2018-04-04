@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/base_match_match">
-
-
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch">
 
         <TextView
             android:id="@+id/nFinish"
-            style="@style/Intro_Buttons"
-            android:text="@string/intro_finis"
+            style="@style/WrapWrap.Regular.White.15"
+            android:padding="15dp"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:text="@string/intro_finis"
             />
 
 </RelativeLayout>

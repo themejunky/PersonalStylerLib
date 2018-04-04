@@ -1,43 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nContainer"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:background="@color/base_white"
-    >
+    style="@style/MatchWrap.Vertical.White"
+    android:gravity="center_horizontal">
 
     <RelativeLayout
         android:id="@+id/nPicContainer"
-        android:background="@color/base_white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/MatchWrap.White"
         android:padding="16dp"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/nPic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_client_address"
-
-            />
+            style="@style/WrapWrap"
+            android:src="@drawable/ic_client_address"/>
 
     </RelativeLayout>
 
     <TextView
         android:id="@+id/nText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/MatchWrap.Regular.Black.14"
+        android:background="@color/white"
         android:gravity="center"
-        android:textSize="14sp"
-        android:textColor="@color/base_black"
-        android:background="@color/base_white"
-        android:layout_gravity="center_horizontal"
-        />
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

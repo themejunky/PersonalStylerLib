@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="divider">#f2f1f1</color>
+    <color name="error">#fc0056</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="grey">#b1b1b1</color>
+    <color name="grey_2">#c3c3c3</color>
+
+    <color name="black">#333333</color>
+
+    <color name="red">#fc0a5d</color>
+    <color name="green">#0cb037</color>
+    <color name="purple">#9326ff</color>
+    <color name="purple_2">#880cff</color>
+</resources>

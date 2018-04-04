@@ -4,11 +4,19 @@
     <!--Fonts Asset-->
     <string name="default_font_regular">Catamaran-Regular.ttf</string>
     <string name="default_font_bold">Catamaran-Bold.ttf</string>
+    <string name="default_mandatory"> *</string>
+
+
     <string name="title_activity_main">MainActivity</string>
 
-    <string name="onboarding_step_4_add">Adauga un serviciu</string>
 
-    <string name="register_mandatory"> *</string>
+    <string name="add_service_add">Adauga un serviciu</string>
+
+
+
+
+
+
 
     <!--Intro-->
     <string name="intro_title_page1">SERVICII PREMIUM</string>
