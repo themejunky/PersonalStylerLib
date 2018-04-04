@@ -16,7 +16,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class CustomActivity extends AppCompatActivity {
 
-    protected Tools mTools;
+    public Tools mTools;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
