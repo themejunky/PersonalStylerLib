@@ -25,6 +25,59 @@
     </style>
 
 
+    <!-- Onboarding sides -->
+    <style name="default_blank_sides">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">42</item>
+    </style>
+    <style name="default_blank_center">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">916</item>
+    </style>
+    <style name="default_scroll_icon">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginRight">25dp</item>
+        <item name="android:layout_marginBottom">25dp</item>
+        <item name="android:src">@drawable/icon_is_scroll</item>
+    </style>
+
+
+    <!-- Top Bar -->
+    <style name="TopBarContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="android:background">@drawable/registration_gradient_bar</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="TopBarContainer_Icon">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">15dp</item>
+        <item name="android:layout_marginLeft">19dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:src">@drawable/ic_back</item>
+        <item name="android:tag">@string/reset_key_button_back</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="TopBarContainer_Title" parent="WrapWrap.Bold.White.16">
+        <item name="android:layout_marginLeft">19dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="TopBarContainer_Guide" parent="WrapWrap.Bold.White.16">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">12dp</item>
+    </style>
+
+
+
     <!-- Switch-->
     <style name="SwitchCompatStyle" >
         <item name="thumbTint">@drawable/switch_color_thumb</item>
