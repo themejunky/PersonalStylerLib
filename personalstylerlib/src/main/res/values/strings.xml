@@ -2,8 +2,8 @@
     <string name="app_name">PersonalStylerLib</string>
 
     <!--Fonts Asset-->
-    <string name="default_font_regular">Catamaran-Regular.ttf</string>
-    <string name="default_font_bold">Catamaran-Bold.ttf</string>
+    <string name="default_font_regular">Regular.ttf</string>
+    <string name="default_font_bold">Bold.ttf</string>
     <string name="default_mandatory"> *</string>
     <string name="reset_key_button_back">reset_back</string>
     <string name="register_bar_ghid">Ghid</string>

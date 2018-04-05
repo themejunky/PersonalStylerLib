@@ -2,7 +2,7 @@ package com.themejunky.personalstylerlib.bases.tools;
 
 import android.content.Context;
 
-public class Tools extends Tools_ISO {
+public class Tools extends Tools_Schedule {
 
     public static Tools getInstance(Context nContext) {
         mContext = nContext;

@@ -27,7 +27,6 @@ public class Tools_ISO extends ToolsBase {
         return df.format(date);
     }
 
-
     public Calendar fromISO8601UTC(String dateStr) {
         Calendar nCalendar = Calendar.getInstance();
         TimeZone tz = TimeZone.getTimeZone("EET");
