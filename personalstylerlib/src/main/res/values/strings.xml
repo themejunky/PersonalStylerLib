@@ -45,4 +45,10 @@
     <string name="time_ago_year">about a year</string>
     <string name="time_ago_years">%d years</string>
 
+
+    <string name="reset_popup_messages">Am trimis email-ul de restare a parolei la %1$s. Te rugam sa iti verifici inbox-ul in urmatoarele minute. Dca tot nu ai primit....  aia e</string>
+    <string name="register_phone_text">Mesajul cu codul a fost trimis la numarul de telefon %1$s.</string>
+    <string name="onboarding_step_1_code_error">Introduceti codul</string>
+    <string name="reset_popup_title">Email trimis!</string>
+    <string name="reset_popup_button">Mergi la Inbox</string>
 </resources>

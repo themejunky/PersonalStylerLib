@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nContainer"
+    style="@style/MatchMatch.Vertical"
+    android:padding="27dp">
+
+    <TextView
+        style="@style/WrapWrap.Bold.Black.16"
+        android:text="@string/reset_popup_title"
+        android:layout_marginBottom="19dp"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/nMessage"
+        style="@style/MatchWrap.Regular.Black.14"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        />
+
+    <com.themejunky.personalstylerlib.customviews.CustomButton
+        android:id="@+id/nClose"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="25dp"
+        app:cb_tag="reset_popup"
+        app:cb_text="@string/reset_popup_button"
+        android:tag="@string/CUSTOM_BUTTON_ACTIVE"
+        app:cb_form_validation="false"
+
+        app:cb_active_pressed="@color/CustomButton_green_pressed"
+        app:cb_active_unpressed="@color/CustomButton_green_unpressed"
+        app:cb_active_shadow="@color/CustomButton_green_shadow"
+
+        app:cb_inactive_pressed="@color/CustomButton_inactive_pressed"
+        app:cb_inactive_unpressed="@color/CustomButton_inactive_unpressed"
+        app:cb_inactive_shadow="@color/CustomButton_inactive_shadow"
+        />
+</LinearLayout>
