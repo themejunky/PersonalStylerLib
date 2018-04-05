@@ -16,4 +16,8 @@ public class Tools extends Tools_ISO {
         mContext = nContext;
         mRowHeight = (int) (70*getDensity());
     }
+
+    public Context getContext() {
+        return mContext;
+    }
 }
