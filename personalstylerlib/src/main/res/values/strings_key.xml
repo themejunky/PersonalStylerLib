@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="tag_menu_left_1">menu_1</string>
+    <string name="tag_menu_left_2">menu_2</string>
+    <string name="tag_menu_left_3">menu_3</string>
+    <string name="tag_menu_left_4">menu_4</string>
+    <string name="tag_menu_left_5">menu_5</string>
+    <string name="tag_menu_left_6">menu_6</string>
+
+    <string name="login_key_button_reset">login_reset</string>
+    <string name="login_key_button_register">login_register</string>
+    <string name="login_key_button_facebook">login_facebook</string>
+    <string name="login_key_button_google">login_google</string>
+    <string name="login_key_button_login">login_login</string>
+
+    <string name="reset_key_button_back">reset_back</string>
+    <string name="reset_key_button_login">reset_login</string>
+    <string name="reset_key_button_reset">reset_reset</string>
+
+    <string name="register_key_button_register">register_register</string>
+    <string name="location_key_button_add">register_add</string>
+
+    <string name="congratulations_key_button_continue">congratulation_continue</string>
+
+    <string name="location_key_button_continue">location_continue</string>
+    <string name="location_key_button_havelocation">location_have</string>
+    <string name="location_key_button_nolocation">location_nohave</string>
+
+    <string name="appointmenst_details_picture">image</string>
+    <string name="appointmenst_details_order_info">order_info</string>
+    <string name="appointmenst_details_status">status</string>
+    <string name="appointmenst_details_programeaza">programeaza</string>
+
+    <string name="request_others">others</string>
+    <string name="request_details">details</string>
+
+    <string name="review_principala">review_principala</string>
+    <string name="review_obisnuita">review_secundara</string>
+    <string name="review_trimite">review_trimite</string>
+
+    <string name="appointmenst_details_btn_chat">chat</string>
+    <string name="appointmenst_details_btn_call">call</string>
+    <string name="appointmenst_details_btn_back">back</string>
+    <string name="appointmenst_details_btn_reschedule">reschedule</string>
+    <string name="appointmenst_details_btn_issue">issue</string>
+    <string name="appointmenst_details_btn_dashboard">dashboard</string>
+    <string name="appointmenst_details_btn_price">price</string>
+    <string name="appointmenst_details_btn_cancel">cancel</string>
+
+    <string name="order_edit">order_edit</string>
+    <string name="order_save">order_save</string>
+
+    <string name="styleable_imei_key_1">next</string>
+    <string name="styleable_imei_key_2">done</string>
+
+    <string name="CUSTOM_BUTTON_ACTIVE">button_active</string>
+    <string name="CUSTOM_BUTTON_INACTIVE">button_inactive</string>
+
+    <string name="custom_setting_parola">setting_password</string>
+    <string name="custom_setting_mail">setting_mail</string>
+    <string name="custom_setting_iban">setting_iban</string>
+    <string name="custom_setting_nume">setting_nume</string>
+    <string name="custom_setting_cnp">setting_cnp</string>
+
+    <string name="custom_setting_notificari">setting_notificari</string>
+    <string name="custom_setting_sms">setting_sms</string>
+    <string name="custom_setting_adresa">setting_adresa</string>
+    <string name="custom_setting_clienti">setting_clienti</string>
+    <string name="custom_setting_tuturor">setting_tuturor</string>
+    <string name="custom_setting_numarul">setting_numarul</string>
+    <string name="custom_setting_necompletat">setting_necompletat</string>
+
+    <string name="custom_setting_invita">setting_invita</string>
+    <string name="custom_setting_contact">setting_contact</string>
+    <string name="custom_setting_facebook">setting_facebook</string>
+    <string name="custom_setting_instagram">setting_instagram</string>
+    <string name="custom_setting_twitter">setting_twitter</string>
+    <string name="custom_setting_linkedin">setting_linkedin</string>
+    <string name="custom_setting_versiune">setting_versiune</string>
+    <string name="custom_setting_politica">setting_politica</string>
+    <string name="custom_setting_termeni">setting_termeni</string>
+
+    <item type="id" name="schedule_days_key_type">type</item>
+    <item type="id" name="schedule_days_key_info">info</item>
+
+    <item type="id" name="schedule_hour_start">start</item>
+    <item type="id" name="schedule_hour_end">end</item>
+    <item type="id" name="schedule_hour_fill">fill</item>
+
+
+    <item type="id" name="schedule_day_position">position</item>
+    <item type="id" name="schedule_day_date">date</item>
+</resources>
