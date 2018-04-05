@@ -12,6 +12,12 @@ import java.util.TimeZone;
 
 public class Tools_ISO extends ToolsBase {
 
+
+    /**
+     * Transform Calendar to ISO8601
+     * @param calendar - calendar to transform
+     * @return ISO Date
+     */
     public String ISO8601fromCalendar(final Calendar calendar) {
         Date date = calendar.getTime();
         TimeZone tz = TimeZone.getTimeZone("EET");
@@ -21,8 +27,8 @@ public class Tools_ISO extends ToolsBase {
         return df.format(date);
     }
 
-    public Calendar fromISO8601UTC(String dateStr) {
 
+    public Calendar fromISO8601UTC(String dateStr) {
         Calendar nCalendar = Calendar.getInstance();
         TimeZone tz = TimeZone.getTimeZone("EET");
         java.text.DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", getLocale());
@@ -96,6 +102,4 @@ public class Tools_ISO extends ToolsBase {
 
         return sb.toString().trim();
     }
-
-
 }

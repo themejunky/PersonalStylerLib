@@ -63,6 +63,11 @@ public class ToolsBase {
         return mContext.getResources().getColor(nColorResources);
     }
 
+    /**
+     * Chech if provided string is Email
+     * @param nEmail - string
+     * @return true/false
+     */
     public boolean isEmailValid(String nEmail) {
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
@@ -70,19 +75,26 @@ public class ToolsBase {
         return matcher.matches();
     }
 
+    /**
+     * Chech if provided string is Phone number
+     * @param nPhone - string
+     * @return true/false
+     */
     public boolean isPhoneValid(String nPhone) {
         return android.util.Patterns.PHONE.matcher(nPhone).matches();
     }
 
-    public String md5(final String s) {
+    /**
+     * Create md5 crytion
+     * @param nString - string ( password ) to crypt
+     * @return - md5
+     */
+    public String md5(final String nString) {
         final String MD5 = "MD5";
         try {
-            // Create MD5 Hash
             MessageDigest digest = java.security.MessageDigest.getInstance(MD5);
-            digest.update(s.getBytes());
+            digest.update(nString.getBytes());
             byte messageDigest[] = digest.digest();
-
-            // Create Hex String
             StringBuilder hexString = new StringBuilder();
             for (byte aMessageDigest : messageDigest) {
                 String h = Integer.toHexString(0xFF & aMessageDigest);
@@ -128,10 +140,11 @@ public class ToolsBase {
      * Sets Grid Manager Horizontal
      * @param list - recyclerview list
      * @param adapter - adapter
+     * @param nColumns - nr of columbs
      * @return - Grid Layout Manager for future
      */
-    public GridLayoutManager setList_GridLayoutManager_Horizontal(final RecyclerView list, final RecyclerView.Adapter adapter) {
-        GridLayoutManager GL = new GridLayoutManager(mContext, 1, LinearLayoutManager.HORIZONTAL, false);
+    public GridLayoutManager setList_GridLayoutManager_Horizontal(final RecyclerView list, final RecyclerView.Adapter adapter, int nColumns) {
+        GridLayoutManager GL = new GridLayoutManager(mContext, nColumns, LinearLayoutManager.HORIZONTAL, false);
         list.setLayoutManager(GL);
         list.setAdapter(adapter);
         return GL;
@@ -151,14 +164,12 @@ public class ToolsBase {
         return GL;
     }
 
-    public SpeedyLinearLayoutManager setList_GridLayoutManager_Vertical(Context mContext, final RecyclerView list, final RecyclerView.Adapter adapter) {
+    public SpeedyLinearLayoutManager setList_GridLayoutManager_Vertical(final RecyclerView list, final RecyclerView.Adapter adapter) {
         SpeedyLinearLayoutManager GL = new SpeedyLinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
         list.setLayoutManager(GL);
         list.setAdapter(adapter);
         return GL;
     }
-
-
 
     /**
      * Method that lets the code add multiple CustomInputs and provide single array containing all
@@ -171,7 +182,6 @@ public class ToolsBase {
         return mReturn;
     }
 
-
     public void mSimpleSetupSpinnerCustom(CustomInput nCustomInput, List<Item> nValues, Boolean nTextBold) {
         ((Spinner) nCustomInput.findViewById(R.id.nSpinner)).setAdapter(new SimpleSpinnerLeftAdapter(mContext,nValues,nTextBold));
     }
@@ -183,5 +193,4 @@ public class ToolsBase {
     public void mSimpleSetupSpinnerTextLeftCustom(Spinner nSpinner, List<Item> nValues, Boolean nTextBold) {
         nSpinner.setAdapter(new SimpleSpinnerLeftAdapter(mContext,nValues,nTextBold));
     }
-
 }
