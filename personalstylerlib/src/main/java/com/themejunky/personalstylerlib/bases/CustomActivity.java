@@ -21,6 +21,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class CustomActivity extends AppCompatActivity implements View.OnClickListener,CustomButton.Custom_Button_Interface,CustomButtonBorder.CustomButtonBorderInterface,CustomServices.Custom_Service_Interface {
 
     public Tools mTools;
+    protected String user_id,service_id;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +89,18 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
 
         ((TextView) findViewById(R.id.nTitle)).setText(nTitle);
     }
+
+    /**
+     * Get user_id and service_id form intent
+     */
+    public void getUserId_ServiceId() {
+        Bundle mBundle = getIntent().getExtras();
+        if(mBundle != null)  {
+            user_id = mBundle.getString("user_id");
+            service_id = mBundle.getString("service_id");
+        }
+    }
+
 
     @Override
     protected void attachBaseContext(Context newBase) {
