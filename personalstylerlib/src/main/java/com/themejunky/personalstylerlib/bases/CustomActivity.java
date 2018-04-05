@@ -11,10 +11,13 @@ import android.widget.ScrollView;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.animations.ScrollAnimation;
 import com.themejunky.personalstylerlib.bases.tools.Tools;
+import com.themejunky.personalstylerlib.customviews.CustomButton;
+import com.themejunky.personalstylerlib.customviews.CustomButtonBorder;
+import com.themejunky.personalstylerlib.customviews.CustomServices;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class CustomActivity extends AppCompatActivity {
+public class CustomActivity extends AppCompatActivity implements View.OnClickListener,CustomButton.Custom_Button_Interface,CustomButtonBorder.CustomButtonBorderInterface,CustomServices.Custom_Service_Interface {
 
     public Tools mTools;
 
@@ -44,8 +47,36 @@ public class CustomActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Check if the current view tag match the object ( resource string from xml)
+     * @param nView - view to check tag against
+     * @param nObject - string object resources
+     * @return
+     */
+    public boolean mCO(View nView, int nObject) {
+        return nView.getTag().equals(getString(nObject));
+    }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
+    @Override
+    public void onClick(View nView) {
+        if (mCO(nView, R.string.reset_key_button_back)) {
+            super.onBackPressed();
+        }
+    }
+
+
+
+    @Override
+    public void onCustomButtonBorderClick(View view) { }
+
+    @Override
+    public void onCustomButtonClick(View view) { }
+
+    @Override
+    public void onCustomServiceClick(View view, String nType) { }
 }
