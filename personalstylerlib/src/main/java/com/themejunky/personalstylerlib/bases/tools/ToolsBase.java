@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.model.Item;
 import com.themejunky.personalstylerlib.customviews.CustomInput;
+import com.themejunky.personalstylerlib.utils.SpeedyLinearLayoutManager;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -138,14 +139,24 @@ public class ToolsBase {
      * Sets Grid Manager Vertical
      * @param list - recyclerview list
      * @param adapter - adapter
+     * @param nColumns - nr of columbs
      * @return - Grid Layout Manager for future
      */
-    public GridLayoutManager setList_GridLayoutManager_Vertical( final RecyclerView list, final RecyclerView.Adapter adapter) {
-        GridLayoutManager GL = new GridLayoutManager(mContext, 1, LinearLayoutManager.VERTICAL, false);
+    public LinearLayoutManager setList_GridLayoutColumnManager_Vertical(final RecyclerView list, final RecyclerView.Adapter adapter, int nColumns) {
+        LinearLayoutManager GL = new GridLayoutManager(mContext, nColumns, LinearLayoutManager.VERTICAL, false);
         list.setLayoutManager(GL);
         list.setAdapter(adapter);
         return GL;
     }
+
+    public SpeedyLinearLayoutManager setList_GridLayoutManager_Vertical(Context mContext, final RecyclerView list, final RecyclerView.Adapter adapter) {
+        SpeedyLinearLayoutManager GL = new SpeedyLinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
+        list.setLayoutManager(GL);
+        list.setAdapter(adapter);
+        return GL;
+    }
+
+
 
     /**
      * Method that lets the code add multiple CustomInputs and provide single array containing all
