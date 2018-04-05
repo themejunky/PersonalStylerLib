@@ -63,28 +63,28 @@ public class BoardingDialog  implements CustomButton.Custom_Button_Interface, Vi
     /**
      * FetchViews and inits for the Validation_Code_PopUp
      */
-    public BoardingDialog setAndShow_RegisterPhone_Layout(CustomInput nInput, CustomDialog_Interface nListener) {
-
-        mListener = nListener;
-
-        ((TextView) mView_LinearLayout.findViewById(R.id.nClose)).setOnClickListener(this);
-        mCodeInput = mView_LinearLayout.findViewById(R.id.nCode);
-
-        String next = String.format(mContext.getString(R.string.register_phone_text), "<font color='#880cff'><b>" + ((EditText) nInput.findViewById(R.id.nInput)).getText().toString() + "</b></font>");
-        ((TextView) mView_LinearLayout.findViewById(R.id.nMessage)).setText(Html.fromHtml(next));
-
-        mView_LinearLayout.findViewById(R.id.nModifica).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mDialog.dismiss();
-            }
-        });
-
-        mErrorMessage = mView_LinearLayout.findViewById(R.id.nError);
-        showDialog();
-
-        return this;
-    }
+//    public BoardingDialog setAndShow_RegisterPhone_Layout(CustomInput nInput, CustomDialog_Interface nListener) {
+//
+//        mListener = nListener;
+//
+//        ((TextView) mView_LinearLayout.findViewById(R.id.nClose)).setOnClickListener(this);
+//        mCodeInput = mView_LinearLayout.findViewById(R.id.nCode);
+//
+//        String next = String.format(mContext.getString(R.string.register_phone_text), "<font color='#880cff'><b>" + ((EditText) nInput.findViewById(R.id.nInput)).getText().toString() + "</b></font>");
+//        ((TextView) mView_LinearLayout.findViewById(R.id.nMessage)).setText(Html.fromHtml(next));
+//
+//        mView_LinearLayout.findViewById(R.id.nModifica).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mDialog.dismiss();
+//            }
+//        });
+//
+//        mErrorMessage = mView_LinearLayout.findViewById(R.id.nError);
+//        showDialog();
+//
+//        return this;
+//    }
 
     private void finishValidationCodePopUp() {
         mDialog.dismiss();
