@@ -13,6 +13,8 @@ import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.model.Item;
 import com.themejunky.personalstylerlib.customviews.CustomInput;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -88,7 +90,16 @@ public class ToolsBase {
         return GL;
     }
 
-
+    /**
+     * Method that lets the code add multiple CustomInputs and provide single array containing all
+     * @param nCustonInputs - multiple CustomInputs
+     * @return - array containing all of them
+     */
+    public ArrayList<CustomInput> forValidation(CustomInput... nCustonInputs) {
+        ArrayList<CustomInput> mReturn = new ArrayList<>();
+        Collections.addAll(mReturn, nCustonInputs);
+        return mReturn;
+    }
 
 
 }

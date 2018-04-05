@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.animations.ScrollAnimation;
@@ -57,6 +58,37 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
         return nView.getTag().equals(getString(nObject));
     }
 
+    /**
+     * Method that administrate top bar
+     * @param nVisibleBackIcon -  if the back-icon should be visible
+     * @param nVisibleTitle  - if the title  should be visible
+     * @param nVisibleGhid-  if the guide  should be visible
+     * @param nTitle - text of the title
+     */
+    public void setBar(boolean nVisibleBackIcon, boolean nVisibleTitle, boolean nVisibleGhid, String nTitle) {
+
+        if (nVisibleBackIcon) {
+            findViewById(R.id.nBack).setVisibility(View.VISIBLE);
+            findViewById(R.id.nBack).setOnClickListener(this);
+        } else {
+            findViewById(R.id.nBack).setVisibility(View.GONE);
+        }
+
+        if (nVisibleTitle) {
+            findViewById(R.id.nTitle).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.nTitle).setVisibility(View.GONE);
+        }
+
+        if (nVisibleGhid) {
+            findViewById(R.id.nGhid).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.nGhid).setVisibility(View.GONE);
+        }
+
+        ((TextView) findViewById(R.id.nTitle)).setText(nTitle);
+    }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -68,8 +100,6 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
             super.onBackPressed();
         }
     }
-
-
 
     @Override
     public void onCustomButtonBorderClick(View view) { }
