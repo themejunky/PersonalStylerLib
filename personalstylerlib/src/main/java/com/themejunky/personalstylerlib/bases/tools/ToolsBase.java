@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.model.Item;
 import com.themejunky.personalstylerlib.customviews.CustomInput;
+import com.themejunky.personalstylerlib.utils.SimpleSpinnerLeftAdapter;
+import com.themejunky.personalstylerlib.utils.SimpleSpinnerRightAdapter;
 import com.themejunky.personalstylerlib.utils.SpeedyLinearLayoutManager;
 
 import java.security.MessageDigest;
@@ -169,5 +171,17 @@ public class ToolsBase {
         return mReturn;
     }
 
+
+    public void mSimpleSetupSpinnerCustom(CustomInput nCustomInput, List<Item> nValues, Boolean nTextBold) {
+        ((Spinner) nCustomInput.findViewById(R.id.nSpinner)).setAdapter(new SimpleSpinnerLeftAdapter(mContext,nValues,nTextBold));
+    }
+
+    public void mSimpleSetupSpinnerTextRightCustom(Spinner nSpinner, List<Item> nValues, Boolean nTextBold) {
+        nSpinner.setAdapter(new SimpleSpinnerRightAdapter(mContext,nValues,nTextBold));
+    }
+
+    public void mSimpleSetupSpinnerTextLeftCustom(Spinner nSpinner, List<Item> nValues, Boolean nTextBold) {
+        nSpinner.setAdapter(new SimpleSpinnerLeftAdapter(mContext,nValues,nTextBold));
+    }
 
 }

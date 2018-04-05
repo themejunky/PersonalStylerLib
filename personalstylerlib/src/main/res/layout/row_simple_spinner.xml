@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch.Vertical">
+
+    <TextView
+        android:id="@+id/nText"
+        style="@style/WrapWrap.Regular.Black.14"
+        android:layout_gravity="right"
+        android:padding="5dp"/>
+
+</LinearLayout>
