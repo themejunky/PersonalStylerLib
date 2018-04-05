@@ -91,7 +91,7 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     /**
-     * Get user_id and service_id form intent
+     * Get user_id and service_id form getIntent()
      */
     public void getUserId_ServiceId() {
         Bundle mBundle = getIntent().getExtras();
