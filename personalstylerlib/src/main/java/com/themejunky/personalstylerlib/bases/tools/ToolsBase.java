@@ -53,11 +53,11 @@ public class ToolsBase {
     public void setViewListener(View.OnClickListener nViewOnClickListener) {
         this.mViewOnClickListener = nViewOnClickListener;
     }
-    protected String getString(int nStringResources) {
+    public String getString(int nStringResources) {
         return mContext.getResources().getString(nStringResources);
     }
 
-    protected int getColor(int nColorResources) {
+    public int getColor(int nColorResources) {
         return mContext.getResources().getColor(nColorResources);
     }
 
