@@ -73,6 +73,19 @@
     <style name="MatchWrap.Regular.Grey" parent="MatchWrap.Regular">     <item name="android:textColor">@color/grey</item>   </style>
     <style name="MatchMatch.Regular.Grey" parent="MatchMatch.Regular">   <item name="android:textColor">@color/grey</item>   </style>
 
+    <!-- Base-Bold-Blue -->
+    <style name="WrapWrap.Bold.Blue" parent="WrapWrap.Bold">        <item name="android:textColor">@color/blue</item>  </style>
+    <style name="WrapMatch.Bold.Blue" parent="WrapMatch.Bold">      <item name="android:textColor">@color/blue</item>  </style>
+    <style name="MatchWrap.Bold.Blue" parent="MatchWrap.Bold">      <item name="android:textColor">@color/blue</item>  </style>
+    <style name="MatchMatch.Bold.Blue" parent="MatchMatch.Bold">    <item name="android:textColor">@color/blue</item>  </style>
+
+    <!-- Base-Regular-Blue -->
+    <style name="WrapWrap.Regular.Blue" parent="WrapWrap.Regular">       <item name="android:textColor">@color/blue</item>   </style>
+    <style name="WrapMatch.Regular.Blue" parent="WrapMatch.Regular">     <item name="android:textColor">@color/blue</item>   </style>
+    <style name="MatchWrap.Regular.Blue" parent="MatchWrap.Regular">     <item name="android:textColor">@color/blue</item>   </style>
+    <style name="MatchMatch.Regular.Blue" parent="MatchMatch.Regular">   <item name="android:textColor">@color/blue</item>   </style>
+
+
     <!-- Base-Bold-Grey -->
     <style name="WrapWrap.Bold.Grey_2" parent="WrapWrap.Bold">        <item name="android:textColor">@color/grey_2</item>  </style>
     <style name="WrapMatch.Bold.Grey_2" parent="WrapMatch.Bold">      <item name="android:textColor">@color/grey_2</item>  </style>
@@ -154,12 +167,13 @@
     <style name="MatchMatch.Regular.Yellow" parent="MatchMatch.Regular">   <item name="android:textColor">@color/yellow</item>     </style>
 
     <!-- Base-Bold-Yellow-2 -->
-    <style name="WrapWrap.Bold..Yellow" parent="WrapWrap.Regular">       <item name="android:textColor">@color/yellow</item>     </style>
+    <style name="WrapWrap.Bold.Yellow" parent="WrapWrap.Regular">       <item name="android:textColor">@color/yellow</item>     </style>
     <style name="WrapMatch.Bold.Yellow" parent="WrapMatch.Regular">     <item name="android:textColor">@color/yellow</item>     </style>
     <style name="MatchWrap.Bold.Yellow" parent="MatchWrap.Regular">     <item name="android:textColor">@color/yellow</item>     </style>
     <style name="MatchMatch.Bold.Yellow" parent="MatchMatch.Regular">   <item name="android:textColor">@color/yellow</item>     </style>
 
 
+    <style name="WrapWrap.Regular.Blue.14" parent="WrapWrap.Regular.Blue">  <item name="android:textSize">14sp</item>     </style>
 
 
 
@@ -196,6 +210,7 @@
 
     <style name="WrapWrap.Bold.Red.7" parent="WrapWrap.Bold.Red">       <item name="android:textSize">7sp</item>     </style>
     <style name="WrapWrap.Bold.Red.13" parent="WrapWrap.Bold.Red">       <item name="android:textSize">13sp</item>     </style>
+    <style name="WrapWrap.Bold.Red.14" parent="WrapWrap.Bold.Red">       <item name="android:textSize">14sp</item>     </style>
 
 
 
