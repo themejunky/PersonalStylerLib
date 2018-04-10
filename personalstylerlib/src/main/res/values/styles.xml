@@ -95,11 +95,25 @@
     <style name="ci_default_style" parent="MatchWrap.Regular.Black.14">
     </style>
 
+    <!-- Main -->
+
+
+    <style name="Side_Menu_Image">
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">65dp</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+
+
     <style name="Base_MediumText" parent="WrapWrap">
         <item name="fontPath">Catamaran-Regular.ttf</item>
         <item name="android:textColor">@color/base_black</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+
+
 
 
 
