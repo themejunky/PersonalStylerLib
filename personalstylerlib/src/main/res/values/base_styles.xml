@@ -173,9 +173,10 @@
     <style name="MatchMatch.Bold.Yellow" parent="MatchMatch.Regular">   <item name="android:textColor">@color/yellow</item>     </style>
 
 
+
+
+    <style name="WrapWrap.Bold.Blue.14" parent="WrapWrap.Regular.Blue">  <item name="android:textSize">14sp</item>     </style>
     <style name="WrapWrap.Regular.Blue.14" parent="WrapWrap.Regular.Blue">  <item name="android:textSize">14sp</item>     </style>
-
-
 
     <style name="WrapWrap.Regular.Yellow.14" parent="WrapWrap.Regular.Yellow">       <item name="android:textSize">14sp</item>     </style>
 
@@ -217,7 +218,6 @@
     <style name="MatchWrap.Regular.Green.8" parent="MatchWrap.Regular.Green">   <item name="android:textSize">8sp</item>     </style>
     <style name="MatchWrap.Bold.Green.13" parent="MatchWrap.Bold.Green">   <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Bold.Green.14" parent="WrapWrap.Bold.Green">       <item name="android:textSize">14sp</item>     </style>
-
 
 
     <style name="WrapWrap.Bold.Purple.14" parent="WrapWrap.Bold.Purple">   <item name="android:textSize">14sp</item>     </style>
