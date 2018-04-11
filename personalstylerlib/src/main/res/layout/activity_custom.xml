@@ -5,21 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.themejunky.personalstylerlib.customviews.CustomSettingItem
-        android:id="@+id/nView"
+    <com.themejunky.personalstylerlib.customviews.CustomRatingBar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:csi_title="IBAN"
-        app:csi_subtext="IBAN"
-        app:csi_arrow_visibility="true"/>
-
-
-    <com.themejunky.personalstylerlib.customviews.CustomHomeItem
-        style="@style/MatchMatch"
-        app:chi_title_text="ceva"
-        app:chi_title_color="@color/CustomHomeItem_default_number_color"
-        app:chi_text_text="ceva"
-        />
-
+        android:layout_height="200dp"/>
 
 </LinearLayout>

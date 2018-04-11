@@ -7,19 +7,12 @@ import android.view.View;
 import com.themejunky.personalstylerlib.bases.CustomActivity;
 import com.themejunky.personalstylerlib.customviews.CustomSettingItem;
 
-public class Custom extends CustomActivity implements CustomSettingItem.CustomSettingItem_Interface {
+public class Custom extends CustomActivity  {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom);
-
-
-        ((CustomSettingItem) findViewById(R.id.nView)).setListener(this);
     }
 
 
-    @Override
-    public void onCustomSettingItemClick(View nView) {
-
-    }
 }
