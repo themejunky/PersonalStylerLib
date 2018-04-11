@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nContainer"
+    style="@style/MatchMatch.Vertical">
+
+    <RelativeLayout
+        style="@style/MatchWrap">
+
+        <ImageView
+            android:id="@+id/nLeftArrow"
+            style="@style/Cube25"
+            android:layout_margin="10dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_picker"
+            />
+
+        <LinearLayout
+            style="@style/WrapWrap.Horizontal"
+            android:layout_centerInParent="true"
+            >
+            <TextView
+                android:id="@+id/nMonth"
+                style="@style/WrapWrap.Bold.Purple.18"
+                />
+
+
+
+            <TextView
+                android:id="@+id/nYear"
+                style="@style/WrapWrap.Regular.Purple.18"
+                android:layout_marginLeft="2dp"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/nRightArrow"
+            style="@style/Cube25"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_picker_dreapta"/>
+
+    </RelativeLayout>
+
+    <View
+        style="@style/Divider.Horizontal"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/nList"
+        style="@style/MatchWrap"
+        android:layout_gravity="center"
+        android:layout_width="315dp"
+        android:layout_margin="5dp"
+        />
+
+    <View
+        style="@style/Divider.Horizontal"/>
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal">
+
+        <TextView
+            android:id="@+id/nCancel"
+            style="@style/TimePicker_buttons"
+            android:text="@string/dialog_button_anuleaza"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/base_line"/>
+
+        <TextView
+            android:id="@+id/nSave"
+            style="@style/TimePicker_buttons"
+            android:text="@string/dialog_button_salveaza"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nContainer"
+    android:layout_width="45dp"
+    android:layout_height="45dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="3dp"
+    >
+
+    <TextView
+        android:id="@+id/nHeader"
+        style="@style/MatchMatch.Regular.Grey.18"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textColor="@color/grey"
+        />
+
+    <TextView
+        android:id="@+id/nBefore"
+        style="@style/MatchMatch.Regular.Black.18"
+        android:visibility="gone"
+        android:textColor="@color/Schedule_MonthPicker_before"
+        />
+
+    <TextView
+        android:id="@+id/nCurrent"
+        style="@style/MatchMatch.Regular.Black.18"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+</RelativeLayout>

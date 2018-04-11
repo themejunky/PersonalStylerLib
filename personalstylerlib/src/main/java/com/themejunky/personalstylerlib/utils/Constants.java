@@ -32,5 +32,4 @@ public class Constants {
     public static final String DB_DATA_PRICES = "prices";
     public static final String DB_DATA_TIMES = "times";
 
-
 }

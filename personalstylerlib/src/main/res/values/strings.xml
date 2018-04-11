@@ -51,4 +51,9 @@
     <string name="onboarding_step_1_code_error">Introduceti codul</string>
     <string name="reset_popup_title">Email trimis!</string>
     <string name="reset_popup_button">Mergi la Inbox</string>
+
+
+
+    <string name="dialog_button_anuleaza">Anuleaza</string>
+    <string name="dialog_button_salveaza">Salveaza</string>
 </resources>

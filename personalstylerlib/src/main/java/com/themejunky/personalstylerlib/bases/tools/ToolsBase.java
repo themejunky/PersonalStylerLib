@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.model.Item;
+import com.themejunky.personalstylerlib.bases.tools.model.NewScheduleMonths;
 import com.themejunky.personalstylerlib.customviews.CustomInput;
 import com.themejunky.personalstylerlib.utils.SimpleSpinnerLeftAdapter;
 import com.themejunky.personalstylerlib.utils.SimpleSpinnerRightAdapter;

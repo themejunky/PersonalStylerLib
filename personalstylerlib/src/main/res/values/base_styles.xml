@@ -181,8 +181,6 @@
     <style name="WrapWrap.Regular.Yellow.14" parent="WrapWrap.Regular.Yellow">       <item name="android:textSize">14sp</item>     </style>
 
 
-
-
     <style name="WrapWrap.Regular.Black.13" parent="WrapWrap.Regular.Black">       <item name="android:textSize">13sp</item>     </style>
     <style name="MatchWrap.Regular.Black.13" parent="MatchWrap.Regular.Black">       <item name="android:textSize">13sp</item>     </style>
     <style name="MatchWrap.Regular.Black.14" parent="MatchWrap.Regular.Black">       <item name="android:textSize">14sp</item>     </style>
@@ -192,6 +190,9 @@
 
     <style name="WrapWrap.Regular.Black.17" parent="WrapWrap.Regular.Black">       <item name="android:textSize">17sp</item>     </style>
 
+    <style name="MatchMatch.Regular.Black.18" parent="MatchMatch.Regular.Black">       <item name="android:textSize">18sp</item>     </style>
+
+
     <style name="WrapWrap.Bold.Black.13" parent="WrapWrap.Bold.Black">       <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Bold.Black.14" parent="WrapWrap.Bold.Black">       <item name="android:textSize">14sp</item>     </style>
     <style name="WrapWrap.Bold.Black.16" parent="WrapWrap.Bold.Black">       <item name="android:textSize">16sp</item>     </style>
@@ -199,6 +200,8 @@
 
     <style name="WrapWrap.Regular.Grey.13" parent="WrapWrap.Regular.Grey">       <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Regular.Grey.14" parent="WrapWrap.Regular.Grey">       <item name="android:textSize">14sp</item>     </style>
+    <style name="MatchMatch.Regular.Grey.18" parent="MatchMatch.Regular.Grey">       <item name="android:textSize">18sp</item>     </style>
+
 
 
     <style name="WrapWrap.Regular.Grey_2.12" parent="WrapWrap.Regular.Grey_2">       <item name="android:textSize">12sp</item>     </style>
@@ -221,7 +224,11 @@
     <style name="WrapWrap.Bold.Green.14" parent="WrapWrap.Bold.Green">       <item name="android:textSize">14sp</item>     </style>
 
 
+    <style name="WrapWrap.Regular.Purple.18" parent="WrapWrap.Regular.Purple">   <item name="android:textSize">18sp</item>     </style>
+
+
     <style name="WrapWrap.Bold.Purple.14" parent="WrapWrap.Bold.Purple">   <item name="android:textSize">14sp</item>     </style>
+    <style name="WrapWrap.Bold.Purple.18" parent="WrapWrap.Bold.Purple">   <item name="android:textSize">18sp</item>     </style>
 
     <style name="WrapWrap.Regular.Purple_2.14" parent="WrapWrap.Regular.Purple_2">   <item name="android:textSize">14sp</item>     </style>
     <style name="WrapWrap.Regular.Purple_2.35" parent="WrapWrap.Regular.Purple_2">   <item name="android:textSize">35sp</item>     </style>
