@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap.Vertical">
+
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        style="@style/MatchWrap.Horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/nOverviewIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_procent_sad"/>
+
+            <TextView
+                android:id="@+id/nOverviewProcent"
+                style="@style/WrapWrap.Bold.Black.13"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-3dp"
+                android:text="70%"/>
+
+            <TextView
+                android:id="@+id/nOverviewTotal"
+                style="@style/WrapWrap.Bold.Black.13"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-3dp"
+                android:text="8 voturi"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/WrapWrap.Horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_like"/>
+
+            <TextView
+                android:id="@+id/nOverviewTotalPositive"
+                style="@style/WrapWrap.Bold.Black.13"
+                android:layout_marginTop="-3dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/WrapWrap.Horizontal"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_dislike"/>
+
+            <TextView
+                android:id="@+id/nOverviewTotalNegative"
+                style="@style/WrapWrap.Bold.Black.13"
+                android:layout_marginTop="-3dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ntest"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        style="@style/MatchWrap.Horizontal">
+
+        <View
+            android:id="@+id/nPositiveLine"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@color/base_green"/>
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="5dp"/>
+
+        <View
+            android:id="@+id/nNegativeLine"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@color/base_red2"/>
+
+    </LinearLayout>
+
+</LinearLayout>

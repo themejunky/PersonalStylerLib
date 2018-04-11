@@ -192,6 +192,7 @@
 
     <style name="WrapWrap.Regular.Black.17" parent="WrapWrap.Regular.Black">       <item name="android:textSize">17sp</item>     </style>
 
+    <style name="WrapWrap.Bold.Black.13" parent="WrapWrap.Bold.Black">       <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Bold.Black.14" parent="WrapWrap.Bold.Black">       <item name="android:textSize">14sp</item>     </style>
     <style name="WrapWrap.Bold.Black.16" parent="WrapWrap.Bold.Black">       <item name="android:textSize">16sp</item>     </style>
     <style name="MatchWrap.Bold.Black.15" parent="MatchWrap.Bold.Black">       <item name="android:textSize">15sp</item>     </style>
