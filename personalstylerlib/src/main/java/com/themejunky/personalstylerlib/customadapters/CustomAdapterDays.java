@@ -62,6 +62,10 @@ public class CustomAdapterDays extends RecyclerView.Adapter<CustomAdapterDays.De
         notifyDataSetChanged();
     }
 
+    public List<NewSchedule> getDaysList() {
+        return mDays;
+    }
+
     public void setDefaultPosition(int nDefaultPosition) {
         mPrevSelected = nDefaultPosition;
     }
