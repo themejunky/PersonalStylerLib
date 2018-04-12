@@ -76,6 +76,16 @@
         <item name="android:layout_marginRight">12dp</item>
     </style>
 
+    <!-- Row Adapter Days -->
+
+    <style name="MainSchedule_Day_Container">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/base_green</item>
+    </style>
 
 
     <!-- Switch-->

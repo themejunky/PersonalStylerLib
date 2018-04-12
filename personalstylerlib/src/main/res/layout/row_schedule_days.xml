@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nContainer"
+    style="@style/MainSchedule_Day_Container"
+    >
+
+
+    <TextView
+        android:id="@+id/nDayNumber"
+        style="@style/WrapWrap.Regular.White.22"
+        android:text="12"
+        />
+
+    <TextView
+        android:id="@+id/nDayWeek"
+        android:text="12"
+        style="@style/WrapWrap.Regular.White.13"/>
+
+</LinearLayout>
