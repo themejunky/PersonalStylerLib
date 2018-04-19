@@ -13,6 +13,13 @@
     <style name="MatchWrap">   <item name="android:layout_width">match_parent</item><item name="android:layout_height">wrap_content</item>  </style>
     <style name="MatchMatch">  <item name="android:layout_width">match_parent</item><item name="android:layout_height">match_parent</item>  </style>
 
+    <style name="FullMatch">  <item name="android:layout_width">0dp</item><item name="android:layout_weight">1</item><item name="android:layout_height">match_parent</item>  </style>
+    <style name="FullWrap">  <item name="android:layout_width">0dp</item><item name="android:layout_weight">1</item><item name="android:layout_height">wrap_content</item>  </style>
+    <style name="MatchFull">  <item name="android:layout_width">match_parent</item><item name="android:layout_weight">1</item><item name="android:layout_height">0dp</item>  </style>
+    <style name="WrapFull">  <item name="android:layout_width">wrap_content</item><item name="android:layout_weight">1</item><item name="android:layout_height">0dp</item>  </style>
+
+
+
     <!-- Base-Cube-->
     <style name="Cube0">     <item name="android:layout_width">0dp</item><item name="android:layout_height">0dp</item>      </style>
     <style name="Cube10">    <item name="android:layout_width">10dp</item><item name="android:layout_height">10dp</item>    </style>
@@ -34,11 +41,24 @@
     <style name="MatchWrap.Horizontal" parent="MatchWrap">      <item name="android:orientation">horizontal</item>  </style>
     <style name="MatchMatch.Horizontal" parent="MatchMatch">    <item name="android:orientation">horizontal</item>  </style>
 
+    <!-- Base-LinearLayouts-Horizontal-Full -->
+    <style name="FullMatch.Horizontal" parent="FullMatch">        <item name="android:orientation">horizontal</item>  </style>
+    <style name="FullWrap.Horizontal" parent="FullWrap">      <item name="android:orientation">horizontal</item>  </style>
+    <style name="MatchFull.Horizontal" parent="MatchFull">      <item name="android:orientation">horizontal</item>  </style>
+    <style name="WrapFull.Horizontal" parent="WrapFull">    <item name="android:orientation">horizontal</item>  </style>
+
     <!-- Base-LinearLayouts-Vertical -->
     <style name="WrapWrap.Vertical" parent="WrapWrap">        <item name="android:orientation">vertical</item>  </style>
     <style name="WrapMatch.Vertical" parent="WrapMatch">      <item name="android:orientation">vertical</item>  </style>
     <style name="MatchWrap.Vertical" parent="MatchWrap">      <item name="android:orientation">vertical</item>  </style>
     <style name="MatchMatch.Vertical" parent="MatchMatch">    <item name="android:orientation">vertical</item>  </style>
+
+    <!-- Base-LinearLayouts-Vertical-Full -->
+    <style name="FullMatch.Vertical" parent="FullMatch">        <item name="android:orientation">vertical</item>  </style>
+    <style name="FullWrap.Vertical" parent="FullWrap">      <item name="android:orientation">vertical</item>  </style>
+    <style name="MatchFull.Vertical" parent="MatchFull">      <item name="android:orientation">vertical</item>  </style>
+    <style name="WrapFull.Vertical" parent="WrapFull">    <item name="android:orientation">vertical</item>  </style>
+
 
     <!-- Base-LinearLayouts-Vertical-With_Background -->
     <style name="MatchWrap.Vertical.White" parent="MatchWrap.Vertical">      <item name="android:background">@color/white</item>  </style>
