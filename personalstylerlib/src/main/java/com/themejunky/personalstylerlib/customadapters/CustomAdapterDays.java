@@ -95,7 +95,6 @@ public class CustomAdapterDays extends RecyclerView.Adapter<CustomAdapterDays.De
         holder.mDayNumber.setText(String.valueOf(item.mDay));
         holder.mDayWeek.setText(item.mDayWeek);
 
-        int mCurrentPos = position;
         holder.mContainer.setOnClickListener(this);
     }
 

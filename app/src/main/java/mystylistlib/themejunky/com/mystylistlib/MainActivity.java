@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.themejunky.personalstylerlib.customdialogs.hour.ScheduleTimeDialog;
 import com.themejunky.personalstylerlib.customviews.CustomButtonBorder;
 import com.themejunky.personalstylerlib.customviews.CustomInput;
 import com.themejunky.personalstylerlib.customviews.CustomTextSwitch;
 
 
-public class MainActivity extends AppCompatActivity  implements CustomButtonBorder.CustomButtonBorderInterface {
+public class MainActivity extends AppCompatActivity  implements CustomButtonBorder.CustomButtonBorderInterface, ScheduleTimeDialog.ScheduleTimeDialog_Interface {
 
 
     private CustomInput mSpinner;
@@ -24,6 +25,10 @@ public class MainActivity extends AppCompatActivity  implements CustomButtonBord
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.nCeas).setTag(R.id.schedule_days_key_info,"11:30");
+        ScheduleTimeDialog.getInstance().refreshContent(this,findViewById(R.id.nCeas),this);
+
        /* mSpinner=  findViewById(R.id.nSpinnerTest);
         List<String> list = new ArrayList<String>();
         list.add("list 1");
@@ -53,6 +58,11 @@ public class MainActivity extends AppCompatActivity  implements CustomButtonBord
                 Log.d("awaea","click 2");
 
         }
+    }
+
+    @Override
+    public void onScheduleTimeDialog_Choose(String nTimeSet, View nView) {
+
     }
 }
 

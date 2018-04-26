@@ -15,7 +15,7 @@
 
 
 
-
+    <string name="schedule_picker_title">Alege intervalul</string>
 
     <!--Intro-->
     <string name="intro_title_page1">SERVICII PREMIUM</string>
@@ -52,7 +52,8 @@
     <string name="reset_popup_title">Email trimis!</string>
     <string name="reset_popup_button">Mergi la Inbox</string>
 
-
+    <string name="schedule_salveaza">Salveaza</string>
+    <string name="schedule_anuleaza">Anuleaza</string>
 
     <string name="dialog_button_anuleaza">Anuleaza</string>
     <string name="dialog_button_salveaza">Salveaza</string>

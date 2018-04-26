@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nContainer"
+    style="@style/MatchMatch.Vertical">
+
+    <TextView
+        style="@style/WrapWrap.Regular.Purple.18"
+        android:padding="15dp"
+        android:text="@string/schedule_picker_title"/>
+
+    <View
+        style="@style/Divider.Horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <LinearLayout style="@style/MatchMatch.Horizontal">
+
+            <RelativeLayout
+                style="@style/FullMatch">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/nHours"
+                    style="@style/MatchMatch"
+                    />
+
+                <LinearLayout style="@style/WrapWrap.Vertical" android:layout_marginTop="60dp" android:layout_centerHorizontal="true">
+                    <View android:layout_width="45dp" android:layout_height="3dp" android:background="@color/purple_2"/>
+                    <View android:layout_width="1dp" android:layout_height="60dp"/>
+                    <View android:layout_width="45dp" android:layout_height="3dp" android:background="@color/purple_2"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/WrapMatch.Regular.Black.18"/>
+
+            <RelativeLayout
+                style="@style/FullMatch">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/nMinute"
+                    style="@style/MatchMatch"/>
+
+                <LinearLayout  style="@style/WrapWrap.Vertical" android:layout_marginTop="60dp" android:layout_centerHorizontal="true">
+                    <View android:layout_width="45dp" android:layout_height="3dp" android:background="@color/purple_2"/>
+                    <View android:layout_width="1dp" android:layout_height="60dp"/>
+                    <View android:layout_width="45dp" android:layout_height="3dp" android:background="@color/purple_2"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        style="@style/Divider.Horizontal"/>
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal">
+
+        <TextView
+            android:id="@+id/nCancel"
+            style="@style/TimePicker_buttons"
+            android:text="@string/schedule_anuleaza"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/base_line"/>
+
+        <TextView
+            android:id="@+id/nSave"
+            style="@style/TimePicker_buttons"
+            android:text="@string/schedule_salveaza"/>
+
+    </LinearLayout>
+
+</LinearLayout>
