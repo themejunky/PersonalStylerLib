@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity  implements CustomButtonBord
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main)
 
         findViewById(R.id.nCeas).setTag(R.id.schedule_days_key_info,"11:30");
         ScheduleTimeDialog.getInstance().refreshContent(this,findViewById(R.id.nCeas),this);
