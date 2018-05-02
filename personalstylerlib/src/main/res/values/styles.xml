@@ -136,6 +136,25 @@
         <item name="fontPath">Catamaran-Regular.ttf</item>
     </style>
 
+    <style name="MenuLeft_Item_Icon">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+    <style name="MenuLeft_Item_Text" parent="WrapWrap.Regular.Black.14">
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="MenuLeft_Item_Arrow">
+        <item name="android:layout_width">13dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:onClick="menuLeftClickListener"
+    style="@style/MatchWrap">
+    <LinearLayout style="@style/MatchWrap.Horizontal">
+        <ImageView style="@style/MenuLeft_Item_Icon" android:id="@+id/nIcon"/>
+        <TextView style="@style/MenuLeft_Item_Text" android:id="@+id/nName"/>
+    </LinearLayout>
+    <ImageView style="@style/MenuLeft_Item_Arrow" android:src="@drawable/ic_menu_arrow"/>
+</RelativeLayout>
