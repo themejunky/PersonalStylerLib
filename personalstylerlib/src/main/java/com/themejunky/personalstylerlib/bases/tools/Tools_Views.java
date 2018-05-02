@@ -65,7 +65,7 @@ public class Tools_Views extends ToolsBase {
      * @param nName - name to be set
      * @param nTag - tag to be set on the menu item to identify the onClickListener ( there is a custom method for click listener that is set into the layout !! )
      */
-    private void mCreateMenuItem(ViewGroup nParent, int nIcon, int nName, int nTag) {
+    public void mCreateMenuItem(ViewGroup nParent, int nIcon, int nName, int nTag) {
         View nMenuItemRow = getMainContainerAfterInflate(nParent, R.layout.row_menu_item);
 
         nMenuItemRow.setTag(mContext.getResources().getString(nTag));
