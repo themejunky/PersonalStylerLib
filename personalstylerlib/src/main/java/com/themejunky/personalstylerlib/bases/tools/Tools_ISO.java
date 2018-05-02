@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class Tools_ISO extends ToolsBase {
+public class Tools_ISO extends Tools_Views {
 
 
     /**

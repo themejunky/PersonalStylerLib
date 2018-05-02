@@ -2,6 +2,8 @@ package com.themejunky.personalstylerlib.utils;
 
 public class Constants {
 
+    public static final String OBJECT_TYPE_DELETEBLE = "deleteble"; /* :)) */
+
     public static final String GENDER_FEMALE = "FEMALE";
     public static final String GENDER_MALE = "MALE";
 
