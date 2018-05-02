@@ -9,26 +9,22 @@
     tools:context="mystylistlib.themejunky.com.mystylistlib.MainActivity">
 
 
+   <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmail"
+        style="@style/MatchWrap"
+        app:ci_imei_option="next"
+        app:ci_type="input"
+        app:ci_keyboard="email"
+        app:ci_title_text="Adresa de email"
+        app:ci_hint="ionescu.popescu@gmail.com"
+        app:ci_error_message="Adresa de email incorecta"
+        />
 
-<com.themejunky.personalstylerlib.customviews.CustomButtonBorder
-    android:id="@+id/apasaId"
-    android:layout_width="120dp"
+<EditText
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cbb_tag="tag"
-    app:cbb_border_default="@color/base_white"
-    app:cbb_text="Apasa-ma"
-    app:cbb_text_color="@color/base_white"
-    app:cbb_backgroundColor="@color/base_green"/>
-
-
-
-<TextView
-    android:id="@+id/nCeas"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:tag="11:00"/>
-
-
+    android:padding="40dp"
+    android:hint="ionescu.popescu@gmail.com"/>
 
 
 </LinearLayout>
