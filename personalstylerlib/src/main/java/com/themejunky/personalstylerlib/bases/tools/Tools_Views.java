@@ -15,7 +15,7 @@ public class Tools_Views extends ToolsBase {
      * Create a parent linearlayout with tag to identify if can be deleted when refresh is request
      * @return parent vertical-linearlayout-match-match
      */
-    protected synchronized LinearLayout generateNewParent_Vertical_MatchMatch() {
+    public synchronized LinearLayout generateNewParent_Vertical_MatchMatch() {
         LinearLayout nParent = new LinearLayout(mContext);
         nParent.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         nParent.setOrientation(LinearLayout.VERTICAL);
@@ -27,7 +27,7 @@ public class Tools_Views extends ToolsBase {
      * Create a parent linearlayout with tag to identify if can be deleted when refresh is request
      * @return parent vertical-linearlayout-match-wrap
      */
-    protected synchronized LinearLayout generateNewParent_Vertical_MatchWrap() {
+    public synchronized LinearLayout generateNewParent_Vertical_MatchWrap() {
         LinearLayout nParent = new LinearLayout(mContext);
         nParent.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         nParent.setOrientation(LinearLayout.VERTICAL);
@@ -41,17 +41,17 @@ public class Tools_Views extends ToolsBase {
      * @param nLayout - the new layout to be inserted into the nParent
      * @return main root of the inserted layout
      */
-    protected synchronized View getMainContainerAfterInflate(ViewGroup nParent, int nLayout) {
+    public synchronized View getMainContainerAfterInflate(ViewGroup nParent, int nLayout) {
         View.inflate(mContext,nLayout,nParent);
         return nParent.getChildAt(nParent.getChildCount()-1);
     }
 
 
-    protected synchronized void mAddDividerToParent(ViewGroup nParent) {
+    public synchronized void mAddDividerToParent(ViewGroup nParent) {
         View nMenuItemRow = getMainContainerAfterInflate(nParent, R.layout.row_horizontal_divider);
     }
 
-    protected synchronized void insertSimpleString(ViewGroup nParent, int nLayout, String nText) {
+    public synchronized void insertSimpleString(ViewGroup nParent, int nLayout, String nText) {
         View.inflate(mContext, nLayout,nParent);
         View nView = nParent.getChildAt(nParent.getChildCount()-1);
         ((TextView) nView).setText(nText);
