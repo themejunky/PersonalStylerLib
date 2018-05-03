@@ -65,6 +65,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
             mSpinner.setVisibility(View.VISIBLE);
             mSpinner.setOnFocusChangeListener(this);
+            setEditTextParameters(mInput);
         } else if (mInputType.equals("3")) {
             mInput.setVisibility(View.VISIBLE);
             setEditTextParameters(mInput);
@@ -171,6 +172,8 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     break;
                 case "4":
                     nTextView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    /* correction for input type password */
+                    setPadding(nTextView, R.styleable.CustomInput_ci_padding, getResources().getInteger(R.integer.ci_password_padding));
                     break;
                 case "5":
                     nTextView.setInputType(InputType.TYPE_CLASS_NUMBER);

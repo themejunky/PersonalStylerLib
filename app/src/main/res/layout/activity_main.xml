@@ -9,9 +9,16 @@
     tools:context="mystylistlib.themejunky.com.mystylistlib.MainActivity">
 
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
    <com.themejunky.personalstylerlib.customviews.CustomInput
         android:id="@+id/nEmail"
-        style="@style/MatchWrap"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
         app:ci_imei_option="next"
         app:ci_type="input"
         app:ci_keyboard="email"
@@ -20,11 +27,20 @@
         app:ci_error_message="Adresa de email incorecta"
         />
 
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="40dp"
-    android:hint="ionescu.popescu@gmail.com"/>
 
+   <com.themejunky.personalstylerlib.customviews.CustomInput
+       android:id="@+id/nPassword"
+       android:layout_width="0dp"
+       android:layout_weight="1"
+       android:layout_height="wrap_content"
+       app:ci_error_mandatory="true"
+       app:ci_error_message="error"
+       app:ci_hint="ionescu.popescu"
+       app:ci_imei_option="next"
+       app:ci_keyboard="password"
+       app:ci_title_text="Parola"
+       app:ci_type="input" />
+
+   </LinearLayout>
 
 </LinearLayout>
