@@ -45,6 +45,7 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
     private LinearLayout mContainer;
     private Boolean mStateOfPress = false;
     private Boolean mStateOfActivation = true;
+    private Boolean mStateClickListenerMovement = false;
 
     public CustomServices(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
@@ -103,6 +104,11 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
                 mStateOfPress = false;
                 setDefaultState();
             }
+
+            if (mStateClickListenerMovement && mListener!=null) {
+                mListener.onCustomServiceClick(view,mTag);
+            }
+
         } else {
             mListener.onCustomServiceClick(view,mTag);
         }
@@ -199,5 +205,14 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
         if (!nState) {
             setInActive();
         }
+    }
+
+    /**
+     * if is set to true the on click listener si triggered
+     * @param nState - state of the click listener movement
+     * @return
+     */
+    public boolean setClickListenerMovement(boolean nState) {
+        return mStateClickListenerMovement = nState;
     }
 }
