@@ -9,38 +9,16 @@
     tools:context="mystylistlib.themejunky.com.mystylistlib.MainActivity">
 
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal">
+   <com.themejunky.personalstylerlib.customviews.CustomServices
+       android:id="@+id/nMen"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:tag="adsads"
+       app:cbs_image="@drawable/ic_add"
+       app:cbs_text="Male"
+       app:cbs_tag="male"
+       app:cbs_style="@style/WrapWrap.Bold.Black.14"
 
-   <com.themejunky.personalstylerlib.customviews.CustomInput
-        android:id="@+id/nEmail"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        app:ci_imei_option="next"
-        app:ci_type="input"
-        app:ci_keyboard="email"
-        app:ci_title_text="Adresa de email"
-        app:ci_hint="ionescu.popescu@gmail.com"
-        app:ci_error_message="Adresa de email incorecta"
-        />
-
-
-   <com.themejunky.personalstylerlib.customviews.CustomInput
-       android:id="@+id/nPassword"
-       android:layout_width="0dp"
-       android:layout_weight="1"
-       android:layout_height="wrap_content"
-       app:ci_error_mandatory="true"
-       app:ci_error_message="error"
-       app:ci_hint="ionescu.popescu"
-       app:ci_imei_option="next"
-       app:ci_keyboard="password"
-       app:ci_title_text="Parola"
-       app:ci_type="input" />
-
-   </LinearLayout>
+       />
 
 </LinearLayout>

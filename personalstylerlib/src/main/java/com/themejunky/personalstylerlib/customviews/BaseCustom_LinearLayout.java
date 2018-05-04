@@ -110,16 +110,17 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     /**
      * Set the tag
      *
-     * @param nTag               - local variable in witch the tag will be saved
      * @param nResourceReference - string reference to be set
      */
-    protected void setTag(String nTag, int nResourceReference) {
+    protected String setTags(int nResourceReference) {
         try {
             if (mTypedarray.getString(nResourceReference) != null) {
-                nTag=mTypedarray.getString(nResourceReference);
+                return mTypedarray.getString(nResourceReference);
             }
         } catch (Exception e) {
+            return "";
         }
+        return "";
     }
 
     protected void setTitleFallbackInvisible(TextView nView, int nResourceReference) {

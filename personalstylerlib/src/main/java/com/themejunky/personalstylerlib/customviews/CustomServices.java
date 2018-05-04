@@ -70,7 +70,7 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
             setPadding(mPicContainer,R.styleable.CustomButtonService_cbs_image_padding, mContainer.getResources().getInteger(R.integer.cbs_padding));
         mText = findViewById(R.id.nText);
 
-        setTag(mTag,R.styleable.CustomButtonService_cbs_tag);
+        mTag = setTags(R.styleable.CustomButtonService_cbs_tag);
         setTitle(mText, R.styleable.CustomButtonService_cbs_text);
 
         setDefaultState();
