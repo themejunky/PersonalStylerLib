@@ -15,12 +15,7 @@ import com.themejunky.personalstylerlib.customviews.CustomServices;
 import com.themejunky.personalstylerlib.customviews.CustomTextSwitch;
 
 
-public class MainActivity extends AppCompatActivity implements CustomServices.Custom_Service_Interface {
-
-
-    private CustomInput mSpinner;
-    private CustomTextSwitch mSwitch,mSwitcher;
-    private CustomButtonBorder apasa;
+public class MainActivity extends AppCompatActivity implements CustomServices.Custom_Service_Interface, CustomButtonBorder.CustomButtonBorderInterface {
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -28,18 +23,23 @@ public class MainActivity extends AppCompatActivity implements CustomServices.Cu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((CustomServices) findViewById(R.id.nMen)).setListener(this);
-        ((CustomServices) findViewById(R.id.nMen)).setClickListenerMovement(true);
+        ((CustomButtonBorder) findViewById(R.id.nHaveLocation)).setListener(this);
+        ((CustomButtonBorder) findViewById(R.id.nNoLocation)).setListener(this);
+
+        ((CustomButtonBorder) findViewById(R.id.nHaveLocation)).setForFillBackgroundOnClick();
+        ((CustomButtonBorder) findViewById(R.id.nNoLocation)).setForFillBackgroundOnClick();
     }
-
-
-
-
 
     @Override
     public void onCustomServiceClick(View view, String nType) {
-            Log.d("adadas","este : "+nType);
         Toast.makeText(this,"este : "+nType,Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    public void onCustomButtonBorderClick(View view) {
+
+    }
 }
+
+
 

@@ -95,12 +95,20 @@
         <attr name="cbb_tag" format="string" />              <!-- used for onClick identification -->
         <attr name="cbb_text" format="string" />             <!-- text on the button -->
         <attr name="cbb_text_color" format="color" />        <!-- text color on the button (default :  -->
+        <attr name="cbb_text_color_pressed" format="color" />
+        <attr name="cbb_backgroundColor" format="color" />
+        <attr name="cbb_backgroundColor_pressed" format="color" />
+        <attr name="cbb_borderColor" format="color" />
+        <attr name="cbb_borderColor_pressed" format="color" />
+
+
         <attr name="cbb_padding" format="dimension" />       <!-- button padding vs text ( default : 15)  -->
-        <attr name="cbb_backgroundColor" format="color" />   <!-- border corrners radius ( default : #fff)  -->
+
         <attr name="cbb_border_radius" format="integer" />   <!-- border corrners radius ( default : 3)  -->
         <attr name="cbb_border_stroke" format="integer" />   <!-- border stroke ( default : 2)  -->
         <attr name="cbb_border_default" format="color" />    <!-- default color ( text & border )  -->
         <attr name="cbb_border_pressed" format="color" />    <!-- pressed color ( text & border )  -->
+        <attr name="cbb_icon" format="reference"/>
     </declare-styleable>
 
     <declare-styleable name="CustomHomeItem">

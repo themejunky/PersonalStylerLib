@@ -4,21 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
     android:orientation="vertical"
     tools:context="mystylistlib.themejunky.com.mystylistlib.MainActivity">
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
 
-   <com.themejunky.personalstylerlib.customviews.CustomServices
-       android:id="@+id/nMen"
-       android:layout_width="50dp"
-       android:layout_height="50dp"
-       android:tag="adsads"
-       app:cbs_image="@drawable/ic_add"
-       app:cbs_text="Male"
-       app:cbs_tag="male"
-       app:cbs_style="@style/WrapWrap.Bold.Black.14"
+      <com.themejunky.personalstylerlib.customviews.CustomButtonBorder
+          android:id="@+id/nHaveLocation"
+          android:layout_width="0dp"
+          android:layout_weight="49"
+          android:layout_height="wrap_content"
+          app:cbb_tag="ceva"
+          app:cbb_padding="15dp"
+          app:cbb_icon="@drawable/ic_profile_1"
+          app:cbb_backgroundColor="@color/base_white"
+          app:cbb_backgroundColor_pressed="@color/base_violet"
+          app:cbb_text_color="@color/base_black"
+          app:cbb_text_color_pressed="@color/base_white"
+          app:cbb_borderColor="@color/base_grey2"
+          app:cbb_borderColor_pressed="@color/base_violet"
+          app:cbb_text="Am o locatie proprie"
+          />
 
-       />
+      <View
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="2"/>
+
+      <com.themejunky.personalstylerlib.customviews.CustomButtonBorder
+          android:id="@+id/nNoLocation"
+          android:layout_width="0dp"
+          android:layout_weight="49"
+          android:layout_height="wrap_content"
+          app:cbb_tag="altceva"
+          app:cbb_padding="15dp"
+          app:cbb_icon="@drawable/ic_profile_1"
+          app:cbb_border_default="@color/CustomButtonBorder_border_color_location"
+          app:cbb_text="Nu am o locatie proprie"
+          />
+
+   </LinearLayout>
 
 </LinearLayout>

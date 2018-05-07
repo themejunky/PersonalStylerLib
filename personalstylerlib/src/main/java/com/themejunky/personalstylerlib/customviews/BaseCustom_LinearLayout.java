@@ -163,7 +163,25 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         try {
             nView.setTextColor(getResources().getColor(nColor));
         } catch (Exception e) {
-            Log.d(TAG, "" + e.getMessage());
+            try {
+                nView.setTextColor(nColor);
+            } catch (Exception e2) {
+            Log.d(TAG, "" + e2.getMessage());}
+        }
+    }
+
+
+    /**
+     * Try setting resource image to imageview
+     * @param nImage - imageview in witch to set the resource
+     * @param nResourceReference - resource
+     */
+    protected void setImageToImageView(ImageView nImage, int nResourceReference) {
+        try {
+            nImage.setImageDrawable(mTypedarray.getDrawable(nResourceReference));
+            nImage.setVisibility(View.VISIBLE);
+        } catch (Exception e) {
+            nImage.setVisibility(View.GONE);
         }
     }
 

@@ -5,6 +5,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,10 +21,12 @@ import com.themejunky.personalstylerlib.R;
 public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.OnClickListener {
 
     /* default values*/
-    private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColor;
+    private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColor, mTextColor;
+    private int mDefaultPressedBackgroundColor, mDefaultPressedBorderRadius, mDefaultPressedBorderStroke, mDefaultPressedBorderColor, mTextPressedColor;
     /* the state of the button ; by default is no pressed = false */
     private Boolean mStateOfPress = false;
     private boolean mStateOfActivation=true;
+    private boolean mStateFillBackgroundOnClick=false;
 
     /* click listener interface */
     public interface CustomButtonBorderInterface {
@@ -34,22 +38,33 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
         mListener = nListener;
     }
 
-    private RelativeLayout mContainer;
+    private LinearLayout mContainer;
     private TextView mText;
+    private ImageView mIcon;
     private CustomButtonBorderInterface mListener;
 
     public CustomButtonBorder(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
         Log.d("defaff", " 0");
         /* load default values */
-        mDefaultBackgroundColor = getResources().getColor(R.color.CustomButtonBorder_default_background_color);
-        mDefaultBorderColor = getResources().getColor(R.color.CustomButtonBorder_default_border_color);
-        mDefaultBorderRadius = getResources().getInteger(R.integer.cbb_radius);
-        mDefaultBorderStroke = getResources().getInteger(R.integer.cbb_stroke);
 
         /* start-up stuff*/
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomButtonBorder);
         inflate(nContext, R.layout.custom_button_color_border, this);
+
+
+        mTextColor = getColorWithDefaultPreloaded(R.styleable.CustomButtonBorder_cbb_text_color,R.color.CustomButtonBorder_default_text_color);
+        mTextPressedColor = getColorWithDefaultPreloaded(R.styleable.CustomButtonBorder_cbb_text_color_pressed,R.color.CustomButtonBorder_default_text_color);
+
+        mDefaultBackgroundColor = getColorWithDefaultPreloaded(R.styleable.CustomButtonBorder_cbb_backgroundColor,R.color.CustomButtonBorder_default_background_color);
+        mDefaultPressedBackgroundColor = getColorWithDefaultPreloaded(R.styleable.CustomButtonBorder_cbb_backgroundColor_pressed,R.color.CustomButtonBorder_default_background_color);
+
+        mDefaultBorderColor = getColorWithDefaultPreloaded(R.styleable.CustomButtonBorder_cbb_borderColor,R.color.CustomButtonBorder_default_border_color);
+        mDefaultPressedBorderColor = getColorWithDefaultPreloaded(R.styleable.CustomButtonBorder_cbb_borderColor_pressed,R.color.CustomButtonBorder_default_border_color);
+
+        mDefaultBorderRadius = mDefaultPressedBorderRadius = getResources().getInteger(R.integer.cbb_radius);
+        mDefaultBorderStroke = mDefaultPressedBorderStroke = getResources().getInteger(R.integer.cbb_stroke);
+
 
         mContainer = findViewById(R.id.nContainer);
         mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonBorder_cbb_tag));
@@ -57,18 +72,20 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
         mContainer.setOnClickListener(this);
 
         mText = findViewById(R.id.nText);
+        mIcon = findViewById(R.id.nIcon);
+
+        setImageToImageView(mIcon,R.styleable.CustomButtonBorder_cbb_icon);
 
         setUnpressed();
         setTitle(mText, R.styleable.CustomButtonBorder_cbb_text);
         setStyle(mText, R.styleable.CustomButtonBorder_cbb_style, R.style.ci_default_style);
         setTextColor(mText, R.styleable.CustomButtonBorder_cbb_text_color, R.color.CustomButtonBorder_default_text_color);
-
     }
 
     @Override
     public void onClick(View view) {
 
-        if (mStateOfActivation) {
+       if (mStateOfActivation) {
             if (mListener != null) {
                 if (!mStateOfPress) {
                     setPressed();
@@ -86,6 +103,11 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
     public void setAsAppointmentButton() {
         mStateOfActivation=false;
     }
+
+    public void setForFillBackgroundOnClick() {
+        mStateFillBackgroundOnClick=true;
+        mDefaultPressedBackgroundColor = getResources().getColor(R.color.CustomButtonBorder_border_color_list_price);
+    }
     /**
      * Default state of the button : white background with gray border (by default)
      */
@@ -99,23 +121,23 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
                 R.styleable.CustomButtonBorder_cbb_border_stroke, mDefaultBorderStroke,
                 R.styleable.CustomButtonBorder_cbb_border_default, mDefaultBorderColor);
 
-        setTextColor(mText, R.styleable.CustomButtonBorder_cbb_border_default, R.color.CustomButtonBorder_default_text_color);
+        setTextColor(mText, mTextColor);
     }
 
     /**
      * Pressed state of the button ( when user clicks on )
      */
     public void setPressed() {
-
+Log.d("adadadada","124");
         mStateOfPress = true;
 
         setBorderColorAndRadius(mContainer,
-                R.styleable.CustomButtonBorder_cbb_backgroundColor, mDefaultBackgroundColor,
-                R.styleable.CustomButtonBorder_cbb_border_radius, mDefaultBorderRadius,
-                R.styleable.CustomButtonBorder_cbb_border_stroke, mDefaultBorderStroke,
-                R.styleable.CustomButtonBorder_cbb_border_pressed, mDefaultBorderColor);
+                R.styleable.CustomButtonBorder_cbb_backgroundColor_pressed, mDefaultPressedBackgroundColor,
+                R.styleable.CustomButtonBorder_cbb_border_radius, mDefaultPressedBorderRadius,
+                R.styleable.CustomButtonBorder_cbb_border_stroke, mDefaultPressedBorderStroke,
+                R.styleable.CustomButtonBorder_cbb_border_pressed, mDefaultPressedBorderColor);
 
-        setTextColor(mText, R.styleable.CustomButtonBorder_cbb_border_pressed, R.color.CustomButtonBorder_default_text_color);
+        setTextColor(mText, mTextPressedColor);
     }
 
     /**
