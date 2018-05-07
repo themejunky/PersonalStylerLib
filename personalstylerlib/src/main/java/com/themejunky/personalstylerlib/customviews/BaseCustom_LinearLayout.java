@@ -179,7 +179,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     protected void setImageToImageView(ImageView nImage, int nResourceReference) {
         try {
             nImage.setImageDrawable(mTypedarray.getDrawable(nResourceReference));
-            nImage.setVisibility(View.GONE);
+            nImage.setVisibility(View.VISIBLE);
         } catch (Exception e) {
             nImage.setVisibility(View.GONE);
         }
