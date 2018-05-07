@@ -13,7 +13,7 @@
 
     <TextView
         android:id="@+id/nText"
-        style="@style/MatchWrap"
+        style="@style/WrapWrap"
         />
 
 </LinearLayout>
