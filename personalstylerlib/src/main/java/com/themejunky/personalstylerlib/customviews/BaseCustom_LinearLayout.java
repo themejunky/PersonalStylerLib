@@ -162,6 +162,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     protected void setTextColor(TextView nView, int nColor) {
         try {
             nView.setTextColor(getResources().getColor(nColor));
+
         } catch (Exception e) {
             try {
                 nView.setTextColor(nColor);
@@ -180,8 +181,11 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         try {
             nImage.setImageDrawable(mTypedarray.getDrawable(nResourceReference));
             nImage.setVisibility(View.VISIBLE);
+            Log.d("cevaceva","1");
         } catch (Exception e) {
             nImage.setVisibility(View.GONE);
+            Log.d("cevaceva","2 : "+e.getMessage());
+            Log.d("cevaceva","2 : "+e.getCause());
         }
     }
 
@@ -200,6 +204,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
             }
         } catch (Exception e) {
             Log.d(TAG, "" + e.getMessage());
+            nView.setVisibility(View.GONE);
         }
     }
 
