@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/nIcon"
         android:visibility="gone"
-        android:layout_marginRight="7dp"
+
         style="@style/Cube20"/>
 
     <TextView
