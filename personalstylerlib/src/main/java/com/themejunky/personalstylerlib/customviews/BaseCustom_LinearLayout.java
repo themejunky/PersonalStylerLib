@@ -76,7 +76,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
      */
     protected void setPadding(View nView, int nResourceReference, int nDefaultDim) {
         try {
-            nView.setPadding(getDimension(nResourceReference, nDefaultDim), getDimension(nResourceReference, nDefaultDim), getDimension(nResourceReference, nDefaultDim), getDimension(nResourceReference, nDefaultDim));
+            nView.setPadding(0, getDimension(nResourceReference, nDefaultDim),0, getDimension(nResourceReference, nDefaultDim));
         } catch (Exception e) {
             Log.d(TAG, "" + e.getMessage());
         }
@@ -179,7 +179,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     protected void setImageToImageView(ImageView nImage, int nResourceReference) {
         try {
             nImage.setImageDrawable(mTypedarray.getDrawable(nResourceReference));
-            nImage.setVisibility(View.VISIBLE);
+            nImage.setVisibility(View.GONE);
         } catch (Exception e) {
             nImage.setVisibility(View.GONE);
         }
