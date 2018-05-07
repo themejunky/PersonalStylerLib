@@ -9,7 +9,7 @@
         android:id="@+id/nIcon"
         android:visibility="visible"
         android:layout_marginRight="7dp"
-        style="@style/Cube25"/>
+        style="@style/Cube20"/>
 
     <TextView
         android:id="@+id/nText"

@@ -104,10 +104,7 @@ public class CustomButtonBorder extends BaseCustom_LinearLayout implements View.
         mStateOfActivation=false;
     }
 
-    public void setForFillBackgroundOnClick() {
-        mStateFillBackgroundOnClick=true;
-        mDefaultPressedBackgroundColor = getResources().getColor(R.color.CustomButtonBorder_border_color_list_price);
-    }
+
     /**
      * Default state of the button : white background with gray border (by default)
      */

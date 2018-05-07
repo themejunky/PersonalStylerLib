@@ -17,7 +17,7 @@
           android:layout_width="0dp"
           android:layout_weight="49"
           android:layout_height="wrap_content"
-          app:cbb_tag="ceva"
+          app:cbb_tag="@string/location_key_button_havelocation"
           app:cbb_padding="15dp"
           app:cbb_icon="@drawable/ic_profile_1"
           app:cbb_backgroundColor="@color/base_white"
@@ -26,7 +26,8 @@
           app:cbb_text_color_pressed="@color/base_white"
           app:cbb_borderColor="@color/base_grey2"
           app:cbb_borderColor_pressed="@color/base_violet"
-          app:cbb_text="Am o locatie proprie"
+          app:cbb_border_default="@color/CustomButtonBorder_border_color_location"
+          app:cbb_text="Test"
           />
 
       <View
@@ -39,11 +40,17 @@
           android:layout_width="0dp"
           android:layout_weight="49"
           android:layout_height="wrap_content"
-          app:cbb_tag="altceva"
+          app:cbb_tag="@string/location_key_button_nolocation"
           app:cbb_padding="15dp"
           app:cbb_icon="@drawable/ic_profile_1"
+          app:cbb_backgroundColor="@color/base_white"
+          app:cbb_backgroundColor_pressed="@color/base_violet"
+          app:cbb_text_color="@color/base_black"
+          app:cbb_text_color_pressed="@color/base_white"
+          app:cbb_borderColor="@color/base_grey2"
+          app:cbb_borderColor_pressed="@color/base_violet"
           app:cbb_border_default="@color/CustomButtonBorder_border_color_location"
-          app:cbb_text="Nu am o locatie proprie"
+          app:cbb_text="Test"
           />
 
    </LinearLayout>

@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity implements CustomServices.Cu
         ((CustomButtonBorder) findViewById(R.id.nHaveLocation)).setListener(this);
         ((CustomButtonBorder) findViewById(R.id.nNoLocation)).setListener(this);
 
-        ((CustomButtonBorder) findViewById(R.id.nHaveLocation)).setForFillBackgroundOnClick();
-        ((CustomButtonBorder) findViewById(R.id.nNoLocation)).setForFillBackgroundOnClick();
     }
 
     @Override
