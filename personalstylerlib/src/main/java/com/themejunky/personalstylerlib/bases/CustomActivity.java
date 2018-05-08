@@ -33,17 +33,16 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
      * Check if the provided ScrollView has scroll. If so .... triger hand-animation
      * @param nScrollView - ScrollView on witch check is made
      */
-    protected void mSetScrollAttention(final ScrollView nScrollView) {
+    protected void mSetScrollAttention(final ScrollView nScrollView, final ImageView nImage) {
         ViewTreeObserver observer = nScrollView.getViewTreeObserver();
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 nScrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                ImageView myImage = findViewById(R.id.nIcon);
                 if (mTools.canScroll(nScrollView)) {
-                    new ScrollAnimation(myImage);
+                    new ScrollAnimation(nImage);
                 } else {
-                    myImage.setVisibility(View.GONE);
+                    nImage.setVisibility(View.GONE);
                 }
             }
         });
