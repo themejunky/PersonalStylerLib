@@ -17,6 +17,8 @@
 
     <color name="yellow">#ffd800</color>
 
+    <color name="snackbar_background">#4095ff</color>
+    <color name="snackbar_text">#000000</color>
 
 
 </resources>

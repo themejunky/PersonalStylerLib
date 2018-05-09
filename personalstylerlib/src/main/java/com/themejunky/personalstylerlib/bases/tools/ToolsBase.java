@@ -3,12 +3,14 @@ package com.themejunky.personalstylerlib.bases.tools;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.model.Item;
@@ -36,7 +38,7 @@ public class ToolsBase {
     public View.OnClickListener mViewOnClickListener;
 
     public int mRowHeight;
-
+    private Snackbar mSnackBar;
 
 
     public Locale getLocale() {
@@ -193,5 +195,24 @@ public class ToolsBase {
 
     public void mSimpleSetupSpinnerTextLeftCustom(Spinner nSpinner, List<Item> nValues, Boolean nTextBold) {
         nSpinner.setAdapter(new SimpleSpinnerLeftAdapter(mContext,nValues,nTextBold));
+    }
+
+    public void showSimpleSnackBar(View nMainView, String nMessage) {
+        mSnackBar = Snackbar.make(nMainView, nMessage, Snackbar.LENGTH_LONG);
+        customizeSnackBar(mSnackBar);
+        mSnackBar.show();
+    }
+
+    public void showSimpleSnackBar(View nMainView, int nMessage) {
+        mSnackBar = Snackbar.make(nMainView, nMessage, Snackbar.LENGTH_LONG);
+        customizeSnackBar(mSnackBar);
+        mSnackBar.show();
+    }
+
+    private void customizeSnackBar(Snackbar mSnackBar) {
+        View sbView = mSnackBar.getView();
+        sbView.setBackgroundColor(mContext.getResources().getColor(R.color.snackbar_background));
+        TextView textView = sbView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(mContext.getResources().getColor(R.color.snackbar_text));
     }
 }

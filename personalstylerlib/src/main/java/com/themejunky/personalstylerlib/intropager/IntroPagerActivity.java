@@ -56,7 +56,6 @@ public class IntroPagerActivity extends AppCompatActivity {
 
     public void skipIt() {
         startActivity(mWhereDoYouGoMyLovely);
-
     }
 
     private void init() {

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.themejunky.personalstylerlib.bases.tools.Tools;
 import com.themejunky.personalstylerlib.customdialogs.hour.ScheduleTimeDialog;
 import com.themejunky.personalstylerlib.customviews.CustomButtonBorder;
 import com.themejunky.personalstylerlib.customviews.CustomInput;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements CustomServices.Cu
         ((CustomButtonBorder) findViewById(R.id.nHaveLocation)).setListener(this);
         ((CustomButtonBorder) findViewById(R.id.nNoLocation)).setListener(this);
 
+
+        Tools.getInstance(this).showSimpleSnackBar(findViewById(R.id.nMainContainer),"ceva");
     }
 
     @Override
