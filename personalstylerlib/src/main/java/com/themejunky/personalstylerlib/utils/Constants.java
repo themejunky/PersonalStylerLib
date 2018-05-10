@@ -7,6 +7,11 @@ public class Constants {
     public static final String GENDER_FEMALE = "FEMALE";
     public static final String GENDER_MALE = "MALE";
 
+    public static final String TAKE_PHOTO_CAMERA = "camera";
+    public static final String TAKE_PHOTO_GALLERY = "gallery";
+    public static final String TAKE_PHOTO_BOTH = "BOTH";
+
+
     public static final String SCHEDULE_MONTH_DAY_TYPE_HEADER = "HEADER";
     public static final String SCHEDULE_MONTH_DAY_TYPE_BEFORE = "BEFORE";
     public static final String SCHEDULE_MONTH_DAY_TYPE_CURRENT = "CURRENT";
