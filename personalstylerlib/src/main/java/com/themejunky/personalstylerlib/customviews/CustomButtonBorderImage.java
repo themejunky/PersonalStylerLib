@@ -69,7 +69,7 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
         mImageView = findViewById(R.id.nImageView);
         mContainer = findViewById(R.id.nContainer);
         mContainer.setOnTouchListener(this);
-
+        mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonBorderImage_cbbi_tag));
         mDefaultBackgroundColor = getResources().getColor(R.color.CustomButtonBorderImage_default_background_color);
         mDefaultBorderColorUnPressed = getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_unpresssed);
         mDefaultBorderColorPressed = getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_pressed);

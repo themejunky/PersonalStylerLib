@@ -134,6 +134,9 @@
         <attr name="cbbi_border_unpressed" format="color"/>
         <attr name="cbbi_border_radius" format="integer"/>
         <attr name="cbbi_border_stroke" format="integer"/>
+        <attr name="cbbi_tag" format="string"/>
+
+
     </declare-styleable>
 
     <declare-styleable name="CustomTextSwitch">
