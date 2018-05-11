@@ -18,7 +18,7 @@ import com.themejunky.personalstylerlib.customviews.CustomServices;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class CustomActivity extends AppCompatActivity implements View.OnClickListener,CustomButton.Custom_Button_Interface,CustomButtonBorder.CustomButtonBorderInterface,CustomServices.Custom_Service_Interface {
+public class CustomActivity extends PhotoActivity implements View.OnClickListener,CustomButton.Custom_Button_Interface,CustomButtonBorder.CustomButtonBorderInterface,CustomServices.Custom_Service_Interface {
 
     public Tools mTools;
     protected String user_id,service_id;
