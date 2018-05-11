@@ -44,8 +44,8 @@ public class PhotoActivity extends CustomActivity implements TakePhoto._Interfac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-     ////   mFireBaseStorage = FirebaseStorage.getInstance();
-      //  storageReference = mFireBaseStorage.getReference();
+        mFireBaseStorage = FirebaseStorage.getInstance();
+        storageReference = mFireBaseStorage.getReference();
     }
 
     protected void mPickCamera() {
@@ -89,9 +89,6 @@ public class PhotoActivity extends CustomActivity implements TakePhoto._Interfac
                 // imageview.setImageURI(selectedImage);
         }
     }
-
-
-
 
     private void uploadImage() {
 

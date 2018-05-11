@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "56194485023",
+    "firebase_url": "https://mystylist-e8d65.firebaseio.com",
+    "project_id": "mystylist-e8d65",
+    "storage_bucket": "mystylist-e8d65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56194485023:android:931dd822e77bff6c",
+        "android_client_info": {
+          "package_name": "com.personalstyler.stylist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56194485023-q05jcuh0cduno8dit883uk28ur25ct9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCNjsnB2YjRvj2PS04I2gu6Zabqem-M3w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56194485023:android:b66a061341a91eac",
+        "android_client_info": {
+          "package_name": "mystylistlib.themejunky.com.mystylistlib"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56194485023-q05jcuh0cduno8dit883uk28ur25ct9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCNjsnB2YjRvj2PS04I2gu6Zabqem-M3w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
