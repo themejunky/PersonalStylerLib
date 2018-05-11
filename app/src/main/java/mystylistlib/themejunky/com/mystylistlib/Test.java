@@ -14,7 +14,7 @@ public class Test extends PhotoActivity implements PhotoActivity._Interface{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-
+///dasdasdas
 
         mPhotoActivityInterface = this;
         findViewById(R.id.nApasa).setOnClickListener(new View.OnClickListener() {
