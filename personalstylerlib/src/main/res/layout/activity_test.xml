@@ -10,4 +10,37 @@
         android:layout_height="wrap_content"
         android:text="apasa"/>
 
+    <RelativeLayout
+        android:id="@+id/nContai"
+        style="@style/MatchWrap"
+        android:background="@color/base_violet"></RelativeLayout>
+
+    <!---->
+
+    <!--<LinearLayout-->
+        <!--style="@style/MatchWrap.Horizontal"-->
+        <!--android:layout_marginTop="15px">-->
+
+        <!--<RelativeLayout android:id="@+id/nPic1_container" android:tag="0" style="@style/base_image_container">-->
+            <!--<ImageView android:id="@+id/nPic1_image" android:tag="image" style="@style/base_image"/>-->
+            <!--<ImageView android:id="@+id/nPic1_delete" android:tag="delete" style="@style/base_image_delete"/>-->
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout android:id="@+id/nPic2_container" android:tag="1" style="@style/base_image_container">-->
+            <!--<ImageView android:id="@+id/nPic2_image" android:tag="image"  style="@style/base_image"/>-->
+            <!--<ImageView android:id="@+id/nPic2_delete" android:tag="delete" style="@style/base_image_delete"/>-->
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout android:id="@+id/nPic3_container" android:tag="2" style="@style/base_image_container">-->
+            <!--<ImageView android:id="@+id/nPic3_image" android:tag="image"  style="@style/base_image"/>-->
+            <!--<ImageView android:id="@+id/nPic3_delete" android:tag="delete" style="@style/base_image_delete"/>-->
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout android:id="@+id/nPic4_container" android:tag="3" style="@style/base_image_container">-->
+            <!--<ImageView android:id="@+id/nPic4_image" android:tag="image"  style="@style/base_image"/>-->
+            <!--<ImageView android:id="@+id/nPic4_delete" android:tag="delete" style="@style/base_image_delete"/>-->
+        <!--</RelativeLayout>-->
+
+    <!--</LinearLayout>-->
+
 </LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nPicScroll"
+    style="@style/MatchWrap">
+
+    <LinearLayout
+        android:id="@+id/nPicMainContainer"
+        style="@style/MatchWrap.Horizontal">
+
+        <RelativeLayout android:id="@+id/nPic1_container" android:tag="0" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic1_image" android:tag="image" style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic1_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/nPic2_container" android:tag="1" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic2_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic2_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/nPic3_container" android:tag="2" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic3_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic3_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/nPic4_container" android:tag="3" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic4_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic4_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/nPic5_container" android:tag="4" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic5_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic5_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout android:id="@+id/nPic6_container" android:tag="5" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic6_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic6_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/nPic7_container" android:tag="6" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic7_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic7_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/nPic8_container" android:tag="7" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic8_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic8_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/nPic9_container" android:tag="8" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic9_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic9_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/nPic10_container" android:tag="9" style="@style/base_image_container">
+            <ImageView android:id="@+id/nPic10_image" android:tag="image"  style="@style/base_image"/>
+            <ImageView android:id="@+id/nPic10_delete" android:tag="delete" style="@style/base_image_delete"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</HorizontalScrollView>

@@ -24,6 +24,20 @@
         <item name="android:paddingBottom">3dp</item>
     </style>
 
+    <style name="base_image_container" parent="Cube70">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="base_image" parent="Cube55">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:src">@drawable/ic_service_placeholder</item>
+    </style>
+
+    <style name="base_image_delete" parent="Cube20">
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/ic_pic_delete</item>
+    </style>
+
 
     <!-- Onboarding sides -->
     <style name="default_blank_sides">

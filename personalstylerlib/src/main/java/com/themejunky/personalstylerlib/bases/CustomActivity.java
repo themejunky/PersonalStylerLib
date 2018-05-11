@@ -20,13 +20,13 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class CustomActivity extends PhotoActivity implements View.OnClickListener,CustomButton.Custom_Button_Interface,CustomButtonBorder.CustomButtonBorderInterface,CustomServices.Custom_Service_Interface {
 
-    public Tools mTools;
+
     protected String user_id,service_id;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mTools = Tools.getInstance(this);
+
     }
 
     /**
