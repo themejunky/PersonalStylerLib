@@ -1,10 +1,12 @@
 package com.themejunky.personalstylerlib.bases;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +15,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -22,7 +23,10 @@ import com.themejunky.personalstylerlib.bases.model.PhotoModel;
 import com.themejunky.personalstylerlib.customdialogs.photo.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
 
-import java.io.IOException;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,9 +77,9 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
             }
         } else if (requestCode==ACTION_CAMERA  && resultCode == RESULT_OK) {
                 nPhoto = new PhotoModel();
-                nPhoto.mFilePath = imageReturnedIntent.getData();
-                mPhotos.add(nPhoto);
+                nPhoto.mBitmap = ((Bitmap) imageReturnedIntent.getExtras().get("data"));
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CAMERA;
+                mPhotos.add(nPhoto);
                 mPhotoActivityInterface.onPhotosRefreshAvailable(Constants.TAKE_PHOTO_CAMERA);
 
 
@@ -89,6 +93,31 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
 //                }
                 // imageview.setImageURI(selectedImage);
         }
+    }
+
+    public File ceva (Bitmap mBitmap) {
+        File f3=new File(Environment.getExternalStorageDirectory()+"/inpaint/");
+        if(!f3.exists())
+            f3.mkdirs();
+        OutputStream outStream = null;
+        File file = new File(Environment.getExternalStorageDirectory() + "/inpaint/"+System.currentTimeMillis()+".png");
+        try {
+            outStream = new FileOutputStream(file);
+            mBitmap.compress(Bitmap.CompressFormat.PNG, 85, outStream);
+            outStream.close();
+            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return file;
+    }
+
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
     }
 
     private void uploadImage() {
