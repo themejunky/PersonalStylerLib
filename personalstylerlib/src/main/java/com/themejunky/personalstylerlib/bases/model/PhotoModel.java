@@ -9,6 +9,7 @@ public class PhotoModel {
     public String mName;
     public String mPhotoFrom; //ex : gallery or camera
     public Uri mFilePath;
+    public String mFilePathString;
     public Bitmap mBitmap;
 
     public RelativeLayout mImageContainer;

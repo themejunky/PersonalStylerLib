@@ -1,27 +1,30 @@
 package com.themejunky.personalstylerlib.bases;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.model.PhotoModel;
 import com.themejunky.personalstylerlib.bases.tools.Tools;
 import com.themejunky.personalstylerlib.customdialogs.photo.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,17 +59,29 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
 
     protected void mActivatePhotoInternalAPI(_Interface nListener, int nNoPic, ViewGroup nViewGroup) {
         mPhotoActivityInterface = nListener;
-        mTools.getMainContainerAfterInflate(nViewGroup,R.layout.custom_pictures);
+        Log.d("adadad","xxx : ");
+        LinearLayout nContainer = mTools.getMainContainerAfterInflate(nViewGroup,R.layout.custom_pictures).findViewById(R.id.nPicMainContainer);
 
+        mViews = new ArrayList<>();
+        RelativeLayout nItem;
+        for (int i=0;i<nNoPic;i++) {
 
-        for(int i=0;i< ((LinearLayout) nViewGroup.findViewById(R.id.nPicMainContainer)).getChildCount();i++) {
-
-            if (i<nNoPic) {
-                mViews.add(new PhotoModel((RelativeLayout) ((LinearLayout) nViewGroup.findViewById(R.id.nPicMainContainer)).getChildAt(i)));
-            }
-
+            nItem = (RelativeLayout) mTools.getMainContainerAfterInflate(nContainer,R.layout.custom_pictures_item);
+            nItem.setTag(String.valueOf(i));
+            mViews.add(new PhotoModel(nItem));
         }
 
+//
+//
+//
+//        for(int i=0;i< ((LinearLayout) nViewGroup.findViewById(R.id.nPicMainContainer)).getChildCount();i++) {
+//
+//            if (i<nNoPic) {
+//                mViews.add(new PhotoModel((RelativeLayout) ((LinearLayout) nViewGroup.findViewById(R.id.nPicMainContainer)).getChildAt(i)));
+//            }
+//
+//        }
+//
         activation();
     }
 
@@ -113,7 +128,7 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
 
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-
+        Log.d("adadad","000 : ");
         if (requestCode==ACTION_GALLERY && resultCode == RESULT_OK) {
             if(resultCode == RESULT_OK){
                  nPhoto = new PhotoModel();
@@ -125,7 +140,31 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
             }
         } else if (requestCode==ACTION_CAMERA  && resultCode == RESULT_OK) {
                 nPhoto = new PhotoModel();
-                nPhoto.mBitmap = ((Bitmap) imageReturnedIntent.getExtras().get("data"));
+              //  nPhoto.mBitmap = ((Bitmap) imageReturnedIntent.getExtras().get("data"));
+            FileOutputStream fos = null;
+            Log.d("adadad","01 : ");
+try {
+    File outputDir = this.getCacheDir(); // context being the Activity pointer
+    File outputFile = File.createTempFile("prefix", "extension", outputDir);
+   // outputDir.deleteOnExit();
+    fos = new FileOutputStream(outputFile);
+    ((Bitmap) imageReturnedIntent.getExtras().get("data")).compress(Bitmap.CompressFormat.PNG, 100, fos);
+
+    nPhoto.mFilePathString = outputFile.getAbsolutePath();
+    nPhoto.mFilePath = Uri.fromFile(outputFile);
+    Log.d("adadad","1 : "+nPhoto.mFilePathString);
+
+}catch (Exception e) {
+    Log.d("adadad",""+e.getMessage());
+} finally {
+    try {
+        fos.close();
+    } catch (Exception e) {
+        Log.d("adadad",""+e.getMessage());
+
+    }
+}
+            Log.d("adadad","02 : ");
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CAMERA;
                 mPhotos.add(nPhoto);
 
@@ -133,6 +172,8 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
 
                 mPhotoActivityInterface.onPhotosRefreshAvailable(Constants.TAKE_PHOTO_CAMERA);
         }
+
+
     }
 
     private void internal() {
@@ -152,8 +193,8 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
 
     private void showImage(ImageView nImageView, PhotoModel nPhotoModel) {
         switch (nPhotoModel.mPhotoFrom) {
-            case Constants.TAKE_PHOTO_CAMERA: nImageView.setImageBitmap(nPhotoModel.mBitmap); break;
-            case Constants.TAKE_PHOTO_GALLERY : nImageView.setImageURI(nPhotoModel.mFilePath); break;
+            case Constants.TAKE_PHOTO_CAMERA:   Picasso.with(this).load(nPhotoModel.mFilePath).into(nImageView); /* nImageView.setImageBitmap(nPhotoModel.mBitmap); */ break;
+            case Constants.TAKE_PHOTO_GALLERY :  Picasso.with(this).load(nPhotoModel.mFilePath).into(nImageView);  break;
         }
     }
 

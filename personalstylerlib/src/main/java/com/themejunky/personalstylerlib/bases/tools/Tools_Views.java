@@ -37,6 +37,18 @@ public class Tools_Views extends ToolsBase {
     }
 
     /**
+     * Create a parent linearlayout with tag to identify if can be deleted when refresh is request
+     * @return parent horizontal-linearlayout-match-wrap
+     */
+    public synchronized LinearLayout generateNewParent_Horizontal_MatchWrap() {
+        LinearLayout nParent = new LinearLayout(mContext);
+        nParent.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        nParent.setOrientation(LinearLayout.HORIZONTAL);
+        nParent.setTag(Constants.OBJECT_TYPE_DELETEBLE);
+        return nParent;
+    }
+
+    /**
      * Return the insertet view after inflating into viewgrup parent
      * @param nParent - container in witch the new layout is insertet
      * @param nLayout - the new layout to be inserted into the nParent
