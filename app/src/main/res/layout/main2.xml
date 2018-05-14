@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_violet">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INSPECTIE NOUA"
+        android:background="#2D3941"
+        android:textColor="#ffffff"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingTop="15dp"
+        android:textSize="16sp"
+        android:paddingBottom="15dp"
+        android:textStyle="bold"/>
+
+    <!--<include-->
+        <!--android:id="@+id/mSubmeniu"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--layout="@layout/include_submeniu_inspectie_noua"/>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <ImageView
+            android:id="@+id/mContur"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            />
+
+        <!--android:src="@drawable/contur_poza_1"-->
+
+        <!--android:rotation="90"-->
+        <!--android:scaleType="fitStart"-->
+        <!--android:adjustViewBounds="true"-->
+
+        <!--<ro.customsoft.e_inspector.CustomView.ResizableImageView-->
+        <!--android:id="@+id/mContur"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:rotation="90"-->
+        <!--android:src="@drawable/contur_poza_1"/>-->
+
+        <Button
+            android:id="@+id/mFlash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flash"/>
+
+        <Button
+            android:id="@+id/mRotate"
+            android:layout_toRightOf="@+id/mFlash"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:text="Rotate"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
