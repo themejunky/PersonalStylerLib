@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
 import android.hardware.Camera;
 import android.media.ExifInterface;
 import android.net.Uri;
@@ -46,6 +47,8 @@ import java.util.Locale;
 
 public class PhotoActivity extends AppCompatActivity implements TakePhoto._Interface, View.OnClickListener {
     public Tools mTools;
+    private Uri mBasePhotoUri;
+    Bitmap mBitmapTransformers;
     @Override
     public void onClick(View nView) {
         mPhotos.remove(Integer.parseInt(nView.getTag().toString()));
@@ -54,11 +57,13 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
 
     public interface _Interface {
         void onPhotosRefreshAvailable(String nType);
+
+        void onPhotosError();
     }
 
     protected Uri mFilePath;
     protected FirebaseStorage mFireBaseStorage;
-    protected  StorageReference storageReference;
+    protected StorageReference storageReference;
     protected List<PhotoModel> mPhotos = new ArrayList<>();
     protected List<PhotoModel> mViews = new ArrayList<>();
     protected _Interface mPhotoActivityInterface;
@@ -67,253 +72,266 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
     private int ACTION_GALLERY = 2;
     private int ACTION_CAMERA_REQUEST = 3;
     File outputFiletest = null;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mTools = Tools.getInstance(this);
-      ///  mFireBaseStorage = FirebaseStorage.getInstance();
-       // storageReference = mFireBaseStorage.getReference();
+        ///  mFireBaseStorage = FirebaseStorage.getInstance();
+        // storageReference = mFireBaseStorage.getReference();
     }
+
     String imageFilePath;
 
-    Uri photoUri;
-    protected void mActivatePhotoInternalAPI(_Interface nListener, int nNoPic, ViewGroup nViewGroup) {
-        mPhotoActivityInterface = nListener;
-        Log.d("adadad","xxx 1 ");
-        LinearLayout nContainer = mTools.getMainContainerAfterInflate(nViewGroup,R.layout.custom_pictures).findViewById(R.id.nPicMainContainer);
 
+    /**
+     * Initiate take photo (gallery and/or camera) with UI
+     *
+     * @param nListener  - listener to comunicate with the activity that triggers this process
+     * @param nNoPic     - number of desired pictures
+     * @param nViewGroup - view group in witch the UI will be deployed
+     */
+    protected void mActivatePhotoInternalAPI(_Interface nListener, int nNoPic, ViewGroup nViewGroup) {
+
+        mPhotoActivityInterface = nListener;
+
+        /* internal container witch also contains HorizontalScrollView */
+        LinearLayout nContainer = mTools.getMainContainerAfterInflate(nViewGroup, R.layout.custom_pictures).findViewById(R.id.nPicMainContainer);
+
+        /* initiate mViews(will hold references to all pictures) */
         mViews = new ArrayList<>();
         RelativeLayout nItem;
-        for (int i=0;i<nNoPic;i++) {
-
-            nItem = (RelativeLayout) mTools.getMainContainerAfterInflate(nContainer,R.layout.custom_pictures_item);
+        for (int i = 0; i < nNoPic; i++) {
+            /* inflate new picture box */
+            nItem = (RelativeLayout) mTools.getMainContainerAfterInflate(nContainer, R.layout.custom_pictures_item);
             nItem.setTag(String.valueOf(i));
+            nItem.setOnClickListener(this);
             mViews.add(new PhotoModel(nItem));
         }
-        Log.d("adadad","xxx 2 ");
-//
-//
-//
-//        for(int i=0;i< ((LinearLayout) nViewGroup.findViewById(R.id.nPicMainContainer)).getChildCount();i++) {
-//
-//            if (i<nNoPic) {
-//                mViews.add(new PhotoModel((RelativeLayout) ((LinearLayout) nViewGroup.findViewById(R.id.nPicMainContainer)).getChildAt(i)));
-//            }
-//
-//        }
-//
-        activation();
+        resetPhotoBox();
     }
 
-    protected void activation() {
+    /**
+     * Reset all photo boxes on every delete or add photo
+     */
+    private void resetPhotoBox() {
 
-        for (PhotoModel item: mViews) {
+        for (PhotoModel item : mViews) {
             item.mImageContainer.setVisibility(View.GONE);
         }
 
-        if (mPhotos!=null && mPhotos.size()>0) {
-            for(int i=0;i<mPhotos.size();i++) {
+        if (mPhotos != null && mPhotos.size() > 0) {
+            for (int i = 0; i < mPhotos.size(); i++) {
                 mViews.get(i).mImageContainer.setVisibility(View.VISIBLE);
             }
         }
+    }
 
-        for (PhotoModel item: mViews) {
-            item.mImageContainer.setOnClickListener(this);
+    /**
+     * Interface from pop-up picker dialog - form camera option
+     */
+    @Override
+    public void onTakePhoto_Camera() {
+        try {
+            if (mPhotos.size() <= mViews.size() - 1) {
+                mPickCamera();
+            }
+        } catch (Exception e) {
+            mPhotoActivityInterface.onPhotosError();
         }
     }
-    public Bitmap getBitmapFromUri() {
 
-        getContentResolver().notifyChange(photoUri, null);
-        ContentResolver cr = getContentResolver();
-        Bitmap bitmap;
+    /**
+     * Interface from pop-up picker dialog - form gallery option
+     */
+    @Override
+    public void onTakePhoto_Gallery() {
+        try {
+            if (mPhotos.size() <= mViews.size() - 1) {
+                mPickGallery();
+            }
+        } catch (Exception e) {
+            mPhotoActivityInterface.onPhotosError();
+        }
+    }
+
+    /**
+     * Open gallery intent to pick photo
+     */
+    private void mPickGallery() {
+        Intent mIntentGallery = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        if (mIntentGallery.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(mIntentGallery, ACTION_GALLERY);
+        }
+    }
+
+    /**
+     * Open camera intent to take photo
+     */
+    private void mPickCamera() throws Exception {
+        Intent nIntentCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (nIntentCamera.resolveActivity(getPackageManager()) != null) {
+            mBasePhotoUri = FileProvider.getUriForFile(this, getPackageName() + ".provider", createImageFile());
+            nIntentCamera.putExtra(MediaStore.EXTRA_OUTPUT, mBasePhotoUri);
+            startActivityForResult(nIntentCamera, ACTION_CAMERA);
+        }
+    }
+//
+//    protected void onActivityResult(int nRequestCode, int nResultCode, Intent nIntentReturned) {
+//        super.onActivityResult(nRequestCode, nResultCode, nIntentReturned);
+//        if (nRequestCode == ACTION_GALLERY && nResultCode == RESULT_OK) {
+//            try {
+//                nPhoto = new PhotoModel();
+//                nPhoto.mFilePath = nIntentReturned.getData();
+//                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_GALLERY;
+//                mPhotos.add(nPhoto);
+//                mPhotoActivityInterface.onPhotosRefreshAvailable(Constants.TAKE_PHOTO_GALLERY);
+//                internal();
+//            } catch (Exception e) {
+//                mPhotoActivityInterface.onPhotosError();
+//            }
+//        } else if (nRequestCode == ACTION_CAMERA && nResultCode == RESULT_OK) {
+//            nPhoto = new PhotoModel();
+//
+//            Bitmap nBitmap;
+//
+//            if (nIntentReturned != null && nIntentReturned.getExtras() != null) {
+//                if (nIntentReturned.getExtras().containsKey("data")) {
+//                    nBitmap = (Bitmap) nIntentReturned.getExtras().get("data");
+//                } else {
+//                    nBitmap = getBitmapFromUri();
+//                }
+//            } else {
+//                nBitmap = getBitmapFromUri();
+//            }
+//
+//            try {
+//                nBitmap = handleSamplingAndRotationBitmap(this, mBasePhotoUri);
+//            } catch (IOException e) {
+//            }
+//
+//            try {
+//                File outputDir = this.getCacheDir(); // context being the Activity pointer
+//                File outputFile = File.createTempFile("prefix", ".jpg", outputDir);
+//                FileOutputStream fos = new FileOutputStream(outputFile);
+//                nBitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+//                nPhoto.mFilePath = Uri.fromFile(outputFile);
+//                Log.d("dasdasdasa","BUN : "+nPhoto.mFilePathString);
+//            } catch (Exception e ) {
+//
+//                Log.d("dasdasdasa",""+e.getMessage());
+//            }
+//
+//            nPhoto.mBitmap = nBitmap;
+//
+//            nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CAMERA;
+//            mPhotos.add(nPhoto);
+//
+//            internal();
+//
+//            mPhotoActivityInterface.onPhotosRefreshAvailable(Constants.TAKE_PHOTO_CAMERA);
+//            Log.d("adadad", "camera 5 : ");
+//        }
+//    }
+protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
+    super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+    Log.d("adadad","camera 2 ");
+    if (requestCode==ACTION_GALLERY && resultCode == RESULT_OK) {
+        if(resultCode == RESULT_OK){
+            Log.d("samsung","gallery : "+imageReturnedIntent.getData());
+            nPhoto = new PhotoModel();
+            nPhoto.mFilePath = imageReturnedIntent.getData();
+            nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_GALLERY;
+            mPhotos.add(nPhoto);
+            internal();
+            mPhotoActivityInterface.onPhotosRefreshAvailable(Constants.TAKE_PHOTO_GALLERY);
+            Log.d("adadad","gallery 2 ");
+        }
+    } else if (requestCode==ACTION_CAMERA  && resultCode == RESULT_OK) {
+
+        nPhoto = new PhotoModel();
+
+        Bitmap nBitmap;
+        // getBitmapFromUri
+        if (imageReturnedIntent != null && imageReturnedIntent.getExtras()!=null) {
+            Bundle extras = imageReturnedIntent.getExtras();
+            if (extras.containsKey("data")) {
+                Log.d("adadadadasda","data 1");
+                nBitmap = (Bitmap) extras.get("data");
+            }
+            else {
+                Log.d("adadadadasda","data 2");
+                nBitmap = optimizeBitmapFromUri(mBasePhotoUri);
+            }
+        }
+        else {
+            Log.d("adadadadasda","data 3");
+            nBitmap = optimizeBitmapFromUri(mBasePhotoUri);
+        }
 
         try {
-            bitmap = android.provider.MediaStore.Images.Media.getBitmap(cr, photoUri);
-            return bitmap;
+            nBitmap = handleSamplingAndRotationBitmap(this,mBasePhotoUri);
+        } catch (IOException e) {
+            Log.d("errr"," 2 : "+e.getMessage());
+        }
+
+        try {
+                File outputDir = this.getCacheDir(); // context being the Activity pointer
+                File outputFile = File.createTempFile("prefix", ".jpg", outputDir);
+                FileOutputStream fos = new FileOutputStream(outputFile);
+            nBitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+                nPhoto.mFilePath = Uri.fromFile(outputFile);
+            } catch (Exception e ) {
+
+                Log.d("errr"," 1 : "+e.getMessage());
+            }
+
+        nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CAMERA;
+        mPhotos.add(nPhoto);
+        mBitmapTransformers.recycle();
+        nBitmap.recycle();
+        internal();
+        mPhotoActivityInterface.onPhotosRefreshAvailable(Constants.TAKE_PHOTO_CAMERA);
+    }
+}
+
+    private Bitmap optimizeBitmapFromUri(Uri nPhotoUri) {
+        try {
+            int MAX_HEIGHT = 1024;
+            int MAX_WIDTH = 1024;
+
+            // First decode with inJustDecodeBounds=true to check dimensions
+            final BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            InputStream imageStream = getContentResolver().openInputStream(nPhotoUri);
+            BitmapFactory.decodeStream(imageStream, null, options);
+            imageStream.close();
+
+            // Calculate inSampleSize
+            options.inSampleSize = calculateInSampleSize(options, MAX_WIDTH, MAX_HEIGHT);
+
+            // Decode bitmap with inSampleSize set
+            options.inJustDecodeBounds = false;
+            imageStream = getContentResolver().openInputStream(nPhotoUri);
+            return BitmapFactory.decodeStream(imageStream, null, options);
         }
         catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
-    protected void mPickCamera() {
-
-
-try {
-    Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-    File outputDir = this.getCacheDir(); // context being the Activity pointer
-    outputFiletest = File.createTempFile("prefix", ".jpg", outputDir);
-
-    //   output=new File(dir, "CameraContentDemo.jpeg");
-    i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(outputFiletest));
-
-    startActivityForResult(i, ACTION_CAMERA);
-    Log.d("adada555d", "camera merge");
-}
-catch (Exception e) {
-    Log.d("adada555d", "camera naspa : "+e.getMessage());
-}
-    }
-
-
-
-    protected void mPickGallery() {
-        Intent pickPhoto = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(pickPhoto , ACTION_GALLERY);
-    }
-
-    @Override
-    public void onTakePhoto_Camera() {
-        if ( mPhotos.size()<=mViews.size()-1) {
-            openCameraIntent(); }
-    }
-
-    @Override
-    public void onTakePhoto_Gallery() {
-        if ( mPhotos.size()<=mViews.size()-1) {
-        mPickGallery(); }
-    }
-
-    private void openCameraIntent() {
-        Intent pictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (pictureIntent.resolveActivity(getPackageManager()) != null) {
-
-            File photoFile = null;
-            try {
-                photoFile = createImageFile();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-                return;
-            }
-             photoUri = FileProvider.getUriForFile(this, getPackageName() +".provider", photoFile);
-            pictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
-            startActivityForResult(pictureIntent, ACTION_CAMERA);
-        }
-    }
 
 
     private File createImageFile() throws IOException {
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.getDefault()).format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
         String imageFileName = "IMG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(imageFileName,".jpg",storageDir);
+        File image = File.createTempFile(imageFileName, ".jpg", storageDir);
         imageFilePath = image.getAbsolutePath();
         return image;
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
-        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-        Log.d("adadad","camera 2 ");
-        if (requestCode==ACTION_GALLERY && resultCode == RESULT_OK) {
-            if(resultCode == RESULT_OK){
-                Log.d("samsung","gallery : "+imageReturnedIntent.getData());
-                 nPhoto = new PhotoModel();
-                 nPhoto.mFilePath = imageReturnedIntent.getData();
-                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_GALLERY;
-                 mPhotos.add(nPhoto);
-                internal();
-                mPhotoActivityInterface.onPhotosRefreshAvailable(Constants.TAKE_PHOTO_GALLERY);
-                Log.d("adadad","gallery 2 ");
-            }
-        } else if (requestCode==ACTION_CAMERA  && resultCode == RESULT_OK) {
 
-            nPhoto = new PhotoModel();
-
-           // getBitmapFromUri
-            if (imageReturnedIntent != null && imageReturnedIntent.getExtras()!=null) {
-                Bundle extras = imageReturnedIntent.getExtras();
-                if (extras.containsKey("data")) {
-                    nPhoto.mBitmap = (Bitmap) extras.get("data");
-                }
-                else {
-                    nPhoto.mBitmap = getBitmapFromUri();
-                }
-            }
-            else {
-                nPhoto.mBitmap = getBitmapFromUri();
-            }
-
-            try {
-                nPhoto.mBitmap = handleSamplingAndRotationBitmap(this,photoUri);
-                Log.d("adasdadad","BINE : ");
-            } catch (IOException e) {
-                Log.d("adasdadad","NASPA : "+e.getMessage());
-            }
-
-
-
-            // imageView.setImageBitmap(bitmap);
-            //imageView.setImageURI(photoUri);
-            /*
-
-
-
-            FileOutputStream fout;
-            try {
-//                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), photoUri);
-//                bitmap = rotateBitmap(bitmap,45);
-//
-//                fout = new FileOutputStream(photoUri.getPath());
-//              //  bitmap.compress(Bitmap.CompressFormat.PNG, 70, fout);
-
-
-
-                BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
-                bitmapOptions.inSampleSize = 4;
-                Bitmap bmOriginal = MediaStore.Images.Media.getBitmap(this.getContentResolver(), photoUri);
-
-                Matrix matrix = new Matrix();
-
-                matrix.postRotate(getImageOrientation(new File(photoUri.getPath()).getAbsolutePath()));
-
-                bmOriginal = Bitmap.createBitmap(bmOriginal, 0, 0, bmOriginal.getWidth(), bmOriginal.getHeight(), matrix, true);
-
-                nPhoto.mBitmap = bmOriginal;
-
-
-                Log.d("camera222","BINEEE : "+getImageOrientation(new File(photoUri.getPath()).getAbsolutePath()));
-            } catch (Exception e) {
-                Log.d("camera222","BINENASPA : "+e.getMessage());
-            }
-*/
-
-
-                nPhoto.mFilePathString = imageFilePath;
-//            FileOutputStream fos = null;
-//            Log.d("samsung","camera 3 : "+nPhoto.mBitmap);
-//try {
-//    File outputDir = this.getCacheDir(); // context being the Activity pointer
-//    File outputFile = File.createTempFile("prefix", "extension", outputDir);
-//   // outputDir.deleteOnExit();
-//    fos = new FileOutputStream(outputFile);
-//    ((Bitmap) imageReturnedIntent.getExtras().get("data")).compress(Bitmap.CompressFormat.PNG, 100, fos);
-//
-//    nPhoto.mFilePathString = outputFile.getAbsolutePath();
-//    nPhoto.mFilePath = Uri.fromFile(outputFile);
-//    Log.d("adadad","camera 4 ");
-//}catch (Exception e) {
-//    Log.d("adadad","camera 41 : "+e.getMessage());
-//} finally {
-//    try {
-//        fos.close();
-//    } catch (Exception e) {
-//        Log.d("adadad","camera 42 : "+e.getMessage());
-//    }
-//}
-            Log.d("adadad","02 : ");
-                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CAMERA;
-                mPhotos.add(nPhoto);
-
-            internal();
-
-                mPhotoActivityInterface.onPhotosRefreshAvailable(Constants.TAKE_PHOTO_CAMERA);
-            Log.d("adadad","camera 5 : ");
-        }
-
-
-    }
-    public static Bitmap handleSamplingAndRotationBitmap(Context context, Uri selectedImage)
-            throws IOException {
+    public Bitmap handleSamplingAndRotationBitmap(Context context, Uri selectedImage) throws IOException {
         int MAX_HEIGHT = 1024;
         int MAX_WIDTH = 1024;
 
@@ -330,14 +348,12 @@ catch (Exception e) {
         // Decode bitmap with inSampleSize set
         options.inJustDecodeBounds = false;
         imageStream = context.getContentResolver().openInputStream(selectedImage);
-        Bitmap img = BitmapFactory.decodeStream(imageStream, null, options);
-
-        img = rotateImageIfRequired(context, img, selectedImage);
-        return img;
+        mBitmapTransformers = BitmapFactory.decodeStream(imageStream, null, options);
+        mBitmapTransformers = rotateImageIfRequired(context, mBitmapTransformers, selectedImage);
+        return mBitmapTransformers;
     }
 
-    private static int calculateInSampleSize(BitmapFactory.Options options,
-                                             int reqWidth, int reqHeight) {
+    private static int calculateInSampleSize(BitmapFactory.Options options,int reqWidth, int reqHeight) {
         // Raw height and width of image
         final int height = options.outHeight;
         final int width = options.outWidth;
@@ -370,16 +386,21 @@ catch (Exception e) {
         }
         return inSampleSize;
     }
+
     private static Bitmap rotateImageIfRequired(Context context, Bitmap img, Uri selectedImage) throws IOException {
 
         InputStream input = context.getContentResolver().openInputStream(selectedImage);
         ExifInterface ei;
-        if (Build.VERSION.SDK_INT > 23)
-            ei = new ExifInterface(input);
-        else
-            ei = new ExifInterface(selectedImage.getPath());
+        if (Build.VERSION.SDK_INT > 23) {
+            Log.d("adadadadasda","test 1");
+            ei = new ExifInterface(input); }
+        else {
+        Log.d("adadadadasda","test 2");
+            ei = new ExifInterface(selectedImage.getPath()); }
 
         int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+
+        Log.d("adadadadasda","test 3 : "+orientation+"/"+img.getWidth()+"/"+img.getHeight());
 
         switch (orientation) {
             case ExifInterface.ORIENTATION_ROTATE_90:
@@ -388,6 +409,10 @@ catch (Exception e) {
                 return rotateImage(img, 180);
             case ExifInterface.ORIENTATION_ROTATE_270:
                 return rotateImage(img, 270);
+            case ExifInterface.ORIENTATION_UNDEFINED:
+                if (img.getWidth()>img.getHeight()) {
+                return rotateImage(img, 90); }
+               else { return rotateImage(img,0); }
             default:
                 return img;
         }
@@ -397,34 +422,39 @@ catch (Exception e) {
         Matrix matrix = new Matrix();
         matrix.postRotate(degree);
         Bitmap rotatedImg = Bitmap.createBitmap(img, 0, 0, img.getWidth(), img.getHeight(), matrix, true);
-        img.recycle();
         return rotatedImg;
     }
-    public static Bitmap rotateBitmap (Bitmap source, float angle){
+
+    public static Bitmap rotateBitmap(Bitmap source, float angle) {
         Matrix matrix = new Matrix();
         matrix.postRotate(angle);
-        return  Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),matrix,true);
+        return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
     }
 
     private void internal() {
-        int mCount =0;
+        int mCount = 0;
 
-        for (PhotoModel item: mViews) {
+        for (PhotoModel item : mViews) {
             ((ImageView) item.mImageContainer.findViewWithTag("image")).setImageResource(R.drawable.ic_service_placeholder);
         }
 
         for (PhotoModel item : mPhotos) {
-            showImage((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"),item);
+            showImage((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"), item);
             mCount++;
         }
 
-        activation();
+        resetPhotoBox();
     }
 
     private void showImage(ImageView nImageView, PhotoModel nPhotoModel) {
         switch (nPhotoModel.mPhotoFrom) {
-            case Constants.TAKE_PHOTO_CAMERA: Log.d("nasoale2","afiseaza : "+nPhotoModel.mFilePathString); /* Picasso.with(this).load(photoUri).into(nImageView); */ nImageView.setImageBitmap(nPhotoModel.mBitmap);  break;
-            case Constants.TAKE_PHOTO_GALLERY : Picasso.with(this).load(nPhotoModel.mFilePath).into(nImageView);  break;
+            case Constants.TAKE_PHOTO_CAMERA:
+              Picasso.with(this).load(nPhotoModel.mFilePath).into(nImageView);
+           //     nImageView.setImageBitmap(nPhotoModel.mBitmap);
+                break;
+            case Constants.TAKE_PHOTO_GALLERY:
+                Picasso.with(this).load(nPhotoModel.mFilePath).into(nImageView);
+                break;
         }
     }
 
@@ -453,29 +483,11 @@ catch (Exception e) {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            Log.d("camera222","ROATIEEE : "+e.getMessage());
+            Log.d("camera222", "ROATIEEE : " + e.getMessage());
         }
         return rotate;
     }
-//
-//    public File ceva (Bitmap mBitmap) {
-//        File f3=new File(Environment.getExternalStorageDirectory()+"/inpaint/");
-//        if(!f3.exists())
-//            f3.mkdirs();
-//        OutputStream outStream = null;
-//        File file = new File(Environment.getExternalStorageDirectory() + "/inpaint/"+System.currentTimeMillis()+".png");
-//        try {
-//            outStream = new FileOutputStream(file);
-//            mBitmap.compress(Bitmap.CompressFormat.PNG, 85, outStream);
-//            outStream.close();
-//            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        return file;
-//    }
-//
+
 //    public Uri getImageUri(Context inContext, Bitmap inImage) {
 //        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
 //        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);

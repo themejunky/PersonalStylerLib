@@ -55,6 +55,11 @@ public class Test extends PhotoActivity implements PhotoActivity._Interface{
         Toast.makeText(this,"AV : "+nPhotoType+"- TOTAL : "+mPhotos.size(),Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void onPhotosError() {
+
+    }
+
 /*
 
     private Camera getCameraInstance() {
