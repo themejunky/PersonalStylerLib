@@ -1,5 +1,9 @@
 package com.themejunky.personalstylerlib.bases.tools;
 
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -9,8 +13,10 @@ import android.widget.TextView;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.utils.Constants;
 
+import java.io.InputStream;
 
-public class Tools_Views extends ToolsBase {
+
+public class Tools_Views extends Tools_Photos {
 
     /**
      * Create a parent linearlayout with tag to identify if can be deleted when refresh is request
@@ -84,5 +90,4 @@ public class Tools_Views extends ToolsBase {
         ((ImageView) nMenuItemRow.findViewById(R.id.nIcon)).setImageDrawable(mContext.getResources().getDrawable(nIcon));
         ((TextView) nMenuItemRow.findViewById(R.id.nName)).setText(mContext.getResources().getString(nName));
     }
-
 }

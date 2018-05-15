@@ -1,24 +1,15 @@
 package mystylistlib.themejunky.com.mystylistlib;
 
 
-import android.hardware.Camera;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.themejunky.personalstylerlib.bases.PhotoActivity;
+import com.themejunky.personalstylerlib.bases.activities.photo.PhotoActivity;
 import com.themejunky.personalstylerlib.customdialogs.photo.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Test extends PhotoActivity implements PhotoActivity._Interface{
     @Override

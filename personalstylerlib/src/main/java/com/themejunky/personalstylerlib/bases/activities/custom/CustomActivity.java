@@ -1,8 +1,7 @@
-package com.themejunky.personalstylerlib.bases;
+package com.themejunky.personalstylerlib.bases.activities.custom;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -10,8 +9,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
+import com.themejunky.personalstylerlib.bases.activities.photo.PhotoActivity;
 import com.themejunky.personalstylerlib.bases.animations.ScrollAnimation;
-import com.themejunky.personalstylerlib.bases.tools.Tools;
 import com.themejunky.personalstylerlib.customviews.CustomButton;
 import com.themejunky.personalstylerlib.customviews.CustomButtonBorder;
 import com.themejunky.personalstylerlib.customviews.CustomServices;
