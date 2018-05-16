@@ -52,10 +52,16 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
     }
 
     @Override
-    public void onPhotoPresenter_PhotoReady(PhotoModel nPhoto, String nType) {
-        mPhotos.add(nPhoto);
+    public int onPhotoPresenter_PhotoReady(PhotoModel nPhoto, String nType, int nPosition) {
+
+        if (nPosition==Constants.TAKE_PHOTO) {
+            mPhotos.add(nPhoto);
+        } else {
+            mPhotos.set(nPosition,nPhoto);
+        }
         internal();
         mPhotoActivityInterface.onPhotosRefreshAvailable(nType);
+        return mPhotos.size();
     }
 
     @Override
@@ -161,6 +167,7 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
         }
     }
 
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent nReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, nReturnedIntent);
         if (requestCode == ACTION_GALLERY && resultCode == RESULT_OK) {
@@ -170,8 +177,6 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
         }
     }
 
-
-
     private void internal() {
         int mCount = 0;
 
@@ -180,7 +185,15 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
         }
 
         for (PhotoModel item : mPhotos) {
-            Picasso.with(this).load(item.mFilePath).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+            if (!item.mPhotoFrom.equals(Constants.TAKE_PHOTO_LOADING)) {
+            Picasso.with(this).load(item.mFilePath).placeholder(R.drawable.ic_pic_delete).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+
+                Log.d("pozitia_copilului","poza buna");
+            }
+            else {
+                Picasso.with(this).load(R.drawable.ic_pic_delete).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                Log.d("pozitia_copilului","poza loading");
+            }
             mCount++;
         }
 

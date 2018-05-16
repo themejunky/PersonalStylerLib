@@ -32,10 +32,11 @@ public class PhotoPresenter {
     private Tools mTools;
     private PhotoActivity mPhotoActivity;
     private _Interface mListener;
+    private int position;
 
     public interface _Interface {
         void onPhotoPresenter_LayoutReady(List<PhotoModel> mViews);
-        void onPhotoPresenter_PhotoReady(PhotoModel mViews, String nType);
+        int onPhotoPresenter_PhotoReady(PhotoModel mViews, String nTypem, int nPosition);
         Uri onPhotoPresenter_GetBasePhotoUri();
     }
 
@@ -44,6 +45,8 @@ public class PhotoPresenter {
         mTools = Tools.getInstance(nPhotoActivity);
         mPhotoActivity = nPhotoActivity;
         mListener = nListener;
+
+        position = Constants.TAKE_PHOTO;
     }
 
 
@@ -60,22 +63,46 @@ public class PhotoPresenter {
 
 
     public void mPreparePhotoGallery(Intent nReturnedIntent) {
+
+        position = Constants.TAKE_PHOTO;
+
+        mCompositeDisposable.add(mPreparePhotoLoadingPlace(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+            @Override
+            public void accept(PhotoModel nPhotoModel) {
+                if (mPhotoActivity != null && mListener != null) {
+                    position = mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CAMERA,position);
+                }
+            }
+        }));
+
         mCompositeDisposable.add(mPreparePhotoGalleryCore(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
             @Override
             public void accept(PhotoModel nPhotoModel) {
                 if (mPhotoActivity != null && mListener != null) {
-                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_GALLERY);
+                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_GALLERY,position-1);
                 }
             }
         }));
     }
 
-    public void mPreparePhotoCamera(Intent nReturnedIntent) {
+    public void mPreparePhotoCamera(final Intent nReturnedIntent) {
+
+        position = Constants.TAKE_PHOTO;
+
+        mCompositeDisposable.add(mPreparePhotoLoadingPlace(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+            @Override
+            public void accept(PhotoModel nPhotoModel) {
+                if (mPhotoActivity != null && mListener != null) {
+                    position = mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CAMERA,position);
+                }
+            }
+        }));
+
         mCompositeDisposable.add(mPreparePhotoCameraCore(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
             @Override
             public void accept(PhotoModel nPhotoModel) {
                 if (mPhotoActivity != null && mListener != null) {
-                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CAMERA);
+                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CAMERA,position-1);
                 }
             }
         }));
@@ -115,6 +142,17 @@ public class PhotoPresenter {
                 PhotoModel nPhoto = new PhotoModel();
                 nPhoto.mFilePath = nReturnedIntent.getData();
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_GALLERY;
+                return nPhoto;
+            }
+        });
+    }
+
+    private Observable<PhotoModel> mPreparePhotoLoadingPlace(final Intent nReturnedIntent) {
+        return Observable.fromCallable(new Callable<PhotoModel>() {
+            @Override
+            public PhotoModel call() {
+                PhotoModel nPhoto = new PhotoModel();
+                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_LOADING;
                 return nPhoto;
             }
         });
