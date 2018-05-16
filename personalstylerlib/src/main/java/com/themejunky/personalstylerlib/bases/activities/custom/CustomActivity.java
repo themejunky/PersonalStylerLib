@@ -24,8 +24,6 @@ public class CustomActivity extends PhotoActivity implements View.OnClickListene
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     /**

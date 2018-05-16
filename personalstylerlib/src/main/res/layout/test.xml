@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_violet">
+
+    <RelativeLayout
+        android:id="@+id/nTop"
+        android:background="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+     />
+
+    <RelativeLayout
+        android:id="@+id/nWindows"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/green"
+        android:layout_below="@+id/nTop"
+
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/nBottom"
+        android:background="@color/grey_2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/nWindows"
+        android:layout_above="@+id/nBottom2"
+
+        />
+    <RelativeLayout
+        android:id="@+id/nBottom2"
+        android:background="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

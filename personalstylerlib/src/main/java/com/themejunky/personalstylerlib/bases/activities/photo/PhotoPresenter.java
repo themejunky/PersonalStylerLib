@@ -141,6 +141,7 @@ public class PhotoPresenter {
             public PhotoModel call() {
                 PhotoModel nPhoto = new PhotoModel();
                 nPhoto.mFilePath = nReturnedIntent.getData();
+                nPhoto.mFilePathString = nReturnedIntent.getData().getPath();
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_GALLERY;
                 return nPhoto;
             }

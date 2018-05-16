@@ -1,11 +1,8 @@
 package com.themejunky.personalstylerlib.bases.activities.photo;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
@@ -13,26 +10,19 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 import com.themejunky.personalstylerlib.R;
+import com.themejunky.personalstylerlib.bases.activities.cropping.CroppingPhoto;
 import com.themejunky.personalstylerlib.bases.model.PhotoModel;
 import com.themejunky.personalstylerlib.bases.tools.Tools;
 import com.themejunky.personalstylerlib.customdialogs.photo.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class PhotoActivity extends AppCompatActivity implements TakePhoto._Interface, View.OnClickListener, PhotoPresenter._Interface {
     public Tools mTools;
@@ -58,6 +48,10 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
             mPhotos.add(nPhoto);
         } else {
             mPhotos.set(nPosition,nPhoto);
+
+            Intent intent = new Intent(this, CroppingPhoto.class);
+            intent.putExtra("EXTRA_FILE_PATH", nPhoto.mFilePath.toString());
+            startActivity(intent);
         }
         internal();
         mPhotoActivityInterface.onPhotosRefreshAvailable(nType);
@@ -175,6 +169,8 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
         } else if (requestCode == ACTION_CAMERA && resultCode == RESULT_OK) {
             mPresenter.mPreparePhotoCamera(nReturnedIntent);
         }
+
+
     }
 
     private void internal() {
