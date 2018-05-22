@@ -51,13 +51,9 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
             mPhotos.set(nPosition, nPhoto);
 
             closeDialog();
-
-
             Intent intent = new Intent(this, CroppingPhoto.class);
             intent.putExtra("EXTRA_FILE_PATH", nPhoto.mFilePath.toString());
-            startActivity(intent);
-
-
+            startActivityForResult(intent,ACTION_CROP);
         }
     //    internal();
 
@@ -84,6 +80,7 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
     protected _Interface mPhotoActivityInterface;
     private int ACTION_CAMERA = 1;
     private int ACTION_GALLERY = 2;
+    private int ACTION_CROP = 3;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

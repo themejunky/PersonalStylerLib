@@ -61,7 +61,6 @@ public class PhotoPresenter {
         }));
     }
 
-
     public void mPreparePhotoGallery(Intent nReturnedIntent) {
 
         position = Constants.TAKE_PHOTO;
