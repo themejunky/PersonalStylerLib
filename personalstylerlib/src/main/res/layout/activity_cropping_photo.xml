@@ -3,29 +3,50 @@
     android:id="@+id/nContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/red">
 
-    <RelativeLayout
-        android:id="@+id/nTop"
+    <ImageView
+        android:id="@+id/nPic"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/base_red"/>
-
-    <RelativeLayout
-        android:id="@+id/nWindows"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@+id/nTop"
-        android:background="@drawable/border_cropp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:adjustViewBounds="true"
         />
 
     <RelativeLayout
-        android:id="@+id/nBottom"
+        android:id="@+id/nCont"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/base_red"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/nWindows"
-        />
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/nTop"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#7f404040"/>
+
+        <RelativeLayout
+            android:id="@+id/nWindows"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/nTop"
+            android:background="@drawable/border_cropp"/>
+
+        <RelativeLayout
+            android:id="@+id/nBottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#7f404040"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/nWindows"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/nCrop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crop"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

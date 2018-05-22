@@ -37,8 +37,8 @@
         <activity
             android:name="com.themejunky.personalstylerlib.bases.activities.cropping.CroppingPhoto"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:theme="@style/AppTheme"
+           />
         <provider
             android:authorities="${applicationId}.provider"
             android:name="android.support.v4.content.FileProvider"

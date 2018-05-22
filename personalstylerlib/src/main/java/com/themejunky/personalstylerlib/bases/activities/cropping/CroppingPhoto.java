@@ -1,160 +1,96 @@
 package com.themejunky.personalstylerlib.bases.activities.cropping;
 
-import android.graphics.Rect;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.squareup.picasso.Picasso;
 import com.themejunky.personalstylerlib.R;
 
-public class CroppingPhoto extends AppCompatActivity implements View.OnTouchListener {
-    private int _xDelta;
+public class CroppingPhoto extends AppCompatActivity implements View.OnTouchListener, ViewTreeObserver.OnGlobalLayoutListener {
     private int _yDelta;
+    private RelativeLayout mTop;
+    private int mViewTopStartHeight,mWindowHeight;
+    private Boolean mViewStartModification = false;
+    private RelativeLayout mWindows;
+    private RelativeLayout.LayoutParams paramsTop;
+    private Uri mUriPic;
+
+    public interface Interface {
+        void onCroppingPhoto_Finished();
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_cropping_photo);
-        Log.d("pusca",""+getIntent().getStringExtra("EXTRA_FILE_PATH"));
-        Uri filePath = Uri.parse(getIntent().getStringExtra("EXTRA_FILE_PATH"));
 
+        mUriPic = Uri.parse(getIntent().getStringExtra("EXTRA_FILE_PATH"));
 
-      //  Picasso.with(this).load(filePath).into((ImageView) findViewById(R.id.nPic));
+        Picasso.with(this).load(mUriPic).into((ImageView) findViewById(R.id.nPic));
 
+        mWindows = findViewById(R.id.nWindows);
+        mWindows.setOnTouchListener(this);
+        mWindows.getViewTreeObserver().addOnGlobalLayoutListener(this);
 
-        findViewById(R.id.nWindows).setOnTouchListener(this);
-
-
+        mTop = findViewById(R.id.nTop);
     }
 
     @Override
     public boolean onTouch(View view, MotionEvent event) {
-        final int X = (int) event.getRawX();
-        final int Y = (int) event.getRawY();
+        int Y = (int) event.getRawY();
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN:
                 RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams) view.getLayoutParams();
-                _xDelta = X - lParams.leftMargin;
                 _yDelta = Y - lParams.topMargin;
                 break;
             case MotionEvent.ACTION_UP:
+                mViewStartModification = false;
                 break;
-            case MotionEvent.ACTION_MOVE:
-               // if (isViewVisible(findViewById(R.id.nWindow)))
-                {
+            case MotionEvent.ACTION_MOVE: {
 
-
-                    RelativeLayout.LayoutParams layoutParams1 = (RelativeLayout.LayoutParams) findViewById(R.id.nTop).getLayoutParams();
-
-
-                    RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) view.getLayoutParams();
-                    layoutParams.topMargin = Y - _yDelta;
-
-
-                    Rect scrollBounds = new Rect();
-                    findViewById(R.id.nContainer).getDrawingRect(scrollBounds);
-
-                    Rect scrollBounds2 = new Rect();
-                    view.getDrawingRect(scrollBounds2);
-
-                    if (scrollBounds.top<layoutParams.topMargin && scrollBounds.bottom>(layoutParams.topMargin+scrollBounds2.bottom)) {
-                        Log.d("adasdasdasdsas","TOP 1 : "+(scrollBounds.top<=layoutParams.topMargin)+"/"+(scrollBounds.bottom>(layoutParams.topMargin+scrollBounds2.bottom)) );
-                        Log.d("adasdasdasdsas","TOP 1 : "+(scrollBounds.bottom+"<="+(layoutParams.topMargin+scrollBounds2.bottom) ));
-                        layoutParams.topMargin = Y - _yDelta;
-
-                        Log.d("esatas","TOP 1 : "+(Y)+"/"+_yDelta+"/"+ layoutParams1.height+"/"+(Y - _yDelta));
-                     layoutParams1.height =     layoutParams1.height +  layoutParams.topMargin;
-
-
-                    } else if (scrollBounds.top>=layoutParams.topMargin) {
-                        layoutParams.topMargin = 0;
-                    } else {
-                        layoutParams.topMargin = scrollBounds.bottom-scrollBounds2.bottom;
-                        Log.d("adasdasdasdsas","FALSEEE "+scrollBounds.bottom+"/"+scrollBounds2.bottom);
-                    }
-
-
-                      /*  if (scrollBounds.top>layoutParams.topMargin) {
-                        Log.d("adasdasdasdsas","TOP 2");
-                        layoutParams.topMargin = 0;
-                    } else if (scrollBounds.bottom>(layoutParams.topMargin+scrollBounds2.bottom)) {
-                        Log.d("adasdasdasdsas","BUBUI"+(scrollBounds.top-scrollBounds2.bottom));
-                        layoutParams.topMargin = scrollBounds.top-scrollBounds2.bottom;
-                    }*/
-
-//                    if (scrollBounds.bottom<=(layoutParams.topMargin+scrollBounds2.bottom)) {
-//                        layoutParams.topMargin = Y - _yDelta;
-//                    } else {
-//                        layoutParams.topMargin = scrollBounds.bottom-scrollBounds2.bottom;
-//                    }
-
-               //     Log.d("adasdasdasdsa",""+scrollBounds.bottom+"/"+scrollBounds2.bottom);
-
-                   // Log.d("adasdasdasdsa",""+scrollBounds.bottom+"/"+(layoutParams.topMargin+scrollBounds2.bottom));
-                    view.setLayoutParams(layoutParams);
-                  //  findViewById(R.id.nTop).setLayoutParams(layoutParams1);
+                if (!mViewStartModification) {
+                    paramsTop = (RelativeLayout.LayoutParams) mTop.getLayoutParams();
+                    mViewTopStartHeight = mTop.getHeight();
+                    mViewStartModification = true;
+                    mWindowHeight = mWindows.getHeight();
                 }
 
+              if (findViewById(R.id.nPic).getHeight()-(mViewTopStartHeight+(Y - _yDelta))>mWindowHeight) {
+                  paramsTop.height = mViewTopStartHeight+(Y - _yDelta);
+                  mTop.setLayoutParams(paramsTop);
+              } else {
+                  paramsTop.height = findViewById(R.id.nPic).getHeight()-mWindowHeight;
+                  mTop.setLayoutParams(paramsTop);
+              }
+            }
 
-
-//        //}
-//
-//                if (!isViewVisible(findViewById(R.id.nWindow))) {
-//                    RelativeLayout.LayoutParams dasdsa = (RelativeLayout.LayoutParams) view.getLayoutParams();
-//                    if (whereItIs(findViewById(R.id.nWindow)).equals("SUS")) {
-//                        dasdsa.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-//        Log.d("fixfix","fix_sus");
-//                        dasdsa.topMargin=5;
-//
-//                    } else if (whereItIs(findViewById(R.id.nWindow)).equals("JOS")) {
-//                        dasdsa.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//                        Log.d("fixfix","fix_jos");
-//                        dasdsa.bottomMargin=5;
-//                    }
-//
-//                    view.setLayoutParams(dasdsa);
-//                    view.requestLayout();
-//            }
-
-                break;
+            break;
         }
         return true;
     }
 
-
-    private boolean isViewVisible(View view) {
-        Rect scrollBounds = new Rect();
-        findViewById(R.id.nContainer).getDrawingRect(scrollBounds);
-        float top = view.getY();
-        float bottom = top + view.getHeight();
-        if (scrollBounds.top < top && scrollBounds.bottom > bottom) {
-            return true; //View is visible.
-        } else {
-            return false; //View is NOT visible.
-        }
+    @Override
+    public void onGlobalLayout() {
+        RelativeLayout.LayoutParams mWindowParam = (RelativeLayout.LayoutParams) mWindows.getLayoutParams();
+        mWindowParam.height = (int) (mWindows.getWidth() / 1.8);
+        mWindows.setLayoutParams(mWindowParam);
+        mWindows.requestLayout();
+        mWindows.getViewTreeObserver().removeOnGlobalLayoutListener(this);
     }
 
-    private String whereItIs(View view) {
-        Rect scrollBounds = new Rect();
-        findViewById(R.id.nContainer).getDrawingRect(scrollBounds);
-
-        float top = view.getY();
-        float bottom = top + view.getHeight();
-
-        if (scrollBounds.top >= top) {
-            return "SUS";
-        } else if (scrollBounds.bottom <= bottom){
-            return "JOS";
-        }
-        return "";
+    public void mCropPhoto() {
+        Drawable drawing = ((ImageView) findViewById(R.id.nPic)).getDrawable();
+        Bitmap   bitmap = ((BitmapDrawable) drawing).getBitmap();
+        Bitmap output = Bitmap.createBitmap(bitmap, 0,(int) (mTop.getHeight()*((double) bitmap.getHeight()/findViewById(R.id.nPic).getHeight())), bitmap.getWidth(),(int) (bitmap.getWidth()/1.8));
+        ((ImageView) findViewById(R.id.nPic)).setImageBitmap(output);
     }
 }
