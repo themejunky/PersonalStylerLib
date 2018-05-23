@@ -49,7 +49,6 @@ public class PhotoPresenter {
         position = Constants.TAKE_PHOTO;
     }
 
-
     public void mSetLayout(ViewGroup nViewGroup, int nNoPic, View.OnClickListener nOnClickListener) {
         mCompositeDisposable.add(mPrepareLayout(nViewGroup, nNoPic, nOnClickListener).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<PhotoModel>>() {
             @Override
@@ -65,7 +64,7 @@ public class PhotoPresenter {
 
         position = Constants.TAKE_PHOTO;
 
-        mCompositeDisposable.add(mPreparePhotoLoadingPlace(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+        mCompositeDisposable.add(mPreparePhotoLoadingPlace().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
             @Override
             public void accept(PhotoModel nPhotoModel) {
                 if (mPhotoActivity != null && mListener != null) {
@@ -88,7 +87,7 @@ public class PhotoPresenter {
 
         position = Constants.TAKE_PHOTO;
 
-        mCompositeDisposable.add(mPreparePhotoLoadingPlace(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+        mCompositeDisposable.add(mPreparePhotoLoadingPlace().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
             @Override
             public void accept(PhotoModel nPhotoModel) {
                 if (mPhotoActivity != null && mListener != null) {
@@ -102,6 +101,30 @@ public class PhotoPresenter {
             public void accept(PhotoModel nPhotoModel) {
                 if (mPhotoActivity != null && mListener != null) {
                     mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CAMERA,position-1);
+                }
+            }
+        }));
+    }
+
+
+    public void mPreparePhotoCropped(Uri nUriPhotoCropped) {
+        position = Constants.TAKE_PHOTO;
+
+        mCompositeDisposable.add(mPreparePhotoLoadingPlace().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+            @Override
+            public void accept(PhotoModel nPhotoModel) {
+                if (mPhotoActivity != null && mListener != null) {
+                    position = mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CROPPED,position);
+                }
+            }
+        }));
+
+        mCompositeDisposable.add(mPreparePhotoCroppedCore(nUriPhotoCropped).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+            @Override
+            public void accept(PhotoModel nPhotoModel) {
+                if (mPhotoActivity != null && mListener != null) {
+                    Log.d("parsareee","gata!!!! "+nPhotoModel.mCroppedFilePath);
+                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CROPPED,position-1);
                 }
             }
         }));
@@ -147,12 +170,26 @@ public class PhotoPresenter {
         });
     }
 
-    private Observable<PhotoModel> mPreparePhotoLoadingPlace(final Intent nReturnedIntent) {
+    private Observable<PhotoModel> mPreparePhotoLoadingPlace() {
         return Observable.fromCallable(new Callable<PhotoModel>() {
             @Override
             public PhotoModel call() {
                 PhotoModel nPhoto = new PhotoModel();
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_LOADING;
+                return nPhoto;
+            }
+        });
+    }
+
+    private Observable<PhotoModel> mPreparePhotoCroppedCore(final Uri nUriPhotoCropped) {
+
+        return Observable.fromCallable(new Callable<PhotoModel>() {
+            @Override
+            public PhotoModel call() {
+                PhotoModel nPhoto = new PhotoModel();
+                nPhoto.mCroppedFilePath = nUriPhotoCropped;
+                nPhoto.mFilePathString = nUriPhotoCropped.getPath();
+                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CROPPED;
                 return nPhoto;
             }
         });

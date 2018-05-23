@@ -29,6 +29,7 @@ dependencies {
 
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
     implementation "io.reactivex.rxjava2:rxjava:2.1.7"
     implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'

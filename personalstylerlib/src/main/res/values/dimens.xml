@@ -14,4 +14,7 @@
 
     <dimen name="schedule_constant">15dp</dimen>
     <dimen name="schedule_constant_info">12dp</dimen>
+
+    <dimen name="default_crop_border_dimenssion">2dp</dimen>
+    <dimen name="default_crop_border_radius">0dp</dimen>
 </resources>

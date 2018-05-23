@@ -7,13 +7,14 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 import com.themejunky.personalstylerlib.R;
-import com.themejunky.personalstylerlib.bases.activities.cropping.CroppingPhoto;
+import com.themejunky.personalstylerlib.bases.activities.cropping.CroppingPhotoActivity;
 import com.themejunky.personalstylerlib.bases.model.PhotoModel;
 import com.themejunky.personalstylerlib.bases.tools.Tools;
 import com.themejunky.personalstylerlib.customdialogs.photo.TakePhoto;
@@ -43,24 +44,28 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
 
     @Override
     public int onPhotoPresenter_PhotoReady(PhotoModel nPhoto, String nType, int nPosition) {
-
         if (nPosition == Constants.TAKE_PHOTO) {
+           // mPhotos.add(nPhoto);
+            //showDialog();
+        }
+        else if (nType.equals(Constants.TAKE_PHOTO_CROPPED)) {
             mPhotos.add(nPhoto);
-            showDialog();
-        } else {
-            mPhotos.set(nPosition, nPhoto);
+            Log.d("parsa",""+nPhoto.mCroppedFilePath);
+            internal();
+        }
+        else  {
+           // mPhotos.set(nPosition, nPhoto);
 
-            closeDialog();
-            Intent intent = new Intent(this, CroppingPhoto.class);
-            intent.putExtra("EXTRA_FILE_PATH", nPhoto.mFilePath.toString());
+           // closeDialog();
+
+       //
+            Intent intent = new Intent(this, CroppingPhotoActivity.class);
+            intent.putExtra(Constants.TAKE_PHOTO_FILE, nPhoto.mFilePath.toString());
+            intent.putExtra(Constants.TAKE_PHOTO_RATIO, "1.8");
             startActivityForResult(intent,ACTION_CROP);
         }
-    //    internal();
-
         mPhotoActivityInterface.onPhotosRefreshAvailable(nType);
-
-
-        return mPhotos.size();
+        return 0;
     }
 
     @Override
@@ -78,9 +83,9 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
     protected List<PhotoModel> mPhotos = new ArrayList<>();
     protected List<PhotoModel> mViews = new ArrayList<>();
     protected _Interface mPhotoActivityInterface;
-    private int ACTION_CAMERA = 1;
-    private int ACTION_GALLERY = 2;
-    private int ACTION_CROP = 3;
+    private final int ACTION_CAMERA = 1;
+    private final int ACTION_GALLERY = 2;
+    private final int ACTION_CROP = 3;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,12 +172,12 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent nReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, nReturnedIntent);
-        if (requestCode == ACTION_GALLERY && resultCode == RESULT_OK) {
-
-            mPresenter.mPreparePhotoGallery(nReturnedIntent);
-        } else if (requestCode == ACTION_CAMERA && resultCode == RESULT_OK) {
-
-            mPresenter.mPreparePhotoCamera(nReturnedIntent);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case ACTION_GALLERY:  mPresenter.mPreparePhotoGallery(nReturnedIntent); break;
+                case ACTION_CAMERA:  mPresenter.mPreparePhotoCamera(nReturnedIntent);   break;
+                case ACTION_CROP:  mPresenter.mPreparePhotoCropped(Uri.parse(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_FILE))); break;
+            }
         }
     }
 
@@ -185,26 +190,12 @@ public class PhotoActivity extends AppCompatActivity implements TakePhoto._Inter
 
         for (PhotoModel item : mPhotos) {
             if (!item.mPhotoFrom.equals(Constants.TAKE_PHOTO_LOADING)) {
-                Picasso.with(this).load(item.mFilePath).placeholder(R.drawable.ic_pic_delete).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                Picasso.with(this).load(item.mCroppedFilePath).placeholder(R.drawable.ic_pic_delete).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
             } else {
                 Picasso.with(this).load(R.drawable.ic_pic_delete).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
             }
             mCount++;
         }
         resetPhotoBox();
-    }
-
-
-
-    private void showDialog() {
-        progressBar = new ProgressDialog(this);
-        progressBar.setCancelable(false);
-        progressBar.setMessage("Please wait ...");
-        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressBar.show();
-    }
-
-    private void closeDialog() {
-        progressBar.dismiss();
     }
 }

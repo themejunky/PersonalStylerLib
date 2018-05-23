@@ -124,6 +124,9 @@
 
     <color name="border_edittext">#d1d1d1</color>
 
+    <color name="default_crop_background">#aa404040</color>
+    <color name="default_crop_border">@color/base_grey2</color>
+
    <!-- Switch-->
     <color name="switch_text_color">#333333</color>
     <color name="switch_subtext_color">#c3c3c3</color>

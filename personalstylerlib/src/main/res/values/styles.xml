@@ -24,6 +24,14 @@
         <item name="android:paddingBottom">3dp</item>
     </style>
 
+    <style name="Default_Crop_Button">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
     <style name="base_image_container" parent="Cube70">
         <item name="android:visibility">visible</item>
     </style>

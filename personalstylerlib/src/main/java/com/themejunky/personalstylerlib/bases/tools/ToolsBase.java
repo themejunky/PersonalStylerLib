@@ -2,6 +2,7 @@ package com.themejunky.personalstylerlib.bases.tools;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
@@ -39,6 +40,7 @@ public class ToolsBase {
 
     public int mRowHeight;
     private Snackbar mSnackBar;
+    private ProgressDialog mProgressBar;
 
 
     public Locale getLocale() {
@@ -215,4 +217,23 @@ public class ToolsBase {
         TextView textView = sbView.findViewById(android.support.design.R.id.snackbar_text);
         textView.setTextColor(mContext.getResources().getColor(R.color.snackbar_text));
     }
+
+    public void showLoading(String nStringResources) {
+        mProgressBar = new ProgressDialog(mContext);
+        mProgressBar.setCancelable(false);
+
+        if (nStringResources==null) {
+            mProgressBar.setMessage(mContext.getString(R.string.default_loading_message));
+        } else {
+            mProgressBar.setMessage(nStringResources);
+        }
+        mProgressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mProgressBar.show();
+    }
+
+    public void closeLoading() {
+        if (mProgressBar!=null) {
+            mProgressBar.dismiss(); }
+    }
+
 }

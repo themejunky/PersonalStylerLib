@@ -51,6 +51,8 @@
     <string name="order_edit">order_edit</string>
     <string name="order_save">order_save</string>
 
+    <string name="crop_action">crop</string>
+
     <string name="styleable_imei_key_1">next</string>
     <string name="styleable_imei_key_2">done</string>
 
