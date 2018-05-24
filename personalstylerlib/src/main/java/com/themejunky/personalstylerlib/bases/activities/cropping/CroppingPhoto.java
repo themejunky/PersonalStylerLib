@@ -82,7 +82,8 @@ public class CroppingPhoto extends CroppingPhotoBase {
         mTools.closeLoading();
 
         Intent returnIntent = new Intent();
-        returnIntent.putExtra(Constants.TAKE_PHOTO_FILE , nUriCropped.toString());
+        returnIntent.putExtra(Constants.TAKE_PHOTO_FILE ,getIntent().getStringExtra(Constants.TAKE_PHOTO_FILE));
+        returnIntent.putExtra(Constants.TAKE_PHOTO_FILE_CROP , nUriCropped.toString());
         setResult(Activity.RESULT_OK, returnIntent);
 
         finish();

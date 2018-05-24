@@ -1,4 +1,4 @@
-package com.themejunky.personalstylerlib.customdialogs.photo;
+package com.themejunky.personalstylerlib.customdialogs.photo.take;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;

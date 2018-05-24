@@ -11,10 +11,13 @@ import android.view.ViewGroup;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.activities.cropping.CroppingPhoto;
 import com.themejunky.personalstylerlib.bases.model.PhotoModel;
+import com.themejunky.personalstylerlib.customdialogs.photo.edit.EditPhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
 
 
 public class Photo extends PhotoBase {
+
+    private String mRatio;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +34,9 @@ public class Photo extends PhotoBase {
 
     @Override
     public void onClick(View nView) {
-        mPhotos.remove(Integer.parseInt(nView.getTag().toString()));
-        refreshPhotos();
+        EditPhoto.getInstance().refreshContent(this,this,Integer.parseInt(nView.getTag().toString()));
+      //  mPhotos.remove(Integer.parseInt(nView.getTag().toString()));
+
     }
 
     @Override
@@ -41,14 +45,18 @@ public class Photo extends PhotoBase {
             mPhotos.add(nPhoto);
             refreshPhotos();
         } else {
-            Intent intent = new Intent(this, CroppingPhoto.class);
-            intent.putExtra(Constants.TAKE_PHOTO_FILE, nPhoto.mFilePath.toString());
-            intent.putExtra(Constants.TAKE_PHOTO_RATIO, "1.8");
-            startActivityForResult(intent, ACTION_CROP);
+            mStartCropping(nPhoto);
         }
         mTools.closeLoading();
         mPhotoActivityInterface.onPhotosRefreshAvailable(nType);
         return mPhotos.size();
+    }
+
+    protected void mStartCropping(PhotoModel nPhoto) {
+        Intent intent = new Intent(this, CroppingPhoto.class);
+        intent.putExtra(Constants.TAKE_PHOTO_FILE, nPhoto.mFilePath.toString());
+        intent.putExtra(Constants.TAKE_PHOTO_RATIO, mRatio);
+        startActivityForResult(intent, ACTION_CROP);
     }
 
     /**
@@ -58,7 +66,8 @@ public class Photo extends PhotoBase {
      * @param nNoPic     - number of desired pictures
      * @param nViewGroup - view group in witch the UI will be deployed
      */
-    protected void mActivatePhotoInternalAPI(_Interface nListener, int nNoPic, ViewGroup nViewGroup) {
+    protected void mActivatePhotoInternalAPI(_Interface nListener, int nNoPic, String nRatio, ViewGroup nViewGroup) {
+        mRatio = nRatio;
         mPhotoActivityInterface = nListener;
         mPresenter = new PhotoPresenter(this, this);
         mPresenter.mSetLayout(nViewGroup, nNoPic, this);
@@ -101,7 +110,9 @@ public class Photo extends PhotoBase {
                     mPresenter.mPreparePhotoCamera(nReturnedIntent);
                     break;
                 case ACTION_CROP:
-                    mPresenter.mPreparePhotoCropped(Uri.parse(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_FILE)));
+                 //   mPresenter.mPreparePhotoCropped(Uri.parse(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_FILE_CROP)));
+
+                    mPresenter.mPreparePhotoCropped(nReturnedIntent);
                     break;
             }
         }
@@ -119,5 +130,17 @@ public class Photo extends PhotoBase {
                 mTools.showSimpleSnackBar(findViewById(R.id.nContainer), R.string.camera_permission_error);
             }
         }
+    }
+
+    @Override
+    public void onEditPhoto_Edit(int nPhotoPositionFromModel) {
+        mStartCropping(mPhotos.get(nPhotoPositionFromModel));
+
+    }
+
+    @Override
+    public void onEditPhoto_Delete(int nPhotoPositionFromModel) {
+        mPhotos.remove(nPhotoPositionFromModel);
+        refreshPhotos();
     }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nContainer"
+    style="@style/MatchMatch.Vertical">
+
+
+    <TextView
+        android:id="@+id/nChooseDelete"
+        style="@style/MatchWrap.Regular.Black.14"
+        android:layout_margin="5dp"
+        android:text="Delete"/>
+
+    <View
+        style="@style/Divider.Horizontal"/>
+
+    <TextView
+        android:id="@+id/nChooseEdit"
+        style="@style/MatchWrap.Regular.Black.14"
+        android:layout_margin="5dp"
+        android:text="Edit"/>
+
+</LinearLayout>

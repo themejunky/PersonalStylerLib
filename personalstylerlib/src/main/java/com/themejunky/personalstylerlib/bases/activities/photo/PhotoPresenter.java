@@ -182,10 +182,10 @@ public class PhotoPresenter {
     /**
      * Prepare foto that was cropped and return with neccesary data as PhotoModel
      *
-     * @param nUriPhotoCropped - URI of the cropped image
+     * @param nReturnedIntent - returned intent when user came back from cropping
      */
-    public void mPreparePhotoCropped(Uri nUriPhotoCropped) {
-        mCompositeDisposable.add(mPreparePhotoCroppedCore(nUriPhotoCropped).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+    public void mPreparePhotoCropped(Intent nReturnedIntent) {
+        mCompositeDisposable.add(mPreparePhotoCroppedCore(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
             @Override
             public void accept(PhotoModel nPhotoModel) {
                 if (mPhotoActivity != null && mListener != null) {
@@ -195,14 +195,15 @@ public class PhotoPresenter {
         }));
     }
 
-    private Observable<PhotoModel> mPreparePhotoCroppedCore(final Uri nUriPhotoCropped) {
+    private Observable<PhotoModel> mPreparePhotoCroppedCore(final Intent nReturnedIntent) {
 
         return Observable.fromCallable(new Callable<PhotoModel>() {
             @Override
             public PhotoModel call() {
                 PhotoModel nPhoto = new PhotoModel();
-                nPhoto.mCroppedFilePath = nUriPhotoCropped;
-                nPhoto.mFilePathString = nUriPhotoCropped.getPath();
+                nPhoto.mCroppedFilePath = Uri.parse(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_FILE_CROP));
+                nPhoto.mFilePathString = Uri.parse(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_FILE_CROP)).getPath();
+                nPhoto.mFilePath =  Uri.parse(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_FILE));
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CROPPED;
                 return nPhoto;
             }

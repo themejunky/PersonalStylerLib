@@ -16,13 +16,14 @@ import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.activities.custom.CustomActivity;
 import com.themejunky.personalstylerlib.bases.model.PhotoModel;
 import com.themejunky.personalstylerlib.bases.tools.Tools;
-import com.themejunky.personalstylerlib.customdialogs.photo.TakePhoto;
+import com.themejunky.personalstylerlib.customdialogs.photo.edit.EditPhoto;
+import com.themejunky.personalstylerlib.customdialogs.photo.take.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class PhotoBase extends CustomActivity implements PhotoContract.BaseView, TakePhoto._Interface, View.OnClickListener, PhotoPresenter._Interface {
+public abstract class PhotoBase extends CustomActivity implements PhotoContract.BaseView, TakePhoto._Interface, View.OnClickListener, PhotoPresenter._Interface, EditPhoto._Interface {
 
     protected List<PhotoModel> mPhotos = new ArrayList<>();
     protected List<PhotoModel> mViews = new ArrayList<>();

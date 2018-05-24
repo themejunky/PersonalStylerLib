@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.themejunky.personalstylerlib.bases.activities.photo.Photo;
 import com.themejunky.personalstylerlib.customdialogs.infiniteLoading.InfiniteLoading;
-import com.themejunky.personalstylerlib.customdialogs.photo.TakePhoto;
+import com.themejunky.personalstylerlib.customdialogs.photo.take.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
 
 public class Test extends Photo implements Photo._Interface, InfiniteLoading._Interface {
@@ -17,7 +17,7 @@ public class Test extends Photo implements Photo._Interface, InfiniteLoading._In
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        mActivatePhotoInternalAPI(this,8,(RelativeLayout) findViewById(R.id.nContai));
+        mActivatePhotoInternalAPI(this,8, "1.8", (RelativeLayout) findViewById(R.id.nContai));
 
         findViewById(R.id.nApasa).setOnClickListener(new View.OnClickListener() {
             @Override
