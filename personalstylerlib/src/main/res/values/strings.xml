@@ -14,6 +14,7 @@
 
     <string name="default_loading_message">Please wait...</string>
     <string name="unexpected_error">Unexpected error. Please try again later or contact the administrator</string>
+    <string name="camera_permission_error">To use this option you must grand CAMERA PERMISSION</string>
     <string name="default_crop_name">Crop Image</string>
 
     <string name="schedule_picker_title">Alege intervalul</string>

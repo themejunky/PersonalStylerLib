@@ -3,7 +3,6 @@ package com.themejunky.personalstylerlib.bases.activities.photo;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -30,25 +29,35 @@ public class PhotoPresenter {
 
     private CompositeDisposable mCompositeDisposable;
     private Tools mTools;
-    private PhotoActivity mPhotoActivity;
+    private Photo mPhotoActivity;
     private _Interface mListener;
-    private int position;
 
     public interface _Interface {
         void onPhotoPresenter_LayoutReady(List<PhotoModel> mViews);
-        int onPhotoPresenter_PhotoReady(PhotoModel mViews, String nTypem, int nPosition);
+
+        int onPhotoPresenter_PhotoReady(PhotoModel mViews, String nTypem);
+
         Uri onPhotoPresenter_GetBasePhotoUri();
     }
 
-    PhotoPresenter(PhotoActivity nPhotoActivity, PhotoPresenter._Interface nListener) {
+    /**
+     * Constructor
+     *
+     * @param nPhotoActivity - instance of activity
+     * @param nListener      - listener implementation
+     */
+    PhotoPresenter(Photo nPhotoActivity, PhotoPresenter._Interface nListener) {
         mCompositeDisposable = new CompositeDisposable();
         mTools = Tools.getInstance(nPhotoActivity);
         mPhotoActivity = nPhotoActivity;
         mListener = nListener;
-
-        position = Constants.TAKE_PHOTO;
     }
 
+    /**
+     * @param nViewGroup       - ViewGroup in witch all the photos will appear (app viewgroup)
+     * @param nNoPic           - number of max pictures
+     * @param nOnClickListener - click listener
+     */
     public void mSetLayout(ViewGroup nViewGroup, int nNoPic, View.OnClickListener nOnClickListener) {
         mCompositeDisposable.add(mPrepareLayout(nViewGroup, nNoPic, nOnClickListener).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<PhotoModel>>() {
             @Override
@@ -59,77 +68,6 @@ public class PhotoPresenter {
             }
         }));
     }
-
-    public void mPreparePhotoGallery(Intent nReturnedIntent) {
-
-        position = Constants.TAKE_PHOTO;
-
-        mCompositeDisposable.add(mPreparePhotoLoadingPlace().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
-            @Override
-            public void accept(PhotoModel nPhotoModel) {
-                if (mPhotoActivity != null && mListener != null) {
-                    position = mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CAMERA,position);
-                }
-            }
-        }));
-
-        mCompositeDisposable.add(mPreparePhotoGalleryCore(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
-            @Override
-            public void accept(PhotoModel nPhotoModel) {
-                if (mPhotoActivity != null && mListener != null) {
-                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_GALLERY,position-1);
-                }
-            }
-        }));
-    }
-
-    public void mPreparePhotoCamera(final Intent nReturnedIntent) {
-
-        position = Constants.TAKE_PHOTO;
-
-        mCompositeDisposable.add(mPreparePhotoLoadingPlace().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
-            @Override
-            public void accept(PhotoModel nPhotoModel) {
-                if (mPhotoActivity != null && mListener != null) {
-                    position = mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CAMERA,position);
-                }
-            }
-        }));
-
-        mCompositeDisposable.add(mPreparePhotoCameraCore(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
-            @Override
-            public void accept(PhotoModel nPhotoModel) {
-                if (mPhotoActivity != null && mListener != null) {
-                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CAMERA,position-1);
-                }
-            }
-        }));
-    }
-
-
-    public void mPreparePhotoCropped(Uri nUriPhotoCropped) {
-        position = Constants.TAKE_PHOTO;
-
-        mCompositeDisposable.add(mPreparePhotoLoadingPlace().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
-            @Override
-            public void accept(PhotoModel nPhotoModel) {
-                if (mPhotoActivity != null && mListener != null) {
-                    position = mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CROPPED,position);
-                }
-            }
-        }));
-
-        mCompositeDisposable.add(mPreparePhotoCroppedCore(nUriPhotoCropped).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
-            @Override
-            public void accept(PhotoModel nPhotoModel) {
-                if (mPhotoActivity != null && mListener != null) {
-                    Log.d("parsareee","gata!!!! "+nPhotoModel.mCroppedFilePath);
-                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel,Constants.TAKE_PHOTO_CROPPED,position-1);
-                }
-            }
-        }));
-    }
-
 
     private Observable<List<PhotoModel>> mPrepareLayout(final ViewGroup nViewGroup, final int nNoPic, final View.OnClickListener nOnClickListener) {
 
@@ -155,6 +93,22 @@ public class PhotoPresenter {
         });
     }
 
+    /**
+     * Prepare foto from gallery and return with neccesary data as PhotoModel
+     *
+     * @param nReturnedIntent - returned intent when user came back from gallery
+     */
+
+    public void mPreparePhotoGallery(Intent nReturnedIntent) {
+        mCompositeDisposable.add(mPreparePhotoGalleryCore(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+            @Override
+            public void accept(PhotoModel nPhotoModel) {
+                if (mPhotoActivity != null && mListener != null) {
+                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel, Constants.TAKE_PHOTO_GALLERY);
+                }
+            }
+        }));
+    }
 
     private Observable<PhotoModel> mPreparePhotoGalleryCore(final Intent nReturnedIntent) {
 
@@ -170,29 +124,20 @@ public class PhotoPresenter {
         });
     }
 
-    private Observable<PhotoModel> mPreparePhotoLoadingPlace() {
-        return Observable.fromCallable(new Callable<PhotoModel>() {
+    /**
+     * Prepare foto from camera and return with neccesary data as PhotoModel
+     *
+     * @param nReturnedIntent - returned intent when user came back from camera
+     */
+    public void mPreparePhotoCamera(final Intent nReturnedIntent) {
+        mCompositeDisposable.add(mPreparePhotoCameraCore(nReturnedIntent).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
             @Override
-            public PhotoModel call() {
-                PhotoModel nPhoto = new PhotoModel();
-                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_LOADING;
-                return nPhoto;
+            public void accept(PhotoModel nPhotoModel) {
+                if (mPhotoActivity != null && mListener != null) {
+                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel, Constants.TAKE_PHOTO_CAMERA);
+                }
             }
-        });
-    }
-
-    private Observable<PhotoModel> mPreparePhotoCroppedCore(final Uri nUriPhotoCropped) {
-
-        return Observable.fromCallable(new Callable<PhotoModel>() {
-            @Override
-            public PhotoModel call() {
-                PhotoModel nPhoto = new PhotoModel();
-                nPhoto.mCroppedFilePath = nUriPhotoCropped;
-                nPhoto.mFilePathString = nUriPhotoCropped.getPath();
-                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CROPPED;
-                return nPhoto;
-            }
-        });
+        }));
     }
 
     private Observable<PhotoModel> mPreparePhotoCameraCore(final Intent nReturnedIntent) {
@@ -229,6 +174,36 @@ public class PhotoPresenter {
                 mTools.mBitmapTransformers.recycle();
                 nBitmap.recycle();
 
+                return nPhoto;
+            }
+        });
+    }
+
+    /**
+     * Prepare foto that was cropped and return with neccesary data as PhotoModel
+     *
+     * @param nUriPhotoCropped - URI of the cropped image
+     */
+    public void mPreparePhotoCropped(Uri nUriPhotoCropped) {
+        mCompositeDisposable.add(mPreparePhotoCroppedCore(nUriPhotoCropped).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PhotoModel>() {
+            @Override
+            public void accept(PhotoModel nPhotoModel) {
+                if (mPhotoActivity != null && mListener != null) {
+                    mListener.onPhotoPresenter_PhotoReady(nPhotoModel, Constants.TAKE_PHOTO_CROPPED);
+                }
+            }
+        }));
+    }
+
+    private Observable<PhotoModel> mPreparePhotoCroppedCore(final Uri nUriPhotoCropped) {
+
+        return Observable.fromCallable(new Callable<PhotoModel>() {
+            @Override
+            public PhotoModel call() {
+                PhotoModel nPhoto = new PhotoModel();
+                nPhoto.mCroppedFilePath = nUriPhotoCropped;
+                nPhoto.mFilePathString = nUriPhotoCropped.getPath();
+                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CROPPED;
                 return nPhoto;
             }
         });

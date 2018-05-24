@@ -41,6 +41,11 @@ public class CroppingPhotoPresenter {
         void unexpectedPresenterError();
     }
 
+    /**
+     * Constructor
+     * @param nCroppingPhotoActivity - instance of activity
+     * @param nListener - listener implementation
+     */
     CroppingPhotoPresenter(CroppingPhotoBase nCroppingPhotoActivity, CroppingPhotoPresenter._Interface nListener) {
         mCompositeDisposable = new CompositeDisposable();
         mTools = Tools.getInstance(nCroppingPhotoActivity);
@@ -48,6 +53,9 @@ public class CroppingPhotoPresenter {
         mListener = nListener;
     }
 
+    /**
+     * Cropping Image
+     */
     public void mCroppingImage() {
         mCompositeDisposable.add(mCroppingImageCore().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Uri>() {
             @Override

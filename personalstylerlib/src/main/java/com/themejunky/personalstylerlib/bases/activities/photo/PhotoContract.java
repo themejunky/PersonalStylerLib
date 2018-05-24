@@ -1,6 +1,6 @@
-package com.themejunky.personalstylerlib.bases.activities.cropping;
+package com.themejunky.personalstylerlib.bases.activities.photo;
 
-public class CroppingContract {
+public class PhotoContract {
     public interface BaseView {
         void fetchViews();
         void initViews();

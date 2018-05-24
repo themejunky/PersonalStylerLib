@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.utils.Constants;
 
-public class CroppingPhotoActivity extends CroppingPhotoBase {
+public class CroppingPhoto extends CroppingPhotoBase {
     private int _yDelta;
     private int mTopStartHeight,mCropFrameHeight;
     /* save when new sliding is active */

@@ -1,18 +1,17 @@
 package mystylistlib.themejunky.com.mystylistlib;
 
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.themejunky.personalstylerlib.bases.activities.photo.PhotoActivity;
+import com.themejunky.personalstylerlib.bases.activities.photo.Photo;
 import com.themejunky.personalstylerlib.customdialogs.infiniteLoading.InfiniteLoading;
 import com.themejunky.personalstylerlib.customdialogs.photo.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
 
-public class Test extends PhotoActivity implements PhotoActivity._Interface, InfiniteLoading._Interface {
+public class Test extends Photo implements Photo._Interface, InfiniteLoading._Interface {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

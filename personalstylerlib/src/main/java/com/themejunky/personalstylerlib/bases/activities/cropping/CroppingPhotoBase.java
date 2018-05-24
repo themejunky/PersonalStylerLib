@@ -13,7 +13,7 @@ import com.themejunky.personalstylerlib.bases.tools.Tools;
 import com.themejunky.personalstylerlib.customviews.CustomButton;
 import com.themejunky.personalstylerlib.utils.Constants;
 
-public abstract class CroppingPhotoBase extends CustomActivity implements View.OnTouchListener, ViewTreeObserver.OnGlobalLayoutListener, CroppingContract.BaseView, CroppingPhotoPresenter._Interface, CustomButton.Custom_Button_Interface {
+public abstract class CroppingPhotoBase extends CustomActivity implements View.OnTouchListener, ViewTreeObserver.OnGlobalLayoutListener, CroppingPhotoContract.BaseView, CroppingPhotoPresenter._Interface, CustomButton.Custom_Button_Interface {
 
     protected ImageView mImage;
     protected RelativeLayout mCropFrame,mTop;

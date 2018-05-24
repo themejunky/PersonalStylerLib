@@ -14,7 +14,6 @@ public class Constants {
     public static final String TAKE_PHOTO_LOADING = "LOADING";
     public static final String TAKE_PHOTO_FILE = "FILE";
     public static final String TAKE_PHOTO_RATIO = "RATIO";
-    public static final int TAKE_PHOTO = 100;
 
     public static final String SCHEDULE_MONTH_DAY_TYPE_HEADER = "HEADER";
     public static final String SCHEDULE_MONTH_DAY_TYPE_BEFORE = "BEFORE";
