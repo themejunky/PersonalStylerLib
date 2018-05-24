@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../Junky2/Documents/PersonalStylerLib/MyStylistLib.iml" filepath="$PROJECT_DIR$/../../../Junky2/Documents/PersonalStylerLib/MyStylistLib.iml" />
+      <module fileurl="file://C:\Users\Junky2\Documents\PersonalStylerLib\MyStylistLib.iml" filepath="C:\Users\Junky2\Documents\PersonalStylerLib\MyStylistLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/PersonalStylerLib.iml" filepath="$PROJECT_DIR$/PersonalStylerLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/personalstylerlib/personalstylerlib.iml" filepath="$PROJECT_DIR$/personalstylerlib/personalstylerlib.iml" />
