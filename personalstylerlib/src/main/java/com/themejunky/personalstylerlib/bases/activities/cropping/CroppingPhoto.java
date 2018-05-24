@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -31,6 +32,7 @@ public class CroppingPhoto extends CroppingPhotoBase {
     public void onResume() {
         super.onResume();
         start();
+
     }
 
     @Override
@@ -83,6 +85,7 @@ public class CroppingPhoto extends CroppingPhotoBase {
 
         Intent returnIntent = new Intent();
         returnIntent.putExtra(Constants.TAKE_PHOTO_FILE ,getIntent().getStringExtra(Constants.TAKE_PHOTO_FILE));
+        returnIntent.putExtra(Constants.TAKE_PHOTO_POSITION ,getIntent().getStringExtra(Constants.TAKE_PHOTO_POSITION));
         returnIntent.putExtra(Constants.TAKE_PHOTO_FILE_CROP , nUriCropped.toString());
         setResult(Activity.RESULT_OK, returnIntent);
 

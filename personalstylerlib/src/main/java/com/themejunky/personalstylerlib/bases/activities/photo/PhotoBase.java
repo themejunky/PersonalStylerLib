@@ -125,11 +125,10 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
             if (!item.mPhotoFrom.equals(Constants.TAKE_PHOTO_LOADING)) {
                 Picasso.with(this).load(item.mCroppedFilePath).placeholder(R.drawable.ic_service_placeholder).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
             } else {
-                Picasso.with(this).load(R.drawable.ic_pic_delete).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                Picasso.with(this).load(R.drawable.ic_service_placeholder).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
             }
             mCount++;
         }
         resetPhotoBox();
     }
-
 }

@@ -15,6 +15,11 @@ public class Constants {
     public static final String TAKE_PHOTO_FILE = "FILE";
     public static final String TAKE_PHOTO_FILE_CROP = "FILE_CROP";
     public static final String TAKE_PHOTO_RATIO = "RATIO";
+    public static final String TAKE_PHOTO_POSITION = "POSITION";
+    public static final String TAKE_PHOTO_BEFORE_CROP = "BEFORE_CROP";
+
+    public static final int TAKE_PHOTO = 100;
+
 
     public static final String SCHEDULE_MONTH_DAY_TYPE_HEADER = "HEADER";
     public static final String SCHEDULE_MONTH_DAY_TYPE_BEFORE = "BEFORE";

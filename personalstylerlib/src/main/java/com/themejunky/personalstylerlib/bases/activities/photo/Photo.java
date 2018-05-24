@@ -2,9 +2,9 @@ package com.themejunky.personalstylerlib.bases.activities.photo;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -35,27 +35,37 @@ public class Photo extends PhotoBase {
     @Override
     public void onClick(View nView) {
         EditPhoto.getInstance().refreshContent(this,this,Integer.parseInt(nView.getTag().toString()));
-      //  mPhotos.remove(Integer.parseInt(nView.getTag().toString()));
-
     }
 
     @Override
-    public int onPhotoPresenter_PhotoReady(PhotoModel nPhoto, String nType) {
-        if (nType.equals(Constants.TAKE_PHOTO_CROPPED)) {
-            mPhotos.add(nPhoto);
+    public int onPhotoPresenter_PhotoReady(PhotoModel nPhoto, String nType, int nPosition) {
+
+        int mReturn = mPhotos.size();
+
+            if (nType.equals(Constants.TAKE_PHOTO_BEFORE_CROP) && nPosition==Constants.TAKE_PHOTO) {
+                 nPhoto.mPosition = mReturn;
+                 mPhotos.add(nPhoto);
+            } else if (nType.equals(Constants.TAKE_PHOTO_GALLERY)) {
+                mPhotos.set(nPosition,nPhoto);
+                mStartCropping(nPhoto);
+            } else if (nType.equals(Constants.TAKE_PHOTO_CAMERA) ) {
+                mPhotos.set(nPosition,nPhoto);
+                mStartCropping(nPhoto);
+            } else if (nType.equals(Constants.TAKE_PHOTO_CROPPED)) {
+                mPhotos.set(nPhoto.mPosition,nPhoto);
+
+            }
             refreshPhotos();
-        } else {
-            mStartCropping(nPhoto);
-        }
-        mTools.closeLoading();
-        mPhotoActivityInterface.onPhotosRefreshAvailable(nType);
-        return mPhotos.size();
+            mPhotoActivityInterface.onPhotosRefreshAvailable(nType);
+            mTools.closeLoading();
+            return mReturn;
     }
 
     protected void mStartCropping(PhotoModel nPhoto) {
         Intent intent = new Intent(this, CroppingPhoto.class);
         intent.putExtra(Constants.TAKE_PHOTO_FILE, nPhoto.mFilePath.toString());
         intent.putExtra(Constants.TAKE_PHOTO_RATIO, mRatio);
+        intent.putExtra(Constants.TAKE_PHOTO_POSITION, String.valueOf(nPhoto.mPosition));
         startActivityForResult(intent, ACTION_CROP);
     }
 
@@ -110,8 +120,6 @@ public class Photo extends PhotoBase {
                     mPresenter.mPreparePhotoCamera(nReturnedIntent);
                     break;
                 case ACTION_CROP:
-                 //   mPresenter.mPreparePhotoCropped(Uri.parse(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_FILE_CROP)));
-
                     mPresenter.mPreparePhotoCropped(nReturnedIntent);
                     break;
             }

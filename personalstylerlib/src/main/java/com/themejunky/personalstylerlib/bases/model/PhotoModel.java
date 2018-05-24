@@ -12,6 +12,7 @@ public class PhotoModel {
     public Uri mCroppedFilePath;
     public String mFilePathString;
     public Bitmap mBitmap;
+    public int mPosition;
 
     public RelativeLayout mImageContainer;
 

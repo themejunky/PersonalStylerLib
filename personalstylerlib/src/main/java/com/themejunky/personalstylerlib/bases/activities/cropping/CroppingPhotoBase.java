@@ -1,6 +1,7 @@
 package com.themejunky.personalstylerlib.bases.activities.cropping;
 
 import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
