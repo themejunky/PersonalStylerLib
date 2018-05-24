@@ -40,27 +40,7 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
         void onPhotosError();
     }
 
-    @Override
-    public void fetchViews() {
-
-    }
-
-    @Override
-    public void initViews() {
-        mTools = Tools.getInstance(this);
-    }
-
-    @Override
-    public void start() {
-
-    }
-
-    @Override
-    public void unexpectedError() {
-
-    }
-
-    /**
+     /**
      * Open gallery intent to pick photo
      */
     protected void mPickGallery() {

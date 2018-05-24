@@ -12,7 +12,7 @@
         android:text="apasa"/>
 
     <RelativeLayout
-        android:id="@+id/nContai"
+        android:id="@+id/nCont"
         style="@style/MatchWrap"/>
 
 </LinearLayout>

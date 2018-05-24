@@ -25,6 +25,7 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mTools = Tools.getInstance(this);
     }
 
     /**

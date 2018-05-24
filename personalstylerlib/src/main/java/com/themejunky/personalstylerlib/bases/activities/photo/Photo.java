@@ -21,15 +21,6 @@ public class Photo extends PhotoBase {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        fetchViews();
-        initViews();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        start();
     }
 
     @Override
