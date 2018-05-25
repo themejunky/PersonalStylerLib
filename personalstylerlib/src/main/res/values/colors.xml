@@ -115,6 +115,7 @@
     <color name="base_grey2">#e6e4e4</color>
     <color name="base_blue">#4095ff</color>
     <color name="base_violet">#880cff</color>
+    <color name="base_yellow">#ffd800</color>
 
     <color name="core_tabview_default_text_color">#b0a2f9</color>
     <color name="core_tabview_selected_text_color">#ffffff</color>
