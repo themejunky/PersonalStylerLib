@@ -208,10 +208,11 @@
     <style name="MatchMatch.Regular.Yellow" parent="MatchMatch.Regular">   <item name="android:textColor">@color/yellow</item>     </style>
 
     <!-- Base-Bold-Yellow-2 -->
-    <style name="WrapWrap.Bold.Yellow" parent="WrapWrap.Regular">       <item name="android:textColor">@color/yellow</item>     </style>
-    <style name="WrapMatch.Bold.Yellow" parent="WrapMatch.Regular">     <item name="android:textColor">@color/yellow</item>     </style>
-    <style name="MatchWrap.Bold.Yellow" parent="MatchWrap.Regular">     <item name="android:textColor">@color/yellow</item>     </style>
-    <style name="MatchMatch.Bold.Yellow" parent="MatchMatch.Regular">   <item name="android:textColor">@color/yellow</item>     </style>
+
+    <style name="WrapWrap.Bold.Yellow" parent="WrapWrap.Bold">       <item name="android:textColor">@color/yellow</item>     </style>
+    <style name="WrapMatch.Bold.Yellow" parent="WrapMatch.Bold">     <item name="android:textColor">@color/yellow</item>     </style>
+    <style name="MatchWrap.Bold.Yellow" parent="MatchWrap.Bold">     <item name="android:textColor">@color/yellow</item>     </style>
+    <style name="MatchMatch.Bold.Yellow" parent="MatchMatch.Bold">   <item name="android:textColor">@color/yellow</item>     </style>
 
 
 
