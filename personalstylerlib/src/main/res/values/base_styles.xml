@@ -264,6 +264,7 @@
 
 
     <style name="WrapWrap.Bold.Red.7" parent="WrapWrap.Bold.Red">       <item name="android:textSize">7sp</item>     </style>
+    <style name="WrapWrap.Bold.Red.12" parent="WrapWrap.Bold.Red">       <item name="android:textSize">12sp</item>     </style>
     <style name="WrapWrap.Bold.Red.13" parent="WrapWrap.Bold.Red">       <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Bold.Red.14" parent="WrapWrap.Bold.Red">       <item name="android:textSize">14sp</item>     </style>
 
@@ -271,7 +272,11 @@
 
     <style name="MatchWrap.Regular.Green.8" parent="MatchWrap.Regular.Green">   <item name="android:textSize">8sp</item>     </style>
     <style name="MatchWrap.Bold.Green.13" parent="MatchWrap.Bold.Green">   <item name="android:textSize">13sp</item>     </style>
+    <style name="WrapWrap.Bold.Green.12" parent="WrapWrap.Bold.Green">       <item name="android:textSize">12sp</item>     </style>
+    <style name="WrapWrap.Bold.Green.13" parent="WrapWrap.Bold.Green">       <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Bold.Green.14" parent="WrapWrap.Bold.Green">       <item name="android:textSize">14sp</item>     </style>
+
+
 
 
     <style name="WrapWrap.Regular.Purple.13" parent="WrapWrap.Regular.Purple">   <item name="android:textSize">13sp</item>     </style>
@@ -283,6 +288,10 @@
 
     <style name="WrapWrap.Regular.Purple_2.14" parent="WrapWrap.Regular.Purple_2">   <item name="android:textSize">14sp</item>     </style>
     <style name="WrapWrap.Regular.Purple_2.35" parent="WrapWrap.Regular.Purple_2">   <item name="android:textSize">35sp</item>     </style>
+
+
+    <style name="WrapWrap.Bold.Purple_2.12" parent="WrapWrap.Bold.Purple_2">   <item name="android:textSize">12sp</item>     </style>
+    <style name="WrapWrap.Bold.Purple_2.13" parent="WrapWrap.Bold.Purple_2">   <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Bold.Purple_2.14" parent="WrapWrap.Bold.Purple_2">   <item name="android:textSize">14sp</item>     </style>
 
     <style name="WrapWrap.Bold.Yellow.12" parent="WrapWrap.Bold.Yellow">  <item name="android:textSize">12sp</item> </style>
