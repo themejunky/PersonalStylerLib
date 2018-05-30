@@ -1,11 +1,12 @@
 package com.themejunky.personalstylerlib.customdialogs.customQuestion;
 
+import android.view.View;
 import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.customdialogs.BaseDialog;
 
-public abstract class CustomQuestionBase extends BaseDialog {
+public  class CustomQuestionBase extends BaseDialog {
 
     protected TextView mTitle, mQuestion, mPositive, mNegative;
 
@@ -18,5 +19,10 @@ public abstract class CustomQuestionBase extends BaseDialog {
 
         mNegative.setOnClickListener(this);
         mPositive.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

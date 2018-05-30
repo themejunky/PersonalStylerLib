@@ -1,6 +1,7 @@
 package com.themejunky.personalstylerlib.customdialogs;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.LinearLayout;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.tools.Tools;
 
-public abstract class BaseDialog implements View.OnClickListener {
+public class BaseDialog implements View.OnClickListener {
     protected Context mContext;
 
     protected AlertDialog.Builder mBuilder;
@@ -40,5 +41,15 @@ public abstract class BaseDialog implements View.OnClickListener {
         mBuilder.setView(mContainer);
 
         return mBuilder;
+    }
+
+    public void prepareDialog() {
+        mBuilder.setView(mContainer);
+        mDialog = mBuilder.create();
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

@@ -41,7 +41,7 @@ public class CustomQuestion extends CustomQuestionBase {
      * @param nType - type difference
      *
      */
-    public AlertDialog.Builder refreshContent(Context nContext, CustomQuestion._Interface nListener, int nTitle, int nQuestion, int nPositive, int nNegative, String nType) {
+    public void refreshContent(Context nContext, CustomQuestion._Interface nListener, int nTitle, int nQuestion, int nPositive, int nNegative, String nType) {
         /* inits*/
         mListener = nListener;
         mContext = nContext;
@@ -57,7 +57,9 @@ public class CustomQuestion extends CustomQuestionBase {
         mPositive.setText(mContext.getResources().getString(nPositive));
         mNegative.setText(mContext.getResources().getString(nNegative));
 
-        return returnDialog();
+        prepareDialog();
+
+      //  return returnDialog();
     }
 
     /***
@@ -75,12 +77,17 @@ public class CustomQuestion extends CustomQuestionBase {
     public String getmType() {
         return mType;
     }
+    public AlertDialog getDialog() {
+        return mDialog;
+    }
 
     @Override
     public void onClick(View nView) {
         if (nView.getId() == R.id.nPositive) {
+            mDialog.dismiss();
             mListener.onCustomQuestion_Positive(mBuilder,mType);
         } else if (nView.getId() == R.id.nNegative) {
+            mDialog.dismiss();
             mListener.onCustomQuestion_Negative(mBuilder,mType);
         }
     }

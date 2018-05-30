@@ -2,6 +2,7 @@ package mystylistlib.themejunky.com.mystylistlib;
 
 
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -14,12 +15,21 @@ import com.themejunky.personalstylerlib.customdialogs.photo.take.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
 
 public class Test extends Photo implements Photo._Interface, InfiniteLoading._Interface, CustomQuestion._Interface {
+
+
+    CustomQuestion adad;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-         CustomQuestion.getInstance().refreshContent(this,this,R.string.text_titlu,R.string.text_intrebare,R.string.text_pozitiv,R.string.text_negativ,"yo").create().show();
+         adad = CustomQuestion.getInstance();
+        adad.refreshContent(this,this,R.string.text_titlu,R.string.text_intrebare,R.string.text_pozitiv,R.string.text_negativ,"yo");
+        adad.setCustomIntegerVariable(1);
+
+        adad.getDialog().show();
+
 
 //        mActivatePhotoInternalAPI(this,8, "1.8", (RelativeLayout) findViewById(R.id.nContai));
 //
@@ -55,13 +65,15 @@ public class Test extends Photo implements Photo._Interface, InfiniteLoading._In
 
     }
 
-    @Override
-    public void onCustomQuestion_Negative(String nType) {
 
+    @Override
+    public void onCustomQuestion_Negative(AlertDialog.Builder buider, String nType) {
+        adad.refreshContent(this,this,R.string.time_ago_seconds,R.string.text_intrebare,R.string.text_pozitiv,R.string.text_negativ,"yo" );
+        adad.getDialog().show();
     }
 
     @Override
-    public void onCustomQuestion_Positive(String nType) {
+    public void onCustomQuestion_Positive(AlertDialog.Builder buider, String nType) {
 
     }
 }
