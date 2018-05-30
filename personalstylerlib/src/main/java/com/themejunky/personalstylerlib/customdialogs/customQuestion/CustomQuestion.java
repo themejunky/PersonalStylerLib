@@ -62,6 +62,26 @@ public class CustomQuestion extends CustomQuestionBase {
       //  return returnDialog();
     }
 
+    public void setTitle(int nTitle) {
+        mTitle.setText(mContext.getResources().getString(nTitle));
+    }
+
+    public void setQuestion(int nQuestion) {
+        mQuestion.setText(mContext.getResources().getString(nQuestion));
+    }
+
+    public void setPositive(int nPositive) {
+        mPositive.setText(mContext.getResources().getString(nPositive));
+    }
+
+    public void setNegative(int nNegative) {
+        mNegative.setText(mContext.getResources().getString(nNegative));
+    }
+
+    public void setType(String nType) {
+        mType = nType;
+    }
+
     /***
      * Passing some infor
      * @param nCustonIntegerVariable - anything you want to pass
