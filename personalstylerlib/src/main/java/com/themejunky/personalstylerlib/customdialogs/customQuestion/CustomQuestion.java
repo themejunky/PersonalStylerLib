@@ -12,10 +12,12 @@ public class CustomQuestion extends CustomQuestionBase {
     private CustomQuestion._Interface mListener;
     /* if in one window more than one custom dialogs will be used ... this will make the difference */
     private String mType;
+    /* just to pass some info */
+    private int mCustomIntegerVariable;
 
     public interface _Interface {
-        void onCustomQuestion_Negative(String nType);
-        void onCustomQuestion_Positive(String nType);
+        void onCustomQuestion_Negative(AlertDialog.Builder buider,String nType);
+        void onCustomQuestion_Positive(AlertDialog.Builder buider,String nType);
     }
 
     public static CustomQuestion getInstance() {
@@ -58,12 +60,24 @@ public class CustomQuestion extends CustomQuestionBase {
         return returnDialog();
     }
 
+    /***
+     * Passing some infor
+     * @param nCustonIntegerVariable - anything you want to pass
+     */
+    public void setCustomIntegerVariable(int nCustonIntegerVariable) {
+        this.mCustomIntegerVariable = nCustonIntegerVariable;
+    }
+
+    public int getmCustomIntegerVariable() {
+        return mCustomIntegerVariable;
+    }
+
     @Override
     public void onClick(View nView) {
         if (nView.getId() == R.id.nPositive) {
-            mListener.onCustomQuestion_Positive(mType);
+            mListener.onCustomQuestion_Positive(mBuilder,mType);
         } else if (nView.getId() == R.id.nNegative) {
-            mListener.onCustomQuestion_Negative(mType);
+            mListener.onCustomQuestion_Negative(mBuilder,mType);
         }
     }
 }
