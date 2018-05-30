@@ -59,4 +59,9 @@
 
     <string name="dialog_button_anuleaza">Anuleaza</string>
     <string name="dialog_button_salveaza">Salveaza</string>
+
+    <string name="text_titlu">Sterge adresa</string>
+    <string name="text_intrebare">Esti sigur ca doresti sa stergi aceasta adresa  </string>
+    <string name="text_pozitiv">Da</string>
+    <string name="text_negativ">Nu</string>
 </resources>

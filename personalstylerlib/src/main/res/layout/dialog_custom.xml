@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nContainer"
+    style="@style/MatchMatch.Vertical">
+
+    <LinearLayout
+        style="@style/MatchWrap.Vertical"
+        android:padding="25dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/nTitle"
+            style="@style/WrapWrap.Bold.Black.14"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/nQuestion"
+            android:lineSpacingExtra="2dp"
+            style="@style/WrapWrap.Regular.Black.14"/>
+    </LinearLayout>
+
+    <View style="@style/Divider.Horizontal"/>
+
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal">
+
+        <TextView
+            android:id="@+id/nNegative"
+            style="@style/TimePicker_buttons"
+            android:textColor="@color/base_red2"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/base_line"/>
+
+        <TextView
+            android:id="@+id/nPositive"
+            style="@style/TimePicker_buttons"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
