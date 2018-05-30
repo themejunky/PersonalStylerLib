@@ -72,6 +72,10 @@ public class CustomQuestion extends CustomQuestionBase {
         return mCustomIntegerVariable;
     }
 
+    public String getmType() {
+        return mType;
+    }
+
     @Override
     public void onClick(View nView) {
         if (nView.getId() == R.id.nPositive) {
