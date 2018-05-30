@@ -131,6 +131,17 @@ public class ToolsBase {
         }
     }
 
+    public void setSpinnerValueById(List<Item> nModelWithValues, String nMatchToFound, CustomInput nSpinner) {
+        int selection=0;
+        for (Item nItem : nModelWithValues) {
+            if (nItem.getId().equals(nMatchToFound)) {
+                ((Spinner) nSpinner.findViewById(R.id.nSpinner)).setSelection(selection);
+            } else {
+                selection++;
+            }
+        }
+    }
+
     public boolean canScroll(ScrollView scrollView) {
         View child = scrollView.getChildAt(0);
         if (child != null) {
