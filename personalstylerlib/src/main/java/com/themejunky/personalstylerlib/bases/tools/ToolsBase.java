@@ -135,9 +135,12 @@ public class ToolsBase {
     public void setSpinnerValueById(List<Item> nModelWithValues, String nMatchToFound, CustomInput nSpinner) {
         int selection=0;
         for (Item nItem : nModelWithValues) {
+
+            Log.d("adasdsa",""+selection+") "+nItem.getId()+"/"+nMatchToFound);
+
             if (nItem.getId().equals(nMatchToFound)) {
 
-                Log.d("adasdsa",""+selection+") "+nItem.getId()+"/"+nMatchToFound);
+
 
                 ((Spinner) nSpinner.findViewById(R.id.nSpinner)).setSelection(selection);
             } else {
