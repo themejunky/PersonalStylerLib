@@ -139,7 +139,7 @@ public class Tools_Photos extends ToolsBase {
         return nFile;
     }
 
-    public void mUploadImagesToFirebase(Context nContext, List<PhotoModel> nPhotos) {
+    public List<PhotoModel> mUploadImagesToFirebase(Context nContext, List<PhotoModel> nPhotos) {
 
         mStorage = FirebaseStorage.getInstance();
         mStorageReference = mStorage.getReference();
@@ -153,6 +153,8 @@ public class Tools_Photos extends ToolsBase {
             }
 
         }
+
+        return nPhotos;
     }
 
     public void mUploadImage(final PhotoModel nPhoto) {
