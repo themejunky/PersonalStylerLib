@@ -145,9 +145,6 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
         setStyle(mText,R.styleable.CustomButtonService_cbs_style,R.style.cs_default_style);
     }
 
-    public void setToNoAddress() {
-        mPic.setColorFilter(getColorWithDefaultPreloaded(R.color.base_red, mDefaultBorderColorActive));
-    }
 
     /**
      * Activate button
