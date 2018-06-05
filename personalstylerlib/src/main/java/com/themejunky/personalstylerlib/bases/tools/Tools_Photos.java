@@ -147,21 +147,23 @@ public class Tools_Photos extends ToolsBase {
         for (PhotoModel nPhoto: nPhotos) {
 
             if (nPhoto.mCroppedFilePath!=null) {
-                mUploadImage(nPhoto.mCroppedFilePath);
+              //  mUploadImage(nPhoto.mNameFolder,nPhoto.mCroppedFilePath,nPhoto.mNameCroppedImage);
+
+                mUploadImage(nPhoto);
             }
 
         }
     }
 
-    public void mUploadImage(Uri mFilePath) {
-        if(mFilePath != null)
+    public void mUploadImage(final PhotoModel nPhoto) {
+        if(nPhoto.mCroppedFilePath != null)
         {
-            StorageReference ref = mStorageReference.child("images/ceva");
-            ref.putFile(mFilePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            StorageReference ref = mStorageReference.child(nPhoto.mNameFolder).child(nPhoto.mNameCroppedImage);
+            ref.putFile(nPhoto.mCroppedFilePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-
+                            nPhoto.mDownloadFirebaseUrlCroppedImage = taskSnapshot.getDownloadUrl().getPath();
                             //progressDialog.dismiss();
                             //Toast.makeText(RegisterAddServices.this, "Uploaded", Toast.LENGTH_SHORT).show();
 

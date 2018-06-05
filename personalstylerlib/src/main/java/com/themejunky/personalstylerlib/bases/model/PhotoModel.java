@@ -14,6 +14,12 @@ public class PhotoModel {
     public Bitmap mBitmap;
     public int mPosition;
 
+    public String mNameFolder;
+    public String mNameCroppedImage;
+    public String mNameOriginamImage;
+
+    public String mDownloadFirebaseUrlCroppedImage;
+
     public RelativeLayout mImageContainer;
 
     public PhotoModel() {}
