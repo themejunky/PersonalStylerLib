@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -164,7 +165,7 @@ public class Tools_Photos extends ToolsBase {
             ref.putFile(nPhoto.mCroppedFilePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
+                            Log.d("new_service","poza firebase2 : "+taskSnapshot.getDownloadUrl().getPath());
                             nPhoto.mDownloadFirebaseUrlCroppedImage = taskSnapshot.getDownloadUrl().getPath();
                             //progressDialog.dismiss();
                             //Toast.makeText(RegisterAddServices.this, "Uploaded", Toast.LENGTH_SHORT).show();
