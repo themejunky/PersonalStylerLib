@@ -185,4 +185,9 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="onboarding_step_3_service_text" parent="WrapWrap">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/base_black</item>
+    </style>
+
 </resources>

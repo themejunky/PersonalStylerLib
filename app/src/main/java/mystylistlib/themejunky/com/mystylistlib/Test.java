@@ -3,6 +3,7 @@ package mystylistlib.themejunky.com.mystylistlib;
 
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -12,23 +13,30 @@ import com.themejunky.personalstylerlib.bases.activities.photo.PhotoBase;
 import com.themejunky.personalstylerlib.customdialogs.customQuestion.CustomQuestion;
 import com.themejunky.personalstylerlib.customdialogs.infiniteLoading.InfiniteLoading;
 import com.themejunky.personalstylerlib.customdialogs.photo.take.TakePhoto;
+import com.themejunky.personalstylerlib.customviews.CustomServices;
 import com.themejunky.personalstylerlib.utils.Constants;
 
 public class Test extends Photo implements Photo._Interface, InfiniteLoading._Interface, CustomQuestion._Interface {
 
 
     CustomQuestion adad;
-
+CustomServices mService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-         adad = CustomQuestion.getInstance();
-        adad.refreshContent(this,this,R.string.text_titlu,R.string.text_intrebare,R.string.text_pozitiv,R.string.text_negativ,"yo");
-        adad.setCustomIntegerVariable(1);
+//         adad = CustomQuestion.getInstance();
+//        adad.refreshContent(this,this,R.string.text_titlu,R.string.text_intrebare,R.string.text_pozitiv,R.string.text_negativ,"yo");
+//        adad.setCustomIntegerVariable(1);
+//
+//        adad.getDialog().show();
 
-        adad.getDialog().show();
+
+        mService = findViewById(R.id.nLocationClient);
+        mService.setListener(this);
+
+        mService.setClickListenerMovement(true);
 
 
 //        mActivatePhotoInternalAPI(this,8, "1.8", (RelativeLayout) findViewById(R.id.nContai));
@@ -65,7 +73,10 @@ public class Test extends Photo implements Photo._Interface, InfiniteLoading._In
 
     }
 
-
+    @Override
+    public void onCustomServiceClick(View view,String nType) {
+        Log.d("dadadasdasdasd","1123 "+nType);
+    }
     @Override
     public void onCustomQuestion_Negative(AlertDialog.Builder buider, String nType) {
         adad.refreshContent(this,this,R.string.time_ago_seconds,R.string.text_intrebare,R.string.text_pozitiv,R.string.text_negativ,"yo" );

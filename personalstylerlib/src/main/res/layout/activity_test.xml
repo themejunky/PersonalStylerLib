@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nContainer"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
@@ -11,8 +13,19 @@
         android:layout_height="wrap_content"
         android:text="apasa"/>
 
-    <RelativeLayout
-        android:id="@+id/nCont"
-        style="@style/MatchWrap"/>
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/nCont"-->
+        <!--style="@style/MatchWrap"/>-->
+
+    <com.themejunky.personalstylerlib.customviews.CustomServices
+        android:id="@+id/nLocationClient"
+        style="@style/Cube55"
+        app:cbs_tag="mata"
+        app:cbs_image="@drawable/ic_client_address"
+        app:cbs_text="cevat"
+        app:cbs_style="@style/onboarding_step_3_service_text"
+        />
+
+
 
 </LinearLayout>

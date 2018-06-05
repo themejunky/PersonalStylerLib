@@ -2,6 +2,7 @@ package com.themejunky.personalstylerlib.customviews;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -64,6 +65,11 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
         mPic = findViewById(R.id.nPic);
             mPic.setImageDrawable(mTypedarray.getDrawable(R.styleable.CustomButtonService_cbs_image));
 
+
+
+
+
+
         mContainer = findViewById(R.id.nContainer);
             mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonService_cbs_tag));
         mPicContainer = findViewById(R.id.nPicContainer);
@@ -71,6 +77,9 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
         mText = findViewById(R.id.nText);
 
         mTag = setTags(R.styleable.CustomButtonService_cbs_tag);
+
+        Log.d("dadadasdasdasd","este : "+mTag);
+
         setTitle(mText, R.styleable.CustomButtonService_cbs_text);
 
         setDefaultState();
@@ -134,6 +143,10 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
         mPic.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonService_cbs_image_color, mDefaultBorderColorActive));
 
         setStyle(mText,R.styleable.CustomButtonService_cbs_style,R.style.cs_default_style);
+    }
+
+    public void setToNoAddress() {
+        mPic.setColorFilter(getColorWithDefaultPreloaded(R.color.base_red, mDefaultBorderColorActive));
     }
 
     /**
