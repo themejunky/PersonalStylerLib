@@ -39,7 +39,7 @@ CustomServices mService;
         mService.setClickListenerMovement(true);
 
 
-//        mActivatePhotoInternalAPI(this,8, "1.8", (RelativeLayout) findViewById(R.id.nContai));
+   //    mActivatePhotoInternalAPI(this,8, "1.8", (RelativeLayout) findViewById(R.id.nContai));
 //
 //        findViewById(R.id.nApasa).setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -9,17 +9,29 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.support.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.themejunky.personalstylerlib.bases.model.PhotoModel;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class Tools_Photos extends ToolsBase {
 
     public Bitmap mBitmapTransformers;
+    private FirebaseStorage mStorage;
+    private StorageReference mStorageReference;
 
     public Bitmap optimizeBitmapFromUri(Activity nActivity, Uri nPhotoUri) {
         try {
@@ -126,4 +138,56 @@ public class Tools_Photos extends ToolsBase {
         nFile.deleteOnExit();
         return nFile;
     }
+
+    public void mUploadImagesToFirebase(Context nContext, List<PhotoModel> nPhotos) {
+
+        mStorage = FirebaseStorage.getInstance();
+        mStorageReference = mStorage.getReference();
+
+        for (PhotoModel nPhoto: nPhotos) {
+
+            if (nPhoto.mCroppedFilePath!=null) {
+                mUploadImage(nPhoto.mCroppedFilePath);
+            }
+
+        }
+    }
+
+    public void mUploadImage(Uri mFilePath) {
+        if(mFilePath != null)
+        {
+            StorageReference ref = mStorageReference.child("images/ceva");
+            ref.putFile(mFilePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+
+                            //progressDialog.dismiss();
+                            //Toast.makeText(RegisterAddServices.this, "Uploaded", Toast.LENGTH_SHORT).show();
+
+//                            Log.d("sdaddas","1: "+taskSnapshot.getUploadSessionUri());
+//                            Log.d("sdaddas","2: "+taskSnapshot.getBytesTransferred());
+//                            Log.d("sdaddas","3: "+taskSnapshot.getMetadata());
+//                            Log.d("sdaddas","4: "+taskSnapshot.getTotalByteCount());
+//                            Log.d("sdaddas","4: "+taskSnapshot.getDownloadUrl());
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+//                            progressDialog.dismiss();
+//                            Toast.makeText(RegisterAddServices.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
+//                            progressDialog.setMessage("Uploaded "+(int)progress+"%");
+                        }
+                    });
+        }
+    }
+
+
 }
