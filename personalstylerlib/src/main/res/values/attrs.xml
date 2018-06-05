@@ -127,6 +127,7 @@
         <attr name="cbbi_devider" format="integer"/>
         <attr name="cbbi_text" format="string"/>
         <attr name="cbbi_text_color" format="color"/>
+        <attr name="cbbi_image_color" format="color"/>
         <attr name="cbbi_image" format="reference"/>
         <attr name="cbbi_backgroundColor" format="color"/>
         <attr name="cbbi_padding" format="integer"/>

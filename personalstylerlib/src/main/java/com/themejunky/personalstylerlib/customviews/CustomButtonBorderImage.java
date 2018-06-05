@@ -87,6 +87,7 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
         setTitle(mText,R.styleable.CustomButtonBorderImage_cbbi_text);
         setTextColor(mText,R.styleable.CustomButtonBorderImage_cbbi_text_color,R.color.Appoint_Trigger_Border);
         mImageView.setImageDrawable(mTypedarray.getDrawable(R.styleable.CustomButtonBorderImage_cbbi_image));
+        mImageView.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonBorderImage_cbbi_image_color,R.color.CustomButtonBorder_default_text_color));
         mContainer.setPadding(mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0));
         //setPadding(mContainer,mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),getResources().getInteger(R.integer.ci_padping));
 
@@ -121,7 +122,4 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
     }
 
 
-    public void setToNoAddress() {
-        mImageView.setColorFilter(getColorWithDefaultPreloaded(R.color.base_red, R.color.base_black));
-    }
 }
