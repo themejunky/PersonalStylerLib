@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/nPicContainer"
         style="@style/MatchWrap.White"
-        android:padding="16dp"
+        android:padding="5dp"
         android:gravity="center">
 
         <ImageView
