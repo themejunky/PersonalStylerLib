@@ -19,7 +19,7 @@ public class PhotoModel {
     public String mNameOriginamImage;
 
     public String mDownloadFirebaseUrlCroppedImage;
-
+    public String mDownloadFirebaseUrlOriginalImage;
     public RelativeLayout mImageContainer;
 
     public PhotoModel() {}

@@ -165,7 +165,7 @@ public class Tools_Photos extends ToolsBase {
             ref.putFile(nPhoto.mCroppedFilePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Log.d("new_service","poza firebase2 : "+taskSnapshot.getDownloadUrl().getPath());
+                            Log.d("new_service","poza firebase2 : "+taskSnapshot.getDownloadUrl());
                             nPhoto.mDownloadFirebaseUrlCroppedImage = taskSnapshot.getDownloadUrl().getPath();
                             //progressDialog.dismiss();
                             //Toast.makeText(RegisterAddServices.this, "Uploaded", Toast.LENGTH_SHORT).show();
