@@ -291,6 +291,7 @@
     <style name="WrapWrap.Bold.Green.13" parent="WrapWrap.Bold.Green">       <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Bold.Green.14" parent="WrapWrap.Bold.Green">       <item name="android:textSize">14sp</item>     </style>
 
+    <style name="WrapWrap.Regular.Green.14" parent="WrapWrap.Regular.Green">       <item name="android:textSize">14sp</item>     </style>
 
 
 
