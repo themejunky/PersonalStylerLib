@@ -25,8 +25,8 @@ public class Constants {
     public static final String SCHEDULE_MONTH_DAY_TYPE_BEFORE = "BEFORE";
     public static final String SCHEDULE_MONTH_DAY_TYPE_CURRENT = "CURRENT";
 
-    public static final String LOCATION_TYPE_CLIENT_ADDRESS = "CLIENT_LOCATION";
-    public static final String LOCATION_TYPE_MY_ADDRESS = "MY_LOCATION";
+    public static final String LOCATION_TYPE_CLIENT_ADDRESS = "CLIENT_ADDRESS";
+    public static final String LOCATION_TYPE_MY_ADDRESS = "STYLIST_ADDRESS";
     public static final String LOCATION_TYPE_BOTH = "BOTH_LOCATION";
 
     public static final String CUSTOM_BUTTON_ACTIVE = "button_active";     //@string/CUSTOM_BUTTON_ACTIVE
