@@ -3,20 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nContainer"
     style="@style/MatchWrap.Vertical.White"
-    android:background="@color/base_blue"
     android:gravity="center_horizontal">
 
     <RelativeLayout
         android:id="@+id/nPicContainer"
         style="@style/MatchWrap.White"
-        android:padding="1dp"
-        android:gravity="center"
-        android:background="@color/base_purple">
+        android:padding="16dp"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/nPic"
             style="@style/WrapWrap"
-            android:background="@color/base_green"
             android:src="@drawable/ic_client_address"/>
 
     </RelativeLayout>
