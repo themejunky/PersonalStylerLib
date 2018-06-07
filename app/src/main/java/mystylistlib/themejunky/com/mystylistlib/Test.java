@@ -33,10 +33,10 @@ CustomServices mService;
 //        adad.getDialog().show();
 
 
-        mService = findViewById(R.id.nLocationClient);
-        mService.setListener(this);
+       // mService = findViewById(R.id.nLocationClient);
+     //   mService.setListener(this);
 
-        mService.setClickListenerMovement(true);
+      //  mService.setClickListenerMovement(true);
 
 
    //    mActivatePhotoInternalAPI(this,8, "1.8", (RelativeLayout) findViewById(R.id.nContai));

@@ -8,12 +8,14 @@
     <RelativeLayout
         android:id="@+id/nPicContainer"
         style="@style/MatchWrap.White"
-        android:padding="16dp"
-        android:gravity="center">
+        android:padding="1dp"
+        android:gravity="center"
+        android:background="@color/base_purple">
 
         <ImageView
             android:id="@+id/nPic"
             style="@style/WrapWrap"
+            android:background="@color/base_green"
             android:src="@drawable/ic_client_address"/>
 
     </RelativeLayout>
