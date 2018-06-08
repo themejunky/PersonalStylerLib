@@ -149,4 +149,5 @@ public class CustomButton extends BaseCustom_LinearLayout implements View.OnTouc
     public void setText(int nText) {
         mButton.setText(nText);
     }
+    public void setText(String nText) { mButton.setText(nText);}
 }
