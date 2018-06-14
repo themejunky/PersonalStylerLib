@@ -43,6 +43,11 @@ public class Photo extends PhotoBase {
                 mPhotos.set(nPosition,nPhoto);
                 mStartCropping(nPhoto);
             } else if (nType.equals(Constants.TAKE_PHOTO_CROPPED)) {
+
+
+                nPhoto.mfirebase_storage_id = mPhotos.get(nPhoto.mPosition).mfirebase_storage_id;
+
+                Log.d("transfer","asdasd "+nPhoto.mPosition+"/"+ nPhoto.mfirebase_storage_id );
                 mPhotos.set(nPhoto.mPosition,nPhoto);
 
             }
@@ -112,6 +117,7 @@ public class Photo extends PhotoBase {
                     break;
                 case ACTION_CROP:
                     mPresenter.mPreparePhotoCropped(nReturnedIntent);
+                    Log.d("transfer","asdas "+mPhotos.get(Integer.parseInt(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_POSITION))).mfirebase_storage_id);
                     break;
             }
         }
@@ -133,6 +139,7 @@ public class Photo extends PhotoBase {
 
     @Override
     public void onEditPhoto_Edit(int nPhotoPositionFromModel) {
+        Log.d("transfer",""+ mPhotos.get(nPhotoPositionFromModel).mfirebase_storage_id);
         mPhotos.get(nPhotoPositionFromModel).mPosition = nPhotoPositionFromModel;
         mStartCropping(mPhotos.get(nPhotoPositionFromModel));
 

@@ -56,8 +56,8 @@ public class Test extends Photo implements Photo._Interface, InfiniteLoading._In
 
     public void add() {
         List<PhotoModel> newStuff = new ArrayList<>();
-        newStuff.add(new PhotoModel("https://firebasestorage.googleapis.com/v0/b/mystylist-e8d65.appspot.com/o/images%2Foriginal_ee764457-cbdc-4226-afd2-34761b8b1607?alt=media&token=4214b7ac-c7cb-4546-a4b0-714f5e7d2d35","https://firebasestorage.googleapis.com/v0/b/mystylist-e8d65.appspot.com/o/images%2Fcropped_ee764457-cbdc-4226-afd2-34761b8b1607?alt=media&token=1da4b246-048d-40fa-98b6-bcac72485091"));
-        newStuff.add(new PhotoModel("https://firebasestorage.googleapis.com/v0/b/mystylist-e8d65.appspot.com/o/images%2Foriginal_87897399-abb4-42f6-9ee7-fe19fe69ac06?alt=media&token=25330ad2-a69c-4130-b29c-cd356bfab2a0","https://firebasestorage.googleapis.com/v0/b/mystylist-e8d65.appspot.com/o/images%2Fcropped_a8a6f41e-4401-4771-8ccf-5c0f07edb400?alt=media&token=c90d8e83-311d-44bb-a687-ddfb18a1ddb2"));
+        newStuff.add(new PhotoModel("https://firebasestorage.googleapis.com/v0/b/mystylist-e8d65.appspot.com/o/images%2Foriginal_ee764457-cbdc-4226-afd2-34761b8b1607?alt=media&token=4214b7ac-c7cb-4546-a4b0-714f5e7d2d35","https://firebasestorage.googleapis.com/v0/b/mystylist-e8d65.appspot.com/o/images%2Fcropped_ee764457-cbdc-4226-afd2-34761b8b1607?alt=media&token=1da4b246-048d-40fa-98b6-bcac72485091","xx-xx-11"));
+        newStuff.add(new PhotoModel("https://firebasestorage.googleapis.com/v0/b/mystylist-e8d65.appspot.com/o/images%2Foriginal_87897399-abb4-42f6-9ee7-fe19fe69ac06?alt=media&token=25330ad2-a69c-4130-b29c-cd356bfab2a0","https://firebasestorage.googleapis.com/v0/b/mystylist-e8d65.appspot.com/o/images%2Fcropped_a8a6f41e-4401-4771-8ccf-5c0f07edb400?alt=media&token=c90d8e83-311d-44bb-a687-ddfb18a1ddb2","yy-yy-22"));
 
         mPhotos = newStuff;
         refreshPhotos();
@@ -69,6 +69,7 @@ public class Test extends Photo implements Photo._Interface, InfiniteLoading._In
             Log.d("uploaddd",""+item.mPhotoFrom);
             Log.d("uploaddd",""+item.mCroppedFilePath);
             Log.d("uploaddd",""+item.mFilePath);
+            Log.d("uploaddd",""+item.mfirebase_storage_id);
             Log.d("uploaddd","-------");
         }
     }
