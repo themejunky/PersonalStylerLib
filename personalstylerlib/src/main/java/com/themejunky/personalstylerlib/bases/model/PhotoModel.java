@@ -11,6 +11,7 @@ import com.themejunky.personalstylerlib.utils.Constants;
 import java.net.URL;
 
 public class PhotoModel {
+    public String mfirebase_storage_id;
     public String mName;
     public String mPhotoFrom; //ex : gallery or camera
     public Uri mFilePath;
