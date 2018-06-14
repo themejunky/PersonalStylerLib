@@ -18,6 +18,7 @@ public class PhotoModel {
     public String mFilePathString;
     public Bitmap mBitmap;
     public int mPosition;
+    public String mWhichToUpload;
 
     public String mNameFolder;
     public String mNameCroppedImage;

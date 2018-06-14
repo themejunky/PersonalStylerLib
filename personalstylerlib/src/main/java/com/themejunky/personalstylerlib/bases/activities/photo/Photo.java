@@ -56,7 +56,6 @@ public class Photo extends PhotoBase {
         Intent intent = new Intent(this, CroppingPhoto.class);
         intent.putExtra(Constants.TAKE_PHOTO_FILE, nPhoto.mFilePath.toString());
         intent.putExtra(Constants.TAKE_PHOTO_RATIO, mRatio);
-        Log.d("editeaza","pozitia 2 : "+nPhoto.mPosition);
         intent.putExtra(Constants.TAKE_PHOTO_POSITION, String.valueOf(nPhoto.mPosition));
         startActivityForResult(intent, ACTION_CROP);
     }
