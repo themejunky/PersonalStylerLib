@@ -2,8 +2,13 @@ package com.themejunky.personalstylerlib.bases.model;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.themejunky.personalstylerlib.utils.Constants;
+
+import java.net.URL;
 
 public class PhotoModel {
     public String mName;
@@ -26,5 +31,20 @@ public class PhotoModel {
 
     public PhotoModel(RelativeLayout nImageContainer) {
         mImageContainer = nImageContainer;
+    }
+
+    public PhotoModel(String mDownloadFirebaseUrlOriginalImage,String mDownloadFirebaseUrlCroppedImage) {
+        this.mDownloadFirebaseUrlOriginalImage = mDownloadFirebaseUrlOriginalImage;
+        this.mDownloadFirebaseUrlCroppedImage = mDownloadFirebaseUrlCroppedImage;
+
+        try {
+            URL url = new URL(mDownloadFirebaseUrlCroppedImage);
+            mCroppedFilePath = Uri.parse(url.toURI().toString());
+
+            url = new URL(mDownloadFirebaseUrlOriginalImage);
+            mFilePath = Uri.parse(url.toURI().toString());
+        } catch (Exception ignore) {
+        }
+        this.mPhotoFrom = Constants.TAKE_PHOTO_WS;
     }
 }

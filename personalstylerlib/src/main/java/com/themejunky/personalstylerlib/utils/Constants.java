@@ -9,9 +9,10 @@ public class Constants {
 
     public static final String TAKE_PHOTO_CAMERA = "camera";
     public static final String TAKE_PHOTO_GALLERY = "gallery";
-    public static final String TAKE_PHOTO_CROPPED = "cropped";
+    public static final String TAKE_PHOTO_CROPPED = "NEW_CROPPED";
     public static final String TAKE_PHOTO_BOTH = "BOTH";
     public static final String TAKE_PHOTO_LOADING = "LOADING";
+    public static final String TAKE_PHOTO_WS = "WS";
     public static final String TAKE_PHOTO_FILE = "FILE";
     public static final String TAKE_PHOTO_FILE_CROP = "FILE_CROP";
     public static final String TAKE_PHOTO_RATIO = "RATIO";

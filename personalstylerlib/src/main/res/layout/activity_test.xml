@@ -1,93 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nContainer"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <!--<Button-->
-        <!--android:id="@+id/nApasa"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="apasa"/>-->
+    <Button
+        android:id="@+id/nApasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="apasa"/>
 
-    <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;-->
-        <!--&lt;!&ndash;android:id="@+id/nCont"&ndash;&gt;-->
-        <!--&lt;!&ndash;style="@style/MatchWrap"/>&ndash;&gt;-->
+    <Button
+        android:id="@+id/nAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="adauga"/>
+    <Button
+        android:id="@+id/nUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="upload"/>
 
-    <!--<com.themejunky.personalstylerlib.customviews.CustomServices-->
-        <!--android:id="@+id/nLocationClient"-->
-        <!--style="@style/Cube55"-->
-        <!--app:cbs_tag="mata"-->
-        <!--app:cbs_image="@drawable/ic_client_address"-->
-        <!--app:cbs_text="cevat"-->
-        <!--app:cbs_style="@style/onboarding_step_3_service_text"-->
-        <!--/>-->
-
-
-    <LinearLayout
-        style="@style/MatchWrap.Horizontal">
-    
-        <com.themejunky.personalstylerlib.customviews.CustomServices
-            android:id="@+id/nMinOrder"
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           android:layout_weight="1"
-           android:paddingLeft="1dp"
-           android:visibility="visible"
-            app:cbs_image_padding="0dp"
-            app:cbs_image="@drawable/ic_cart"
-            app:cbs_text="ceva"
-            app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"
-            app:cbs_border_default="@color/base_white"
-            app:cbs_image_color="@color/base_purple"
-            />
-
-        <com.themejunky.personalstylerlib.customviews.CustomServices
-            android:id="@+id/nAddService"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="1dp"
-            app:cbs_image_padding="0dp"
-            app:cbs_image="@drawable/ic_cart"
-            app:cbs_text="ceva"
-            app:cbs_style="@style/WrapWrap.Regular.Green.14"
-            app:cbs_border_default="@color/base_white"
-            app:cbs_image_color="@color/base_green"
-            />
-
-        <com.themejunky.personalstylerlib.customviews.CustomServices
-            android:id="@+id/nCopyListing"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="1dp"
-            app:cbs_image_padding="@dimen/app_button_image_padding"
-            app:cbs_image="@drawable/ic_cart"
-            app:cbs_text="ceva"
-            app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"
-            app:cbs_border_default="@color/base_white"
-            app:cbs_image_color="@color/base_blue"
-            />
-
-        <com.themejunky.personalstylerlib.customviews.CustomServices
-            android:id="@+id/nMainRedirect"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="1dp"
-            app:cbs_image_padding="@dimen/app_button_image_padding"
-            app:cbs_image="@drawable/ic_cart"
-            app:cbs_text="ceva"
-            app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"
-            app:cbs_border_default="@color/base_white"
-            app:cbs_image_color="@color/base_blue"
-            />
-
-
-    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/nContai"
+        style="@style/MatchWrap"
+        android:background="@color/base_violet"></RelativeLayout>
 
 </LinearLayout>
