@@ -35,10 +35,10 @@ public class PhotoModel {
         mImageContainer = nImageContainer;
     }
 
-    public PhotoModel(String mDownloadFirebaseUrlOriginalImage,String mDownloadFirebaseUrlCroppedImage) {
+    public PhotoModel(String mDownloadFirebaseUrlOriginalImage,String mDownloadFirebaseUrlCroppedImage,String mfirebase_storage_id) {
         this.mDownloadFirebaseUrlOriginalImage = mDownloadFirebaseUrlOriginalImage;
         this.mDownloadFirebaseUrlCroppedImage = mDownloadFirebaseUrlCroppedImage;
-
+        this.mfirebase_storage_id = mfirebase_storage_id;
         try {
             URL url = new URL(mDownloadFirebaseUrlCroppedImage);
             mCroppedFilePath = Uri.parse(url.toURI().toString());
