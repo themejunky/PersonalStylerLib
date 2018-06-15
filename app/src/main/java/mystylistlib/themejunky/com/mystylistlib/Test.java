@@ -21,8 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test extends Photo implements Photo._Interface, InfiniteLoading._Interface, CustomQuestion._Interface {
-
-
     CustomQuestion adad;
     CustomServices mService;
     @Override
@@ -65,7 +63,6 @@ public class Test extends Photo implements Photo._Interface, InfiniteLoading._In
 
     public void nUpload() {
         for (PhotoModel item: mPhotos) {
-
             Log.d("uploaddd",""+item.mPhotoFrom);
             Log.d("uploaddd",""+item.mCroppedFilePath);
             Log.d("uploaddd",""+item.mFilePath);
