@@ -20,7 +20,7 @@ public class PhotoModel {
     public Bitmap mBitmap;
     public int mPosition;
     public String mWhichToUpload;
-
+    public Boolean mWasUploadedToFirebase = false;
     public String mNameFolder;
     public String mNameCroppedImage;
     public String mNameOriginamImage;
