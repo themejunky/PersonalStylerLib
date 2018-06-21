@@ -14,6 +14,7 @@ public class CustomQuestion extends CustomQuestionBase {
     private String mType;
     /* just to pass some info */
     private int mCustomIntegerVariable;
+    private String mCustomStringVariable;
 
     public interface _Interface {
         void onCustomQuestion_Negative(AlertDialog.Builder buider,String nType);
@@ -86,8 +87,14 @@ public class CustomQuestion extends CustomQuestionBase {
      * Passing some infor
      * @param nCustonIntegerVariable - anything you want to pass
      */
-    public void setCustomIntegerVariable(int nCustonIntegerVariable) {
+      public void setCustomIntegerVariable(int nCustonIntegerVariable) {
         this.mCustomIntegerVariable = nCustonIntegerVariable;
+    }
+    public void setCustomStringVariable(String nCustonStringVariable) {
+        this.mCustomStringVariable = nCustonStringVariable;
+    }
+    public String getmCustomStringVariable() {
+        return mCustomStringVariable;
     }
 
     public int getmCustomIntegerVariable() {
