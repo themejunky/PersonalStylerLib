@@ -138,11 +138,30 @@ public class PhotoPresenter {
             @Override
             public PhotoModel call() {
                 PhotoModel nPhoto = new PhotoModel();
-                nPhoto.mFilePath = nReturnedIntent.getData();
-                nPhoto.mFilePathString = nReturnedIntent.getData().getPath();
+//                nPhoto.mFilePath = nReturnedIntent.getData();
+//                nPhoto.mFilePathString = nReturnedIntent.getData().getPath();
+//                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_GALLERY;
+//                return nPhoto;
+
+
+                //  PhotoModel nPhoto = new PhotoModel();
+                Bitmap nBitmap = null;
+
+                try {
+                    nBitmap = mTools.handleSamplingAndRotationBitmap(mPhotoActivity, nReturnedIntent.getData());
+                    File outputFile = mTools.createImageFile(mPhotoActivity);
+                    FileOutputStream fos = new FileOutputStream(outputFile);
+                    nBitmap.compress(Bitmap.CompressFormat.JPEG, 90, fos);
+                    nPhoto.mFilePath = Uri.fromFile(outputFile);
+                    nPhoto.mFilePathString = nPhoto.mFilePath.getPath();
+                } catch (Exception e) {
+                }
+
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_GALLERY;
-                return nPhoto;
+
+return nPhoto;
             }
+
         });
     }
 
