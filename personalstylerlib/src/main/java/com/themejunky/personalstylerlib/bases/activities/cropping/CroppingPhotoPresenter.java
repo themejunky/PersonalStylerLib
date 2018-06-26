@@ -92,7 +92,7 @@ public class CroppingPhotoPresenter {
                     /* create new file and save the cropped bitmap */
                     File outputFile = mTools.createImageFile(mCroppingPhotoActivity);
                     mFOS = new FileOutputStream(outputFile);
-                    mCroppedImage.compress(Bitmap.CompressFormat.PNG, 100, mFOS);
+                    mCroppedImage.compress(Bitmap.CompressFormat.JPEG, 90, mFOS);
 
 
                     mFOS.close();
