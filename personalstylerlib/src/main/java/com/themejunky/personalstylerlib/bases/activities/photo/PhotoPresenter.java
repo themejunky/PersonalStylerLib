@@ -1,11 +1,16 @@
 package com.themejunky.personalstylerlib.bases.activities.photo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.net.Uri;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -181,23 +186,11 @@ public class PhotoPresenter {
                 PhotoModel nPhoto = new PhotoModel();
                 Bitmap nBitmap = null;
 
-//            if (nReturnedIntent != null && nReturnedIntent.getExtras() != null) {
-//                Bundle extras = nReturnedIntent.getExtras();
-//                if (extras.containsKey("data")) {
-//                    nBitmap = (Bitmap) extras.get("data");
-//                } else {
-//                    nBitmap = optimizeBitmapFromUri(mBasePhotoUri);
-//                }
-//            } else {
-//                nBitmap = optimizeBitmapFromUri(mBasePhotoUri);
-//            }
-
                 try {
                     nBitmap = mTools.handleSamplingAndRotationBitmap(mPhotoActivity, mListener.onPhotoPresenter_GetBasePhotoUri());
-//            } catch (IOException e) {} try {
                     File outputFile = mTools.createImageFile(mPhotoActivity);
                     FileOutputStream fos = new FileOutputStream(outputFile);
-                    nBitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+                    nBitmap.compress(Bitmap.CompressFormat.JPEG, 90, fos);
                     nPhoto.mFilePath = Uri.fromFile(outputFile);
                 } catch (Exception e) {
                 }
@@ -212,6 +205,51 @@ public class PhotoPresenter {
         });
     }
 
+   /* private Observable<PhotoModel> mPreparePhotoCameraCore(final Intent nReturnedIntent) {
+
+        return Observable.fromCallable(new Callable<PhotoModel>() {
+            @Override
+            public PhotoModel call() {
+                PhotoModel nPhoto = new PhotoModel();
+                Bitmap nBitmap = null;
+
+                try {
+
+                    int targetW = 1080;
+                    int targetH = 600;
+                    // Get the dimensions of the bitmap
+                    BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+                    bmOptions.inJustDecodeBounds = true;
+                    BitmapFactory.decodeFile( mListener.onPhotoPresenter_GetBasePhotoUri().getPath(), bmOptions);
+                    int photoW = bmOptions.outWidth;
+                    int photoH = bmOptions.outHeight;
+                    // Determine how much to scale down the image
+                    int scaleFactor = Math.min(photoW/targetW, photoH/targetH);
+                    // Decode the image file into a Bitmap sized to fill the View
+                    bmOptions.inJustDecodeBounds = false;
+                    bmOptions.inSampleSize = scaleFactor;
+                    bmOptions.inPurgeable = true;
+                    Bitmap bitmap = BitmapFactory.decodeFile(mListener.onPhotoPresenter_GetBasePhotoUri().getPath(), bmOptions);
+
+
+                   // nBitmap = mTools.handleSamplingAndRotationBitmap(mPhotoActivity, mListener.onPhotoPresenter_GetBasePhotoUri());
+                    File outputFile = mTools.createImageFile(mPhotoActivity);
+                    FileOutputStream fos = new FileOutputStream(outputFile);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fos);
+                    nPhoto.mFilePath = Uri.fromFile(outputFile);
+                } catch (Exception e) {
+                }
+
+                nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CAMERA;
+
+           //     mTools.mBitmapTransformers.recycle();
+             //   nBitmap.recycle();
+
+                return nPhoto;
+            }
+        });
+    }
+*/
     /**
      * Prepare foto that was cropped and return with neccesary data as PhotoModel
      *
@@ -254,5 +292,55 @@ public class PhotoPresenter {
                 return nPhoto;
             }
         });
+    }
+
+
+
+
+    public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+            inSampleSize *=2;
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) > reqHeight
+                    && (halfWidth / inSampleSize) > reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
+    }
+
+    public static Point getScreenDimensions(Context context){
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Point point = new Point();
+        Display display = windowManager.getDefaultDisplay();
+        display.getSize(point);
+        return point;
+    }
+
+    public static Bitmap decodeSampledFile(File file, Context context){
+
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        try {
+            int reqWidth = getScreenDimensions(context).x;
+            int reqHeight = getScreenDimensions(context).y;
+            options.inJustDecodeBounds = true;
+            BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+            options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+            options.inJustDecodeBounds = false;
+            return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 }
