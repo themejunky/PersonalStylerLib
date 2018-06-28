@@ -42,6 +42,21 @@ public class Tools_ISO extends Tools_Views {
         }
     }
 
+    public Calendar fromISO8601UTCP(String dateStr) {
+        Calendar nCalendar = Calendar.getInstance();
+        TimeZone tz = TimeZone.getTimeZone("EET");
+        java.text.DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'+'HH:mm", getLocale());
+        df.setTimeZone(tz);
+
+        try {
+            nCalendar.setTime(df.parse(dateStr));
+            return nCalendar;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public String timeAgo(Date date) {
         return timeAgo(date.getTime());
     }
