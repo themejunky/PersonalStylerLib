@@ -14,7 +14,7 @@ public class Tools extends Tools_Schedule {
 
     private Tools(Context nContext) {
         mContext = nContext;
-        mRowHeight = (int) (70*getDensity());
+        mRowHeight = (int) (90*getDensity());
     }
 
     public Context getContext() {
