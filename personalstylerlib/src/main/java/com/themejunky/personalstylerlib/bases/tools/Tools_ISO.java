@@ -14,14 +14,14 @@ public class Tools_ISO extends Tools_Views {
 
 
     /**
-     * Transform Calendar to ISO8601
+     * Transform Calendar to ISO8601K
      * @param calendar - calendar to transform
      * @return ISO Date
      */
     public String ISO8601fromCalendar(final Calendar calendar) {
         Date date = calendar.getTime();
         TimeZone tz = TimeZone.getTimeZone("EET");
-        java.text.DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", getLocale());
+        java.text.DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SS'Z'", getLocale());
         df.setTimeZone(tz);
 
         return df.format(date);
