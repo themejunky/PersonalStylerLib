@@ -199,8 +199,8 @@ public class ToolsBase {
         return GL;
     }
 
-    public SpeedyLinearLayoutManager setList_GridLayoutManager_HorizontalS(final RecyclerView list, final RecyclerView.Adapter adapter, int nColumns) {
-        SpeedyLinearLayoutManager GL = new SpeedyLinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
+    public SpeedyLinearLayoutManager setList_GridLayoutManager_Horizontal(final RecyclerView list, final RecyclerView.Adapter adapter) {
+        SpeedyLinearLayoutManager GL = new SpeedyLinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
         list.setLayoutManager(GL);
         list.setAdapter(adapter);
         return GL;
