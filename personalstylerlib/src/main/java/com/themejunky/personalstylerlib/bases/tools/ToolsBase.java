@@ -199,6 +199,14 @@ public class ToolsBase {
         return GL;
     }
 
+    public SpeedyLinearLayoutManager setList_GridLayoutManager_HorizontalS(final RecyclerView list, final RecyclerView.Adapter adapter, int nColumns) {
+        SpeedyLinearLayoutManager GL = new SpeedyLinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
+        list.setLayoutManager(GL);
+        list.setAdapter(adapter);
+        return GL;
+    }
+
+
     /**
      * Method that lets the code add multiple CustomInputs and provide single array containing all
      * @param nCustonInputs - multiple CustomInputs
