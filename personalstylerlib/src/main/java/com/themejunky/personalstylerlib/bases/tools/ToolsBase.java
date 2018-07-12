@@ -45,7 +45,7 @@ public class ToolsBase {
 
 
     public Locale getLocale() {
-        return new Locale("ro_RO");
+        return new Locale("RO");
     }
     public float getDensity() {
         return mContext.getResources().getDisplayMetrics().density;
