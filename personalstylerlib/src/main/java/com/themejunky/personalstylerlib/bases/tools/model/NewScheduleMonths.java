@@ -7,4 +7,5 @@ public class NewScheduleMonths {
     public String mMonth;
     public int mYear;
     public List<NewScheduleMonthDays> mDays;
+    public Boolean status;
 }
