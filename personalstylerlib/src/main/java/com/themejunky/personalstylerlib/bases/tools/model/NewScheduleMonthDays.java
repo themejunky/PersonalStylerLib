@@ -8,6 +8,7 @@ public class NewScheduleMonthDays {
     public int mDay;
     public String mDayType;
     public Long mCalendarMil;
+    public Boolean status;
 
     public NewScheduleMonthDays(Long nCalendarMill,String nDayType) {
         if (nCalendarMill!=null) {
