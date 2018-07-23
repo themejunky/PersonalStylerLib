@@ -39,7 +39,7 @@ public class ToolsBase {
     public Activity mActivity;
     public View.OnClickListener mViewOnClickListener;
 
-    public int mRowHeight;
+    public int mRowHeightMax;
     private Snackbar mSnackBar;
     private ProgressDialog mProgressBar;
 
@@ -51,7 +51,7 @@ public class ToolsBase {
         return mContext.getResources().getDisplayMetrics().density;
     }
     public int getHourRowHeight() {
-        return mRowHeight;
+        return mRowHeightMax;
     }
 
     public void setActivity(Activity nActivity) {

@@ -226,6 +226,10 @@
     <style name="WrapWrap.Regular.Black.13" parent="WrapWrap.Regular.Black">       <item name="android:textSize">13sp</item>     </style>
     <style name="MatchWrap.Regular.Black.13" parent="MatchWrap.Regular.Black">       <item name="android:textSize">13sp</item>     </style>
     <style name="MatchWrap.Regular.Black.14" parent="MatchWrap.Regular.Black">       <item name="android:textSize">14sp</item>     </style>
+    <style name="MatchWrap.Regular.Black.15" parent="MatchWrap.Regular.Black">       <item name="android:textSize">15sp</item>     </style>
+    <style name="MatchWrap.Regular.Black.16" parent="MatchWrap.Regular.Black">       <item name="android:textSize">16sp</item>     </style>
+    <style name="MatchWrap.Regular.Black.17" parent="MatchWrap.Regular.Black">       <item name="android:textSize">17sp</item>     </style>
+    <style name="MatchWrap.Regular.Black.18" parent="MatchWrap.Regular.Black">       <item name="android:textSize">18sp</item>     </style>
     <style name="WrapWrap.Regular.Black.14" parent="WrapWrap.Regular.Black">       <item name="android:textSize">14sp</item>     </style>
     <style name="WrapWrap.Regular.Black.15" parent="WrapWrap.Regular.Black">       <item name="android:textSize">15sp</item>     </style>
     <style name="WrapWrap.Regular.Black.16" parent="WrapWrap.Regular.Black">       <item name="android:textSize">16sp</item>     </style>
