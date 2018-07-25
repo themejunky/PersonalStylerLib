@@ -8,4 +8,7 @@ public class NewScheduleMonths {
     public int mYear;
     public List<NewScheduleMonthDays> mDays;
     public Boolean status;
+
+    //because calculated calendar contains day-names and previsious month days
+    public int mCurrentMonthOffsetDays=0;
 }
