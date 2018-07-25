@@ -5,7 +5,6 @@ import android.content.Context;
 public class Tools extends Tools_Schedule {
 
     public static Tools getInstance(Context nContext) {
-        mContext = nContext;
 
         if (mInstance == null)
             mInstance = new Tools(nContext);
