@@ -241,6 +241,7 @@
     <style name="MatchMatch.Regular.Black.18" parent="MatchMatch.Regular.Black">       <item name="android:textSize">18sp</item>     </style>
     <style name="WrapWrap.Regular.Black.22" parent="MatchMatch.Regular.Black">       <item name="android:textSize">22sp</item>     </style>
 
+
     <style name="WrapWrap.Bold.Black.13" parent="WrapWrap.Bold.Black">       <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Bold.Black.14" parent="WrapWrap.Bold.Black">       <item name="android:textSize">14sp</item>     </style>
     <style name="WrapWrap.Bold.Black.15" parent="WrapWrap.Bold.Black">       <item name="android:textSize">15sp</item>     </style>
@@ -251,8 +252,11 @@
 
     <style name="WrapWrap.Regular.Grey.13" parent="WrapWrap.Regular.Grey">       <item name="android:textSize">13sp</item>     </style>
     <style name="WrapWrap.Regular.Grey.14" parent="WrapWrap.Regular.Grey">       <item name="android:textSize">14sp</item>     </style>
+    <style name="MatchMatch.Regular.Grey.15" parent="MatchMatch.Regular.Grey">       <item name="android:textSize">15sp</item>     </style>
     <style name="MatchMatch.Regular.Grey.18" parent="MatchMatch.Regular.Grey">       <item name="android:textSize">18sp</item>     </style>
 
+
+    <style name="MatchMatch.Bold.Black.15" parent="MatchMatch.Bold.Black">    <item name="android:textSize">15sp</item>  </style>
 
 
     <style name="WrapWrap.Regular.Grey_2.12" parent="WrapWrap.Regular.Grey_2">       <item name="android:textSize">12sp</item>     </style>
