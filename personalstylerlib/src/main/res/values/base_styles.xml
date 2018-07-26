@@ -214,6 +214,7 @@
     <style name="MatchWrap.Bold.Yellow" parent="MatchWrap.Bold">     <item name="android:textColor">@color/yellow</item>     </style>
     <style name="MatchMatch.Bold.Yellow" parent="MatchMatch.Bold">   <item name="android:textColor">@color/yellow</item>     </style>
 
+    <style name="MatchWrap.Regular.Grey.15" parent="MatchWrap.Regular.Grey">   <item name="android:textSize">15sp</item>     </style>
 
 
 
