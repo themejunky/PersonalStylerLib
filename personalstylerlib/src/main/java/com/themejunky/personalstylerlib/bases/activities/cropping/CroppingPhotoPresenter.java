@@ -79,29 +79,24 @@ public class CroppingPhotoPresenter {
             @Override
             public Uri call() {
 
-                try {
+            try {
 
-                    Drawable mDrawing = mListener.getImageToCropFrom().getDrawable();
-                    mBitmap = ((BitmapDrawable) mDrawing).getBitmap();
-                    /* create crop :
-                     mTop.getHeight() -> height of the above capture
-                     mBitmap.getHeight() / mImage.getHeight() -> real image height / imageView height -> coresponding ration between real image size and what user see in our imageview
-                    */
-                    mCroppedImage = Bitmap.createBitmap(mBitmap, 0, (int) (mListener.getTopContainer().getHeight() * ((double) mBitmap.getHeight() / mListener.getImageToCropFrom().getHeight())), mBitmap.getWidth(), (int) (mBitmap.getWidth() / mListener.getRatio()));
+                Drawable mDrawing = mListener.getImageToCropFrom().getDrawable();
+                mBitmap = ((BitmapDrawable) mDrawing).getBitmap();
 
-                    /* create new file and save the cropped bitmap */
-                    File outputFile = mTools.createImageFile(mCroppingPhotoActivity);
-                    mFOS = new FileOutputStream(outputFile);
-                    mCroppedImage.compress(Bitmap.CompressFormat.JPEG, 90, mFOS);
+                mCroppedImage = Bitmap.createBitmap(mBitmap, 0, (int) (mListener.getTopContainer().getHeight() * ((double) mBitmap.getHeight() / mListener.getImageToCropFrom().getHeight())), mBitmap.getWidth(), (int) (mBitmap.getWidth() / mListener.getRatio()));
 
+                File outputFile = mTools.createImageFile(mCroppingPhotoActivity);
+                mFOS = new FileOutputStream(outputFile);
+                mCroppedImage.compress(Bitmap.CompressFormat.JPEG, 90, mFOS);
 
-                    mFOS.close();
+                mFOS.close();
 
-                    return Uri.fromFile(outputFile);
+                return Uri.fromFile(outputFile);
 
-                } catch (Exception e) {
-                    return null;
-                }
+            } catch (Exception e) {
+                return null;
+            }
             }
         });
     }
