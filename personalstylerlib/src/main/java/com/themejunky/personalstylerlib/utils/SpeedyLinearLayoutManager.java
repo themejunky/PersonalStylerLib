@@ -9,10 +9,14 @@ import android.util.DisplayMetrics;
 
 public class SpeedyLinearLayoutManager extends LinearLayoutManager {
 
-    private static final float MILLISECONDS_PER_INCH = 180f; //default is 25f (bigger = slower)
+    private static float MILLISECONDS_PER_INCH = 210f; //default is 25f (bigger = slower) //120
 
     public SpeedyLinearLayoutManager(Context context, int orientation, boolean reverseLayout) {
         super(context, orientation, reverseLayout);
+    }
+
+    public void setSpeed(float nSpeed) {
+        MILLISECONDS_PER_INCH = nSpeed;
     }
 
     @Override
