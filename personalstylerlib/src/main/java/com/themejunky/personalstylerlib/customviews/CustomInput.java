@@ -39,7 +39,9 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColorFocus, mDefaultBorderColorUnFocus;
 
     public CustomInput(Context nContext, AttributeSet nAttrs) {
+
         super(nContext, nAttrs);
+        Log.d("asdadaadtest",""+nContext);
         TAG = "CustomInput";
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);
         inflate(nContext, R.layout.custom_input_edit_text, this);
