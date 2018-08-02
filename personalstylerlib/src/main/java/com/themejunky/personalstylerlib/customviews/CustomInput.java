@@ -43,9 +43,17 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         super(nContext, nAttrs);
         Log.d("asdadaadtest123",""+nContext);
         TAG = "CustomInput";
-        mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);     Log.d("asdadaadtest123","1");
-        inflate(nContext, R.layout.custom_input_edit_text, this);Log.d("asdadaadtest123","2");
-        mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);Log.d("asdadaadtest123","3");
+        try {
+            mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);
+            Log.d("asdadaadtest123", "1");
+            inflate(nContext, R.layout.custom_input_edit_text, this);
+            Log.d("asdadaadtest123", "2");
+            mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
+            Log.d("asdadaadtest123", "3");
+        } catch (Exception e) {
+            Log.wtf("asdadaadtest123", " ERR : "+e.getMessage());
+            Log.wtf("asdadaadtest123", " ERR : "+e.getLocalizedMessage());
+        }
         mInput = findViewById(R.id.nInput);Log.d("asdadaadtest123","4");
         TextView mTitle = findViewById(R.id.nTitle);Log.d("asdadaadtest123","5");
         setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);Log.d("asdadaadtest123","6");
