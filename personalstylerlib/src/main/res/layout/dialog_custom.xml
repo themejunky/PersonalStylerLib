@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nContainer"
     style="@style/MatchMatch.Vertical">
 
@@ -19,6 +19,15 @@
             android:id="@+id/nQuestion"
             android:lineSpacingExtra="2dp"
             style="@style/WrapWrap.Regular.Black.14"/>
+
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:id="@+id/nOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            app:ci_imei_option="next"
+            app:ci_type="spinner" />
     </LinearLayout>
 
     <View style="@style/Divider.Horizontal"/>
