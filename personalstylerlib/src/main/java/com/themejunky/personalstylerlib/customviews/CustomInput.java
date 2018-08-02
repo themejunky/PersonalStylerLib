@@ -41,50 +41,50 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public CustomInput(Context nContext, AttributeSet nAttrs) {
 
         super(nContext, nAttrs);
-        Log.d("asdadaadtest",""+nContext);
+        Log.d("asdadaadtest123",""+nContext);
         TAG = "CustomInput";
-        mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);
-        inflate(nContext, R.layout.custom_input_edit_text, this);
-        mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
-        mInput = findViewById(R.id.nInput);
-        TextView mTitle = findViewById(R.id.nTitle);
-        setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
-        setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
-        setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
+        mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);     Log.d("asdadaadtest123","1");
+        inflate(nContext, R.layout.custom_input_edit_text, this);Log.d("asdadaadtest123","2");
+        mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);Log.d("asdadaadtest123","3");
+        mInput = findViewById(R.id.nInput);Log.d("asdadaadtest123","4");
+        TextView mTitle = findViewById(R.id.nTitle);Log.d("asdadaadtest123","5");
+        setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);Log.d("asdadaadtest123","6");
+        setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);Log.d("asdadaadtest123","7");
+        setTitle(mTitle, R.styleable.CustomInput_ci_title_text);Log.d("asdadaadtest123","8");
 
-        mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);
-        mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);
-        mDefaultBorderColorFocus = getResources().getColor(R.color.CustomInput_default_border_color_focus);
-        mDefaultBorderRadius = getResources().getInteger(R.integer.ci_radius);
-        mDefaultBorderStroke = getResources().getInteger(R.integer.ci_stroke);
+        mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);Log.d("asdadaadtest123","9");
+        mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);Log.d("asdadaadtest123","10");
+        mDefaultBorderColorFocus = getResources().getColor(R.color.CustomInput_default_border_color_focus);Log.d("asdadaadtest123","11");
+        mDefaultBorderRadius = getResources().getInteger(R.integer.ci_radius);Log.d("asdadaadtest123","12");
+        mDefaultBorderStroke = getResources().getInteger(R.integer.ci_stroke);Log.d("asdadaadtest123","13");
 
 
-        if (mInputType.equals("1")) {
+        if (mInputType.equals("1")) {Log.d("asdadaadtest123","14");
 
-            mInput.setVisibility(View.VISIBLE);
-            setEditTextParameters(mInput);
-        } else if (mInputType.equals("2")) {
-            CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
-            mSpinner.setVisibility(View.VISIBLE);
-            mSpinner.setOnFocusChangeListener(this);
-            setEditTextParameters(mInput);
-        } else if (mInputType.equals("3")) {
-            mInput.setVisibility(View.VISIBLE);
-            setEditTextParameters(mInput);
+            mInput.setVisibility(View.VISIBLE);Log.d("asdadaadtest123","15");
+            setEditTextParameters(mInput);Log.d("asdadaadtest123","16");
+        } else if (mInputType.equals("2")) {Log.d("asdadaadtest123","17");
+            CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);Log.d("asdadaadtest123","18");
+            mSpinner.setVisibility(View.VISIBLE);Log.d("asdadaadtest123","19");
+            mSpinner.setOnFocusChangeListener(this);Log.d("asdadaadtest123","20");
+            setEditTextParameters(mInput);Log.d("asdadaadtest123","21");
+        } else if (mInputType.equals("3")) {Log.d("asdadaadtest123","22");
+            mInput.setVisibility(View.VISIBLE);Log.d("asdadaadtest123","23");
+            setEditTextParameters(mInput);Log.d("asdadaadtest123","24");
 
-            setMinLines(mInput, R.styleable.CustomInput_ci_min_lines, getResources().getInteger(R.integer.ci_min_lines));
-            setMaxLines(mInput, R.styleable.CustomInput_ci_max_lines, getResources().getInteger(R.integer.ci_max_lines));
-            setGravity(mInput, R.styleable.CustomInput_ci_gravity, Gravity.TOP | Gravity.LEFT);
-            setScrollBar(mInput, R.styleable.CustomInput_ci_scrollbars);
-            mInput.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);
-            mInput.setSingleLine(false);
+            setMinLines(mInput, R.styleable.CustomInput_ci_min_lines, getResources().getInteger(R.integer.ci_min_lines));Log.d("asdadaadtest123","25");
+            setMaxLines(mInput, R.styleable.CustomInput_ci_max_lines, getResources().getInteger(R.integer.ci_max_lines));Log.d("asdadaadtest123","26");
+            setGravity(mInput, R.styleable.CustomInput_ci_gravity, Gravity.TOP | Gravity.LEFT);Log.d("asdadaadtest123","27");
+            setScrollBar(mInput, R.styleable.CustomInput_ci_scrollbars);Log.d("asdadaadtest123","28");
+            mInput.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);Log.d("asdadaadtest123","29");
+            mInput.setSingleLine(false);Log.d("asdadaadtest123","30");
         }
 
 
-        mError = findViewById(R.id.nError);
-        setTitle(mError, R.styleable.CustomInput_ci_error_message);
-        TextView mMandatory = findViewById(R.id.nMandatory);
-        setMandatory(mMandatory, R.styleable.CustomInput_ci_error_mandatory);
+        mError = findViewById(R.id.nError);Log.d("asdadaadtest123","31");
+        setTitle(mError, R.styleable.CustomInput_ci_error_message);Log.d("asdadaadtest123","32");
+        TextView mMandatory = findViewById(R.id.nMandatory);Log.d("asdadaadtest123","33");
+        setMandatory(mMandatory, R.styleable.CustomInput_ci_error_mandatory);Log.d("asdadaadtest123","34");
     }
 
     /**
