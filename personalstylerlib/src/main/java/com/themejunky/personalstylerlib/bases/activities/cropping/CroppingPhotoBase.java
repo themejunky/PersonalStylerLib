@@ -39,7 +39,7 @@ public abstract class CroppingPhotoBase extends CustomActivity implements View.O
         mTools = Tools.getInstance(this);
         mPresenter = new CroppingPhotoPresenter(this,this);
 
-        mTools.showLoading(null);
+        //mTools.showLoading(null);
         mCropFrame.getViewTreeObserver().addOnGlobalLayoutListener(this);
     }
 
