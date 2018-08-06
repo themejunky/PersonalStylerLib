@@ -56,7 +56,7 @@ public class Photo extends PhotoBase {
 
     protected void mStartCropping(PhotoModel nPhoto) {
         Intent intent = new Intent(this, CroppingPhoto.class);
-        intent.putExtra(Constants.TAKE_PHOTO_FILE, nPhoto.mFilePath.toString());
+       if ( nPhoto.mFilePath!=null) intent.putExtra(Constants.TAKE_PHOTO_FILE, nPhoto.mFilePath.toString());
         intent.putExtra(Constants.TAKE_PHOTO_RATIO, mRatio);
         intent.putExtra(Constants.TAKE_PHOTO_POSITION, String.valueOf(nPhoto.mPosition));
         startActivityForResult(intent, ACTION_CROP);
