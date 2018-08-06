@@ -34,11 +34,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
-        <!--<activity-->
-            <!--android:name="com.themejunky.personalstylerlib.bases.activities.cropping.CroppingPhoto"-->
-            <!--android:screenOrientation="portrait"-->
-            <!--android:theme="@style/AppTheme"-->
-           <!--/>-->
+        <activity
+            android:name="com.themejunky.personalstylerlib.bases.activities.cropping.CroppingPhoto"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+           />
 
         <!--<provider-->
             <!--android:authorities="${applicationId}.provider"-->
