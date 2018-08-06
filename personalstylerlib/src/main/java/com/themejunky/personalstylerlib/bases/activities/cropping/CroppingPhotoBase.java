@@ -76,8 +76,7 @@ public abstract class CroppingPhotoBase extends CustomActivity implements View.O
 
     @Override
     public double getRatio() {
-        Log.d("dasdasda","aa"+mCropRation);
-        return 1.8;
+        return mCropRation;
     }
 
     @Override
