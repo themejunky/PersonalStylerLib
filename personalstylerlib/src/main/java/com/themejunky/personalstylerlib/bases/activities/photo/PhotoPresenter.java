@@ -215,7 +215,8 @@ return nPhoto;
                 }
 
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CAMERA;
-
+                Log.d("asdadasdasdasd",""+mTools);
+                Log.d("asdadasdasdasd",""+mTools.mBitmapTransformers);
                 mTools.mBitmapTransformers.recycle();
                 nBitmap.recycle();
 

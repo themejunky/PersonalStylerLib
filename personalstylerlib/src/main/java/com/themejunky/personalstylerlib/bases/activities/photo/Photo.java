@@ -104,6 +104,7 @@ public class Photo extends PhotoBase {
     protected void onActivityResult(int requestCode, int resultCode, Intent nReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, nReturnedIntent);
         if (resultCode == RESULT_OK) {
+            mTools.showLoading(null);
             switch (requestCode) {
                 case ACTION_GALLERY:
                     mPresenter.mPreparePhotoGallery(nReturnedIntent);
