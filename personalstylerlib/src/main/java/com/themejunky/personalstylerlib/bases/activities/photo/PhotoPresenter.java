@@ -215,9 +215,9 @@ return nPhoto;
                 }
 
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CAMERA;
-           if (mTools!=null && mTools.mBitmapTransformers!=null)
-                mTools.mBitmapTransformers.recycle();
-                nBitmap.recycle();
+                if (mTools!=null && mTools.mBitmapTransformers!=null)
+                     mTools.mBitmapTransformers.recycle();
+                     nBitmap.recycle();
 
                 return nPhoto;
             }
