@@ -32,7 +32,6 @@ public class CroppingPhoto extends CroppingPhotoBase {
     public void onResume() {
         super.onResume();
         start();
-
     }
 
     @Override
@@ -95,7 +94,7 @@ public class CroppingPhoto extends CroppingPhotoBase {
     @Override
     public void onCustomButtonClick(View nView) {
         if (mCO(nView,R.string.crop_action)) {
-            mTools.showLoading(null);
+            //mTools.showLoading(null);
             mPresenter.mCroppingImage();
         }
     }
