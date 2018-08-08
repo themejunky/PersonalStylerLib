@@ -11,8 +11,7 @@ import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.squareup.picasso.MemoryPolicy;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.activities.custom.CustomActivity;
 import com.themejunky.personalstylerlib.bases.model.PhotoModel;
@@ -104,9 +103,9 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
 
         for (PhotoModel item : mPhotos) {
             if (!item.mPhotoFrom.equals(Constants.TAKE_PHOTO_LOADING)) {
-                Picasso.with(this).load(item.mCroppedFilePath).placeholder(R.drawable.ic_service_placeholder).memoryPolicy(MemoryPolicy.NO_CACHE,MemoryPolicy.NO_STORE).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                Glide.with(this).load(item.mCroppedFilePath).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
             } else {
-                Picasso.with(this).load(R.drawable.ic_service_placeholder).memoryPolicy(MemoryPolicy.NO_CACHE,MemoryPolicy.NO_STORE).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                Glide.with(this).load(R.drawable.ic_service_placeholder).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
             }
             mCount++;
         }

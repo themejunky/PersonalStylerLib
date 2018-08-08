@@ -7,7 +7,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.activities.custom.CustomActivity;
 import com.themejunky.personalstylerlib.bases.tools.Tools;
@@ -50,17 +50,7 @@ public abstract class CroppingPhotoBase extends CustomActivity implements View.O
 
             mCropRation = Double.parseDouble(getIntent().getStringExtra(Constants.TAKE_PHOTO_RATIO));
 
-            Picasso.with(this).load(Uri.parse(getIntent().getStringExtra(Constants.TAKE_PHOTO_FILE))).into(mImage, new com.squareup.picasso.Callback() {
-                @Override
-                public void onSuccess() {
-                    mCrop.setListener(CroppingPhotoBase.this);
-                }
-
-                @Override
-                public void onError() {
-                    mShowError();
-                }
-            });
+            Glide.with(this).load(Uri.parse(getIntent().getStringExtra(Constants.TAKE_PHOTO_FILE))).into(mImage);
         }
     }
 
