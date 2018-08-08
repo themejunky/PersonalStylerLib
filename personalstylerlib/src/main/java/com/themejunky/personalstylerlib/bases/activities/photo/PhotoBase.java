@@ -104,13 +104,17 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
     protected void refreshPhotos() {
         int mCount = 0;
 
-        for (PhotoModel item : mPhotos) {
-            if (!item.mPhotoFrom.equals(Constants.TAKE_PHOTO_LOADING)) {
-                GlideApp.with(this).load(item.mCroppedFilePath).placeholder(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
-            } else {
-                GlideApp.with(this).load(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+        try {
+            for (PhotoModel item : mPhotos) {
+                if (!item.mPhotoFrom.equals(Constants.TAKE_PHOTO_LOADING)) {
+                    GlideApp.with(this).load(item.mCroppedFilePath).placeholder(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                } else {
+                    GlideApp.with(this).load(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                }
+                mCount++;
             }
-            mCount++;
+        } catch (IllegalArgumentException  e) {
+
         }
         resetPhotoBox();
     }
