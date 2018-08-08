@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.activities.custom.CustomActivity;
 import com.themejunky.personalstylerlib.bases.model.PhotoModel;
@@ -19,6 +21,7 @@ import com.themejunky.personalstylerlib.bases.tools.Tools;
 import com.themejunky.personalstylerlib.customdialogs.photo.edit.EditPhoto;
 import com.themejunky.personalstylerlib.customdialogs.photo.take.TakePhoto;
 import com.themejunky.personalstylerlib.utils.Constants;
+import com.themejunky.personalstylerlib.utils.GlideApp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,9 +106,9 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
 
         for (PhotoModel item : mPhotos) {
             if (!item.mPhotoFrom.equals(Constants.TAKE_PHOTO_LOADING)) {
-                Glide.with(this).load(item.mCroppedFilePath).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                GlideApp.with(this).load(item.mCroppedFilePath).placeholder(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
             } else {
-                Glide.with(this).load(R.drawable.ic_service_placeholder).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                GlideApp.with(this).load(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
             }
             mCount++;
         }
