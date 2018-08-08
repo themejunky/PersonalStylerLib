@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -114,7 +115,7 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
                 mCount++;
             }
         } catch (IllegalArgumentException  e) {
-
+            Log.w("NASOALE","!!!! "+e.getMessage());
         }
         resetPhotoBox();
     }
