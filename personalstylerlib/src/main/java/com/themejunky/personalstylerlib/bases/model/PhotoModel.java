@@ -50,4 +50,6 @@ public class PhotoModel {
         }
         this.mPhotoFrom = Constants.TAKE_PHOTO_WS;
     }
+
+
 }

@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.Picasso;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.bases.activities.custom.CustomActivity;
 import com.themejunky.personalstylerlib.bases.model.PhotoModel;
@@ -105,18 +107,17 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
     protected void refreshPhotos() {
         int mCount = 0;
 
-        try {
             for (PhotoModel item : mPhotos) {
+
                 if (!item.mPhotoFrom.equals(Constants.TAKE_PHOTO_LOADING)) {
-                    GlideApp.with(this).load(item.mCroppedFilePath).placeholder(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                 //   Picasso.get().load(item.mCroppedFilePath).placeholder(R.drawable.ic_service_placeholder).memoryPolicy(MemoryPolicy.NO_CACHE,MemoryPolicy.NO_STORE).into((ImageView) mViews.get(mCount).mImageContainer.getChildAt(0));
+                      GlideApp.with(this).load(item.mCroppedFilePath).placeholder(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.getChildAt(0));
                 } else {
-                    GlideApp.with(this).load(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.findViewWithTag("image"));
+                  //  Picasso.get().load(R.drawable.ic_service_placeholder).memoryPolicy(MemoryPolicy.NO_CACHE,MemoryPolicy.NO_STORE).into((ImageView) mViews.get(mCount).mImageContainer.getChildAt(0));
+                     GlideApp.with(this).load(R.drawable.ic_service_placeholder).apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true)).into((ImageView) mViews.get(mCount).mImageContainer.getChildAt(0));
                 }
                 mCount++;
             }
-        } catch (IllegalArgumentException  e) {
-            Log.w("NASOALE","!!!! "+e.getMessage());
-        }
         resetPhotoBox();
     }
 }

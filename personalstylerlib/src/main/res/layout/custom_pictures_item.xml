@@ -3,6 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nPic_container"
     style="@style/base_image_container">
-    <ImageView android:id="@+id/nPic_image" android:tag="image" style="@style/base_image" android:background="#28404040"/>
-    <ImageView android:id="@+id/nPic_delete" android:tag="delete" style="@style/base_image_delete"/>
+    <ImageView android:id="@+id/nPic_image" style="@style/base_image" android:background="#28404040"/>
+    <ImageView android:id="@+id/nPic_delete"  style="@style/base_image_delete"/>
 </RelativeLayout>
