@@ -84,6 +84,11 @@ public class Test extends Photo implements Photo._Interface, InfiniteLoading._In
     }
 
     @Override
+    public void onRefreshFinished() {
+
+    }
+
+    @Override
     public void onPhotosError() {
     }
     @Override
