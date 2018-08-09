@@ -124,9 +124,9 @@
         <attr name="chi_text_color" format="color" />        <!-- set text color -->
     </declare-styleable>
     <declare-styleable name="CustomButtonBorderImage">
-        <attr name="cbbi_devider" format="integer"/>
+        <attr name="cbbi_devider_witdh" format="integer"/>
         <attr name="cbbi_text" format="string"/>
-        <attr name="cbbi_text_color" format="color"/>
+
         <attr name="cbbi_image_color" format="color"/>
         <attr name="cbbi_image" format="reference"/>
         <attr name="cbbi_backgroundColor" format="color"/>
@@ -138,7 +138,15 @@
         <attr name="cbbi_tag" format="string"/>
         <attr name="cbbi_container_gravity" format="boolean" />
         <attr name="cbbi_text_style" format="reference" />
+        <attr name="cbbi_disable_text_style" format="reference" />
+        <attr name="cbbi_default_background_color" format="color"/>
+        <attr name="cbbi_default_border_pressed_color" format="color"/>
+        <attr name="cbbi_default_border_unpressed_color" format="color"/>
+        <attr name="cbbi_default_text_color" format="color"/>
 
+        <attr name="cbbi_disable_image_color" format="color"/>
+        <attr name="cbbi_disable_background_color" format="color"/>
+        <attr name="cbbi_disable_border_color" format="color"/>
 
     </declare-styleable>
 

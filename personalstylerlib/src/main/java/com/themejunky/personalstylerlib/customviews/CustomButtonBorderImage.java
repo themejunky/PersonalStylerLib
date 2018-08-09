@@ -18,7 +18,9 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
     protected TextView mText;
     protected ImageView mImageView;
     protected LinearLayout mContainer;
+    protected Boolean mDisable = false;
     private Custom_BorderImage_Interface mListener;
+
     private int mDefaultBackgroundColor,mDefaultBorderRadius, mDefaultBorderStroke,mDefaultBorderColorPressed,mDefaultBorderColorUnPressed;
 
     /* click listener interface */
@@ -70,27 +72,27 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
         }
 
         mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonBorderImage_cbbi_tag));
-        mDefaultBackgroundColor = getResources().getColor(R.color.CustomButtonBorderImage_default_background_color);
-        mDefaultBorderColorUnPressed = getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_unpresssed);
-        mDefaultBorderColorPressed = getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_pressed);
+
+        mDefaultBackgroundColor = mTypedarray.getColor(R.styleable.CustomButtonBorderImage_cbbi_default_background_color,getResources().getColor(R.color.CustomButtonBorderImage_default_background_color));
+        mDefaultBorderColorUnPressed = mTypedarray.getColor(R.styleable.CustomButtonBorderImage_cbbi_default_border_unpressed_color,getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_unpresssed));
+        mDefaultBorderColorPressed = mTypedarray.getColor(R.styleable.CustomButtonBorderImage_cbbi_default_border_pressed_color,getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_pressed));
+
         mDefaultBorderRadius = getResources().getInteger(R.integer.cbbi_radius);
         mDefaultBorderStroke = getResources().getInteger(R.integer.cbbi_stroke);
 
         setDefaultState();
 
-
-
         LayoutParams params = (LayoutParams) mDevider.getLayoutParams();
-        params.width =  mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_devider,0);
+        params.width =  (int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_devider_witdh,0)*mDensity);
         mDevider.setLayoutParams(params);
 
         setTitle(mText,R.styleable.CustomButtonBorderImage_cbbi_text);
         setStyle(mText, R.styleable.CustomButtonBorderImage_cbbi_text_style, R.style.ci_default_style);
-        setTextColor(mText,R.styleable.CustomButtonBorderImage_cbbi_text_color,R.color.Appoint_Trigger_Border);
+        //setTextColor(mText,R.styleable.CustomButtonBorderImage_cbbi_text_color,R.color.Appoint_Trigger_Border);
 
         mImageView.setImageDrawable(mTypedarray.getDrawable(R.styleable.CustomButtonBorderImage_cbbi_image));
         mImageView.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonBorderImage_cbbi_image_color,R.color.CustomButtonBorder_default_text_color));
-        mContainer.setPadding(mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0));
+        mContainer.setPadding((int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0)*mDensity),(int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0)*mDensity),(int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0)*mDensity),(int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0)*mDensity));
         //setPadding(mContainer,mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),getResources().getInteger(R.integer.ci_padping));
 
 
@@ -123,5 +125,33 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
                 R.styleable.CustomButtonBorderImage_cbbi_border_unpressed,mDefaultBorderColorUnPressed);
     }
 
+    public void setDisable() {
 
+        mDisable = true;
+
+        setStyle(mText, R.styleable.CustomButtonBorderImage_cbbi_disable_text_style, R.style.ci_default_style);
+
+        mImageView.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonBorderImage_cbbi_disable_image_color,R.color.CustomButtonBorder_default_text_color));
+
+        setBorderColorAndRadius(mContainer,
+                R.styleable.CustomButtonBorderImage_cbbi_disable_background_color,getResources().getColor(R.color.CustomButtonBorderImage_default_background_color),
+                R.styleable.CustomButtonBorderImage_cbbi_border_radius,mDefaultBorderRadius,
+                R.styleable.CustomButtonBorderImage_cbbi_border_stroke,mDefaultBorderStroke,
+                R.styleable.CustomButtonBorderImage_cbbi_disable_border_color,getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_unpresssed));
+    }
+
+    public void setActive() {
+
+        mDisable = false;
+
+        setStyle(mText, R.styleable.CustomButtonBorderImage_cbbi_text_style, R.style.ci_default_style);
+
+        mImageView.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonBorderImage_cbbi_image_color,R.color.CustomButtonBorder_default_text_color));
+
+        setBorderColorAndRadius(mContainer,
+                R.styleable.CustomButtonBorderImage_cbbi_default_background_color,getResources().getColor(R.color.CustomButtonBorderImage_default_background_color),
+                R.styleable.CustomButtonBorderImage_cbbi_border_radius,mDefaultBorderRadius,
+                R.styleable.CustomButtonBorderImage_cbbi_border_stroke,mDefaultBorderStroke,
+                R.styleable.CustomButtonBorderImage_cbbi_border_unpressed,getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_unpresssed));
+    }
 }

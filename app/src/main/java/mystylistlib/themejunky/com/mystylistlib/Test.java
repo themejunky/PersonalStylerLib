@@ -14,6 +14,7 @@ import com.themejunky.personalstylerlib.bases.model.PhotoModel;
 import com.themejunky.personalstylerlib.customdialogs.customQuestion.CustomQuestion;
 import com.themejunky.personalstylerlib.customdialogs.infiniteLoading.InfiniteLoading;
 import com.themejunky.personalstylerlib.customdialogs.photo.take.TakePhoto;
+import com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage;
 import com.themejunky.personalstylerlib.customviews.CustomServices;
 import com.themejunky.personalstylerlib.utils.Constants;
 
@@ -27,6 +28,9 @@ public class Test extends Photo implements Photo._Interface, InfiniteLoading._In
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+
+
+        ((CustomButtonBorderImage) findViewById(R.id.nPicture)).setDisable();
 
         mActivatePhotoInternalAPI(this,8,"1.8",(RelativeLayout) findViewById(R.id.nContai));
 

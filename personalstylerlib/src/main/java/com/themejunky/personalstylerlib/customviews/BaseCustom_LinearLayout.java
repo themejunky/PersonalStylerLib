@@ -22,6 +22,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     protected Context mContext;
     protected TypedArray mTypedarray;
     protected String TAG = "CustomView";
+    protected float mDensity;
 
     public BaseCustom_LinearLayout(Context context) {
         super(context);
@@ -30,6 +31,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
     public BaseCustom_LinearLayout(Context nContext, AttributeSet nAttrs) {
         super(nContext, nAttrs);
         this.mContext = nContext;
+        this.mDensity = mContext.getResources().getDisplayMetrics().density;
     }
 
     /**

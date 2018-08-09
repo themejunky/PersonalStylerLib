@@ -17,11 +17,15 @@
         app:cbbi_border_radius="3"
         app:cbbi_text="Pozele noastre"
         app:cbbi_image="@drawable/ic_add"
-        app:cbbi_devider="10"
+        app:cbbi_devider_witdh="10"
         app:cbbi_border_stroke="5"
-        app:cbbi_padding="20"
+        app:cbbi_padding="8"
         app:cbbi_container_gravity="true"
-        app:cbbi_text_color="@color/CustomService_default_border_color_active"/>
+        app:cbbi_disable_background_color="@color/green"
+        app:cbbi_disable_border_color="@color/red"
+        app:cbbi_disable_image_color="@color/base_blue"
+        app:cbbi_disable_text_style="@style/WrapWrap.Regular.Yellow.14"
+       />
 
     <Button
         android:id="@+id/nApasa"
