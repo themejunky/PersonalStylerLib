@@ -279,7 +279,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
             GradientDrawable mGD = new GradientDrawable();
             mGD.setColor(mTypedarray.getInt(nColor, nDefaultColor));
             mGD.setCornerRadius(mTypedarray.getFloat(nRadius, nDefaultRadius));
-            mGD.setStroke(mTypedarray.getInt(nStroke, nDefaultStroke), mTypedarray.getColor(nBorderColor, nDefaultBorderColor));
+            mGD.setStroke(mTypedarray.getInt((int) (nStroke*mDensity), (int) (nDefaultStroke*mDensity)), mTypedarray.getColor(nBorderColor, nDefaultBorderColor));
             nView.setBackground(mGD);
         } catch (Exception e) {
             Log.d(TAG, "" + e.getMessage());
