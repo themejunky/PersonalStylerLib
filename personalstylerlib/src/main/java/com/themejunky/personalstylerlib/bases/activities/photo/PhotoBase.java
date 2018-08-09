@@ -38,6 +38,7 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
 
     public interface _Interface {
         void onPhotosRefreshAvailable(String nType);
+        void onRefreshFinished();
         void onPhotosError();
     }
 
@@ -97,6 +98,8 @@ public abstract class PhotoBase extends CustomActivity implements PhotoContract.
                 mViews.get(i).mImageContainer.setVisibility(View.VISIBLE);
             }
         }
+
+        mPhotoActivityInterface.onRefreshFinished();
     }
 
     protected void refreshPhotos() {
