@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nContainer"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
+
+    <com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage
+        android:id="@+id/nPicture"
+        android:layout_height="100dp"
+        android:layout_width="300dp"
+        app:cbbi_tag="test"
+        app:cbbi_border_radius="3"
+        app:cbbi_text="Pozele noastre"
+        app:cbbi_image="@drawable/ic_add"
+        app:cbbi_devider="10"
+        app:cbbi_border_stroke="5"
+        app:cbbi_padding="20"
+        app:cbbi_container_gravity="true"
+        app:cbbi_text_color="@color/CustomService_default_border_color_active"/>
 
     <Button
         android:id="@+id/nApasa"

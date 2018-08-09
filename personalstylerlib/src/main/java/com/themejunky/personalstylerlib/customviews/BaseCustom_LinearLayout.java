@@ -181,7 +181,6 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         try {
             nImage.setImageDrawable(mTypedarray.getDrawable(nResourceReference));
             nImage.setVisibility(View.VISIBLE);
-            Log.d("cevaceva","1");
         } catch (Exception e) {
             nImage.setVisibility(View.GONE);
             Log.d("cevaceva","2 : "+e.getMessage());

@@ -3,6 +3,7 @@ package com.themejunky.personalstylerlib.customviews;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,10 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.themejunky.personalstylerlib.R;
-
-/**
- * Created by Junky2 on 3/21/2018.
- */
 
 public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements View.OnTouchListener {
 
@@ -23,9 +20,6 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
     protected LinearLayout mContainer;
     private Custom_BorderImage_Interface mListener;
     private int mDefaultBackgroundColor,mDefaultBorderRadius, mDefaultBorderStroke,mDefaultBorderColorPressed,mDefaultBorderColorUnPressed;
-
-
-
 
     /* click listener interface */
     public interface Custom_BorderImage_Interface {
@@ -68,7 +62,13 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
         mText = findViewById(R.id.nText);
         mImageView = findViewById(R.id.nImageView);
         mContainer = findViewById(R.id.nContainer);
+
         mContainer.setOnTouchListener(this);
+
+        if (mTypedarray.getBoolean(R.styleable.CustomButtonBorderImage_cbbi_container_gravity,false)) {
+            mContainer.setGravity(Gravity.CENTER);
+        }
+
         mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonBorderImage_cbbi_tag));
         mDefaultBackgroundColor = getResources().getColor(R.color.CustomButtonBorderImage_default_background_color);
         mDefaultBorderColorUnPressed = getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_unpresssed);
@@ -85,7 +85,9 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
         mDevider.setLayoutParams(params);
 
         setTitle(mText,R.styleable.CustomButtonBorderImage_cbbi_text);
+        setStyle(mText, R.styleable.CustomButtonBorderImage_cbbi_text_style, R.style.ci_default_style);
         setTextColor(mText,R.styleable.CustomButtonBorderImage_cbbi_text_color,R.color.Appoint_Trigger_Border);
+
         mImageView.setImageDrawable(mTypedarray.getDrawable(R.styleable.CustomButtonBorderImage_cbbi_image));
         mImageView.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonBorderImage_cbbi_image_color,R.color.CustomButtonBorder_default_text_color));
         mContainer.setPadding(mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0));

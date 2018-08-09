@@ -5,6 +5,7 @@
 
     <ImageView
         android:id="@+id/nImageView"
+        android:src="@drawable/ic_add"
         style="@style/WrapWrap"/>
 
     <View
@@ -13,6 +14,7 @@
 
     <TextView
         android:id="@+id/nText"
+        android:text="ceva"
         style="@style/WrapWrap"/>
 
 </LinearLayout>
