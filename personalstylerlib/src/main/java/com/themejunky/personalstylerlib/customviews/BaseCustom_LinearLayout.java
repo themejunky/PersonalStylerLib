@@ -325,7 +325,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
      * @return - style item as int
      */
     private int getDimension(int nResourceReference, int nDefault) {
-        return mTypedarray.getInt(nResourceReference, nDefault);
+        return (int) (mTypedarray.getInt(nResourceReference, nDefault)*mDensity);
     }
 
 

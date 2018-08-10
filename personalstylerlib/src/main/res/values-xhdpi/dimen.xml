@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- J3 -->
+    <integer name="ci_padding">6</integer>
+
+    <integer name="ci_radius">8</integer>
+    <integer name="ci_stroke">3</integer>
+
+    <integer name="ci_padding_left">12</integer>
+    <integer name="ci_padding_right">12</integer>
+    <integer name="ci_padding_top">3</integer>
+    <integer name="ci_padding_bottom">7</integer>
+</resources>

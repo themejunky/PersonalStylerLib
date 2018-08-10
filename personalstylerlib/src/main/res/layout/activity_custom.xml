@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/MatchMatch.Vertical">
+    style="@style/MatchMatch.Vertical"
+    android:padding="20dp">
 
 
     <com.themejunky.personalstylerlib.customviews.CustomInput
@@ -9,14 +10,34 @@
         style="@style/MatchWrap"
         app:ci_imei_option="next"
         app:ci_type="input"
-        app:ci_keyboard="email"
+        app:ci_keyboard="text"
+        app:ci_title_text="Nume complet"
+        app:ci_hint="Ionescu Popescu"
+        app:ci_error_message="eroare eroare"
+        />
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmail2"
+        style="@style/MatchWrap"
+        app:ci_imei_option="next"
+        app:ci_type="input"
+        app:ci_keyboard="text"
         app:ci_title_text="Adresa de email"
         app:ci_hint="ionescu.popescu@gmail.com"
         app:ci_error_message="eroare eroare"
         />
 
-    <com.themejunky.personalstylerlib.customviews.CustomRatingBar
-        android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmail3"
+        style="@style/MatchWrap"
+        app:ci_imei_option="next"
+        app:ci_type="input"
+        app:ci_keyboard="text"
+        app:ci_title_text="Numar de telefon"
+        app:ci_hint="0720.123.456"
+        app:ci_error_message="eroare eroare"
+        />
+
+
 
 </LinearLayout>

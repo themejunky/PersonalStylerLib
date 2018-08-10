@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Eu : Pixel 2xl -->
+    <integer name="ci_padding">8</integer>
+    <integer name="ci_radius">15</integer>
+    <integer name="ci_stroke">5</integer>
+
+    <integer name="ci_padding_left">11</integer>
+    <integer name="ci_padding_right">11</integer>
+    <integer name="ci_padding_top">4</integer>
+    <integer name="ci_padding_bottom">8</integer>
+</resources>

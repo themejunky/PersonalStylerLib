@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alina : Assus -->
+    <integer name="ci_padding">7</integer>
+
+    <integer name="ci_radius">10</integer>
+    <integer name="ci_stroke">3</integer>
+
+    <integer name="ci_padding_left">10</integer>
+    <integer name="ci_padding_right">10</integer>
+    <integer name="ci_padding_top">3</integer>
+    <integer name="ci_padding_bottom">7</integer>
+</resources>

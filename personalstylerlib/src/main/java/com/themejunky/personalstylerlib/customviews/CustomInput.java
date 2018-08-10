@@ -2,6 +2,7 @@ package com.themejunky.personalstylerlib.customviews;
 
 import android.content.Context;
 import android.text.InputType;
+import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -149,7 +150,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
 
 
-        setPadding(nTextView,R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding));
+        setPadding(nTextView,R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_top),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_bottom));
 
         setStyle(nTextView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
         setFontFamily(nTextView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
