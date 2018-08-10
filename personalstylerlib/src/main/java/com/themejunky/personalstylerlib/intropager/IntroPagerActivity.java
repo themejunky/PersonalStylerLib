@@ -5,17 +5,15 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.themejunky.personalstylerlib.R;
 
 import java.util.List;
 
 public class IntroPagerActivity extends AppCompatActivity {
-    private IntroPagerFragmentAdapter adapterTabViewPager;
+    protected IntroPagerFragmentAdapter adapterTabViewPager;
     protected ViewPager viewPager;
     protected Intent mWhereDoYouGoMyLovely;
-    private TabLayout tabLayout;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +25,6 @@ public class IntroPagerActivity extends AppCompatActivity {
 
     public void fetchViews() {
         viewPager = findViewById(R.id.viewpager);
-
     }
 
     public void setContent(List<ViewPagerModel> nContent, Intent nWhereDoYouGoMyLovely) {
@@ -49,7 +46,7 @@ public class IntroPagerActivity extends AppCompatActivity {
         }
 
         viewPager.setAdapter(adapterTabViewPager);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDotss);
+        TabLayout tabLayout = findViewById(R.id.tabDotss);
         tabLayout.setupWithViewPager(viewPager, true);
 
     }
@@ -60,24 +57,5 @@ public class IntroPagerActivity extends AppCompatActivity {
 
     private void init() {
         adapterTabViewPager = new IntroPagerFragmentAdapter(getSupportFragmentManager());
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                Log.d("adasds", "1234 : " + position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
     }
-
-
 }

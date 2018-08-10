@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MatchMatch.Vertical">
-
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/nContainerPager"
         style="@style/MatchMatch.Vertical"
         android:background="@color/intro_bg_picture_page1"
@@ -13,22 +10,19 @@
             android:id="@+id/nImage"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="48" />
+            android:layout_weight="40" />
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/nContainerLinear"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="52"
+            android:layout_weight="60"
             android:background="@drawable/background_intro1"
             android:orientation="vertical">
 
             <LinearLayout
                 style="@style/WrapWrap.Vertical"
-                android:layout_gravity="center"
-                android:layout_marginBottom="60dp"
-                android:layout_marginTop="60dp"
-                android:gravity="center">
+                android:layout_centerVertical="true">
 
                 <TextView
                     android:id="@+id/nTitle"
@@ -49,17 +43,16 @@
             <ViewStub
                 android:id="@+id/nextViewStub"
                 style="@style/MatchMatch"
+                android:layout_alignParentBottom="true"
                 android:layout="@layout/next_layout" />
 
             <ViewStub
                 android:id="@+id/finishViewStub"
                 style="@style/MatchMatch"
+                android:layout_alignParentBottom="true"
                 android:layout="@layout/finish_layout" />
 
-        </LinearLayout>
-
+        </RelativeLayout>
 
     </LinearLayout>
 
-
-</LinearLayout>
