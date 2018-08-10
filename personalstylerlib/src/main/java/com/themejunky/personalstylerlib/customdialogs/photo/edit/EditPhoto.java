@@ -37,7 +37,7 @@ public class EditPhoto extends BaseDialog {
 
         mContainer.findViewById(R.id.nChooseDelete).setOnClickListener(this);
         mContainer.findViewById(R.id.nChooseEdit).setOnClickListener(this);
-
+        mContainer.findViewById(R.id.nCancel).setOnClickListener(this);
         showDialog();
     }
 
@@ -50,6 +50,8 @@ public class EditPhoto extends BaseDialog {
             mDialog.dismiss();
         } else if (nView.getId()==R.id.nChooseEdit) {
             mListener.onEditPhoto_Edit(mPhotoPositionFromModel);
+            mDialog.dismiss();
+        } else if (nView.getId()==R.id.nCancel) {
             mDialog.dismiss();
         }
     }

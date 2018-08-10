@@ -4,21 +4,10 @@
     android:id="@+id/nContainer"
     style="@style/MatchMatch.Vertical">
 
-    <TextView
-        android:id="@+id/nTitle"
-        style="@style/WrapWrap.Bold.Black.14"
-        android:layout_gravity="center"
-        android:layout_margin="15dp"
-        android:text="@string/photos_option_choose"/>
-
-    <View
-        style="@style/Divider.Horizontal"
-        android:background="@color/base_line"/>
-
     <LinearLayout
         style="@style/MatchWrap.Vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
 
         <TextView
             android:id="@+id/nChooseDelete"
@@ -48,7 +37,6 @@
             android:id="@+id/nCancel"
             style="@style/PopupActionButtons"
             android:text="@string/photos_option_close"/>
-
 
     </LinearLayout>
 

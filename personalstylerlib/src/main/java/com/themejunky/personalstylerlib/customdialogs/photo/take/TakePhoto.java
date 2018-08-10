@@ -13,7 +13,7 @@ import com.themejunky.personalstylerlib.utils.Constants;
 
 public class TakePhoto extends BaseDialog {
     private TakePhoto._Interface mListener;
-    private TextView mChooseCamera, mChooseGallery;
+    private TextView mChooseCamera, mChooseGallery,mCancel;
     private static TakePhoto mInstance = null;
 
     public interface _Interface {
@@ -40,6 +40,8 @@ public class TakePhoto extends BaseDialog {
 
         mChooseCamera = mContainer.findViewById(R.id.nChooseCamera);
         mChooseGallery = mContainer.findViewById(R.id.nChooseGalery);
+        mCancel = mContainer.findViewById(R.id.nCancel);
+
         switch (nOptions) {
             case Constants.TAKE_PHOTO_CAMERA: mChooseCamera.setVisibility(View.VISIBLE); break;
             case Constants.TAKE_PHOTO_GALLERY: mChooseGallery.setVisibility(View.VISIBLE); break;
@@ -48,6 +50,7 @@ public class TakePhoto extends BaseDialog {
 
         mChooseCamera.setOnClickListener(this);
         mChooseGallery.setOnClickListener(this);
+        mCancel.setOnClickListener(this);
 
         showDialog();
     }
@@ -59,6 +62,8 @@ public class TakePhoto extends BaseDialog {
             mDialog.dismiss();
         } else if (nView.equals(mChooseGallery)) {
             mListener.onTakePhoto_Gallery();
+            mDialog.dismiss();
+        } else if (nView.equals(mCancel)) {
             mDialog.dismiss();
         }
     }

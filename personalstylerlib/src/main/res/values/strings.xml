@@ -15,6 +15,8 @@
     <string name="photos_option_delete">Sterge</string>
     <string name="photos_option_edit">Editeaza</string>
     <string name="photos_option_close">Inchide</string>
+    <string name="photos_option_camera">Camera</string>
+    <string name="photos_option_galerie">Galerie</string>
 
 
     <string name="default_loading_message">Please wait...</string>
