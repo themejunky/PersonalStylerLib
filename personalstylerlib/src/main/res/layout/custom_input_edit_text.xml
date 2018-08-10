@@ -3,7 +3,8 @@
     style="@style/MatchWrap.Vertical">
 
     <LinearLayout
-        style="@style/MatchWrap.Horizontal">
+        style="@style/MatchWrap.Horizontal"
+        android:layout_marginBottom="5dp">
 
         <TextView
             android:id="@+id/nTitle"
@@ -12,6 +13,7 @@
         <TextView
             android:id="@+id/nMandatory"
             style="@style/WrapWrap.Bold.Purple_2.14"
+
             android:text="@string/default_mandatory"
             android:visibility="gone"/>
 

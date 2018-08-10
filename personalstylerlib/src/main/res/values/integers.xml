@@ -13,7 +13,7 @@
     <integer name="ci_radius">7</integer>
     <integer name="ci_stroke">1</integer>
 
-
+    <dimen name="ci_text_padding">20dp</dimen>
 
     <integer name="cs_radius">3</integer>
     <integer name="cs_stroke">2</integer>

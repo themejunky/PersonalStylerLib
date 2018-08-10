@@ -62,7 +62,10 @@
         <attr name="ci_hint" format="string" />                  <!-- set edittext hint -->
         <attr name="ci_error_mandatory" format="boolean" />      <!--  set the "*" to flag up the field is mandatory -->
         <attr name="ci_error_message" format="string" />         <!-- set the error message if validation not succeed -->
-        <attr name="ci_paddingLeft" format="integer" />          <!-- set the paddingLeft -->
+        <attr name="ci_text_padding_left" format="integer" />          <!-- set the paddingLeft -->
+        <attr name="ci_text_padding_top" format="integer" />          <!-- set the paddingLeft -->
+        <attr name="ci_text_padding_right" format="integer" />          <!-- set the paddingLeft -->
+        <attr name="ci_text_padding_bottom" format="integer" />          <!-- set the paddingLeft -->
         <attr name="ci_padding" format="integer" />              <!-- set the padding -->
         <attr name="ci_lines" format="integer" />                <!-- set the nr of lines -->
         <attr name="ci_gravity" format="enum" >                  <!-- set the gravity of text {default: left | top} -->

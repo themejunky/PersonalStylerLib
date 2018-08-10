@@ -84,6 +84,14 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         }
     }
 
+    protected void setPadding(View nView, int nLeftValue, int nLeftValueDefault, int nTopValue, int nTopValueDefault, int nRightValue, int nRightValueDefault, int nBottomValue, int nBottomValueDefault) {
+        try {
+            nView.setPadding(getDimension(nLeftValue, nLeftValueDefault), getDimension(nTopValue, nTopValueDefault),getDimension(nRightValue, nRightValueDefault), getDimension(nBottomValue, nBottomValueDefault));
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
+        }
+    }
+
     protected void setPadding(View nView, int nResourceReference) {
         try {
             nView.setPadding(nResourceReference, nResourceReference, nResourceReference, nResourceReference);
@@ -317,7 +325,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
      * @return - style item as int
      */
     private int getDimension(int nResourceReference, int nDefault) {
-        return (int) (mTypedarray.getDimension(nResourceReference, nDefault));
+        return mTypedarray.getInt(nResourceReference, nDefault);
     }
 
 

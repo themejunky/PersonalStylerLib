@@ -3,6 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical">
 
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmail"
+        style="@style/MatchWrap"
+        app:ci_imei_option="next"
+        app:ci_type="input"
+        app:ci_keyboard="email"
+        app:ci_title_text="Adresa de email"
+        app:ci_hint="ionescu.popescu@gmail.com"
+        app:ci_error_message="eroare eroare"
+        />
+
     <com.themejunky.personalstylerlib.customviews.CustomRatingBar
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
