@@ -41,6 +41,8 @@ public class EditPhoto extends BaseDialog {
         showDialog();
     }
 
+
+
     @Override
     public void onClick(View nView) {
         if (nView.getId()==R.id.nChooseDelete) {

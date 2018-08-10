@@ -11,6 +11,11 @@
 
     <string name="add_service_add">Adauga un serviciu</string>
 
+    <string name="photos_option_choose">Alege o optiune</string>
+    <string name="photos_option_delete">Sterge</string>
+    <string name="photos_option_edit">Editeaza</string>
+    <string name="photos_option_close">Inchide</string>
+
 
     <string name="default_loading_message">Please wait...</string>
     <string name="unexpected_error">Unexpected error. Please try again later or contact the administrator</string>
