@@ -154,4 +154,8 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
                 R.styleable.CustomButtonBorderImage_cbbi_border_stroke,mDefaultBorderStroke,
                 R.styleable.CustomButtonBorderImage_cbbi_border_unpressed,getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_unpresssed));
     }
+
+    public Boolean getmDisable() {
+        return mDisable;
+    }
 }
