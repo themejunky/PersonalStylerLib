@@ -29,6 +29,7 @@ public class SimpleSpinnerLeftAdapter  extends BaseAdapter {
         this.mValues.addAll(nValues);
         this.mTextBold = nTextBold;
         this.mBoldFont = Typeface.createFromAsset(applicationContext.getAssets(),"Bold.ttf");
+
         inflter = (LayoutInflater.from(applicationContext));
     }
 
@@ -54,6 +55,7 @@ public class SimpleSpinnerLeftAdapter  extends BaseAdapter {
         TextView mText =  view.findViewById(R.id.nText);
         mText.setText(mValues.get(i).getValue());
         if (mTextBold) { mText.setTypeface(mBoldFont);}
+
         return view;
     }
 }

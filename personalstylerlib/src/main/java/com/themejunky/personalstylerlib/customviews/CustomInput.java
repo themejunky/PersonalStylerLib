@@ -68,8 +68,9 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             mSpinner.setOnFocusChangeListener(this);
             setEditTextParameters(mInput);
 
-        //    setPadding(findViewById(R.id.nSpinnerContainer),R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_top_password),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_bottom));
+            setPadding(findViewById(R.id.nSpinnerContainer),R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_spinner_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_spinner_top),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_spinner_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_spinner_bottom));
 
+            setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer),R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
 
         } else if (mInputType.equals("3")) {
             mInput.setVisibility(View.VISIBLE);

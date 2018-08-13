@@ -3,18 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchWrap.Vertical"
     android:id="@+id/nSpinnerContainer"
-    android:padding="3dp"
     android:background="@drawable/border_edit_text">
+
     <Spinner
         android:id="@+id/nSpinner"
         style="@style/MatchWrap"
         android:gravity="center_vertical"/>
     
-    <View
-        android:id="@+id/nSpinnerLine"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-       />
+    <!--<View-->
+        <!--android:id="@+id/nSpinnerLine"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!---->
+       <!--/>-->
 
 </LinearLayout>
