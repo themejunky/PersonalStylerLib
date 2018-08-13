@@ -6,6 +6,5 @@
     <TextView
         android:id="@+id/nText"
         style="@style/WrapWrap.Regular.Black.14"
-        android:layout_gravity="left"
-        android:padding="5dp"/>
+        android:layout_gravity="left"/>
 </LinearLayout>

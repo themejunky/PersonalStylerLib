@@ -7,6 +7,6 @@
         android:id="@+id/nText"
         style="@style/WrapWrap.Regular.Black.14"
         android:layout_gravity="right"
-        android:padding="5dp"/>
+       />
 
 </LinearLayout>
