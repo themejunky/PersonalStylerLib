@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/MatchMatch.Vertical"
+    style="@style/MatchMatch.Horizontal"
     android:padding="20dp">
 
 
     <com.themejunky.personalstylerlib.customviews.CustomInput
         android:id="@+id/nEmail"
-        style="@style/MatchWrap"
+        style="@style/WrapWrap"
         app:ci_imei_option="next"
         app:ci_type="input"
         app:ci_keyboard="text"
         app:ci_title_text="Nume complet"
-        app:ci_hint="Ionescu Popescu"
+        app:ci_hint="Ionescu Pop"
         app:ci_error_message="eroare eroare"
         />
 
     <com.themejunky.personalstylerlib.customviews.CustomInput
         android:id="@+id/nEmail2"
-        style="@style/MatchWrap"
+        style="@style/WrapWrap"
         app:ci_imei_option="next"
         app:ci_type="input"
-        app:ci_keyboard="text"
+        app:ci_keyboard="password"
         app:ci_title_text="Adresa de email"
-        app:ci_hint="ionescu.popescu@gmail.com"
+        app:ci_hint="ionescu@gmail.com"
         app:ci_error_message="eroare eroare"
         />
 
     <com.themejunky.personalstylerlib.customviews.CustomInput
         android:id="@+id/nEmail3"
-        style="@style/MatchWrap"
+        style="@style/WrapWrap"
         app:ci_imei_option="next"
-        app:ci_type="input"
+        app:ci_type="spinner"
         app:ci_keyboard="text"
-        app:ci_title_text="Numar de telefon"
-        app:ci_hint="0720.123.456"
+        app:ci_title_text="Numar"
         app:ci_error_message="eroare eroare"
         />
 
