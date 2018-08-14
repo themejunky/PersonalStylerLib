@@ -10,4 +10,12 @@
     <integer name="ci_padding_right">10</integer>
     <integer name="ci_padding_top">3</integer>
     <integer name="ci_padding_bottom">7</integer>
+
+
+    <integer name="ci_padding_top_password">8</integer>
+    <integer name="ci_padding_spinner_left">5</integer>
+    <integer name="ci_padding_spinner_right">5</integer>
+    <integer name="ci_padding_spinner_top">5</integer>
+    <integer name="ci_padding_spinner_bottom">5</integer>
+
 </resources>
