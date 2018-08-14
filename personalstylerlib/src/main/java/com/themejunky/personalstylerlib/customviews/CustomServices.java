@@ -56,8 +56,8 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
         mDefaultBorderColorActive = getResources().getColor(R.color.CustomService_default_border_color_active);
         mDefaultBorderColorPressed = getResources().getColor(R.color.CustomService_default_border_color_pressed);
         mDefaultBorderColorInactive = getResources().getColor(R.color.CustomService_default_border_color_inactive);
-        mDefaultBorderRadius = getResources().getInteger(R.integer.cs_radius);
-        mDefaultBorderStroke = getResources().getInteger(R.integer.cs_stroke);
+        mDefaultBorderRadius = getResources().getInteger(R.integer.ci_radius);
+        mDefaultBorderStroke = getResources().getInteger(R.integer.ci_stroke);
 
         TAG = "CustomService";
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomButtonService);
