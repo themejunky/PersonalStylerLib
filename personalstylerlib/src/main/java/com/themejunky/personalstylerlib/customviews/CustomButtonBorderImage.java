@@ -67,10 +67,11 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
 
         mContainer.setOnTouchListener(this);
 
-        if (mTypedarray.getBoolean(R.styleable.CustomButtonBorderImage_cbbi_container_gravity,false)) {
+        if (mTypedarray.getBoolean(R.styleable.CustomButtonBorderImage_cbbi_container_gravity_center,false)) {
             mContainer.setGravity(Gravity.CENTER);
         }
-        if (mTypedarray.getBoolean(R.styleable.CustomButtonBorderImage_cbbi_container_gravity_center_left_vertical,false)) {
+
+        if (mTypedarray.getBoolean(R.styleable.CustomButtonBorderImage_cbbi_container_gravity_left_vertical,false)) {
             mContainer.setGravity(Gravity.CENTER | Gravity.LEFT);
         }
 

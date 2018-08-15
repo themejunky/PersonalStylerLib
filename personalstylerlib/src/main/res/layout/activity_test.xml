@@ -20,7 +20,7 @@
         app:cbbi_devider_witdh="10"
         app:cbbi_border_stroke="5"
         app:cbbi_padding="8"
-        app:cbbi_container_gravity="true"
+        app:cbbi_container_gravity_center="true"
         app:cbbi_disable_background_color="@color/green"
         app:cbbi_disable_border_color="@color/red"
         app:cbbi_disable_image_color="@color/base_blue"

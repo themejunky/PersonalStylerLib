@@ -11,7 +11,7 @@
         app:cbbi_image="@drawable/ic_client_address"
         app:cbbi_devider_witdh="10"
         app:cbbi_padding="8"
-        app:cbbi_container_gravity_center_left_vertical="true"
+        app:cbbi_container_gravity_left_vertical="true"
         app:cbbi_default_text_color="@color/base_red"
         app:cbbi_image_color="@color/base_red"
         app:cbbi_border_pressed="@color/base_red"
