@@ -41,7 +41,16 @@ public class EditPhoto extends BaseDialog {
         showDialog();
     }
 
+    public void disableEdit() {
+        mContainer.findViewById(R.id.nChooseEdit).setVisibility(View.GONE);
+        mContainer.findViewById(R.id.nOptionDivider).setVisibility(View.GONE);
+    }
 
+
+    public void enableEdit() {
+        mContainer.findViewById(R.id.nChooseEdit).setVisibility(View.VISIBLE);
+        mContainer.findViewById(R.id.nOptionDivider).setVisibility(View.VISIBLE);
+    }
 
     @Override
     public void onClick(View nView) {

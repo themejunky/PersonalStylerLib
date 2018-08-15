@@ -16,6 +16,7 @@
             android:text="@string/photos_option_delete"/>
 
         <View
+            android:id="@+id/nOptionDivider"
             style="@style/Divider.Horizontal"/>
 
         <TextView
