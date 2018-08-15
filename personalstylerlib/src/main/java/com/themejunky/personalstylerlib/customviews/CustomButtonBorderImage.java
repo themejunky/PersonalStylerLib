@@ -77,8 +77,8 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
         mDefaultBorderColorUnPressed = mTypedarray.getColor(R.styleable.CustomButtonBorderImage_cbbi_default_border_unpressed_color,getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_unpresssed));
         mDefaultBorderColorPressed = mTypedarray.getColor(R.styleable.CustomButtonBorderImage_cbbi_default_border_pressed_color,getResources().getColor(R.color.CustomButtonBorderImage_default_border_color_pressed));
 
-        mDefaultBorderRadius = getResources().getInteger(R.integer.cbbi_radius);
-        mDefaultBorderStroke = getResources().getInteger(R.integer.cbbi_stroke);
+        mDefaultBorderRadius = getResources().getInteger(R.integer.ci_radius);
+        mDefaultBorderStroke = getResources().getInteger(R.integer.ci_stroke);
 
         setDefaultState();
 
