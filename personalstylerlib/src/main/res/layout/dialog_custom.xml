@@ -22,26 +22,31 @@
 
     </LinearLayout>
 
-    <View style="@style/Divider.Horizontal"/>
+    <View
+        style="@style/Divider.Horizontal"
+        android:background="@color/base_line"/>
 
     <LinearLayout
-        style="@style/MatchWrap.Horizontal">
+        style="@style/MatchWrap.Horizontal"
+        android:background="@color/PopupBackgroundActions"
+        >
 
         <TextView
             android:id="@+id/nNegative"
-            style="@style/TimePicker_buttons"
-            android:textColor="@color/base_red2"/>
+            style="@style/PopupActionButtons"
+            />
 
         <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
+            style="@style/Divider.Vertical"
             android:background="@color/base_line"/>
 
         <TextView
             android:id="@+id/nPositive"
-            style="@style/TimePicker_buttons"/>
+            style="@style/PopupActionButtons"
+            />
 
     </LinearLayout>
+
 
 
 </LinearLayout>

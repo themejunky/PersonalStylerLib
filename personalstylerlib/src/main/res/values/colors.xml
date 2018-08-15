@@ -117,7 +117,7 @@
     <color name="base_violet">#880cff</color>
     <color name="base_yellow">#ffd800</color>
     <color name="base_dialog_buttons_background">#efeff4</color>
-
+    <color name="PopupBackgroundActions">#efeff4</color>
     <color name="core_tabview_default_text_color">#b0a2f9</color>
     <color name="core_tabview_selected_text_color">#ffffff</color>
     <color name="core_tabview_selected_line">#ffd800</color>
