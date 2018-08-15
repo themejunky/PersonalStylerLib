@@ -65,7 +65,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         try {
             nView.setTextAppearance(mContext, getStyle(nResourceReference, nDefault));
         } catch (Exception e) {
-            Log.d(TAG, "" + e.getMessage());
+            Log.d(TAG, "adsasdda" + e.getMessage());
         }
     }
 

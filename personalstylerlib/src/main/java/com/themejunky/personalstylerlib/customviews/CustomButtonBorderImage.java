@@ -70,6 +70,9 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
         if (mTypedarray.getBoolean(R.styleable.CustomButtonBorderImage_cbbi_container_gravity,false)) {
             mContainer.setGravity(Gravity.CENTER);
         }
+        if (mTypedarray.getBoolean(R.styleable.CustomButtonBorderImage_cbbi_container_gravity_center_left_vertical,false)) {
+            mContainer.setGravity(Gravity.CENTER | Gravity.LEFT);
+        }
 
         mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonBorderImage_cbbi_tag));
 
@@ -87,18 +90,14 @@ public class CustomButtonBorderImage extends BaseCustom_LinearLayout implements 
         mDevider.setLayoutParams(params);
 
         setTitle(mText,R.styleable.CustomButtonBorderImage_cbbi_text);
+
         setStyle(mText, R.styleable.CustomButtonBorderImage_cbbi_text_style, R.style.ci_default_style);
-        //setTextColor(mText,R.styleable.CustomButtonBorderImage_cbbi_text_color,R.color.Appoint_Trigger_Border);
+      //  setTextColor(mText,R.styleable.CustomButtonBorderImage_cbbi_default_text_color,R.color.Appoint_Trigger_Border);
 
         mImageView.setImageDrawable(mTypedarray.getDrawable(R.styleable.CustomButtonBorderImage_cbbi_image));
         mImageView.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonBorderImage_cbbi_image_color,R.color.CustomButtonBorder_default_text_color));
         mContainer.setPadding((int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0)*mDensity),(int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0)*mDensity),(int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0)*mDensity),(int) (mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0)*mDensity));
         //setPadding(mContainer,mTypedarray.getInt(R.styleable.CustomButtonBorderImage_cbbi_padding,0),getResources().getInteger(R.integer.ci_padping));
-
-
-
-
-
     }
 
     public void setPressedState(){

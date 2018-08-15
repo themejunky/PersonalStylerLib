@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/MatchMatch.Horizontal"
+    style="@style/MatchMatch.Vertical"
     android:padding="20dp">
+
+    <com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage
+        android:id="@+id/nAddAddress"
+        style="@style/MatchWrap"
+        app:cbbi_text="Nu ai nicio adresa adaugata"
+        app:cbbi_image="@drawable/ic_client_address"
+        app:cbbi_devider_witdh="10"
+        app:cbbi_padding="8"
+        app:cbbi_container_gravity_center_left_vertical="true"
+        app:cbbi_default_text_color="@color/base_red"
+        app:cbbi_image_color="@color/base_red"
+        app:cbbi_border_pressed="@color/base_red"
+        app:cbbi_border_unpressed="@color/base_red"
+        app:cbbi_text_style="@style/WrapWrap.Bold.Red.13"
+        />
 
 
     <com.themejunky.personalstylerlib.customviews.CustomInput

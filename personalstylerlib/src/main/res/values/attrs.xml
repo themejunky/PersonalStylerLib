@@ -139,7 +139,8 @@
         <attr name="cbbi_border_radius" format="integer"/>
         <attr name="cbbi_border_stroke" format="integer"/>
         <attr name="cbbi_tag" format="string"/>
-        <attr name="cbbi_container_gravity" format="boolean" />
+        <attr name="cbbi_container_gravity_center" format="boolean" />
+        <attr name="cbbi_container_gravity_center_left_vertical" format="boolean" />
         <attr name="cbbi_text_style" format="reference" />
         <attr name="cbbi_disable_text_style" format="reference" />
         <attr name="cbbi_default_background_color" format="color"/>
