@@ -12,6 +12,7 @@ import java.net.URL;
 
 public class PhotoModel {
     public String mfirebase_storage_id;
+    public String mType;
     public String mName;
     public String mPhotoFrom; //ex : gallery or camera
     public Uri mFilePath;
@@ -51,5 +52,19 @@ public class PhotoModel {
         this.mPhotoFrom = Constants.TAKE_PHOTO_WS;
     }
 
+    public PhotoModel(String mDownloadFirebaseUrlOriginalImage,String mDownloadFirebaseUrlCroppedImage,String mfirebase_storage_id,String mType) {
+        this.mDownloadFirebaseUrlOriginalImage = mDownloadFirebaseUrlOriginalImage;
+        this.mDownloadFirebaseUrlCroppedImage = mDownloadFirebaseUrlCroppedImage;
+        this.mfirebase_storage_id = mfirebase_storage_id;
+        try {
+            URL url = new URL(mDownloadFirebaseUrlCroppedImage);
+            mCroppedFilePath = Uri.parse(url.toURI().toString());
 
+            url = new URL(mDownloadFirebaseUrlOriginalImage);
+            mFilePath = Uri.parse(url.toURI().toString());
+        } catch (Exception ignore) {
+        }
+        this.mPhotoFrom = Constants.TAKE_PHOTO_WS;
+        this.mType = mType;
+    }
 }
