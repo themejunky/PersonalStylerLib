@@ -29,11 +29,11 @@ public class Photo extends PhotoBase {
 
         Log.d("poza_click",""+mPhotos.get(Integer.parseInt(nView.getTag().toString())).mType);
 
-//        if (!mPhotos.get(Integer.parseInt(nView.getTag().toString())).mPhotoFrom.equals("NEW_CROPPED")) {
-//            EditPhoto.getInstance().disableEdit();
-//        } else {
-//            EditPhoto.getInstance().enableEdit();
-//        }
+        if (!mPhotos.get(Integer.parseInt(nView.getTag().toString())).mType.equals("INHOUSE")) {
+            EditPhoto.getInstance().disableEdit();
+        } else {
+            EditPhoto.getInstance().enableEdit();
+        }
 
     }
 

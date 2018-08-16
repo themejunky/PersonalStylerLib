@@ -304,6 +304,7 @@ return nPhoto;
                 nPhoto.mFilePath =  Uri.parse(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_FILE));
                 nPhoto.mPosition =  Integer.parseInt(nReturnedIntent.getStringExtra(Constants.TAKE_PHOTO_POSITION));
                 nPhoto.mPhotoFrom = Constants.TAKE_PHOTO_CROPPED;
+                nPhoto.mType = "UPLOADED";
                 return nPhoto;
             }
         });
