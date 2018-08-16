@@ -27,11 +27,11 @@ public class Photo extends PhotoBase {
     public void onClick(View nView) {
         EditPhoto.getInstance().refreshContent(this,this,Integer.parseInt(nView.getTag().toString()));
 
-        if (!mPhotos.get(Integer.parseInt(nView.getTag().toString())).mPhotoFrom.equals("NEW_CROPPED")) {
-            EditPhoto.getInstance().disableEdit();
-        } else {
-            EditPhoto.getInstance().enableEdit();
-        }
+//        if (!mPhotos.get(Integer.parseInt(nView.getTag().toString())).mPhotoFrom.equals("NEW_CROPPED")) {
+//            EditPhoto.getInstance().disableEdit();
+//        } else {
+//            EditPhoto.getInstance().enableEdit();
+//        }
 
     }
 
