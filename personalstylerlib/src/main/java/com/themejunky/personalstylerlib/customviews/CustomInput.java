@@ -42,6 +42,8 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public CustomInput(Context nContext, AttributeSet nAttrs) {
 
         super(nContext, nAttrs);
+
+
         TAG = "CustomInput";
         mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);     
         inflate(nContext, R.layout.custom_input_edit_text, this);
@@ -89,6 +91,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         setTitle(mError, R.styleable.CustomInput_ci_error_message);
         TextView mMandatory = findViewById(R.id.nMandatory);
         setMandatory(mMandatory, R.styleable.CustomInput_ci_error_mandatory);
+
     }
 
     /**
