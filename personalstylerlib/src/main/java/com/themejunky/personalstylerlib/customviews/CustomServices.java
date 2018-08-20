@@ -67,21 +67,17 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
 
         mContainer = findViewById(R.id.nContainer);
             mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonService_cbs_tag));
-     //   mPicContainer = findViewById(R.id.nPicContainer);
-     //       setPadding(mPicContainer,R.styleable.CustomButtonService_cbs_image_padding, mContainer.getResources().getInteger(R.integer.cbs_padding));
+
         mText = findViewById(R.id.nText);
 
         mTag = setTags(R.styleable.CustomButtonService_cbs_tag);
-
-        Log.d("dadadasdasdasd","este : "+mTag);
-
         setTitle(mText, R.styleable.CustomButtonService_cbs_text);
 
         setDefaultState();
 
        /*to be able to ajust as a square to the screen */
-        mText.getViewTreeObserver().addOnGlobalLayoutListener(this);
-        mContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
+     //   mText.getViewTreeObserver().addOnGlobalLayoutListener(this);
+     //   mContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
     //    mPicContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
 
         mContainer.setOnClickListener(this);
@@ -90,8 +86,8 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
     @Override
     public void onMeasure(int widthSpec, int heightSpec) {
         super.onMeasure(widthSpec, heightSpec);
-        mSavedSize = Math.min(getMeasuredWidth(), getMeasuredHeight());
-        setMeasuredDimension(getMeasuredWidth(), getMeasuredHeight());
+     //   mSavedSize = Math.min(getMeasuredWidth(), getMeasuredHeight());
+    //    setMeasuredDimension(getMeasuredWidth(), getMeasuredHeight());
     }
 
     @Override
@@ -120,8 +116,8 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
     //    params.height = mSavedSize;
       //  mPicContainer.setLayoutParams(params);
 
-        if (mText.getHeight()!=0) mText.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        if (mContainer.getHeight()!=0)  mContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+    ///    if (mText.getHeight()!=0) mText.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+     //   if (mContainer.getHeight()!=0)  mContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
     //    if (mPicContainer.getHeight()!=0)  mPicContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
     }
 
