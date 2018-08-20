@@ -3,19 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nContainer"
     style="@style/MatchWrap.Vertical.White"
-    android:padding="10dp"
     android:gravity="center_horizontal">
 
     <RelativeLayout
-        android:background="@color/base_red"
         android:id="@+id/nPicContainer"
         style="@style/MatchWrap.White"
         android:gravity="center">
 
         <ImageView
             android:id="@+id/nPic"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_client_address"/>
 
     </RelativeLayout>
@@ -24,7 +22,6 @@
         android:id="@+id/nText"
         style="@style/MatchWrap.Regular.Black.14"
         android:background="@color/white"
-        android:layout_marginTop="5dp"
         android:gravity="center"
         android:layout_gravity="center_horizontal"/>
 

@@ -80,9 +80,9 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
         setDefaultState();
 
        /*to be able to ajust as a square to the screen */
-       // mText.getViewTreeObserver().addOnGlobalLayoutListener(this);
-      //  mContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
-      //  mPicContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
+        mText.getViewTreeObserver().addOnGlobalLayoutListener(this);
+        mContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
+        mPicContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
 
         mContainer.setOnClickListener(this);
     }
