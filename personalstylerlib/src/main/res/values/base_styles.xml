@@ -79,6 +79,7 @@
 
     <!-- Base-LinearLayouts-Vertical-With_Background -->
     <style name="MatchWrap.Vertical.White" parent="MatchWrap.Vertical">      <item name="android:background">@color/white</item>  </style>
+    <style name="WrapWrap.Vertical.White" parent="WrapWrap.Vertical">      <item name="android:background">@color/white</item>  </style>
 
     <!-- Base-Bold -->
     <style name="WrapWrap.Bold" parent="WrapWrap">        <item name="fontPath">Bold.ttf</item>  </style>

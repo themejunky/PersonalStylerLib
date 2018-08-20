@@ -23,6 +23,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:orientation="horizontal">
 
         <com.themejunky.personalstylerlib.customviews.CustomInput
@@ -62,7 +63,7 @@
     <LinearLayout
         style="@style/MatchWrap.Horizontal"
         android:background="@color/base_line_color"
-        android:visibility="gone"
+        android:visibility="visible"
         android:paddingBottom="1dp"
         android:paddingTop="1dp">
 

@@ -67,8 +67,8 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
 
         mContainer = findViewById(R.id.nContainer);
             mContainer.setTag(mTypedarray.getString(R.styleable.CustomButtonService_cbs_tag));
-        mPicContainer = findViewById(R.id.nPicContainer);
-            setPadding(mPicContainer,R.styleable.CustomButtonService_cbs_image_padding, mContainer.getResources().getInteger(R.integer.cbs_padding));
+     //   mPicContainer = findViewById(R.id.nPicContainer);
+     //       setPadding(mPicContainer,R.styleable.CustomButtonService_cbs_image_padding, mContainer.getResources().getInteger(R.integer.cbs_padding));
         mText = findViewById(R.id.nText);
 
         mTag = setTags(R.styleable.CustomButtonService_cbs_tag);
@@ -82,7 +82,7 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
        /*to be able to ajust as a square to the screen */
         mText.getViewTreeObserver().addOnGlobalLayoutListener(this);
         mContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
-        mPicContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
+    //    mPicContainer.getViewTreeObserver().addOnGlobalLayoutListener(this);
 
         mContainer.setOnClickListener(this);
     }
@@ -115,25 +115,25 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
 
     @Override
     public void onGlobalLayout() {
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mPicContainer.getLayoutParams();
-        params.width = mSavedSize;
-        params.height = mSavedSize;
-        mPicContainer.setLayoutParams(params);
+    //    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mPicContainer.getLayoutParams();
+    //    params.width = mSavedSize;
+    //    params.height = mSavedSize;
+      //  mPicContainer.setLayoutParams(params);
 
         if (mText.getHeight()!=0) mText.getViewTreeObserver().removeOnGlobalLayoutListener(this);
         if (mContainer.getHeight()!=0)  mContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        if (mPicContainer.getHeight()!=0)  mPicContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+    //    if (mPicContainer.getHeight()!=0)  mPicContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
     }
 
     /**
      * The default state ; the start-up state of the customview
      */
     public void setDefaultState() {
-        setBorderColorAndRadius(mPicContainer,
-                R.styleable.CustomButtonService_cbs_backgroundColor,mDefaultBackgroundColor,
-                R.styleable.CustomButtonService_cbs_border_radius,mDefaultBorderRadius,
-                R.styleable.CustomButtonService_cbs_border_stroke,mDefaultBorderStroke,
-                R.styleable.CustomButtonService_cbs_border_default,mDefaultBorderColorActive);
+//        setBorderColorAndRadius(mPicContainer,
+//                R.styleable.CustomButtonService_cbs_backgroundColor,mDefaultBackgroundColor,
+//                R.styleable.CustomButtonService_cbs_border_radius,mDefaultBorderRadius,
+//                R.styleable.CustomButtonService_cbs_border_stroke,mDefaultBorderStroke,
+//                R.styleable.CustomButtonService_cbs_border_default,mDefaultBorderColorActive);
 
         mPic.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonService_cbs_image_color, mDefaultBorderColorActive));
 
@@ -147,11 +147,11 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
     public void setActive() {
         mStateOfPress=true;
 
-        setBorderColorAndRadius(mPicContainer,
-                R.styleable.CustomButtonService_cbs_backgroundColor,mDefaultBackgroundColor,
-                R.styleable.CustomButtonService_cbs_border_radius,mDefaultBorderRadius,
-                R.styleable.CustomButtonService_cbs_border_stroke,mDefaultBorderStroke,
-                R.styleable.CustomButtonService_cbs_border_pressed, mDefaultBorderColorPressed);
+//        setBorderColorAndRadius(mPicContainer,
+//                R.styleable.CustomButtonService_cbs_backgroundColor,mDefaultBackgroundColor,
+//                R.styleable.CustomButtonService_cbs_border_radius,mDefaultBorderRadius,
+//                R.styleable.CustomButtonService_cbs_border_stroke,mDefaultBorderStroke,
+//                R.styleable.CustomButtonService_cbs_border_pressed, mDefaultBorderColorPressed);
 
         mPic.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonService_cbs_border_pressed, mDefaultBorderColorPressed));
         setTextColor(mText, R.styleable.CustomButtonService_cbs_border_pressed, mDefaultBorderColorPressed);
@@ -165,11 +165,11 @@ public class CustomServices extends BaseCustom_LinearLayout implements ViewTreeO
         mStateOfPress=false;
         mStateOfActivation=false;
 
-        setBorderColorAndRadius(mPicContainer,
-                R.styleable.CustomButtonService_cbs_backgroundColor,mDefaultBackgroundColor,
-                R.styleable.CustomButtonService_cbs_border_radius,mDefaultBorderRadius,
-                R.styleable.CustomButtonService_cbs_border_stroke,mDefaultBorderStroke,
-                R.styleable.CustomButtonService_cbs_border_inactive_state,mDefaultBorderColorInactive);
+//        setBorderColorAndRadius(mPicContainer,
+//                R.styleable.CustomButtonService_cbs_backgroundColor,mDefaultBackgroundColor,
+//                R.styleable.CustomButtonService_cbs_border_radius,mDefaultBorderRadius,
+//                R.styleable.CustomButtonService_cbs_border_stroke,mDefaultBorderStroke,
+//                R.styleable.CustomButtonService_cbs_border_inactive_state,mDefaultBorderColorInactive);
 
         mPic.setColorFilter(getColorWithDefaultPreloaded(R.styleable.CustomButtonService_cbs_border_inactive_state, mDefaultBorderColorInactive));
         setTextColor(mText, R.styleable.CustomButtonService_cbs_border_inactive_state, mDefaultBorderColorInactive);
