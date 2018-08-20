@@ -83,8 +83,11 @@ public class Tools_Views extends Tools_Photos {
      * @param nName - name to be set
      * @param nTag - tag to be set on the menu item to identify the onClickListener ( there is a custom method for click listener that is set into the layout !! )
      */
-    public void mCreateMenuItem(ViewGroup nParent, int nIcon, int nName, int nTag) {
+    public void mCreateMenuItem(ViewGroup nParent, int nIcon, int nName, int nTag, View.OnClickListener click) {
         View nMenuItemRow = getMainContainerAfterInflate(nParent, R.layout.row_menu_item);
+
+        nMenuItemRow.setOnClickListener(click);
+
 
         nMenuItemRow.setTag(mContext.getResources().getString(nTag));
         ((ImageView) nMenuItemRow.findViewById(R.id.nIcon)).setImageDrawable(mContext.getResources().getDrawable(nIcon));
