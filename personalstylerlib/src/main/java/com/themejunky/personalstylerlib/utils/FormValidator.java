@@ -180,6 +180,7 @@ public class FormValidator implements TextWatcher, Spinner.OnItemSelectedListene
         /* if numbers of valid CustomInputs != total of them ..... shit happends */
         if (mValidationScore == (mEditTextViews.size()+mSpinnerViews.size())) {
             mSubmitButton.setActive();
+
         } else {
             mSubmitButton.setInactive();
         }

@@ -38,7 +38,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     private EditText mInput, mInputBorder;
     private String mInputType, mInputKeyboard, mGravity, mScrollbar;
     private TextView mError;
-    private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColorFocus, mDefaultBorderColorUnFocus;
+    private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColorFocus, mDefaultBorderColorUnFocus,mDefaultBorderColorError;
 
     public CustomInput(Context nContext, AttributeSet nAttrs) {
 
@@ -60,6 +60,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         mDefaultBorderColorFocus = getResources().getColor(R.color.CustomInput_default_border_color_focus);
         mDefaultBorderRadius = getResources().getInteger(R.integer.ci_radius);
         mDefaultBorderStroke = getResources().getInteger(R.integer.ci_stroke);
+        mDefaultBorderColorError = getResources().getColor(R.color.default_error);
 
 
         if (mInputType.equals("1")) {
@@ -131,7 +132,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         findViewById(R.id.nError).setVisibility(View.VISIBLE);
 
         if (mInput != null && mInputType.equals("input")) {
-            setInputBottomLineColor(mInput, R.styleable.CustomInput_ci_botton_line_error, R.color.default_error);
+            setDefaultState(mInput);
         }
     }
 
@@ -142,7 +143,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         findViewById(R.id.nError).setVisibility(View.GONE);
 
         if (mInput != null && mInputType.equals("input")) {
-            setInputBottomLineColor(mInput, R.styleable.CustomInput_ci_botton_line_default, R.color.CustomInput_line_default);
+            setDefaultState(mInput);
         }
     }
 
@@ -231,5 +232,14 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                 R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius,
                 R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke,
                 R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
+    }
+
+    public void setmError(View editText) {
+        Log.d("adaw", "setDefaultState");
+        setBorderColorAndRadius(editText,
+                R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor,
+                R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius,
+                R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke,
+                R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorError);
     }
 }
