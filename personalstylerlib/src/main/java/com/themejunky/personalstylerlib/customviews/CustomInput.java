@@ -1,6 +1,7 @@
 package com.themejunky.personalstylerlib.customviews;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
@@ -201,6 +202,8 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     break;
             }
         }
+
+        mInput.setHintTextColor(Color.parseColor("#cbcbcb"));
     }
 
     public void setFocusState(View editText) {

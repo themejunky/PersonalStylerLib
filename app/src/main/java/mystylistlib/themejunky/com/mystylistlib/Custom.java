@@ -14,7 +14,7 @@ public class Custom extends CustomActivity implements CustonScheduleMonthDialog.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom);
 
-        CustonScheduleMonthDialog.getInstance().refreshContent(this,this);
+      //  CustonScheduleMonthDialog.getInstance().refreshContent(this,this);
 
 
 //        String[] arraySpinner = new String[] {"Alege orasul", "Bucuresti", "Teleorman", "Timisoara", "Voluntari"};
