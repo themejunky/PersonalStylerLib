@@ -11,6 +11,9 @@
     <integer name="ci_padding_bottom">8</integer>
 
     <integer name="ci_padding_top_password">9</integer>
+    <integer name="ci_padding_bottom_password">8</integer>
+
+
     <integer name="ci_padding_spinner_left">5</integer>
     <integer name="ci_padding_spinner_right">5</integer>
     <integer name="ci_padding_spinner_top">6</integer>

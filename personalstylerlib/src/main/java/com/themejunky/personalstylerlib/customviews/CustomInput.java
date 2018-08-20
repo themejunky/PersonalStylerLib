@@ -181,7 +181,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                 case "4":
                     nTextView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     setPadding(nTextView,R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_top_password),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_bottom_password));
-
                     break;
                 case "5":
                     nTextView.setInputType(InputType.TYPE_CLASS_NUMBER);

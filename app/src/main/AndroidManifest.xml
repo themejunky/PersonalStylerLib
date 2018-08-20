@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.themejunky.personalstylerlib.bases.CameraPreviewCustom2"
+            android:name="com.themejunky.personalstylerlib.bases.activities.custom.CustomActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />

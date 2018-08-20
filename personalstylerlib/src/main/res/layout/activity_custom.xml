@@ -4,58 +4,65 @@
     style="@style/MatchMatch.Vertical"
     android:padding="20dp">
 
-    <com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage
-        android:id="@+id/nAddAddress"
-        style="@style/MatchWrap"
-        app:cbbi_text="Nu ai nicio adresa adaugata"
-        app:cbbi_image="@drawable/ic_client_address"
-        app:cbbi_devider_witdh="10"
-        app:cbbi_padding="8"
-        app:cbbi_container_gravity_left_vertical="true"
-        app:cbbi_default_text_color="@color/base_red"
-        app:cbbi_image_color="@color/base_red"
-        app:cbbi_border_pressed="@color/base_red"
-        app:cbbi_border_unpressed="@color/base_red"
-        app:cbbi_text_style="@style/WrapWrap.Bold.Red.13"
-        />
+    <!--<com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage-->
+        <!--android:id="@+id/nAddAddress"-->
+        <!--style="@style/MatchWrap"-->
+        <!--app:cbbi_text="Nu ai nicio adresa adaugata"-->
+        <!--app:cbbi_image="@drawable/ic_client_address"-->
+        <!--app:cbbi_devider_witdh="10"-->
+        <!--app:cbbi_padding="8"-->
+        <!--app:cbbi_container_gravity_left_vertical="true"-->
+        <!--app:cbbi_default_text_color="@color/base_red"-->
+        <!--app:cbbi_image_color="@color/base_red"-->
+        <!--app:cbbi_border_pressed="@color/base_red"-->
+        <!--app:cbbi_border_unpressed="@color/base_red"-->
+        <!--app:cbbi_text_style="@style/WrapWrap.Bold.Red.13"-->
+        <!--/>-->
 
 
-    <com.themejunky.personalstylerlib.customviews.CustomInput
-        android:id="@+id/nEmail"
-        style="@style/WrapWrap"
-        app:ci_imei_option="next"
-        app:ci_type="input"
-        app:ci_keyboard="text"
-        app:ci_title_text="Nume complet"
-        app:ci_hint="Ionescu Pop"
-        app:ci_error_message="eroare eroare"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <com.themejunky.personalstylerlib.customviews.CustomInput
-        android:id="@+id/nEmail2"
-        style="@style/WrapWrap"
-        app:ci_imei_option="next"
-        app:ci_type="input"
-        app:ci_keyboard="password"
-        app:ci_title_text="Adresa de email"
-        app:ci_hint="ionescu@gmail.com"
-        app:ci_error_message="eroare eroare"
-        />
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:id="@+id/nEmail"
+            style="@style/WrapWrap"
+            app:ci_imei_option="next"
+            app:ci_type="input"
+            app:ci_keyboard="text"
+            app:ci_title_text="Nume complet"
+            app:ci_hint="Ionescu Pop"
+            app:ci_error_message="eroare eroare"
+            />
 
-    <com.themejunky.personalstylerlib.customviews.CustomInput
-        android:id="@+id/nEmail3"
-        style="@style/WrapWrap"
-        app:ci_imei_option="next"
-        app:ci_type="spinner"
-        app:ci_keyboard="text"
-        app:ci_title_text="Numar"
-        app:ci_error_message="eroare eroare"
-        />
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:id="@+id/nEmail2"
+            style="@style/WrapWrap"
+            app:ci_imei_option="next"
+            app:ci_type="input"
+            app:ci_keyboard="password"
+            app:ci_title_text="Adresa de email"
+            app:ci_hint="ionescu@gmail.com"
+            app:ci_error_message="eroare eroare"
+            />
 
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:id="@+id/nEmail3"
+            style="@style/WrapWrap"
+            app:ci_imei_option="next"
+            app:ci_type="spinner"
+            app:ci_keyboard="text"
+            app:ci_title_text="Numar"
+            app:ci_error_message="eroare eroare"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         style="@style/MatchWrap.Horizontal"
         android:background="@color/base_line_color"
+        android:visibility="gone"
         android:paddingBottom="1dp"
         android:paddingTop="1dp">
 

@@ -11,8 +11,8 @@
     <integer name="ci_padding_top">3</integer>
     <integer name="ci_padding_bottom">7</integer>
 
-    <integer name="ci_padding_top_password">4</integer>
-    <integer name="ci_padding_bottom_password">6</integer>
+    <integer name="ci_padding_top_password">3</integer>
+    <integer name="ci_padding_bottom_password">7</integer>
 
     <integer name="ci_padding_spinner_left">5</integer>
     <integer name="ci_padding_spinner_right">5</integer>
