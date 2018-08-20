@@ -129,10 +129,11 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
      * Show error : TextView and BottomLine
      */
     public void showError() {
+
         findViewById(R.id.nError).setVisibility(View.VISIBLE);
 
-        if (mInput != null && mInputType.equals("input")) {
-            setDefaultState(mInput);
+        if (mInput != null && mInputType.equals("1")) {
+            setmError(mInput);
         }
     }
 
@@ -142,7 +143,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public void hideError() {
         findViewById(R.id.nError).setVisibility(View.GONE);
 
-        if (mInput != null && mInputType.equals("input")) {
+        if (mInput != null && mInputType.equals("1")) {
             setDefaultState(mInput);
         }
     }

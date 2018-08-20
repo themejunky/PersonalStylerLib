@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmail"
+        style="@style/MatchWrap"
+        android:layout_marginTop="25dp"
+        app:ci_imei_option="done"
+        app:ci_type="input"
+        app:ci_keyboard="email"
+        app:ci_title_text="@string/login_email_title"
+        app:ci_hint="@string/login_email_hint"
+        app:ci_error_message="@string/login_error_1"
+        />
+
+    <com.themejunky.personalstylerlib.customviews.CustomButton
+        android:id="@+id/nResetButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="25dp"
+        android:tag="button_inactive"
+        app:cb_tag="@string/reset_key_button_reset"
+        app:cb_text="RESET"
+
+        app:cb_form_validation="true"
+
+        app:cb_active_pressed="@color/CustomButton_green_pressed"
+        app:cb_active_unpressed="@color/CustomButton_green_unpressed"
+        app:cb_active_shadow="@color/CustomButton_green_shadow"
+
+        app:cb_inactive_pressed="@color/CustomButton_inactive_pressed"
+        app:cb_inactive_unpressed="@color/CustomButton_inactive_unpressed"
+        app:cb_inactive_shadow="@color/CustomButton_inactive_shadow"
+        />
+
+</LinearLayout>
