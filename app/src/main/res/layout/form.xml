@@ -20,6 +20,28 @@
         app:ci_error_message="@string/login_error_1"
         />
 
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nDescriere"
+        style="@style/MatchWrap"
+        android:layout_marginTop="6dp"
+        app:ci_type="input_multiline"
+        app:ci_keyboard="text"
+        app:ci_imei_option="next"
+        app:ci_title_text="text"
+        app:ci_hint="hint"
+        app:ci_error_message="error"
+        app:ci_error_mandatory="true"
+        />
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nTimp"
+        style="@style/MatchWrap"
+        app:ci_error_mandatory="true"
+        app:ci_error_message="Err"
+        app:ci_imei_option="next"
+        app:ci_title_text="ti"
+        app:ci_type="spinner" />
+
     <com.themejunky.personalstylerlib.customviews.CustomButton
         android:id="@+id/nResetButton"
         android:layout_width="match_parent"

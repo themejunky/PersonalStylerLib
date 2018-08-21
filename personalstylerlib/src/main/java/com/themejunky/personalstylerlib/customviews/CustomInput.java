@@ -129,11 +129,10 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
      * Show error : TextView and BottomLine
      */
     public void showError() {
-
         findViewById(R.id.nError).setVisibility(View.VISIBLE);
-
-        if (mInput != null && mInputType.equals("1")) {
+        if (mInput != null) {
             setmError(mInput);
+            setmError(findViewById(R.id.nSpinnerContainer));
         }
     }
 
@@ -142,9 +141,9 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
      */
     public void hideError() {
         findViewById(R.id.nError).setVisibility(View.GONE);
-
-        if (mInput != null && mInputType.equals("1")) {
+        if (mInput != null ) {
             setDefaultState(mInput);
+            setDefaultState(findViewById(R.id.nSpinnerContainer));
         }
     }
 
@@ -236,7 +235,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     }
 
     public void setmError(View editText) {
-        Log.d("adaw", "setDefaultState");
+        Log.d("adaw", "setDefaultState2");
         setBorderColorAndRadius(editText,
                 R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor,
                 R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius,
