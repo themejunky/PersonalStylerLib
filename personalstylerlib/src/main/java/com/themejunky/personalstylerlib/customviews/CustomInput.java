@@ -172,10 +172,10 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
        if (mInputKeyboard != null) {
             switch (mInputKeyboard) {
                 case "1":
-                    nTextView.setInputType(InputType.TYPE_CLASS_TEXT);
+                    nTextView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
                     break;
                 case "12":
-                    nTextView.setInputType(InputType.TYPE_CLASS_TEXT);
+                    nTextView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
                     break;
                 case "2":
                     nTextView.setInputType(InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS);
