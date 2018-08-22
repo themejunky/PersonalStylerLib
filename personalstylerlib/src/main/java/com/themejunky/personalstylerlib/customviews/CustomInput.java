@@ -67,14 +67,19 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             mInput.setVisibility(View.VISIBLE);
             setEditTextParameters(mInput);
         } else if (mInputType.equals("2")) {
-            CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
-            mSpinner.setVisibility(View.VISIBLE);
-            mSpinner.setOnFocusChangeListener(this);
-            setEditTextParameters(mInput);
+            try {
 
-            setPadding(findViewById(R.id.nSpinnerContainer),R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_spinner_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_spinner_top),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_spinner_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_spinner_bottom));
+                CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
+                mSpinner.setVisibility(View.VISIBLE);
+                mSpinner.setOnFocusChangeListener(this);
+                setEditTextParameters(mInput);
 
-            setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer),R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
+                setPadding(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_text_padding_left, getResources().getInteger(R.integer.ci_padding_spinner_left), R.styleable.CustomInput_ci_text_padding_top, getResources().getInteger(R.integer.ci_padding_spinner_top), R.styleable.CustomInput_ci_text_padding_right, getResources().getInteger(R.integer.ci_padding_spinner_right), R.styleable.CustomInput_ci_text_padding_bottom, getResources().getInteger(R.integer.ci_padding_spinner_bottom));
+
+                setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
+            }catch (Exception e) {
+                Log.d("eroare_naspa","x : "+e.getMessage());
+            }
 
         } else if (mInputType.equals("3")) {
             mInput.setVisibility(View.VISIBLE);
