@@ -17,7 +17,7 @@
         <!--app:cbbi_image_color="@color/base_red"-->
         <!--app:cbbi_border_pressed="@color/base_red"-->
         <!--app:cbbi_border_unpressed="@color/base_red"-->
-        <!--app:cbbi_text_style="@style/WrapWrap.Bold.Red.13"-->
+        <!--app:cbbi_text_style="@sty le/WrapWrap.Bold.Red.13"-->
         <!--/>-->
 
     <com.themejunky.personalstylerlib.customviews.CustomInput
