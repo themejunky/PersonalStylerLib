@@ -5,7 +5,7 @@
     android:id="@+id/nSpinnerContainer"
     android:background="@drawable/border_edit_text">
 
-    <Spinner
+    <android.support.v7.widget.AppCompatSpinner
         android:id="@+id/nSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
