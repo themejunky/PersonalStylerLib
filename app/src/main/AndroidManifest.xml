@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Form">
+        <activity android:name=".Test">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,6 +37,8 @@
         <activity
             android:name="com.themejunky.personalstylerlib.bases.activities.cropping.CroppingPhoto"
             android:screenOrientation="portrait"
+            android:windowActionBar="false"
+            android:windowNoTitle="true"
             android:theme="@style/AppTheme"
            />
 

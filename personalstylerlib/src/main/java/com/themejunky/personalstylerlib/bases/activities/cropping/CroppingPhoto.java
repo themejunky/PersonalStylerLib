@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import com.themejunky.personalstylerlib.R;
 import com.themejunky.personalstylerlib.utils.Constants;
@@ -21,7 +23,7 @@ public class CroppingPhoto extends CroppingPhotoBase {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_cropping_photo);
 
         fetchViews();
