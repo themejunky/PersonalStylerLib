@@ -44,61 +44,66 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
 
         super(nContext, nAttrs);
 
+        try {
 
-        TAG = "CustomInput";
-        mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);     
-        inflate(nContext, R.layout.custom_input_edit_text, this);
-        mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
-        mInput = findViewById(R.id.nInput);
-        TextView mTitle = findViewById(R.id.nTitle);
-        setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
-        setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
-        setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
+            TAG = "CustomInput";
+            mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);
+            inflate(nContext, R.layout.custom_input_edit_text, this);
+            mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
+            mInput = findViewById(R.id.nInput);
+            TextView mTitle = findViewById(R.id.nTitle);
+            setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
+            setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
+            setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
 
-        mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);
-        mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);
-        mDefaultBorderColorFocus = getResources().getColor(R.color.CustomInput_default_border_color_focus);
-        mDefaultBorderRadius = getResources().getInteger(R.integer.ci_radius);
-        mDefaultBorderStroke = getResources().getInteger(R.integer.ci_stroke);
-        mDefaultBorderColorError = getResources().getColor(R.color.default_error);
+            mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);
+            mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);
+            mDefaultBorderColorFocus = getResources().getColor(R.color.CustomInput_default_border_color_focus);
+            mDefaultBorderRadius = getResources().getInteger(R.integer.ci_radius);
+            mDefaultBorderStroke = getResources().getInteger(R.integer.ci_stroke);
+            mDefaultBorderColorError = getResources().getColor(R.color.default_error);
 
 
-        if (mInputType.equals("1")) {
-            mInput.setVisibility(View.VISIBLE);
-            setEditTextParameters(mInput);
-        } else if (mInputType.equals("2")) {
-            try {
+            if (mInputType.equals("1")) {
+                mInput.setVisibility(View.VISIBLE);
+                setEditTextParameters(mInput);
+            } else if (mInputType.equals("2")) {
+                try {
 
-                CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
-                mSpinner.setVisibility(View.VISIBLE);
-                mSpinner.setOnFocusChangeListener(this);
+                    CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
+                    mSpinner.setVisibility(View.VISIBLE);
+                    mSpinner.setOnFocusChangeListener(this);
+                    setEditTextParameters(mInput);
+
+                    setPadding(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_text_padding_left, getResources().getInteger(R.integer.ci_padding_spinner_left), R.styleable.CustomInput_ci_text_padding_top, getResources().getInteger(R.integer.ci_padding_spinner_top), R.styleable.CustomInput_ci_text_padding_right, getResources().getInteger(R.integer.ci_padding_spinner_right), R.styleable.CustomInput_ci_text_padding_bottom, getResources().getInteger(R.integer.ci_padding_spinner_bottom));
+
+                    setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
+                } catch (Exception e) {
+                    Log.d("eroare_naspa", "x : " + e.getMessage());
+                }
+
+            } else if (mInputType.equals("3")) {
+                mInput.setVisibility(View.VISIBLE);
                 setEditTextParameters(mInput);
 
-                setPadding(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_text_padding_left, getResources().getInteger(R.integer.ci_padding_spinner_left), R.styleable.CustomInput_ci_text_padding_top, getResources().getInteger(R.integer.ci_padding_spinner_top), R.styleable.CustomInput_ci_text_padding_right, getResources().getInteger(R.integer.ci_padding_spinner_right), R.styleable.CustomInput_ci_text_padding_bottom, getResources().getInteger(R.integer.ci_padding_spinner_bottom));
-
-                setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
-            }catch (Exception e) {
-                Log.d("eroare_naspa","x : "+e.getMessage());
+                setMinLines(mInput, R.styleable.CustomInput_ci_min_lines, getResources().getInteger(R.integer.ci_min_lines));
+                setMaxLines(mInput, R.styleable.CustomInput_ci_max_lines, getResources().getInteger(R.integer.ci_max_lines));
+                setGravity(mInput, R.styleable.CustomInput_ci_gravity, Gravity.TOP | Gravity.LEFT);
+                setScrollBar(mInput, R.styleable.CustomInput_ci_scrollbars);
+                mInput.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);
+                mInput.setSingleLine(false);
             }
 
-        } else if (mInputType.equals("3")) {
-            mInput.setVisibility(View.VISIBLE);
-            setEditTextParameters(mInput);
 
-            setMinLines(mInput, R.styleable.CustomInput_ci_min_lines, getResources().getInteger(R.integer.ci_min_lines));
-            setMaxLines(mInput, R.styleable.CustomInput_ci_max_lines, getResources().getInteger(R.integer.ci_max_lines));
-            setGravity(mInput, R.styleable.CustomInput_ci_gravity, Gravity.TOP | Gravity.LEFT);
-            setScrollBar(mInput, R.styleable.CustomInput_ci_scrollbars);
-            mInput.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);
-            mInput.setSingleLine(false);
+            mError = findViewById(R.id.nError);
+            setTitle(mError, R.styleable.CustomInput_ci_error_message);
+            TextView mMandatory = findViewById(R.id.nMandatory);
+            setMandatory(mMandatory, R.styleable.CustomInput_ci_error_mandatory);
+
         }
-
-
-        mError = findViewById(R.id.nError);
-        setTitle(mError, R.styleable.CustomInput_ci_error_message);
-        TextView mMandatory = findViewById(R.id.nMandatory);
-        setMandatory(mMandatory, R.styleable.CustomInput_ci_error_mandatory);
-
+        catch (Exception e) {
+            Log.d("eroare_naspa", "0 : " + e.getMessage());
+        }
     }
 
     /**
