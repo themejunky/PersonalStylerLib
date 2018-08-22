@@ -78,7 +78,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
 
                 setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
             }catch (Exception e) {
-                Log.d("eroare_naspa","1 : "+e.getMessage());
+                Log.d("eroare_naspa","x : "+e.getMessage());
             }
 
         } else if (mInputType.equals("3")) {
