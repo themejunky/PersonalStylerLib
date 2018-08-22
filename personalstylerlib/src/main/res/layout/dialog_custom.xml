@@ -22,6 +22,16 @@
 
     </LinearLayout>
 
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        app:ci_imei_option="next"
+        app:ci_type="spinner" />
+
     <View
         style="@style/Divider.Horizontal"
         android:background="@color/base_line"/>

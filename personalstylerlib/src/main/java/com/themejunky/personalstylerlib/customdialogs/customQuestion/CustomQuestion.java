@@ -3,8 +3,11 @@ package com.themejunky.personalstylerlib.customdialogs.customQuestion;
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.themejunky.personalstylerlib.R;
+import com.themejunky.personalstylerlib.customviews.CustomInput;
 
 public class CustomQuestion extends CustomQuestionBase {
 
@@ -57,6 +60,12 @@ public class CustomQuestion extends CustomQuestionBase {
         mQuestion.setText(mContext.getResources().getString(nQuestion));
         mPositive.setText(mContext.getResources().getString(nPositive));
         mNegative.setText(mContext.getResources().getString(nNegative));
+
+        String[] arraySpinner = new String[] {"Alege orasul", "Bucuresti", "Teleorman", "Timisoara", "Voluntari"};
+        Spinner s = ((CustomInput) mContainer.findViewById(R.id.nOptions)).findViewById(R.id.nSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,android.R.layout.simple_spinner_item, arraySpinner);
+        adapter.setDropDownViewResource(android.R.layout.simple_spin‌​ner_dropdown_item);
+        s.setAdapter(adapter);
 
         prepareDialog();
 
