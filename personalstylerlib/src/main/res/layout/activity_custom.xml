@@ -14,145 +14,137 @@
         app:ci_imei_option="next"
         app:ci_type="spinner" />
 
-    <!--<com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage-->
-        <!--android:id="@+id/nAddAddress"-->
-        <!--style="@style/MatchWrap"-->
-        <!--app:cbbi_text="Nu ai nicio adresa adaugata"-->
-        <!--app:cbbi_image="@drawable/ic_client_address"-->
-        <!--app:cbbi_devider_witdh="10"-->
-        <!--app:cbbi_padding="8"-->
-        <!--app:cbbi_container_gravity_left_vertical="true"-->
-        <!--app:cbbi_default_text_color="@color/base_red"-->
-        <!--app:cbbi_image_color="@color/base_red"-->
-        <!--app:cbbi_border_pressed="@color/base_red"-->
-        <!--app:cbbi_border_unpressed="@color/base_red"-->
-        <!--app:cbbi_text_style="@sty le/WrapWrap.Bold.Red.13"-->
-        <!--/>-->
+    <com.themejunky.personalstylerlib.customviews.CustomButtonBorderImage
+        android:id="@+id/nAddAddress"
+        style="@style/MatchWrap"
+        app:cbbi_text="Nu ai nicio adresa adaugata"
+        app:cbbi_image="@drawable/ic_client_address"
+        app:cbbi_devider_witdh="10"
+        app:cbbi_padding="8"
+        app:cbbi_container_gravity_left_vertical="true"
+        app:cbbi_default_text_color="@color/base_red"
+        app:cbbi_image_color="@color/base_red"
+        app:cbbi_border_pressed="@color/base_red"
+        app:cbbi_border_unpressed="@color/base_red"
+        app:cbbi_text_style="@style/WrapWrap.Bold.Red.13"
+        />
 
-    <!--<com.themejunky.personalstylerlib.customviews.CustomInput-->
-        <!--android:id="@+id/nEmails"-->
-        <!--style="@style/MatchWrap"-->
-        <!--app:ci_imei_option="next"-->
-        <!--app:ci_type="input"-->
-        <!--app:ci_keyboard="text"-->
-        <!--app:ci_title_text="text1"-->
-        <!--app:ci_hint="text2"-->
-        <!--app:ci_error_message="text3"-->
-        <!--/>-->
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmails"
+        style="@style/MatchWrap"
+        app:ci_imei_option="next"
+        app:ci_type="input"
+        app:ci_keyboard="text"
+        app:ci_title_text="text1"
+        app:ci_hint="text2"
+        app:ci_error_message="text3"
+        />
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:visibility="visible"-->
-        <!--android:orientation="horizontal">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="horizontal">
 
-        <!--<com.themejunky.personalstylerlib.customviews.CustomInput-->
-            <!--android:id="@+id/nEmail"-->
-            <!--style="@style/WrapWrap"-->
-            <!--app:ci_imei_option="next"-->
-            <!--app:ci_type="input"-->
-            <!--app:ci_keyboard="text"-->
-            <!--app:ci_title_text="Nume complet"-->
-            <!--app:ci_hint="Ionescu Pop"-->
-            <!--app:ci_error_message="eroare eroare"-->
-            <!--/>-->
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:id="@+id/nEmail"
+            style="@style/WrapWrap"
+            app:ci_imei_option="next"
+            app:ci_type="input"
+            app:ci_keyboard="text"
+            app:ci_title_text="Nume complet"
+            app:ci_hint="Ionescu Pop"
+            app:ci_error_message="eroare eroare"
+            />
 
-        <!--<com.themejunky.personalstylerlib.customviews.CustomInput-->
-            <!--android:id="@+id/nEmail2"-->
-            <!--style="@style/WrapWrap"-->
-            <!--app:ci_imei_option="next"-->
-            <!--app:ci_type="input"-->
-            <!--app:ci_keyboard="password"-->
-            <!--app:ci_title_text="Adresa de email"-->
-            <!--app:ci_hint="ionescu@gmail.com"-->
-            <!--app:ci_error_message="eroare eroare"-->
-            <!--/>-->
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:id="@+id/nEmail2"
+            style="@style/WrapWrap"
+            app:ci_imei_option="next"
+            app:ci_type="input"
+            app:ci_keyboard="password"
+            app:ci_title_text="Adresa de email"
+            app:ci_hint="ionescu@gmail.com"
+            app:ci_error_message="eroare eroare"
+            />
 
-        <!--<com.themejunky.personalstylerlib.customviews.CustomInput-->
-            <!--android:id="@+id/nEmail3"-->
-            <!--style="@style/WrapWrap"-->
-            <!--app:ci_imei_option="next"-->
-            <!--app:ci_type="spinner"-->
-            <!--app:ci_keyboard="text"-->
-            <!--app:ci_title_text="Numar"-->
-            <!--app:ci_error_message="eroare eroare"-->
-            <!--/>-->
+        <com.themejunky.personalstylerlib.customviews.CustomInput
+            android:id="@+id/nEmail3"
+            style="@style/WrapWrap"
+            app:ci_imei_option="next"
+            app:ci_type="spinner"
+            app:ci_keyboard="text"
+            app:ci_title_text="Numar"
+            app:ci_error_message="eroare eroare"
+            />
 
-    <!--</LinearLayout>-->
+    </LinearLayout>
 
-    <!--<LinearLayout-->
-        <!--style="@style/MatchWrap.Horizontal"-->
-        <!--android:background="@color/base_line_color"-->
-        <!--android:visibility="visible"-->
-        <!--android:paddingBottom="1dp"-->
-        <!--android:paddingTop="1dp">-->
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal"
+        android:background="@color/base_line_color"
+        android:visibility="visible"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp">
 
-        <!--<com.themejunky.personalstylerlib.customviews.CustomServices-->
-            <!--android:id="@+id/nMinOrder"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:paddingLeft="0dp"-->
-            <!--app:cbs_image_padding="0dp"-->
-            <!--app:cbs_image="@drawable/ic_cart"-->
-            <!--app:cbs_text="Comanda Minima"-->
-            <!--app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"-->
-            <!--app:cbs_border_default="@color/base_white"-->
-            <!--app:cbs_image_color="@color/base_purple"-->
-            <!--/>-->
+        <com.themejunky.personalstylerlib.customviews.CustomServices
+            android:id="@+id/nMinOrder"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingLeft="0dp"
+            app:cbs_image_padding="0dp"
+            app:cbs_image="@drawable/ic_cart"
+            app:cbs_text="Comanda Minima"
+            app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"
+            app:cbs_border_default="@color/base_white"
+            app:cbs_image_color="@color/base_purple"
+            />
 
-        <!--<com.themejunky.personalstylerlib.customviews.CustomServices-->
-            <!--android:id="@+id/nAddService"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:paddingLeft="1dp"-->
-            <!--app:cbs_image_padding="0dp"-->
-            <!--app:cbs_image="@drawable/ic_cart"-->
-            <!--app:cbs_text="Adauga un serviciu"-->
-            <!--app:cbs_style="@style/WrapWrap.Regular.Green.14"-->
-            <!--app:cbs_border_default="@color/base_white"-->
-            <!--app:cbs_image_color="@color/base_green"-->
-            <!--/>-->
+        <com.themejunky.personalstylerlib.customviews.CustomServices
+            android:id="@+id/nAddService"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingLeft="1dp"
+            app:cbs_image_padding="0dp"
+            app:cbs_image="@drawable/ic_cart"
+            app:cbs_text="Adauga un serviciu"
+            app:cbs_style="@style/WrapWrap.Regular.Green.14"
+            app:cbs_border_default="@color/base_white"
+            app:cbs_image_color="@color/base_green"
+            />
 
-        <!--<com.themejunky.personalstylerlib.customviews.CustomServices-->
-            <!--android:id="@+id/nCopyListing"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:paddingLeft="1dp"-->
-            <!--app:cbs_image_padding="@dimen/app_button_image_padding"-->
-            <!--app:cbs_image="@drawable/ic_cart"-->
-            <!--app:cbs_text="Copiaza listare"-->
-            <!--app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"-->
-            <!--app:cbs_border_default="@color/base_white"-->
-            <!--app:cbs_image_color="@color/base_blue"-->
-            <!--/>-->
+        <com.themejunky.personalstylerlib.customviews.CustomServices
+            android:id="@+id/nCopyListing"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingLeft="1dp"
+            app:cbs_image_padding="@dimen/app_button_image_padding"
+            app:cbs_image="@drawable/ic_cart"
+            app:cbs_text="Copiaza listare"
+            app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"
+            app:cbs_border_default="@color/base_white"
+            app:cbs_image_color="@color/base_blue"
+            />
 
-        <!--<com.themejunky.personalstylerlib.customviews.CustomServices-->
-            <!--android:id="@+id/nMainRedirect"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:paddingLeft="1dp"-->
-            <!--app:cbs_image_padding="@dimen/app_button_image_padding"-->
-            <!--app:cbs_image="@drawable/ic_cart"-->
-            <!--app:cbs_text="Panou de control"-->
-            <!--app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"-->
-            <!--app:cbs_border_default="@color/base_white"-->
-            <!--app:cbs_image_color="@color/base_blue"-->
-            <!--/>-->
+        <com.themejunky.personalstylerlib.customviews.CustomServices
+            android:id="@+id/nMainRedirect"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingLeft="1dp"
+            app:cbs_image_padding="@dimen/app_button_image_padding"
+            app:cbs_image="@drawable/ic_cart"
+            app:cbs_text="Panou de control"
+            app:cbs_style="@style/WrapWrap.Regular.Purple_2.14"
+            app:cbs_border_default="@color/base_white"
+            app:cbs_image_color="@color/base_blue"
+            />
 
 
-    <!--</LinearLayout>-->
+    </LinearLayout>
 
-    <!--<com.themejunky.personalstylerlib.customviews.CustomInput-->
-        <!--android:id="@+id/nOptions"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="12dp"-->
-        <!--android:layout_marginBottom="12dp"-->
-        <!--app:ci_imei_option="next"-->
-        <!--app:ci_type="spinner" />-->
 
 </LinearLayout>

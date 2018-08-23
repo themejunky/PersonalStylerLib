@@ -23,8 +23,8 @@
         android:id="@+id/nInput"
         style="@style/MatchWrap.Regular.Black.13"
         android:textColorHint="@color/base_red"
+        android:includeFontPadding="false"
         android:gravity="center_vertical"
-
         android:visibility="gone" />
 
     <com.themejunky.personalstylerlib.customviews.CustomSpinner

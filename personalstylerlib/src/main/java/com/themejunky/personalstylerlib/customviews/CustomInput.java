@@ -49,10 +49,10 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             inflate(nContext, R.layout.custom_input_edit_text, this);
             mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
             mInput = findViewById(R.id.nInput);
-            TextView mTitle = findViewById(R.id.nTitle);
-            setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
-            setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
-            setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
+            //TextView mTitle = findViewById(R.id.nTitle);
+        //    setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
+           // setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
+         //   setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
 
             mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);
             mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);
@@ -65,7 +65,9 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             if (mInputType.equals("1")) {
                 mInput.setVisibility(View.VISIBLE);
                 setEditTextParameters(mInput);
-            } else if (mInputType.equals("2")) {
+            }
+
+            else if (mInputType.equals("2")) {
                     CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
                     mSpinner.setVisibility(View.VISIBLE);
                     mSpinner.setOnFocusChangeListener(this);
@@ -84,12 +86,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                 mInput.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);
                 mInput.setSingleLine(false);
             }
-
-
-            mError = findViewById(R.id.nError);
-            setTitle(mError, R.styleable.CustomInput_ci_error_message);
-            TextView mMandatory = findViewById(R.id.nMandatory);
-            setMandatory(mMandatory, R.styleable.CustomInput_ci_error_mandatory);
     }
 
     /**
@@ -181,8 +177,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     nTextView.setInputType(InputType.TYPE_CLASS_NUMBER);
                     break;
                 case "4":
-                    nTextView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    //setPadding(nTextView,R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_top_password),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_bottom_password));
+                    nTextView.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     break;
                 case "5":
                     nTextView.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -201,6 +196,10 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             }
         }
 
+        mError = findViewById(R.id.nError);
+        setTitle(mError, R.styleable.CustomInput_ci_error_message);
+        TextView mMandatory = findViewById(R.id.nMandatory);
+        setMandatory(mMandatory, R.styleable.CustomInput_ci_error_mandatory);
         mInput.setHintTextColor(Color.parseColor("#cbcbcb"));
     }
 

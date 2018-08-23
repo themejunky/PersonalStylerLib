@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/base_black">
+    android:background="@color/base_grey2">
 
 
     <EditText
@@ -39,7 +41,37 @@
         android:layout_margin="5dp"/>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nEmail"
+        style="@style/MatchWrap"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        app:ci_imei_option="next"
+        app:ci_type="input"
+        app:ci_keyboard="email"
+        app:ci_title_text="@string/login_email_title"
+        app:ci_hint="@string/login_email_hint"
+        app:ci_error_message="@string/login_error_1"
+        />
 
 
+    <com.themejunky.personalstylerlib.customviews.CustomInput
+        android:id="@+id/nPassword"
+        style="@style/MatchWrap"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        app:ci_imei_option="done"
+        app:ci_type="input"
+        app:ci_keyboard="password"
+        app:ci_title_text="@string/login_password_title"
+        app:ci_hint="@string/login_password_hint"
+        app:ci_error_message="@string/login_error_2"
+        />
 
+    </LinearLayout>
 </LinearLayout>
