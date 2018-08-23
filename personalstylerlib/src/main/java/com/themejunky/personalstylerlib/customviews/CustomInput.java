@@ -80,7 +80,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     mSpinner.setOnFocusChangeListener(this);
                     setEditTextParameters(mInput);
                  //   setPadding(findViewById(R.id.nSpinnerContainer), ));
-                    setPadding(findViewById(R.id.nSpinnerContainer),defaultPaddingLeftRight,fontPaddingCorrection,defaultPaddingLeftRight,defaultPaddingTopBottom);
+                    //setPadding(findViewById(R.id.nSpinnerContainer),defaultPaddingLeftRight,fontPaddingCorrection,defaultPaddingLeftRight,defaultPaddingTopBottom);
                     setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
 
             } else if (mInputType.equals("3")) {
