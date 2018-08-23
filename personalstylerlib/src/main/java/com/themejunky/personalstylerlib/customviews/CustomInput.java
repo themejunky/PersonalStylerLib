@@ -151,7 +151,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public void setEditTextParameters(TextView nTextView) {
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
 
-        int defaultPadding = (int) (5*mDensity + 0.5f);
+        int defaultPadding = (int) (10*mDensity + 0.5f);
 
         setPadding(nTextView,defaultPadding,defaultPadding+(int) (0.15f*14),defaultPadding,defaultPadding);
 
@@ -159,6 +159,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         setFontFamily(nTextView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
         setInputHint(nTextView, R.styleable.CustomInput_ci_hint);
         setDefaultState(nTextView);
+        setTitle(nTextView, R.styleable.CustomInput_ci_title_text);
 
         nTextView.setOnFocusChangeListener(this);
 
