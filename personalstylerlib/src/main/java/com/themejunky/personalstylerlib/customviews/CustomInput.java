@@ -44,8 +44,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
 
         super(nContext, nAttrs);
 
-        try {
-
             TAG = "CustomInput";
             mTypedarray = nContext.obtainStyledAttributes(nAttrs, R.styleable.CustomInput);
             inflate(nContext, R.layout.custom_input_edit_text, this);
@@ -68,19 +66,12 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                 mInput.setVisibility(View.VISIBLE);
                 setEditTextParameters(mInput);
             } else if (mInputType.equals("2")) {
-                try {
-
                     CustomSpinner mSpinner = findViewById(R.id.nCustomSpinner);
                     mSpinner.setVisibility(View.VISIBLE);
                     mSpinner.setOnFocusChangeListener(this);
                     setEditTextParameters(mInput);
-
-                    setPadding(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_text_padding_left, getResources().getInteger(R.integer.ci_padding_spinner_left), R.styleable.CustomInput_ci_text_padding_top, getResources().getInteger(R.integer.ci_padding_spinner_top), R.styleable.CustomInput_ci_text_padding_right, getResources().getInteger(R.integer.ci_padding_spinner_right), R.styleable.CustomInput_ci_text_padding_bottom, getResources().getInteger(R.integer.ci_padding_spinner_bottom));
-
+                   // setPadding(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_text_padding_left, getResources().getInteger(R.integer.ci_padding_spinner_left), R.styleable.CustomInput_ci_text_padding_top, getResources().getInteger(R.integer.ci_padding_spinner_top), R.styleable.CustomInput_ci_text_padding_right, getResources().getInteger(R.integer.ci_padding_spinner_right), R.styleable.CustomInput_ci_text_padding_bottom, getResources().getInteger(R.integer.ci_padding_spinner_bottom));
                     setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
-                } catch (Exception e) {
-                    Log.d("eroare_naspa", "x : " + e.getMessage());
-                }
 
             } else if (mInputType.equals("3")) {
                 mInput.setVisibility(View.VISIBLE);
@@ -99,11 +90,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             setTitle(mError, R.styleable.CustomInput_ci_error_message);
             TextView mMandatory = findViewById(R.id.nMandatory);
             setMandatory(mMandatory, R.styleable.CustomInput_ci_error_mandatory);
-
-        }
-        catch (Exception e) {
-            Log.d("eroare_naspa", "0 : " + e.getMessage());
-        }
     }
 
     /**
@@ -169,8 +155,9 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public void setEditTextParameters(TextView nTextView) {
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
 
+        int defaultPadding = (int) (5*mDensity + 0.5f);
 
-        setPadding(nTextView,R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_top),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_bottom));
+        setPadding(nTextView,defaultPadding,defaultPadding+(int) (0.15f*14),defaultPadding,defaultPadding);
 
         setStyle(nTextView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
         setFontFamily(nTextView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
@@ -195,7 +182,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     break;
                 case "4":
                     nTextView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    setPadding(nTextView,R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_top_password),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_bottom_password));
+                    //setPadding(nTextView,R.styleable.CustomInput_ci_text_padding_left,getResources().getInteger(R.integer.ci_padding_left),R.styleable.CustomInput_ci_text_padding_top,getResources().getInteger(R.integer.ci_padding_top_password),R.styleable.CustomInput_ci_text_padding_right,getResources().getInteger(R.integer.ci_padding_right),R.styleable.CustomInput_ci_text_padding_bottom,getResources().getInteger(R.integer.ci_padding_bottom_password));
                     break;
                 case "5":
                     nTextView.setInputType(InputType.TYPE_CLASS_NUMBER);

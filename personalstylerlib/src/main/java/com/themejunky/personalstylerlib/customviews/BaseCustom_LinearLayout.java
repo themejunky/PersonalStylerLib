@@ -92,6 +92,14 @@ public class BaseCustom_LinearLayout extends LinearLayout {
         }
     }
 
+    protected void setPadding(View nView, int nLeftValue, int nTopValue, int nRightValue, int nBottomValue) {
+        try {
+            nView.setPadding(nLeftValue, nTopValue,nRightValue,nBottomValue);
+        } catch (Exception e) {
+            Log.d(TAG, "" + e.getMessage());
+        }
+    }
+
     protected void setPadding(View nView, int nResourceReference) {
         try {
             nView.setPadding(nResourceReference, nResourceReference, nResourceReference, nResourceReference);

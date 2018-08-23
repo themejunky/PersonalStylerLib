@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_black">
+
+
+    <EditText
+        android:id="@+id/nText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adresa de email"
+        android:includeFontPadding="false"
+        android:textSize="14sp"
+        android:background="@drawable/container_round_corners"
+        android:inputType="textEmailAddress"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:id="@+id/nText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Parola"
+        android:textSize="14sp"
+        android:background="@drawable/container_round_corners"
+        android:inputType="textPassword"
+        android:includeFontPadding="false"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:id="@+id/nText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_round_corners"
+        android:hint="Nume prenume"
+        android:textSize="14sp"
+        android:includeFontPadding="false"
+        android:inputType="text"
+        android:layout_margin="5dp"/>
+
+
+
+
+
+</LinearLayout>
