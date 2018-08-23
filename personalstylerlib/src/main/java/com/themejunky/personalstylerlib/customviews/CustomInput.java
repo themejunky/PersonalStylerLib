@@ -39,6 +39,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     private String mInputType, mInputKeyboard, mGravity, mScrollbar;
     private TextView mError;
     private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColorFocus, mDefaultBorderColorUnFocus,mDefaultBorderColorError;
+    private int defaultPadding,fontPaddingCorrection;
 
     public CustomInput(Context nContext, AttributeSet nAttrs) {
 
@@ -50,9 +51,12 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
             mInput = findViewById(R.id.nInput);
             TextView mTitle = findViewById(R.id.nTitle);
-        //    setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
-           // setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
+        //  setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
+           //setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
              setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
+
+             defaultPadding = (int) (10*mDensity + 0.5f);
+             fontPaddingCorrection = defaultPadding+(int) (0.15f*14);
 
             mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);
             mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);
@@ -64,7 +68,9 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
 
             if (mInputType.equals("1")) {
                 mInput.setVisibility(View.VISIBLE);
+
                 setEditTextParameters(mInput);
+
             }
 
             else if (mInputType.equals("2")) {
@@ -72,7 +78,8 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     mSpinner.setVisibility(View.VISIBLE);
                     mSpinner.setOnFocusChangeListener(this);
                     setEditTextParameters(mInput);
-                   // setPadding(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_text_padding_left, getResources().getInteger(R.integer.ci_padding_spinner_left), R.styleable.CustomInput_ci_text_padding_top, getResources().getInteger(R.integer.ci_padding_spinner_top), R.styleable.CustomInput_ci_text_padding_right, getResources().getInteger(R.integer.ci_padding_spinner_right), R.styleable.CustomInput_ci_text_padding_bottom, getResources().getInteger(R.integer.ci_padding_spinner_bottom));
+                 //   setPadding(findViewById(R.id.nSpinnerContainer), ));
+                    setPadding(findViewById(R.id.nSpinnerContainer),defaultPadding,fontPaddingCorrection,defaultPadding,defaultPadding);
                     setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
 
             } else if (mInputType.equals("3")) {
@@ -151,10 +158,8 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public void setEditTextParameters(TextView nTextView) {
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
 
-        int defaultPadding = (int) (10*mDensity + 0.5f);
 
-        setPadding(nTextView,defaultPadding,defaultPadding+(int) (0.15f*14),defaultPadding,defaultPadding);
-
+        setPadding(nTextView,defaultPadding,fontPaddingCorrection,defaultPadding,defaultPadding);
         setStyle(nTextView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
         setFontFamily(nTextView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
         setInputHint(nTextView, R.styleable.CustomInput_ci_hint);
