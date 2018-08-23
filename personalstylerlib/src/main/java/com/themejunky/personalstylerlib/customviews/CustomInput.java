@@ -49,10 +49,10 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             inflate(nContext, R.layout.custom_input_edit_text, this);
             mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
             mInput = findViewById(R.id.nInput);
-            //TextView mTitle = findViewById(R.id.nTitle);
+            TextView mTitle = findViewById(R.id.nTitle);
         //    setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
            // setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
-         //   setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
+             setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
 
             mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);
             mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);
@@ -159,7 +159,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         setFontFamily(nTextView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
         setInputHint(nTextView, R.styleable.CustomInput_ci_hint);
         setDefaultState(nTextView);
-        setTitle(nTextView, R.styleable.CustomInput_ci_title_text);
 
         nTextView.setOnFocusChangeListener(this);
 
