@@ -39,7 +39,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     private String mInputType, mInputKeyboard, mGravity, mScrollbar;
     private TextView mError;
     private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColorFocus, mDefaultBorderColorUnFocus,mDefaultBorderColorError;
-    private int defaultPadding,fontPaddingCorrection;
+    private int defaultPaddingTopBottom,fontPaddingCorrection,defaultPaddingLeftRight;
 
     public CustomInput(Context nContext, AttributeSet nAttrs) {
 
@@ -52,11 +52,12 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             mInput = findViewById(R.id.nInput);
             TextView mTitle = findViewById(R.id.nTitle);
         //  setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
-           //setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
+             setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
              setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
 
-             defaultPadding = (int) (10*mDensity + 0.5f);
-             fontPaddingCorrection = defaultPadding+(int) (0.15f*14);
+             defaultPaddingTopBottom = (int) (5*mDensity + 0.5f);
+             defaultPaddingLeftRight = (int) (10*mDensity + 0.5f);
+             fontPaddingCorrection = defaultPaddingTopBottom+(int) (0.15f*14);
 
             mDefaultBackgroundColor = getResources().getColor(R.color.CustomInput_default_background_color);
             mDefaultBorderColorUnFocus = getResources().getColor(R.color.CustomInput_default_border_color_unfocus);
@@ -79,7 +80,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     mSpinner.setOnFocusChangeListener(this);
                     setEditTextParameters(mInput);
                  //   setPadding(findViewById(R.id.nSpinnerContainer), ));
-                    setPadding(findViewById(R.id.nSpinnerContainer),defaultPadding,fontPaddingCorrection,defaultPadding,defaultPadding);
+                    setPadding(findViewById(R.id.nSpinnerContainer),defaultPaddingLeftRight,fontPaddingCorrection,defaultPaddingLeftRight,defaultPaddingTopBottom);
                     setBorderColorAndRadius(findViewById(R.id.nSpinnerContainer), R.styleable.CustomInput_ci_backgroundColor, mDefaultBackgroundColor, R.styleable.CustomInput_ci_border_radius, mDefaultBorderRadius, R.styleable.CustomInput_ci_border_stroke, mDefaultBorderStroke, R.styleable.CustomInput_ci_border_unpressed, mDefaultBorderColorUnFocus);
 
             } else if (mInputType.equals("3")) {
@@ -159,7 +160,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
         mInputKeyboard = mTypedarray.getString(R.styleable.CustomInput_ci_keyboard);
 
 
-        setPadding(nTextView,defaultPadding,fontPaddingCorrection,defaultPadding,defaultPadding);
+        setPadding(nTextView,defaultPaddingLeftRight,fontPaddingCorrection,defaultPaddingLeftRight,defaultPaddingTopBottom);
         setStyle(nTextView, R.styleable.CustomInput_ci_style, R.style.ci_default_style);
         setFontFamily(nTextView, mTypedarray.getString(R.styleable.CustomInput_ci_font), false);
         setInputHint(nTextView, R.styleable.CustomInput_ci_hint);
