@@ -77,7 +77,7 @@
             android:id="@+id/nOptions"
             style="@style/MatchWrap"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             app:ci_imei_option="next"
             app:ci_title_text="@string/login_password_title"
             app:ci_type="spinner" />

@@ -8,7 +8,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.themejunky.personalstylerlib.bases.activities.custom.CustomActivity;
+import com.themejunky.personalstylerlib.bases.model.Item;
+import com.themejunky.personalstylerlib.bases.tools.Tools;
 import com.themejunky.personalstylerlib.customviews.CustomInput;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Fonts extends CustomActivity {
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +30,14 @@ public class Fonts extends CustomActivity {
 
          int defaultPadding = (int) (5*scale + 0.5f);
 
-            String[] arraySpinner = new String[] {"Alege orasul", "Bucuresti", "Teleorman", "Timisoara", "Voluntari"};
-            Spinner s = ((CustomInput) findViewById(R.id.nOptions)).findViewById(R.id.nSpinner);
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                    android.R.layout.simple_spinner_item, arraySpinner);
-            adapter.setDropDownViewResource(android.R.layout.simple_spin‌​ner_dropdown_item);
-            s.setAdapter(adapter);
+
+
+            List<Item> mData = new ArrayList<>();
+            mData.add(new Item("0","Alege Durata"));
+            mData.add(new Item("0","Bucurestia"));
+            mData.add(new Item("0","Teleorman"));
+
+            Tools.getInstance(this).mSimpleSetupSpinnerCustom(((CustomInput) findViewById(R.id.nOptions)),mData, false);
 
         //   findViewById(R.id.nText1).setPadding(defaultPadding,(int) (0.15f*14)+defaultPadding,defaultPadding,defaultPadding);
          //   findViewById(R.id.nText2).setPadding(defaultPadding,(int) (0.15f*14)+defaultPadding,defaultPadding,defaultPadding);

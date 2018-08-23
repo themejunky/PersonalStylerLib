@@ -219,7 +219,7 @@ public class ToolsBase {
     }
 
     public void mSimpleSetupSpinnerCustom(CustomInput nCustomInput, List<Item> nValues, Boolean nTextBold) {
-        ((android.support.v7.widget.AppCompatSpinner) nCustomInput.findViewById(R.id.nSpinner)).setAdapter(new SimpleSpinnerLeftAdapter(mContext,nValues,nTextBold));
+        ((Spinner) nCustomInput.findViewById(R.id.nSpinner)).setAdapter(new SimpleSpinnerLeftAdapter(mContext,nValues,nTextBold));
     }
 
     public void mSimpleSetupSpinnerTextRightCustom(Spinner nSpinner, List<Item> nValues, Boolean nTextBold) {
