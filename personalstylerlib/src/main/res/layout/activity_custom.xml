@@ -34,7 +34,7 @@
         style="@style/MatchWrap"
         app:ci_imei_option="next"
         app:ci_type="input"
-        app:ci_keyboard="text"
+        app:ci_keyboard="password"
         app:ci_title_text="text1"
         app:ci_hint="text2"
         app:ci_error_message="text3"

@@ -183,7 +183,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                     nTextView.setInputType(InputType.TYPE_CLASS_NUMBER);
                     break;
                 case "4":
-                    nTextView.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    nTextView.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     break;
                 case "5":
                     nTextView.setInputType(InputType.TYPE_CLASS_NUMBER);
