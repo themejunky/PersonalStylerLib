@@ -61,12 +61,6 @@ public class CustomQuestion extends CustomQuestionBase {
         mPositive.setText(mContext.getResources().getString(nPositive));
         mNegative.setText(mContext.getResources().getString(nNegative));
 
-        String[] arraySpinner = new String[] {"Alege orasul", "Bucuresti", "Teleorman", "Timisoara", "Voluntari"};
-        Spinner s = ((CustomInput) mContainer.findViewById(R.id.nOptions)).findViewById(R.id.nSpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,android.R.layout.simple_spinner_item, arraySpinner);
-        adapter.setDropDownViewResource(android.R.layout.simple_spin‌​ner_dropdown_item);
-        s.setAdapter(adapter);
-
         prepareDialog();
 
       //  return returnDialog();
