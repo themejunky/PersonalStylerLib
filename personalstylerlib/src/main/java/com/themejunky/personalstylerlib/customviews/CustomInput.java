@@ -37,7 +37,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
 
     private EditText mInput, mInputBorder;
     private String mInputType, mInputKeyboard, mGravity, mScrollbar;
-    private TextView mError;
+    private TextView mError,mTitle;
     private int mDefaultBackgroundColor, mDefaultBorderRadius, mDefaultBorderStroke, mDefaultBorderColorFocus, mDefaultBorderColorUnFocus,mDefaultBorderColorError;
     private int defaultPaddingTopBottom,fontPaddingCorrection,defaultPaddingLeftRight;
 
@@ -50,7 +50,7 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
             inflate(nContext, R.layout.custom_input_edit_text, this);
             mInputType = mTypedarray.getString(R.styleable.CustomInput_ci_type);
             mInput = findViewById(R.id.nInput);
-            TextView mTitle = findViewById(R.id.nTitle);
+             mTitle = findViewById(R.id.nTitle);
         //  setStyle(mTitle, R.styleable.CustomInput_ci_title_style, R.style.ci_default_style);
              setFontFamily(mTitle, mTypedarray.getString(R.styleable.CustomInput_ci_title_font), true);
              setTitle(mTitle, R.styleable.CustomInput_ci_title_text);
@@ -116,6 +116,14 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     public void setHint(String nText) {
         mInput.setHint(nText);
     }
+
+
+    public void setTitle(String nText) {
+        mTitle.setText(nText);
+    }
+
+
+
 
     /**
      * Set a new error message and shows-up
