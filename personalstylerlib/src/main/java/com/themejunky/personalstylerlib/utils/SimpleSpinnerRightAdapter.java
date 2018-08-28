@@ -21,13 +21,14 @@ public class SimpleSpinnerRightAdapter extends BaseAdapter {
     private LayoutInflater inflter;
     private Boolean mTextBold;
     private Typeface mBoldFont;
-
+    private int mDensity;
     public SimpleSpinnerRightAdapter(Context applicationContext, List<Item> nValues, Boolean nTextBold) {
         this.mContext = applicationContext;
         this.mValues = new ArrayList<>();
         this.mValues.addAll(nValues);
         this.mTextBold = nTextBold;
         this.mBoldFont = Typeface.createFromAsset(applicationContext.getAssets(),"Bold.ttf");
+        this.mDensity = (int) applicationContext.getResources().getDisplayMetrics().density;
         inflter = (LayoutInflater.from(applicationContext));
     }
 
@@ -53,6 +54,9 @@ public class SimpleSpinnerRightAdapter extends BaseAdapter {
         TextView mText =  view.findViewById(R.id.nText);
         mText.setText(mValues.get(i).getValue());
         if (mTextBold) { mText.setTypeface(mBoldFont);}
+
+        mText.setPadding((int)(10*mDensity + 0.15f ),(int)(5*mDensity + 0.15f),(int) (10*mDensity + 0.15f), (int)((5*mDensity + 0.15f)+(14*1.0f)));
+
         return view;
     }
 }

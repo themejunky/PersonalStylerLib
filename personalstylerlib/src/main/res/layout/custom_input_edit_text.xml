@@ -30,6 +30,7 @@
     <com.themejunky.personalstylerlib.customviews.CustomSpinner
         android:id="@+id/nCustomSpinner"
         style="@style/MatchWrap.Regular.Black.13"
+
         android:visibility="gone" />
 
     <TextView

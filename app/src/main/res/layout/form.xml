@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
 
 
@@ -11,7 +11,8 @@
     <com.themejunky.personalstylerlib.customviews.CustomInput
         android:id="@+id/nEmail"
         style="@style/MatchWrap"
-        android:layout_marginTop="25dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         app:ci_imei_option="done"
         app:ci_type="input"
         app:ci_keyboard="email"
@@ -20,46 +21,54 @@
         app:ci_error_message="@string/login_error_1"
         />
 
-    <com.themejunky.personalstylerlib.customviews.CustomInput
-        android:id="@+id/nDescriere"
-        style="@style/MatchWrap"
-        android:layout_marginTop="6dp"
-        app:ci_type="input_multiline"
-        app:ci_keyboard="text"
-        app:ci_imei_option="next"
-        app:ci_title_text="text"
-        app:ci_hint="hint"
-        app:ci_error_message="error"
-        app:ci_error_mandatory="true"
-        />
+    <!--<com.themejunky.personalstylerlib.customviews.CustomInput-->
+        <!--android:id="@+id/nDescriere"-->
+        <!--style="@style/MatchWrap"-->
+        <!--android:layout_marginTop="6dp"-->
+        <!--app:ci_type="input_multiline"-->
+        <!--app:ci_keyboard="text"-->
+        <!--app:ci_imei_option="next"-->
+        <!--app:ci_title_text="text"-->
+        <!--app:ci_hint="hint"-->
+        <!--app:ci_error_message="error"-->
+        <!--app:ci_error_mandatory="true"-->
+        <!--/>-->
 
     <com.themejunky.personalstylerlib.customviews.CustomInput
         android:id="@+id/nTimp"
         style="@style/MatchWrap"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         app:ci_error_mandatory="true"
         app:ci_error_message="Err"
         app:ci_imei_option="next"
         app:ci_title_text="ti"
         app:ci_type="spinner" />
 
-    <com.themejunky.personalstylerlib.customviews.CustomButton
-        android:id="@+id/nResetButton"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="25dp"
-        android:tag="button_inactive"
-        app:cb_tag="@string/reset_key_button_reset"
-        app:cb_text="RESET"
+    <!--<Spinner-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:background="@drawable/spinner_default"/>-->
 
-        app:cb_form_validation="true"
+    <!--<com.themejunky.personalstylerlib.customviews.CustomButton-->
+        <!--android:id="@+id/nResetButton"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="55dp"-->
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:tag="button_inactive"-->
+        <!--app:cb_tag="@string/reset_key_button_reset"-->
+        <!--app:cb_text="RESET"-->
 
-        app:cb_active_pressed="@color/CustomButton_green_pressed"
-        app:cb_active_unpressed="@color/CustomButton_green_unpressed"
-        app:cb_active_shadow="@color/CustomButton_green_shadow"
+        <!--app:cb_form_validation="true"-->
 
-        app:cb_inactive_pressed="@color/CustomButton_inactive_pressed"
-        app:cb_inactive_unpressed="@color/CustomButton_inactive_unpressed"
-        app:cb_inactive_shadow="@color/CustomButton_inactive_shadow"
-        />
+        <!--app:cb_active_pressed="@color/CustomButton_green_pressed"-->
+        <!--app:cb_active_unpressed="@color/CustomButton_green_unpressed"-->
+        <!--app:cb_active_shadow="@color/CustomButton_green_shadow"-->
+
+        <!--app:cb_inactive_pressed="@color/CustomButton_inactive_pressed"-->
+        <!--app:cb_inactive_unpressed="@color/CustomButton_inactive_unpressed"-->
+        <!--app:cb_inactive_shadow="@color/CustomButton_inactive_shadow"-->
+        <!--/>-->
 
 </LinearLayout>
