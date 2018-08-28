@@ -25,9 +25,11 @@ public class Photo extends PhotoBase {
 
     @Override
     public void onClick(View nView) {
+        Log.d("poza_click",""+mPhotos.get(Integer.parseInt(nView.getTag().toString())).mType);
+
+
         EditPhoto.getInstance().refreshContent(this,this,Integer.parseInt(nView.getTag().toString()));
 
-        Log.d("poza_click",""+mPhotos.get(Integer.parseInt(nView.getTag().toString())).mType);
 
         if (mPhotos.get(Integer.parseInt(nView.getTag().toString())).mType.equals("INHOUSE")) {
             EditPhoto.getInstance().disableEdit();

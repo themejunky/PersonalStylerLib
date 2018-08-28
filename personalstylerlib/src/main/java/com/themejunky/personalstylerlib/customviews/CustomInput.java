@@ -123,8 +123,6 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
     }
 
 
-
-
     /**
      * Set a new error message and shows-up
      */
