@@ -21,7 +21,7 @@
         </item>
         <item >
             <bitmap android:gravity="center|right"
-                android:src="@drawable/arrow2" />
+                android:src="@drawable/spinnerbmp" />
         </item>
     </layer-list></item>
 </selector>
