@@ -120,6 +120,7 @@ public class BaseCustom_LinearLayout extends LinearLayout {
                 nView.setText(mTypedarray.getString(nResourceReference));
             } else {
                 nView.setVisibility(View.GONE);
+                ((LinearLayout) nView.getParent()).setVisibility(View.GONE);
             }
         } catch (Exception e) {
         }
