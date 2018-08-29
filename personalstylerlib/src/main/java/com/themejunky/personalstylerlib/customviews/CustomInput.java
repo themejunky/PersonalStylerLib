@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -93,6 +94,12 @@ public class CustomInput extends BaseCustom_LinearLayout implements View.OnFocus
                 setScrollBar(mInput, R.styleable.CustomInput_ci_scrollbars);
                 mInput.setImeOptions(EditorInfo.IME_FLAG_NO_ENTER_ACTION);
                 mInput.setSingleLine(false);
+            }
+
+
+            //if there is no title text... hide
+            if (mTitle.getText().toString().length()==0) {
+                ((ViewGroup) mTitle.getParent()).setVisibility(View.GONE);
             }
     }
 

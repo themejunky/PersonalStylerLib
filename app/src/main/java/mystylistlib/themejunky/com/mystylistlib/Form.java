@@ -35,13 +35,13 @@ public class Form extends CustomActivity implements CustomButton.Custom_Button_I
 //        adapter.setDropDownViewResource(android.R.layout.simple_spin‌​ner_dropdown_item);
 //        s.setAdapter(adapter);
 
-        List<Item> mData = new ArrayList<>();
-        mData.add(new Item("1","2"));
-        mData.add(new Item("1","3"));
-        mData.add(new Item("1","4"));
-        ((Spinner)( findViewById(R.id.nTimp)).findViewById(R.id.nSpinner)).setAdapter(new SimpleSpinnerLeftAdapter(this, mData, false));
-
-        mCustomInputs = new ArrayList<CustomInput>() {{add(mEmail);add(mDescriere);add(mTimp);}};
+//        List<Item> mData = new ArrayList<>();
+//        mData.add(new Item("1","2"));
+//        mData.add(new Item("1","3"));
+//        mData.add(new Item("1","4"));
+//        ((Spinner)( findViewById(R.id.nTimp)).findViewById(R.id.nSpinner)).setAdapter(new SimpleSpinnerLeftAdapter(this, mData, false));
+//
+//        mCustomInputs = new ArrayList<CustomInput>() {{add(mEmail);add(mDescriere);add(mTimp);}};
       //  mReset.setListener(this);
     }
 
